@@ -21,7 +21,7 @@
           <div class="max-w-xl mx-auto" x-data="{ selected: 1 }">
             <ul class="shadow-box">
               <li class="relative bg-[#191925] rounded-md mb-2">
-                <button type="button" class="w-full px-8 py-6 text-left" @click="selected !== 1 ? selected = 1 : selected = null">
+                <button type="button" class="w-full px-8 py-4 text-left" @click="selected !== 1 ? selected = 1 : selected = null">
                   <div class="flex items-center justify-between">
                     <span :class="{ 'text-[#00A3FF]': selected === 1, 'text-white': selected !== 1 }">
                       Comment puis-je suivre l’avancement de mon projet ?
@@ -37,7 +37,7 @@
               </li>
           
               <li class="relative bg-[#191925] rounded-md mb-2">
-                <button type="button" class="w-full px-8 py-6 text-left" @click="selected !== 2 ? selected = 2 : selected = null">
+                <button type="button" class="w-full px-8 py-4 text-left" @click="selected !== 2 ? selected = 2 : selected = null">
                   <div class="flex items-center justify-between">
                     <span :class="{ 'text-[#00A3FF]': selected === 2, 'text-white': selected !== 2 }">
                       Comment modifier mon projet en cours de route ?
@@ -54,7 +54,7 @@
               </li>
           
               <li class="relative bg-[#191925] rounded-md mb-2">
-                <button type="button" class="w-full px-8 py-6 text-left" @click="selected !== 3 ? selected = 3 : selected = null">
+                <button type="button" class="w-full px-8 py-4 text-left" @click="selected !== 3 ? selected = 3 : selected = null">
                   <div class="flex items-center justify-between">
                     <span :class="{ 'text-[#00A3FF]': selected === 3, 'text-white': selected !== 3 }">
                       Comment vous assurez-vous que le site répond à mes attentes ?
@@ -71,12 +71,12 @@
               </li>
           
               <li class="relative bg-[#191925] rounded-md mb-2">
-                <button type="button" class="w-full px-8 py-6 text-left" @click="selected !== 4 ? selected = 4 : selected = null">
+                <button type="button" class="w-full px-8 py-4 text-left" @click="selected !== 4 ? selected = 4 : selected = null">
                   <div class="flex items-center justify-between">
                     <span :class="{ 'text-[#00A3FF]': selected === 4, 'text-white': selected !== 4 }">
                       Quelles technologies utilisez-vous pour le développement ?
                     </span>
-                    <span class="ico-plus bg-[#fff]"></span>
+                    <span class="ico-plus">+</span>
                   </div>
                 </button>
                 <div class="relative overflow-hidden transition-all max-h-0 duration-700" style="" x-ref="container4" x-bind:style="selected == 4 ? 'max-height: ' + $refs.container4.scrollHeight + 'px' : ''">
@@ -86,6 +86,43 @@
                   </div>
                 </div>
               </li>
+
+
+              <li class="relative bg-[#191925] rounded-md mb-2">
+                <button type="button" class="w-full px-8 py-4 text-left" @click="selected !== 4 ? selected = 4 : selected = null">
+                  <div class="flex items-center justify-between">
+                    <span :class="{ 'text-[#00A3FF]': selected === 4, 'text-white': selected !== 4 }">
+                      La sécurité des données est-elle garantie ?
+                    </span>
+                    <span class="ico-plus">+</span>
+                  </div>
+                </button>
+                <div class="relative overflow-hidden transition-all max-h-0 duration-700" style="" x-ref="container4" x-bind:style="selected == 4 ? 'max-height: ' + $refs.container4.scrollHeight + 'px' : ''">
+                  <div class="p-6 text-[#ACACAC]">
+                    <p>To do this, load the v3 site key as documented, and then explicitly render v2 using grecaptcha.render.</p>
+                    <p>You are allowed to hide the badge as long as you include the reCAPTCHA branding visibly in the user flow. Please include the following text:</p>
+                  </div>
+                </div>
+              </li>
+
+
+              <li class="relative bg-[#191925] rounded-md mb-2">
+                <button type="button" class="w-full px-8 py-4 text-left" @click="selected !== 4 ? selected = 4 : selected = null">
+                  <div class="flex items-center justify-between">
+                    <span :class="{ 'text-[#00A3FF]': selected === 4, 'text-white': selected !== 4 }">
+                      Offrez-vous des formations pour l’autogestion du site ? 
+                    </span>
+                    <span class="ico-plus">+</span>
+                  </div>
+                </button>
+                <div class="relative overflow-hidden transition-all max-h-0 duration-700" style="" x-ref="container4" x-bind:style="selected == 4 ? 'max-height: ' + $refs.container4.scrollHeight + 'px' : ''">
+                  <div class="p-6 text-[#ACACAC]">
+                    <p>To do this, load the v3 site key as documented, and then explicitly render v2 using grecaptcha.render.</p>
+                    <p>You are allowed to hide the badge as long as you include the reCAPTCHA branding visibly in the user flow. Please include the following text:</p>
+                  </div>
+                </div>
+              </li>
+
             </ul>
           </div>
           
