@@ -1,142 +1,260 @@
 {% block faq %}
-<section class="px-[80px]">
-<h1 class="text-5xl mb-4 font-bold tracking-tight text-white sm:text-4xl px-8">FAQ</h1>
-<div class="grid grid-cols-1 lg:grid-cols-6">
-<div class="col-span-3 px-8">
-    <p class="text-white text-2xl font-bold mb-2">Quels types de services offrez-vous ?</p>
-    <p class="text-[#ACACAC] text-lg mb-3">Nous proposons une gamme complète de services de développement web, y compris la création de sites web sur mesure, la refonte de sites existants, l'optimisation SEO intégrée par le code, et des services de maintenance et de support continus.</p>
-    <p class="text-white text-2xl font-bold mb-2">Combien coûte la création d’un site ?</p>
-    <p class="text-[#ACACAC] text-lg mb-3">Le coût varie selon plusieurs facteurs, y compris la complexité du site, les fonctionnalités requises et la stratégie de contenu. Nous recommandons une consultation gratuite pour établir un devis personnalisé adapté à vos besoins spécifiques.</p>
-    <p class="text-white text-2xl font-bold mb-2">Quel est le délai typique pour un projet ?</p>
-    <p class="text-[#ACACAC] text-lg mb-6">Cela dépend de la complexité, des fonctionnalités requises et des retours du client. En général, un projet peut prendre de quelques semaines à plusieurs mois. Un calendrier plus détaillé sera discuté après avoir évalué vos besoins spécifiques.</p>
-    <div class="flex">
-        <a class="py-4 px-8 text-white bg-[#00A3FF] cursor-pointer rounded-lg font-bold">Nous contacter</a>
-        <a class="py-4 px-8 text-white cursor-pointer rounded-lg font-bold">Centre de Support</a>
+<section class="lg:px-32 px-16 my-32">
+  <h1 class="text-4xl lg:text-3xl mb-4 font-bold tracking-tight text-white">
+    FAQ
+  </h1>
+  <div class="grid grid-cols-1 lg:grid-cols-6">
+    {# Block Question #}
+    <div class="col-span-3 mb-16">
+      <p class="text-white text-2xl font-bold mb-2">
+        Quels types de services offrez-vous ?
+      </p>
+      <p class="text-[#ACACAC] text-xl lg-1500:text-base mb-3">
+        Nous proposons une gamme complète de services de développement web, y
+        compris la création de sites web sur mesure, la refonte de sites
+        existants, l'optimisation SEO intégrée par le code, et des services de
+        maintenance et de support continus.
+      </p>
+      <p class="text-white text-2xl font-bold mb-2">
+        Combien coûte la création d’un site ?
+      </p>
+      <p class="text-[#ACACAC] text-xl lg-1500:text-base mb-3">
+        Le coût varie selon plusieurs facteurs, y compris la complexité du site,
+        les fonctionnalités requises et la stratégie de contenu. Nous
+        recommandons une consultation gratuite pour établir un devis
+        personnalisé adapté à vos besoins spécifiques.
+      </p>
+      <p class="text-white text-2xl font-bold mb-2">
+        Quel est le délai typique pour un projet ?
+      </p>
+      <p class="text-[#ACACAC] text-xl lg-1500:text-base mb-6">
+        Cela dépend de la complexité, des fonctionnalités requises et des
+        retours du client. En général, un projet peut prendre de quelques
+        semaines à plusieurs mois. Un calendrier plus détaillé sera discuté
+        après avoir évalué vos besoins spécifiques.
+      </p>
+      <div class="flex">
+        <a
+          class="py-4 px-8 text-white bg-[#00A3FF] text-xl lg-1500:text-base cursor-pointer rounded-lg font-bold"
+          >Nous contacter</a
+        >
+        <a
+          class="py-4 px-8 text-white cursor-pointer text-xl lg-1500:text-base rounded-lg font-bold"
+          >Centre de Support</a
+        >
+      </div>
     </div>
-</div>
 
-<div class="col-span-3 px-8">
-
-        <div class="col-span-4">
-          <div class="max-w-xl mx-auto" x-data="{ selected: 1 }">
-            <ul class="shadow-box">
-              <li class="relative bg-[#191925] rounded-md mb-2">
-                <button type="button" class="w-full px-8 py-4 text-left" @click="selected !== 1 ? selected = 1 : selected = null">
-                  <div class="flex items-center justify-between">
-                    <span :class="{ 'text-[#00A3FF]': selected === 1, 'text-white': selected !== 1 }">
-                      Comment puis-je suivre l’avancement de mon projet ?
-                    </span>
-                    <span class="ico-plus"></span>
-                  </div>
-                </button>
-                <div class="relative overflow-hidden transition-all max-h-0 duration-700" style="" x-ref="container1" x-bind:style="selected == 1 ? 'max-height: ' + $refs.container1.scrollHeight + 'px' : ''">
-                  <div class="p-6 text-[#ACACAC]">
-                    <p>Nous fournissons des mises à jour régulières sur l’avancement du projet à travers des réunions virtuelles et des rapports d’étape envoyés par e-mail. Cela vous permet de rester informé et d’apporter vos commentaires tout au long du projet.</p>
-                  </div>
+    {# Block Accordion #}
+    <div class="col-span-3 lg:px-8">
+      <div class="col-span-4">
+        <div class="w-full mx-auto" x-data="{ selected: 1 }">
+          <ul class="shadow-box">
+            <li class="relative bg-[#191925] rounded-md mb-2">
+              <button
+                type="button"
+                class="w-full px-8 py-6 lg-1500:py-4 text-left"
+                @click="selected !== 1 ? selected = 1 : selected = null"
+              >
+                <div class="flex items-center justify-between">
+                  <span
+                    :class="{ 'text-[#00A3FF] text-xl lg-1500:text-base': selected === 1, 'text-white text-xl lg-1500:text-base': selected !== 1 }"
+                  >
+                    Comment puis-je suivre l’avancement de mon projet ?
+                  </span>
+                  <span class="ico-plus"></span>
                 </div>
-              </li>
-          
-              <li class="relative bg-[#191925] rounded-md mb-2">
-                <button type="button" class="w-full px-8 py-4 text-left" @click="selected !== 2 ? selected = 2 : selected = null">
-                  <div class="flex items-center justify-between">
-                    <span :class="{ 'text-[#00A3FF]': selected === 2, 'text-white': selected !== 2 }">
-                      Comment modifier mon projet en cours de route ?
-                    </span>
-                    <span class="ico-plus"></span>
-                  </div>
-                </button>
-                <div class="relative overflow-hidden transition-all max-h-0 duration-700" style="" x-ref="container2" x-bind:style="selected == 2 ? 'max-height: ' + $refs.container2.scrollHeight + 'px' : ''">
-                  <div class="p-6 text-[#ACACAC]">
-                    <p>For reCAPTCHA v3, create a separate key for testing environments. Scores may not be accurate as reCAPTCHA v3 relies on seeing real traffic.</p>
-                    <p>For reCAPTCHA v2, use the following test keys. You will always get No CAPTCHA and all verification requests will pass.</p>
-                  </div>
+              </button>
+              <div
+                class="relative overflow-hidden transition-all max-h-0 duration-700"
+                x-ref="container1"
+                x-bind:style="selected == 1 ? 'max-height: ' + $refs.container1.scrollHeight + 'px' : ''"
+              >
+                <div class="p-6 text-[#ACACAC]">
+                  <p class="text-xl lg-1500:text-base">
+                    Nous fournissons des mises à jour régulières sur
+                    l’avancement du projet à travers des réunions virtuelles et
+                    des rapports d’étape envoyés par e-mail. Cela vous permet de
+                    rester informé et d’apporter vos commentaires tout au long
+                    du projet.
+                  </p>
                 </div>
-              </li>
-          
-              <li class="relative bg-[#191925] rounded-md mb-2">
-                <button type="button" class="w-full px-8 py-4 text-left" @click="selected !== 3 ? selected = 3 : selected = null">
-                  <div class="flex items-center justify-between">
-                    <span :class="{ 'text-[#00A3FF]': selected === 3, 'text-white': selected !== 3 }">
-                      Comment vous assurez-vous que le site répond à mes attentes ?
-                    </span>
-                    <span class="ico-plus"></span>
-                  </div>
-                </button>
-                <div class="relative overflow-hidden transition-all max-h-0 duration-700" style="" x-ref="container3" x-bind:style="selected == 3 ? 'max-height: ' + $refs.container3.scrollHeight + 'px' : ''">
-                  <div class="p-6 text-[#ACACAC]">
-                    <p>To do this, load the v3 site key as documented, and then explicitly render v2 using grecaptcha.render.</p>
-                    <p>You are allowed to hide the badge as long as you include the reCAPTCHA branding visibly in the user flow. Please include the following text:</p>
-                  </div>
+              </div>
+            </li>
+
+            <li class="relative bg-[#191925] rounded-md mb-2">
+              <button
+                type="button"
+                class="w-full px-8 py-6 lg-1500:py-4 text-left"
+                @click="selected !== 2 ? selected = 2 : selected = null"
+              >
+                <div class="flex items-center justify-between">
+                  <span
+                    :class="{ 'text-[#00A3FF] text-xl lg-1500:text-base': selected === 2, 'text-white text-xl lg-1500:text-base': selected !== 2 }"
+                  >
+                    Comment modifier mon projet en cours de route ?
+                  </span>
+                  <span class="ico-plus"></span>
                 </div>
-              </li>
-          
-              <li class="relative bg-[#191925] rounded-md mb-2">
-                <button type="button" class="w-full px-8 py-4 text-left" @click="selected !== 4 ? selected = 4 : selected = null">
-                  <div class="flex items-center justify-between">
-                    <span :class="{ 'text-[#00A3FF]': selected === 4, 'text-white': selected !== 4 }">
-                      Quelles technologies utilisez-vous pour le développement ?
-                    </span>
-                    <span class="ico-plus">+</span>
-                  </div>
-                </button>
-                <div class="relative overflow-hidden transition-all max-h-0 duration-700" style="" x-ref="container4" x-bind:style="selected == 4 ? 'max-height: ' + $refs.container4.scrollHeight + 'px' : ''">
-                  <div class="p-6 text-[#ACACAC]">
-                    <p>To do this, load the v3 site key as documented, and then explicitly render v2 using grecaptcha.render.</p>
-                    <p>You are allowed to hide the badge as long as you include the reCAPTCHA branding visibly in the user flow. Please include the following text:</p>
-                  </div>
+              </button>
+              <div
+                class="relative overflow-hidden transition-all max-h-0 duration-700"
+                x-ref="container2"
+                x-bind:style="selected == 2 ? 'max-height: ' + $refs.container2.scrollHeight + 'px' : ''"
+              >
+                <div class="p-6 text-[#ACACAC]">
+                  <p class="text-xl lg-1500:text-base">
+                    For reCAPTCHA v3, create a separate key for testing
+                    environments. Scores may not be accurate as reCAPTCHA v3
+                    relies on seeing real traffic. For reCAPTCHA v2, use the
+                    following test keys. You will always get No CAPTCHA and all
+                    verification requests will pass.
+                  </p>
                 </div>
-              </li>
+              </div>
+            </li>
 
-
-              <li class="relative bg-[#191925] rounded-md mb-2">
-                <button type="button" class="w-full px-8 py-4 text-left" @click="selected !== 5 ? selected = 5 : selected = null">
-                  <div class="flex items-center justify-between">
-                    <span :class="{ 'text-[#00A3FF]': selected === 5, 'text-white': selected !== 5 }">
-                      La sécurité des données est-elle garantie ?
-                    </span>
-                    <span class="ico-plus">+</span>
-                  </div>
-                </button>
-                <div class="relative overflow-hidden transition-all max-h-0 duration-700" style="" x-ref="container5" x-bind:style="selected == 5 ? 'max-height: ' + $refs.container5.scrollHeight + 'px' : ''">
-                  <div class="p-6 text-[#ACACAC]">
-                    <p>To do this, load the v3 site key as documented, and then explicitly render v2 using grecaptcha.render.</p>
-                    <p>You are allowed to hide the badge as long as you include the reCAPTCHA branding visibly in the user flow. Please include the following text:</p>
-                  </div>
+            <li class="relative bg-[#191925] rounded-md mb-2">
+              <button
+                type="button"
+                class="w-full px-8 py-6 lg-1500:py-4 text-left"
+                @click="selected !== 3 ? selected = 3 : selected = null"
+              >
+                <div class="flex items-center justify-between">
+                  <span
+                    :class="{ 'text-[#00A3FF] text-xl lg-1500:text-base': selected === 3, 'text-white text-xl lg-1500:text-base': selected !== 3 }"
+                  >
+                    Comment vous assurez-vous que le site répond à mes attentes
+                    ?
+                  </span>
+                  <span class="ico-plus"></span>
                 </div>
-              </li>
-
-
-              <li class="relative bg-[#191925] rounded-md mb-2">
-                <button type="button" class="w-full px-8 py-4 text-left" @click="selected !== 6 ? selected = 6 : selected = null">
-                  <div class="flex items-center justify-between">
-                    <span :class="{ 'text-[#00A3FF]': selected === 6, 'text-white': selected !== 6 }">
-                      Offrez-vous des formations pour l’autogestion du site ? 
-                    </span>
-                    <span class="ico-plus">+</span>
-                  </div>
-                </button>
-                <div class="relative overflow-hidden transition-all max-h-0 duration-700" style="" x-ref="container6" x-bind:style="selected == 6 ? 'max-height: ' + $refs.container6.scrollHeight + 'px' : ''">
-                  <div class="p-6 text-[#ACACAC]">
-                    <p>To do this, load the v3 site key as documented, and then explicitly render v2 using grecaptcha.render.</p>
-                    <p>You are allowed to hide the badge as long as you include the reCAPTCHA branding visibly in the user flow. Please include the following text:</p>
-                  </div>
+              </button>
+              <div
+                class="relative overflow-hidden transition-all max-h-0 duration-700"
+                x-ref="container3"
+                x-bind:style="selected == 3 ? 'max-height: ' + $refs.container3.scrollHeight + 'px' : ''"
+              >
+                <div class="p-6 text-[#ACACAC]">
+                  <p class="text-xl lg-1500:text-base">
+                    To do this, load the v3 site key as documented, and then
+                    explicitly render v2 using grecaptcha.render. You are
+                    allowed to hide the badge as long as you include the
+                    reCAPTCHA branding visibly in the user flow. Please include
+                    the following text:
+                  </p>
                 </div>
-              </li>
+              </div>
+            </li>
 
-            </ul>
-          </div>
-          
+            <li class="relative bg-[#191925] rounded-md mb-2">
+              <button
+                type="button"
+                class="w-full px-8 py-6 lg-1500:py-4 text-left"
+                @click="selected !== 4 ? selected = 4 : selected = null"
+              >
+                <div class="flex items-center justify-between">
+                  <span
+                    :class="{ 'text-[#00A3FF] text-xl lg-1500:text-base': selected === 4, 'text-white text-xl lg-1500:text-base': selected !== 4 }"
+                  >
+                    Quelles technologies utilisez-vous pour le développement ?
+                  </span>
+                  <span class="ico-plus">+</span>
+                </div>
+              </button>
+              <div
+                class="relative overflow-hidden transition-all max-h-0 duration-700"
+                x-ref="container4"
+                x-bind:style="selected == 4 ? 'max-height: ' + $refs.container4.scrollHeight + 'px' : ''"
+              >
+                <div class="p-6 text-[#ACACAC]">
+                  <p class="text-xl lg-1500:text-base">
+                    To do this, load the v3 site key as documented, and then
+                    explicitly render v2 using grecaptcha.render.
+                  </p>
+                  <p>
+                    You are allowed to hide the badge as long as you include the
+                    reCAPTCHA branding visibly in the user flow. Please include
+                    the following text:
+                  </p>
+                </div>
+              </div>
+            </li>
+
+            <li class="relative bg-[#191925] rounded-md mb-2">
+              <button
+                type="button"
+                class="w-full px-8 py-6 lg-1500:py-4 text-left"
+                @click="selected !== 5 ? selected = 5 : selected = null"
+              >
+                <div class="flex items-center justify-between">
+                  <span
+                    :class="{ 'text-[#00A3FF] text-xl lg-1500:text-base': selected === 5, 'text-white text-xl lg-1500:text-base': selected !== 5 }"
+                  >
+                    La sécurité des données est-elle garantie ?
+                  </span>
+                  <span class="ico-plus">+</span>
+                </div>
+              </button>
+              <div
+                class="relative overflow-hidden transition-all max-h-0 duration-700"
+                x-ref="container5"
+                x-bind:style="selected == 5 ? 'max-height: ' + $refs.container5.scrollHeight + 'px' : ''"
+              >
+                <div class="p-6 text-[#ACACAC]">
+                  <p class="text-xl lg-1500:text-base">
+                    To do this, load the v3 site key as documented, and then
+                    explicitly render v2 using grecaptcha.render. You are
+                    allowed to hide the badge as long as you include the
+                    reCAPTCHA branding visibly in the user flow. Please include
+                    the following text:
+                  </p>
+                </div>
+              </div>
+            </li>
+
+            <li class="relative bg-[#191925] rounded-md mb-2">
+              <button
+                type="button"
+                class="w-full px-8 py-6 lg-1500:py-4 text-left"
+                @click="selected !== 6 ? selected = 6 : selected = null"
+              >
+                <div class="flex items-center justify-between">
+                  <span
+                    :class="{ 'text-[#00A3FF] text-xl lg-1500:text-base': selected === 6, 'text-white text-xl lg-1500:text-base': selected !== 6 }"
+                  >
+                    Offrez-vous des formations pour l’autogestion du site ?
+                  </span>
+                  <span class="ico-plus">+</span>
+                </div>
+              </button>
+              <div
+                class="relative overflow-hidden transition-all max-h-0 duration-700"
+                x-ref="container6"
+                x-bind:style="selected == 6 ? 'max-height: ' + $refs.container6.scrollHeight + 'px' : ''"
+              >
+                <div class="p-6 text-[#ACACAC]">
+                  <p class="text-xl lg-1500:text-base">
+                    To do this, load the v3 site key as documented, and then
+                    explicitly render v2 using grecaptcha.render. You are
+                    allowed to hide the badge as long as you include the
+                    reCAPTCHA branding visibly in the user flow. Please include
+                    the following text:
+                  </p>
+                </div>
+              </div>
+            </li>
+          </ul>
         </div>
-
-</div>
-
-
-</div>
-
-
-
+      </div>
+    </div>
+  </div>
 </section>
 
-<script defer src="https://unpkg.com/@alpinejs/collapse@3.x.x/dist/cdn.min.js"></script>
+{# JS Script Temp for AlpineJS #}
+<script
+  defer
+  src="https://unpkg.com/@alpinejs/collapse@3.x.x/dist/cdn.min.js"
+></script>
 <script src="https://unpkg.com/alpinejs" defer></script>
 {% endblock faq %}

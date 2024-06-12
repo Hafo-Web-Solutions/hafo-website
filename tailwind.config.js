@@ -6,6 +6,9 @@ module.exports = {
   ],
   theme: {
     extend: {
+      screens: {
+        'lg-1500': '1400px',
+      },
       transitionProperty: {
         'position': 'left, bottom',
       },
