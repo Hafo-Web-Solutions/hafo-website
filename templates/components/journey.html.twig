@@ -1,49 +1,94 @@
 {% block journey %}
-<div class="px-[80px] my-8">
-    <h1 class="text-5xl mb-4 font-bold tracking-tight text-white sm:text-4xl px-8">Votre Parcours de Réussite</h1>
-    <p class="mb-6 text-[#ACACAC] px-8">Chaque Étape, Un Pas de Plus Vers Votre Vision</p>
-        <div class="flex flex-wrap">
-         <div class="bg-[#191925] hover:bg-transparent border border-transparent hover:border-[#00A3FF] rounded-lg p-8 cursor-pointer group w-[320px] h-[250px] m-4">
-             <div class="flex justify-between relative">
-               <p class="text-[#ACACAC] text-sm">ÉTAPE-01</p>
-               <img style="transition-property: transform, left, bottom;" src="{{ asset('./image/journey/step1.svg') }}" class="absolute w-[80px] left-[220px] bottom-[10px] transform transition-all ease-in-out group-hover:scale-[0.5] group-hover:left-[180px] group-hover:bottom-[-20px]" />
-             </div>
-             <h3 class="text-white font-bold text-2xl mt-[20px]">Définir vos objectifs</h3>
-             <p class="text-[#ACACAC] mt-2 mb-[20px] text-base">Identifiez clairement ce que vous voulez atteindre avec votre projet.</p>
-             <img src="{{ asset('./image/expertise/arrow.svg') }}" class="h-5" />
-           </div>
-         
+<div class="px-16 lg:px-32 my-8">
+  <h1 class="text-4xl lg:text-3xl mb-2 font-bold tracking-tight text-white">
+    Votre Parcours de Réussite
+  </h1>
+  <p class="mb-8 text-[#ACACAC]">
+    Chaque Étape, Un Pas de Plus Vers Votre Vision
+  </p>
+  <div class="flex flex-wrap justify-center">
+    {# Step 01 - Definir objectif #}
+    <div
+      class="bg-[#191925] hover:bg-transparent border border-transparent hover:border-[#00A3FF] rounded-lg p-6 lg-1500:p-6 cursor-pointer group w-[100%] py-4 lg-1500:w-[290px] lg-1500:h-[240px] m-4 mb-8"
+    >
+      <div class="flex justify-between relative">
+        <p class="text-[#ACACAC] text-sm">ÉTAPE-01</p>
+        <img
+          src="{{ asset('./image/journey/step1.svg') }}"
+          class="absolute w-[80px] right-[0px] top-[0px] lg-1500:right-[-60px] lg-1500:top-[-60px] transform transition-all ease-in-out lg-1500:group-hover:scale-[0.5] lg-1500:group-hover:right-[-30px] lg-1500:group-hover:top-[-30px]"
+        />
+      </div>
+      <h3 class="text-white font-bold text-2xl mt-[20px]">
+        Définir vos objectifs
+      </h3>
+      <p class="text-[#ACACAC] mt-2 mb-[20px] text-xl lg-1500:text-base">
+        Identifiez clairement ce que vous voulez atteindre avec votre projet.
+      </p>
+      <img src="{{ asset('./image/expertise/arrow.svg') }}" class="h-5" />
+    </div>
 
-           <div class="bg-[#191925] hover:bg-transparent border border-transparent hover:border-[#00A3FF] rounded-lg p-8 cursor-pointer group w-[320px] h-[250px] m-4">
-             <div class="flex justify-between relative">
-               <p class="text-[#ACACAC] text-sm">ÉTAPE-02</p>
-               <img style="transition-property: transform, left, bottom;" src="{{ asset('./image/journey/step2.svg') }}" class="absolute w-[80px] left-[220px] bottom-[10px] transform transition-all ease-in-out group-hover:scale-[0.5] group-hover:left-[180px] group-hover:bottom-[-20px]" />
-             </div>
-             <h3 class="text-white font-bold text-2xl mt-[20px]">Contactez-nous</h3>
-             <p class="text-[#ACACAC] mt-2 mb-[20px] text-base">Prenez l’initiative de nous joindre pour discuter de vos idées et besoins.</p>
-             <img src="{{ asset('./image/expertise/arrow.svg') }}" class="h-5" />
-           </div>
+    {# Step 02 - Contactez-nous
+    -----------------------------------------------#}
+    <div
+      class="bg-[#191925] hover:bg-transparent border border-transparent hover:border-[#00A3FF] rounded-lg p-6 lg-1500:p-6 cursor-pointer group w-[100%] py-4 lg-1500:w-[290px] lg-1500:h-[240px] m-4 mb-8"
+    >
+      <div class="flex justify-between relative">
+        <p class="text-[#ACACAC] text-sm">ÉTAPE-02</p>
+        <img
+          src="{{ asset('./image/journey/step2.svg') }}"
+          class="absolute w-[80px] right-[0px] top-[0px] lg-1500:right-[-60px] lg-1500:top-[-60px] transform transition-all ease-in-out lg-1500:group-hover:scale-[0.5] lg-1500:group-hover:right-[-30px] lg-1500:group-hover:top-[-30px]"
+        />
+      </div>
+      <h3 class="text-white font-bold text-2xl mt-[20px]">Contactez-nous</h3>
+      <p class="text-[#ACACAC] mt-2 mb-[20px] text-xl lg-1500:text-base">
+        Prenez l’initiative de nous joindre pour discuter de vos idées et
+        besoins.
+      </p>
+      <img src="{{ asset('./image/expertise/arrow.svg') }}" class="h-5" />
+    </div>
 
-           <div class="bg-[#191925] hover:bg-transparent border border-transparent hover:border-[#00A3FF] rounded-lg p-8 cursor-pointer group w-[320px] h-[250px] m-4">
-             <div class="flex justify-between relative">
-               <p class="text-[#ACACAC] text-sm">ÉTAPE-03</p>
-               <img style="transition-property: transform, left, bottom;" src="{{ asset('./image/journey/step3.svg') }}" class="absolute w-[80px] left-[220px] bottom-[10px] transform transition-all ease-in-out group-hover:scale-[0.5] group-hover:left-[180px] group-hover:bottom-[-20px]" />
-             </div>
-             <h3 class="text-white font-bold text-2xl mt-[20px]">Planifions ensemble</h3>
-             <p class="text-[#ACACAC] mt-2 mb-[20px] text-base">Nous établirons un plan précis qui détaille chaque étape pour atteindre vos objectifs.</p>
-             <img src="{{ asset('./image/expertise/arrow.svg') }}" class="h-5" />
-           </div>
+    {# Step 03 - Planifions ensemble #}
+    <div
+      class="bg-[#191925] hover:bg-transparent border border-transparent hover:border-[#00A3FF] rounded-lg p-6 lg-1500:p-6 cursor-pointer group w-[100%] py-4 lg-1500:w-[290px] lg-1500:h-[240px] m-4 mb-8"
+    >
+      <div class="flex justify-between relative">
+        <p class="text-[#ACACAC] text-sm">ÉTAPE-03</p>
+        <img
+          src="{{ asset('./image/journey/step3.svg') }}"
+          class="absolute w-[80px] right-[0px] top-[0px] lg-1500:right-[-60px] lg-1500:top-[-60px] transform transition-all ease-in-out lg-1500:group-hover:scale-[0.5] lg-1500:group-hover:right-[-30px] lg-1500:group-hover:top-[-30px]"
+        />
+      </div>
+      <h3 class="text-white font-bold text-2xl mt-[20px]">
+        Planifions ensemble
+      </h3>
+      <p class="text-[#ACACAC] mt-2 mb-[20px] text-xl lg-1500:text-base">
+        Nous établirons un plan précis qui détaille chaque étape pour atteindre
+        vos objectifs.
+      </p>
+      <img src="{{ asset('./image/expertise/arrow.svg') }}" class="h-5" />
+    </div>
 
-           <div class="bg-[#191925] hover:bg-transparent border border-transparent hover:border-[#00A3FF] rounded-lg p-8 cursor-pointer group w-[320px] h-[250px] m-4">
-             <div class="flex justify-between relative">
-               <p class="text-[#ACACAC] text-sm">ÉTAPE-04</p>
-               <img style="transition-property: transform, left, bottom;" src="{{ asset('./image/journey/step4.svg') }}" class="absolute w-[80px] left-[220px] bottom-[10px] transform transition-all ease-in-out group-hover:scale-[0.5] group-hover:left-[180px] group-hover:bottom-[-20px]" />
-             </div>
-             <h3 class="text-white font-bold text-2xl mt-[20px]">Lancement du projet</h3>
-             <p class="text-[#ACACAC] mt-2 mb-[20px] text-base">Une fois le plan approuvé, nous commençons la mise en œuvre pour réaliser vos ambitions.</p>
-             <img src="{{ asset('./image/expertise/arrow.svg') }}" class="h-5" />
-           </div>
-        </div>
+    {# Step 04 - Lancement du projet #}
+    <div
+      class="bg-[#191925] hover:bg-transparent border border-transparent hover:border-[#00A3FF] rounded-lg p-6 lg-1500:p-6 cursor-pointer group w-[100%] py-4 lg-1500:w-[290px] lg-1500:h-[240px] m-4 mb-8"
+    >
+      <div class="flex justify-between relative">
+        <p class="text-[#ACACAC] text-sm">ÉTAPE-04</p>
+        <img
+          src="{{ asset('./image/journey/step4.svg') }}"
+          class="absolute w-[80px] right-[0px] top-[0px] lg-1500:right-[-60px] lg-1500:top-[-60px] transform transition-all ease-in-out lg-1500:group-hover:scale-[0.5] lg-1500:group-hover:right-[-30px] lg-1500:group-hover:top-[-30px]"
+        />
+      </div>
+      <h3 class="text-white font-bold text-2xl mt-[20px]">
+        Lancement du projet
+      </h3>
+      <p class="text-[#ACACAC] mt-2 mb-[20px] text-xl lg-1500:text-base">
+        Une fois le plan approuvé, nous commençons la mise en œuvre pour
+        réaliser vos ambitions.
+      </p>
+      <img src="{{ asset('./image/expertise/arrow.svg') }}" class="h-5" />
+    </div>
+  </div>
 </div>
 
 {% endblock journey %}
