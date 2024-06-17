@@ -1,3 +1,50 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+body {
+  font-family: "Roboto", sans-serif;
+}
+
+.hidden-until-scroll {
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+}
+
+/* HEADER */
+.nav-hidden {
+  transform: translateY(-100%);
+  transition: transform 0.5s ease-in-out;
+}
+.nav-visible {
+  transform: translateY(0);
+  transition: transform 0.5s ease-in-out;
+}
+.nav-none {
+  display: none;
+}
+
+.submenu-container {
+  top: 64px;
+}
+
+.submenu-container::before {
+  content: "";
+  position: absolute;
+  top: -20px;
+  left: 58%;
+  transform: translateX(-50%);
+  border-width: 10px;
+  border-style: solid;
+  border-color: transparent transparent #212e48 transparent;
+}
+
+.no-border {
+  border-color: #1b1b28;
+}
+
+/* ALPINE ATTRIBUTE */
+[x-cloak] {
+  display: none;
+}
