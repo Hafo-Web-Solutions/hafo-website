@@ -1,5 +1,5 @@
 {% block faq %}
-<section class="lg:px-32 px-16 my-32">
+<section class="lg:px-32 px-16 my-32 lg:my-0 lg-1500:h-screen">
   <h1 class="text-4xl lg:text-3xl mb-4 font-bold tracking-tight text-white">
     FAQ
   </h1>
@@ -62,7 +62,23 @@
                   >
                     Comment puis-je suivre l’avancement de mon projet ?
                   </span>
-                  <span class="ico-plus"></span>
+                  <span class="ico-plus">
+                    <svg
+                    :class="selected === 1 ? 'transform rotate-180' : ''"
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="24"
+                    height="24"
+                    viewbox="0 0 24 24"
+                    fill="none"
+                    :stroke="selected === 1 ? '#00A3FF' : 'white'"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    class="feather feather-chevron-up"
+                  >
+                    <polyline points="18 15 12 9 6 15"></polyline>
+                  </svg>
+                  </span>
                 </div>
               </button>
               <div
@@ -94,7 +110,24 @@
                   >
                     Comment modifier mon projet en cours de route ?
                   </span>
-                  <span class="ico-plus"></span>
+                  <span class="ico-plus">
+                    <span class="ico-plus">
+                      <svg
+                      :class="selected === 2 ? 'transform rotate-180' : ''"
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="24"
+                      height="24"
+                      viewbox="0 0 24 24"
+                      fill="none"
+                      :stroke="selected === 2 ? '#00A3FF' : 'white'"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      class="feather feather-chevron-up"
+                    >
+                      <polyline points="18 15 12 9 6 15"></polyline>
+                    </svg>
+                  </span>
                 </div>
               </button>
               <div
@@ -127,7 +160,23 @@
                     Comment vous assurez-vous que le site répond à mes attentes
                     ?
                   </span>
-                  <span class="ico-plus"></span>
+                  <span class="ico-plus">
+                    <svg
+                    :class="selected === 3 ? 'transform rotate-180' : ''"
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="24"
+                    height="24"
+                    viewbox="0 0 24 24"
+                    fill="none"
+                    :stroke="selected === 3 ? '#00A3FF' : 'white'"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    class="feather feather-chevron-up"
+                  >
+                    <polyline points="18 15 12 9 6 15"></polyline>
+                  </svg>
+                  </span>
                 </div>
               </button>
               <div
@@ -159,7 +208,23 @@
                   >
                     Quelles technologies utilisez-vous pour le développement ?
                   </span>
-                  <span class="ico-plus">+</span>
+                  <span class="ico-plus">
+                    <svg
+                    :class="selected === 4 ? 'transform rotate-180' : ''"
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="24"
+                    height="24"
+                    viewbox="0 0 24 24"
+                    fill="none"
+                    :stroke="selected === 4 ? '#00A3FF' : 'white'"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    class="feather feather-chevron-up"
+                  >
+                    <polyline points="18 15 12 9 6 15"></polyline>
+                  </svg>
+                  </span>
                 </div>
               </button>
               <div
@@ -193,7 +258,23 @@
                   >
                     La sécurité des données est-elle garantie ?
                   </span>
-                  <span class="ico-plus">+</span>
+                  <span class="ico-plus">
+                    <svg
+                    :class="selected === 5 ? 'transform rotate-180' : ''"
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="24"
+                    height="24"
+                    viewbox="0 0 24 24"
+                    fill="none"
+                    :stroke="selected === 5 ? '#00A3FF' : 'white'"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    class="feather feather-chevron-up"
+                  >
+                    <polyline points="18 15 12 9 6 15"></polyline>
+                  </svg>
+                  </span>
                 </div>
               </button>
               <div
@@ -225,7 +306,23 @@
                   >
                     Offrez-vous des formations pour l’autogestion du site ?
                   </span>
-                  <span class="ico-plus">+</span>
+                  <span class="ico-plus">
+                    <svg
+                    :class="selected === 6 ? 'transform rotate-180' : ''"
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="24"
+                    height="24"
+                    viewbox="0 0 24 24"
+                    fill="none"
+                    :stroke="selected === 6 ? '#00A3FF' : 'white'"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    class="feather feather-chevron-up"
+                  >
+                    <polyline points="18 15 12 9 6 15"></polyline>
+                  </svg>
+                  </span>
                 </div>
               </button>
               <div
@@ -250,11 +347,4 @@
     </div>
   </div>
 </section>
-
-{# JS Script Temp for AlpineJS #}
-<script
-  defer
-  src="https://unpkg.com/@alpinejs/collapse@3.x.x/dist/cdn.min.js"
-></script>
-<script src="https://unpkg.com/alpinejs" defer></script>
 {% endblock faq %}
