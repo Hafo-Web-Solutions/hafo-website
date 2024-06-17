@@ -1,56 +1,104 @@
 {% block expertise %}
-    <section class="my-24 lg-1500:my-64 grid grid-cols-1 lg-1500:grid-cols-7 gap-4 px-16 lg:px-32">
-        <div class="lg-1500:col-span-3 mb-16 lg-1500:mb-0">
-            <h2 class="text-4xl lg:text-3xl font-bold tracking-tight text-white">Explorez notre Savoir-Faire</h2>
-            <p class="text-[#00A3FF] mt-3 text-xl lg:text-base">Votre projet, notre expertise</p>
-            <p class="text-[#ACACAC] mt-3 mb-8 text-xl lg:text-base">Plongez dans l’univers du digital avec aisance et précision. Nous transformons vos visions en réalisations numériques personnalisées, combinant performance, esthétique moderne et expérience utilisateur optimale. Vos ambitions sont au coeur de notre démarche créative</p>
-            <a class="py-4 px-8 text-white font-bold bg-[#00A3FF] cursor-pointer rounded-lg">Découvrez nos services</a>
+<section
+  class="grid grid-cols-1 lg-1500:grid-cols-7 gap-4 px-16 mt-36 lg:mt-0 lg:px-32 lg:h-screen"
+>
+  <div class="lg-1500:col-span-3 mb-16 lg-1500:mb-0">
+    <h2 class="text-4xl lg:text-3xl font-bold tracking-tight text-white">
+      Explorez notre Savoir-Faire
+    </h2>
+    <p class="text-[#00A3FF] mt-3 text-xl lg:text-base">
+      Votre projet, notre expertise
+    </p>
+    <p class="text-[#ACACAC] mt-3 mb-8 text-xl lg:text-base">
+      Plongez dans l’univers du digital avec aisance et précision. Nous
+      transformons vos visions en réalisations numériques personnalisées,
+      combinant performance, esthétique moderne et expérience utilisateur
+      optimale. Vos ambitions sont au coeur de notre démarche créative
+    </p>
+    <a
+      class="py-4 px-8 text-white font-bold bg-[#00A3FF] cursor-pointer rounded-lg"
+      >Découvrez nos services</a
+    >
+  </div>
+
+  <div class="lg-1500:col-span-4 p-0 m-0">
+    <div class="flex justify-center flex-wrap w-[100%%]">
+      <div
+        class="bg-[#191925] hover:bg-transparent border border-transparent hover:border-[#00A3FF] rounded-lg p-6 cursor-pointer group w-[290px] h-[240px] m-4"
+      >
+        <div class="flex justify-between relative">
+          <p class="text-[#ACACAC] text-base">IMPACT</p>
+          <img
+            style="transition-property: transform, left, bottom"
+            src="{{ asset('./image/expertise/creation.svg') }}"
+            class="absolute w-[80px] left-[200px] bottom-[0px] transform transition-all ease-in-out group-hover:scale-[0.5] group-hover:left-[180px] group-hover:bottom-[-20px]"
+          />
         </div>
+        <h3 class="text-white font-bold text-xl mt-1">Création de site</h3>
+        <p class="text-[#ACACAC] mt-2 mb-3 text-base">
+          Développement de site web intuitif au design moderne pour une présence
+          numérique forte.
+        </p>
+        <img src="{{ asset('./image/expertise/arrow.svg') }}" class="h-5" />
+      </div>
 
-        <div class="lg-1500:col-span-4 p-0 m-0">
-           <div class="flex justify-center flex-wrap w-[100%%]">
-            <div class="bg-[#191925] hover:bg-transparent border border-transparent hover:border-[#00A3FF] rounded-lg p-6 cursor-pointer group w-[290px] h-[240px] m-4">
-                <div class="flex justify-between relative">
-                  <p class="text-[#ACACAC] text-base">IMPACT</p>
-                  <img style="transition-property: transform, left, bottom;" src="{{ asset('./image/expertise/creation.svg') }}" class="absolute w-[80px] left-[200px] bottom-[0px] transform transition-all ease-in-out group-hover:scale-[0.5] group-hover:left-[180px] group-hover:bottom-[-20px]" />
-                </div>
-                <h3 class="text-white font-bold text-xl mt-1">Création de site</h3>
-                <p class="text-[#ACACAC] mt-2 mb-3 text-base">Développement de site web intuitif au design moderne pour une présence numérique forte.</p>
-                <img src="{{ asset('./image/expertise/arrow.svg') }}" class="h-5" />
-              </div>
-            
-
-              <div class="bg-[#191925] hover:bg-transparent border border-transparent hover:border-[#00A3FF] rounded-lg p-6 cursor-pointer group w-[290px] h-[240px] m-4">
-                <div class="flex justify-between relative">
-                  <p class="text-[#ACACAC] text-base">ÉVOLUTION</p>
-                  <img style="transition-property: transform, left, bottom;" src="{{ asset('./image/expertise/refonte.svg') }}" class="absolute w-[80px] left-[200px] bottom-[0px] transform transition-all ease-in-out group-hover:scale-[0.5] group-hover:left-[180px] group-hover:bottom-[-20px]" />
-                </div>
-                <h3 class="text-white font-bold text-xl mt-1">Refonte</h3>
-                <p class="text-[#ACACAC] mt-2 mb-3 text-base">Boostez votre présence en ligne avec une refonte de site axée sur la performance et le design.</p>
-                <img src="{{ asset('./image/expertise/arrow.svg') }}" class="h-5" />
-              </div>
-
-              <div class="bg-[#191925] hover:bg-transparent border border-transparent hover:border-[#00A3FF] rounded-lg p-6 cursor-pointer group w-[290px] h-[240px] m-4">
-                <div class="flex justify-between relative h-4">
-                  <p class="text-[#ACACAC] text-base">FIABILITÉ</p>
-                  <img style="transition-property: transform, left, bottom;" src="{{ asset('./image/expertise/maintenance.svg') }}" class="absolute w-[80px] left-[200px] bottom-[0px] transform transition-all ease-in-out group-hover:scale-[0.5] group-hover:left-[180px] group-hover:bottom-[-20px]" />
-                </div>
-                <h3 class="text-white font-bold text-xl mt-2">Maintenance</h3>
-                <p class="text-[#ACACAC] mt-2 mb-3 text-base">Maintenance proactive et support continu pour assurer une fiabilité sans faille de votre site web.</p>
-                <img src="{{ asset('./image/expertise/arrow.svg') }}" class="h-5" />
-              </div>
-
-              <div class="bg-[#191925] hover:bg-transparent border border-transparent hover:border-[#00A3FF] rounded-lg p-6 cursor-pointer group w-[290px] h-[240px] m-4">
-                <div class="flex justify-between relative">
-                  <p class="text-[#ACACAC] text-base">VISIBILITÉ</p>
-                  <img style="transition-property: transform, left, bottom;" src="{{ asset('./image/expertise/referencement.svg') }}" class="absolute w-[80px] left-[200px] bottom-[0px] transform transition-all ease-in-out group-hover:scale-[0.5] group-hover:left-[180px] group-hover:bottom-[-20px]" />
-                </div>
-                <h3 class="text-white font-bold text-xl mt-1">Référencement</h3>
-                <p class="text-[#ACACAC] mt-2 mb-3 text-base">Améliorez votre visibilité avec un référencement naturel efficace, grâce à un code optimisé.</p>
-                <img src="{{ asset('./image/expertise/arrow.svg') }}" class="h-5" />
-              </div>
-           </div>
+      <div
+        class="bg-[#191925] hover:bg-transparent border border-transparent hover:border-[#00A3FF] rounded-lg p-6 cursor-pointer group w-[290px] h-[240px] m-4"
+      >
+        <div class="flex justify-between relative">
+          <p class="text-[#ACACAC] text-base">ÉVOLUTION</p>
+          <img
+            style="transition-property: transform, left, bottom"
+            src="{{ asset('./image/expertise/refonte.svg') }}"
+            class="absolute w-[80px] left-[200px] bottom-[0px] transform transition-all ease-in-out group-hover:scale-[0.5] group-hover:left-[180px] group-hover:bottom-[-20px]"
+          />
         </div>
-    
-     </section>
+        <h3 class="text-white font-bold text-xl mt-1">Refonte</h3>
+        <p class="text-[#ACACAC] mt-2 mb-3 text-base">
+          Boostez votre présence en ligne avec une refonte de site axée sur la
+          performance et le design.
+        </p>
+        <img src="{{ asset('./image/expertise/arrow.svg') }}" class="h-5" />
+      </div>
+
+      <div
+        class="bg-[#191925] hover:bg-transparent border border-transparent hover:border-[#00A3FF] rounded-lg p-6 cursor-pointer group w-[290px] h-[240px] m-4"
+      >
+        <div class="flex justify-between relative h-4">
+          <p class="text-[#ACACAC] text-base">FIABILITÉ</p>
+          <img
+            style="transition-property: transform, left, bottom"
+            src="{{ asset('./image/expertise/maintenance.svg') }}"
+            class="absolute w-[80px] left-[200px] bottom-[0px] transform transition-all ease-in-out group-hover:scale-[0.5] group-hover:left-[180px] group-hover:bottom-[-20px]"
+          />
+        </div>
+        <h3 class="text-white font-bold text-xl mt-2">Maintenance</h3>
+        <p class="text-[#ACACAC] mt-2 mb-3 text-base">
+          Maintenance proactive et support continu pour assurer une fiabilité
+          sans faille de votre site web.
+        </p>
+        <img src="{{ asset('./image/expertise/arrow.svg') }}" class="h-5" />
+      </div>
+
+      <div
+        class="bg-[#191925] hover:bg-transparent border border-transparent hover:border-[#00A3FF] rounded-lg p-6 cursor-pointer group w-[290px] h-[240px] m-4"
+      >
+        <div class="flex justify-between relative">
+          <p class="text-[#ACACAC] text-base">VISIBILITÉ</p>
+          <img
+            style="transition-property: transform, left, bottom"
+            src="{{ asset('./image/expertise/referencement.svg') }}"
+            class="absolute w-[80px] left-[200px] bottom-[0px] transform transition-all ease-in-out group-hover:scale-[0.5] group-hover:left-[180px] group-hover:bottom-[-20px]"
+          />
+        </div>
+        <h3 class="text-white font-bold text-xl mt-1">Référencement</h3>
+        <p class="text-[#ACACAC] mt-2 mb-3 text-base">
+          Améliorez votre visibilité avec un référencement naturel efficace,
+          grâce à un code optimisé.
+        </p>
+        <img src="{{ asset('./image/expertise/arrow.svg') }}" class="h-5" />
+      </div>
+    </div>
+  </div>
+</section>
 {% endblock expertise %}
