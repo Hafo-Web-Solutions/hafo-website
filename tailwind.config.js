@@ -39,6 +39,7 @@ module.exports = {
       },
       transitionProperty: {
         'position': 'left, bottom',
+        'width': 'width',
       },
     },
   },
