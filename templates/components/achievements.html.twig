@@ -1,9 +1,9 @@
 {% block achievements %}
 <section
-  class="grid grid-cols-1 lg:grid-cols-7 lg:px-32 lg:h-screen mt-24 lg:mt-0"
+  class="mobile-container flex flex-col mt-24 lg:mt-0 gap-4 mb-[100px]"
 >
   {# Image #}
-  <article class="col-span-3">
+  <article >
     <img
       src="{{ asset('./image/achievements/image.svg') }}"
       alt="image achievement"
@@ -12,27 +12,27 @@
   </article>
 
   {# Block content #}
-  <article class="p-[35px] col-span-4">
-    <h2 class="text-4xl lg:text-3xl mb-4 font-bold tracking-tight text-white">
+  <article class="">
+    <h2 class="text-3xl mb-4 font-bold tracking-tight text-white">
       Hafo, Partenaire de Votre Innovation Digitale
     </h2>
-    <p class="mb-4 text-[#ACACAC] text-xl lg-1500:text-base">
+    <p class="mb-4 text-[#ACACAC] text-base">
       En quête d'une vision digitale unique ? Hafo Web Solutions est à la
       recherche de collaborations stratégiques pour enrichir son portfolio.
       Soyez parmi les premiers à bénéficier d'une expertise pointue et d'une
       attention dédiée pour la concrétisation de votre projet en ligne.
     </p>
-    <p class="mb-4 text-[#ACACAC] text-xl lg-1500:text-base">
+    <p class="mb-4 text-[#ACACAC] text-base">
       Nous offrons des solutions personnalisées, adaptées à vos besoins
       spécifiques. Chaque projet est une opportunité d'exceller ensemble,
       alliant technologie de pointe et approche sur mesure.
     </p>
-    <p class="mb-10 text-[#ACACAC] text-xl lg-1500:text-base">
+    <p class="mb-10 text-[#ACACAC] text-base">
       Ouvrons ensemble le chapitre numérique de votre succès.
     </p>
     <a
       href="#"
-      class="py-4 px-8 text-white bg-[#00A3FF] text-xl lg-1500:text-base font-bold cursor-pointer rounded-lg"
+      class="py-4 px-8 text-white font-semibold bg-[#00A3FF] text-base cursor-pointer rounded-lg"
       >Initiez Votre Projet</a
     >
   </article>
