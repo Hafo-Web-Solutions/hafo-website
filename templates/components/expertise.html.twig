@@ -1,8 +1,9 @@
 {% block expertise %}
+
 <section
-  class="grid grid-cols-1 lg-1500:grid-cols-7 gap-4 px-16 mt-36 lg:mt-0 lg:px-32 lg:h-screen"
+  class="w-full container grid grid-cols-1 lg-1500:grid-cols-7 gap-4 px-16 mt-36 lg:mt-0 lg:px-32 lg:h-screen"
 >
-  <div class="lg-1500:col-span-3 mb-16 lg-1500:mb-0">
+  <article class="lg-1500:col-span-3 mb-16 lg-1500:mb-0">
     <h2 class="text-4xl lg:text-3xl font-bold tracking-tight text-white">
       Explorez notre Savoir-Faire
     </h2>
@@ -16,20 +17,23 @@
       optimale. Vos ambitions sont au coeur de notre démarche créative
     </p>
     <a
-      class="py-4 px-8 text-white font-bold bg-[#00A3FF] cursor-pointer rounded-lg"
+      href="#"
+      class="py-4 px-8 text-white bg-[#00A3FF] cursor-pointer rounded-lg"
       >Découvrez nos services</a
     >
-  </div>
+  </article>
 
-  <div class="lg-1500:col-span-4 p-0 m-0">
+  <article class="lg-1500:col-span-4 p-0 m-0">
     <div class="flex justify-center flex-wrap w-[100%%]">
-      <div
+      <!-- Création de site -->
+      <a href="#"
         class="bg-[#191925] hover:bg-transparent border border-transparent hover:border-[#00A3FF] rounded-lg p-6 cursor-pointer group w-[290px] h-[240px] m-4"
       >
         <div class="flex justify-between relative">
           <p class="text-[#ACACAC] text-base">IMPACT</p>
           <img
             style="transition-property: transform, left, bottom"
+            alt="icon cretion de site"
             src="{{ asset('./image/expertise/creation.svg') }}"
             class="absolute w-[80px] left-[200px] bottom-[0px] transform transition-all ease-in-out group-hover:scale-[0.5] group-hover:left-[180px] group-hover:bottom-[-20px]"
           />
@@ -39,16 +43,21 @@
           Développement de site web intuitif au design moderne pour une présence
           numérique forte.
         </p>
-        <img src="{{ asset('./image/expertise/arrow.svg') }}" class="h-5" />
-      </div>
-
-      <div
+        <img
+          src="{{ asset('./image/expertise/arrow.svg') }}"
+          class="h-5"
+          alt="redirection Création de site"
+        />
+      </a>
+      <!-- Refonte -->
+      <a href="#"
         class="bg-[#191925] hover:bg-transparent border border-transparent hover:border-[#00A3FF] rounded-lg p-6 cursor-pointer group w-[290px] h-[240px] m-4"
       >
         <div class="flex justify-between relative">
           <p class="text-[#ACACAC] text-base">ÉVOLUTION</p>
           <img
             style="transition-property: transform, left, bottom"
+            alt="icon refonte"
             src="{{ asset('./image/expertise/refonte.svg') }}"
             class="absolute w-[80px] left-[200px] bottom-[0px] transform transition-all ease-in-out group-hover:scale-[0.5] group-hover:left-[180px] group-hover:bottom-[-20px]"
           />
@@ -58,16 +67,21 @@
           Boostez votre présence en ligne avec une refonte de site axée sur la
           performance et le design.
         </p>
-        <img src="{{ asset('./image/expertise/arrow.svg') }}" class="h-5" />
-      </div>
-
-      <div
+        <img
+          src="{{ asset('./image/expertise/arrow.svg') }}"
+          class="h-5"
+          alt="redirection Refonte"
+        />
+      </a>
+      <!-- Maintenance -->
+      <a href="#"
         class="bg-[#191925] hover:bg-transparent border border-transparent hover:border-[#00A3FF] rounded-lg p-6 cursor-pointer group w-[290px] h-[240px] m-4"
       >
         <div class="flex justify-between relative h-4">
           <p class="text-[#ACACAC] text-base">FIABILITÉ</p>
           <img
             style="transition-property: transform, left, bottom"
+            alt="icon maintenance"
             src="{{ asset('./image/expertise/maintenance.svg') }}"
             class="absolute w-[80px] left-[200px] bottom-[0px] transform transition-all ease-in-out group-hover:scale-[0.5] group-hover:left-[180px] group-hover:bottom-[-20px]"
           />
@@ -77,16 +91,21 @@
           Maintenance proactive et support continu pour assurer une fiabilité
           sans faille de votre site web.
         </p>
-        <img src="{{ asset('./image/expertise/arrow.svg') }}" class="h-5" />
-      </div>
-
-      <div
+        <img
+          src="{{ asset('./image/expertise/arrow.svg') }}"
+          class="h-5"
+          alt="redirection Maintenance"
+        />
+      </a>
+      <!-- Référencement -->
+      <a href="#"
         class="bg-[#191925] hover:bg-transparent border border-transparent hover:border-[#00A3FF] rounded-lg p-6 cursor-pointer group w-[290px] h-[240px] m-4"
       >
         <div class="flex justify-between relative">
           <p class="text-[#ACACAC] text-base">VISIBILITÉ</p>
           <img
             style="transition-property: transform, left, bottom"
+            alt="icon référencement"
             src="{{ asset('./image/expertise/referencement.svg') }}"
             class="absolute w-[80px] left-[200px] bottom-[0px] transform transition-all ease-in-out group-hover:scale-[0.5] group-hover:left-[180px] group-hover:bottom-[-20px]"
           />
@@ -96,9 +115,13 @@
           Améliorez votre visibilité avec un référencement naturel efficace,
           grâce à un code optimisé.
         </p>
-        <img src="{{ asset('./image/expertise/arrow.svg') }}" class="h-5" />
-      </div>
+        <img
+          src="{{ asset('./image/expertise/arrow.svg') }}"
+          class="h-5"
+          alt="redirection Référencement"
+        />
+      </a> 
     </div>
-  </div>
+  </article>
 </section>
 {% endblock expertise %}

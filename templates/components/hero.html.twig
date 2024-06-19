@@ -1,0 +1,35 @@
+{% block hero %}
+<section class="h-screen flex justify-center items-center">
+        <div class="container h-[400px] overflow-hidden absolute">
+            <img src="{{ asset('./image/hero/pattern.svg') }}" class="w-full object-cover opacity-5" alt="pattern hero"/>
+        </div>
+
+        <article class="z-10 w-[500px] flex flex-col justify-center items-center gap-4">
+            <p class="text-secondary text-sm">AGENCE HAFO WEB SOLUTIONS</p>
+            <h2 class="text-white text-4xl font-bold text-center">Transformez Votre Vision en Succès Numérique</h2>
+            <p class="text-grayText text-center">Découvrez un monde de possibilité avec des solutions web sur mesure qui captent l’essence de vos idées.</p>
+            <a href="#" class="py-3 px-6 text-white rounded-md bg-secondary">Découvrez nos services</a>
+            <div class="gap-3 hidden md:flex">
+                <div class="w-16 h-16 rounded-md bg-primary border-2 border-borderBase flex justify-center items-center">
+                    <img src="{{ asset('./image/hero/strategy.svg') }}" class="w-10 h-10" alt="strategy icon">
+                </div>
+                <div class="w-16 h-16 rounded-md bg-primary border-2 border-borderBase flex justify-center items-center">
+                    <img src="{{ asset('./image/hero/code.svg') }}" class="w-10 h-10" alt="code icon">
+                </div>
+                <div class="w-16 h-16 rounded-md bg-primary border-2 border-borderBase flex justify-center items-center">
+                    <img src="{{ asset('./image/hero/design.svg') }}" class="w-10 h-10" alt="design ui icon">
+                </div>
+                <div class="w-16 h-16 rounded-md bg-primary border-2 border-borderBase flex justify-center items-center">
+                    <img src="{{ asset('./image/hero/secure.svg') }}" class="w-10 h-10" alt="securité icon">
+                </div>
+                <div class="w-16 h-16 rounded-md bg-primary border-2 border-borderBase flex justify-center items-center">
+                    <img src="{{ asset('./image/hero/maintenance.svg') }}" class="w-10 h-10" alt="maintenance icon">
+                </div>
+                <div class="w-16 h-16 rounded-md bg-primary border-2 border-borderBase flex justify-center items-center">
+                    <img src="{{ asset('./image/hero/seo.svg') }}" class="w-10 h-10" alt="seo icon">
+                </div>
+            </div>
+        </article>
+    </article>
+</section>
+{% endblock hero %}

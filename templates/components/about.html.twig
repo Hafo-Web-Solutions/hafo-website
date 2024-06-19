@@ -1,14 +1,13 @@
 {% block about %}
-<div class="h-screen">
-  <div class="mx-auto grid max-w-7xl gap-x-8 gap-y-10">
+  <section class=" container h-screen w-full">
     {# Title section #}
-    <div class="max-w-2xl">
+
       <h2
-        class="text-4xl lg:text-3xl font-bold tracking-tight text-white sm:text-4xl"
+        class="text-4xl lg:text-3xl font-bold tracking-tight text-white sm:text-4xl max-w-2xl mb-4"
       >
         Stratégie Digitale Personnalisée. Votre Vision, Notre Mission
       </h2>
-    </div>
+
 
     {# Block content #}
     <div class="relative lg-1500:h-80 w-[100%]">
@@ -19,6 +18,7 @@
         <img
           class="w-[100%] object-cover"
           src="{{ asset('./image/about.webp') }}"
+          alt="image a propos"
         />
       </div>
 
@@ -43,6 +43,5 @@
         >
       </div>
     </div>
-  </div>
-</div>
+  </section>
 {% endblock about %}
