@@ -13,11 +13,12 @@ module.exports = {
         tertiary: '#212E48',
         quaternary: '#191925',
         quinternary: '#1B1B28',
-        grayText: '#acacac',
+        grayText: '#ACACAC',
         whiteTransparency: 'rgba(255, 255, 255, 0.00784)',
         borderBase: '#282832',
         dark: '#1D1D1D',
         customBlack: 'rgba(0, 0, 0, 0.8)',
+        darkBlue: '#242435',
       },
       boxShadow: {
         '3xl': '0 0 15px rgba(0,0,0,.15)',
@@ -25,10 +26,14 @@ module.exports = {
       padding: {
         paddingBase: '12.166%',
         paddingDemi: '6.083%',
+        100: '100px',
+        50: '50px',
       },
       margin: {
         marginBase: '12.166%',
         marginDemi: '6.083%',
+        100: '100px',
+        50: '50px',
       },
       screens: {
         // Navigation breakpoints
@@ -53,6 +58,15 @@ module.exports = {
       }
 
       addUtilities(newUtilities)
-    }
+    },
+    function ({ addComponents }) {
+      const newComponents = {
+        '.mobile-container': {
+          '@apply w-full mx-auto px-4 py-0.5': {},
+        },
+      }
+
+      addComponents(newComponents)
+    },
   ],
 }
