@@ -1,16 +1,16 @@
 {% block expertise %}
 
 <section
-  class="w-full container grid grid-cols-1 lg-1500:grid-cols-7 gap-4 px-16 mt-36 lg:mt-0 lg:px-32 lg:h-screen"
+  class="mobile-container mb-[100px] flex flex-wrap justify-center"
 >
-  <article class="lg-1500:col-span-3 mb-16 lg-1500:mb-0">
-    <h2 class="text-4xl lg:text-3xl font-bold tracking-tight text-white">
+  <article class="mb-16 w-min-[380px]">
+    <h2 class="text-3xl font-bold tracking-tight text-white">
       Explorez notre Savoir-Faire
     </h2>
-    <p class="text-[#00A3FF] mt-3 text-xl lg:text-base">
+    <p class="text-[#00A3FF] mt-3 text-base">
       Votre projet, notre expertise
     </p>
-    <p class="text-[#ACACAC] mt-3 mb-8 text-xl lg:text-base">
+    <p class="text-[#ACACAC] mt-3 mb-8 text-base">
       Plongez dans l’univers du digital avec aisance et précision. Nous
       transformons vos visions en réalisations numériques personnalisées,
       combinant performance, esthétique moderne et expérience utilisateur
@@ -18,19 +18,21 @@
     </p>
     <a
       href="#"
-      class="py-4 px-8 text-white bg-[#00A3FF] cursor-pointer rounded-lg"
+      class="py-4 px-8 text-white font-semibold bg-[#00A3FF] cursor-pointer rounded-lg"
       >Découvrez nos services</a
     >
   </article>
 
-  <article class="lg-1500:col-span-4 p-0 m-0">
+  <article class="p-0 m-0" data-aos="fade-up"
+  data-aos-duration="2000">
     <div class="flex justify-center flex-wrap w-[100%%]">
-      <!-- Création de site -->
-      <a href="#"
-        class="bg-[#191925] hover:bg-transparent border border-transparent hover:border-[#00A3FF] rounded-lg p-6 cursor-pointer group w-[290px] h-[240px] m-4"
+    <div class="flex flex-col md:flex-row">
+        <!-- Création de site -->
+        <a href="#"
+        class="bg-[#191925] hover:bg-transparent border border-transparent hover:border-[#00A3FF] rounded-lg p-6 cursor-pointer group w-[290px] h-[220px] m-4"
       >
         <div class="flex justify-between relative">
-          <p class="text-[#ACACAC] text-base">IMPACT</p>
+          <p class="text-[#ACACAC] text-sm">IMPACT</p>
           <img
             style="transition-property: transform, left, bottom"
             alt="icon cretion de site"
@@ -48,13 +50,13 @@
           class="h-5"
           alt="redirection Création de site"
         />
-      </a>
+        </a>
       <!-- Refonte -->
       <a href="#"
-        class="bg-[#191925] hover:bg-transparent border border-transparent hover:border-[#00A3FF] rounded-lg p-6 cursor-pointer group w-[290px] h-[240px] m-4"
+        class="bg-[#191925] hover:bg-transparent border border-transparent hover:border-[#00A3FF] rounded-lg p-6 cursor-pointer group w-[290px] h-[220px] m-4"
       >
         <div class="flex justify-between relative">
-          <p class="text-[#ACACAC] text-base">ÉVOLUTION</p>
+          <p class="text-[#ACACAC] text-sm">ÉVOLUTION</p>
           <img
             style="transition-property: transform, left, bottom"
             alt="icon refonte"
@@ -73,12 +75,14 @@
           alt="redirection Refonte"
         />
       </a>
-      <!-- Maintenance -->
-      <a href="#"
-        class="bg-[#191925] hover:bg-transparent border border-transparent hover:border-[#00A3FF] rounded-lg p-6 cursor-pointer group w-[290px] h-[240px] m-4"
+    </div>
+    <div class="flex flex-col md:flex-row">
+        <!-- Maintenance -->
+        <a href="#"
+        class="bg-[#191925] hover:bg-transparent border border-transparent hover:border-[#00A3FF] rounded-lg p-6 cursor-pointer group w-[290px] h-[220px] m-4"
       >
         <div class="flex justify-between relative h-4">
-          <p class="text-[#ACACAC] text-base">FIABILITÉ</p>
+          <p class="text-[#ACACAC] text-sm">FIABILITÉ</p>
           <img
             style="transition-property: transform, left, bottom"
             alt="icon maintenance"
@@ -99,10 +103,10 @@
       </a>
       <!-- Référencement -->
       <a href="#"
-        class="bg-[#191925] hover:bg-transparent border border-transparent hover:border-[#00A3FF] rounded-lg p-6 cursor-pointer group w-[290px] h-[240px] m-4"
+        class="bg-[#191925] hover:bg-transparent border border-transparent hover:border-[#00A3FF] rounded-lg p-6 cursor-pointer group w-[290px] h-[220px] m-4"
       >
         <div class="flex justify-between relative">
-          <p class="text-[#ACACAC] text-base">VISIBILITÉ</p>
+          <p class="text-[#ACACAC] text-sm">VISIBILITÉ</p>
           <img
             style="transition-property: transform, left, bottom"
             alt="icon référencement"
@@ -121,6 +125,7 @@
           alt="redirection Référencement"
         />
       </a> 
+    </div>
     </div>
   </article>
 </section>

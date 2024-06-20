@@ -1,15 +1,15 @@
 {% block faq %}
-<section class="lg:px-32 px-16 my-32 lg:my-0 lg-1500:h-screen">
-  <h2 class="text-4xl lg:text-3xl mb-4 font-bold tracking-tight text-white">
+<section class="mobile-container my-32 lg:my-0 lg-1500:h-screen">
+  <h2 class="text-3xl mb-4 font-bold tracking-tight text-white px-0 md:px-4">
     FAQ
   </h2>
-  <article class="grid grid-cols-1 lg-1500:grid-cols-6">
+  <article class="flex flex-col md:flex-row items-center md:items-start w-full">
     {# Block Question #}
-    <div class="col-span-3 mb-16">
+    <div class="w-[380px] md:w-1/2 mb-8">
       <p class="text-white text-2xl font-bold mb-2">
         Quels types de services offrez-vous ?
       </p>
-      <p class="text-[#ACACAC] text-xl lg-1500:text-base mb-3">
+      <p class="text-[#ACACAC] text-base mb-3">
         Nous proposons une gamme complète de services de développement web, y
         compris la création de sites web sur mesure, la refonte de sites
         existants, l'optimisation SEO intégrée par le code, et des services de
@@ -18,7 +18,7 @@
       <p class="text-white text-2xl font-bold mb-2">
         Combien coûte la création d’un site ?
       </p>
-      <p class="text-[#ACACAC] text-xl lg-1500:text-base mb-3">
+      <p class="text-[#ACACAC] text-base mb-3">
         Le coût varie selon plusieurs facteurs, y compris la complexité du site,
         les fonctionnalités requises et la stratégie de contenu. Nous
         recommandons une consultation gratuite pour établir un devis
@@ -27,40 +27,39 @@
       <p class="text-white text-2xl font-bold mb-2">
         Quel est le délai typique pour un projet ?
       </p>
-      <p class="text-[#ACACAC] text-xl lg-1500:text-base mb-6">
+      <p class="text-[#ACACAC] text-base mb-6">
         Cela dépend de la complexité, des fonctionnalités requises et des
         retours du client. En général, un projet peut prendre de quelques
         semaines à plusieurs mois. Un calendrier plus détaillé sera discuté
         après avoir évalué vos besoins spécifiques.
       </p>
-      <div class="flex">
+      <div class="flex flex-col md:flex-row">
         <a
         href="#"
-          class="py-4 px-8 text-white bg-[#00A3FF] text-xl lg-1500:text-base cursor-pointer rounded-lg font-bold"
+          class="py-4 px-8 text-white text-center bg-[#00A3FF] text-base cursor-pointer rounded-lg font-semibold order-last md:order-first"
           >Nous contacter</a
         >
         <a
         href="#"
-          class="py-4 px-8 text-white cursor-pointer text-xl lg-1500:text-base rounded-lg font-bold"
+          class="py-4 px-8 text-white text-center cursor-pointer text-base rounded-lg font-semibold"
           >Centre de Support</a
         >
       </div>
     </div>
 
     {# Block Accordion #}
-    <div class="col-span-3 lg:px-8">
-      <div class="col-span-4">
-        <div class="w-full mx-auto" x-data="{ selected: 1 }">
+       <div class="w-[380px] md:w-1/2" x-data="{ selected: 1 }">
           <ul class="shadow-box">
+
             <li class="relative bg-[#191925] rounded-md mb-2">
               <button
                 type="button"
-                class="w-full px-8 py-6 lg-1500:py-4 text-left"
+                class="w-full px-4 py-4 text-left"
                 @click="selected !== 1 ? selected = 1 : selected = null"
               >
                 <div class="flex items-center justify-between">
                   <span
-                    :class="{ 'text-[#00A3FF] text-xl lg-1500:text-base': selected === 1, 'text-white text-xl lg-1500:text-base': selected !== 1 }"
+                    :class="{ 'text-[#00A3FF] text-base': selected === 1, 'text-white text-base': selected !== 1 }"
                   >
                     Comment puis-je suivre l’avancement de mon projet ?
                   </span>
@@ -89,7 +88,7 @@
                 x-bind:style="selected == 1 ? 'max-height: ' + $refs.container1.scrollHeight + 'px' : ''"
               >
                 <div class="p-6 text-[#ACACAC]">
-                  <p class="text-xl lg-1500:text-base">
+                  <p class="text-base">
                     Nous fournissons des mises à jour régulières sur
                     l’avancement du projet à travers des réunions virtuelles et
                     des rapports d’étape envoyés par e-mail. Cela vous permet de
@@ -103,12 +102,12 @@
             <li class="relative bg-[#191925] rounded-md mb-2">
               <button
                 type="button"
-                class="w-full px-8 py-6 lg-1500:py-4 text-left"
+                class="w-full  px-4 py-4 text-left"
                 @click="selected !== 2 ? selected = 2 : selected = null"
               >
                 <div class="flex items-center justify-between">
                   <span
-                    :class="{ 'text-[#00A3FF] text-xl lg-1500:text-base': selected === 2, 'text-white text-xl lg-1500:text-base': selected !== 2 }"
+                    :class="{ 'text-[#00A3FF] text-base': selected === 2, 'text-white text-base': selected !== 2 }"
                   >
                     Comment modifier mon projet en cours de route ?
                   </span>
@@ -138,7 +137,7 @@
                 x-bind:style="selected == 2 ? 'max-height: ' + $refs.container2.scrollHeight + 'px' : ''"
               >
                 <div class="p-6 text-[#ACACAC]">
-                  <p class="text-xl lg-1500:text-base">
+                  <p class="text-base">
                     For reCAPTCHA v3, create a separate key for testing
                     environments. Scores may not be accurate as reCAPTCHA v3
                     relies on seeing real traffic. For reCAPTCHA v2, use the
@@ -152,12 +151,12 @@
             <li class="relative bg-[#191925] rounded-md mb-2">
               <button
                 type="button"
-                class="w-full px-8 py-6 lg-1500:py-4 text-left"
+                class="w-full  px-4 py-4 text-left"
                 @click="selected !== 3 ? selected = 3 : selected = null"
               >
                 <div class="flex items-center justify-between">
                   <span
-                    :class="{ 'text-[#00A3FF] text-xl lg-1500:text-base': selected === 3, 'text-white text-xl lg-1500:text-base': selected !== 3 }"
+                    :class="{ 'text-[#00A3FF] text-base': selected === 3, 'text-white text-base': selected !== 3 }"
                   >
                     Comment vous assurez-vous que le site répond à mes attentes
                     ?
@@ -187,7 +186,7 @@
                 x-bind:style="selected == 3 ? 'max-height: ' + $refs.container3.scrollHeight + 'px' : ''"
               >
                 <div class="p-6 text-[#ACACAC]">
-                  <p class="text-xl lg-1500:text-base">
+                  <p class="text-base">
                     To do this, load the v3 site key as documented, and then
                     explicitly render v2 using grecaptcha.render. You are
                     allowed to hide the badge as long as you include the
@@ -201,12 +200,12 @@
             <li class="relative bg-[#191925] rounded-md mb-2">
               <button
                 type="button"
-                class="w-full px-8 py-6 lg-1500:py-4 text-left"
+                class="w-full  px-4 py-4 text-left"
                 @click="selected !== 4 ? selected = 4 : selected = null"
               >
                 <div class="flex items-center justify-between">
                   <span
-                    :class="{ 'text-[#00A3FF] text-xl lg-1500:text-base': selected === 4, 'text-white text-xl lg-1500:text-base': selected !== 4 }"
+                    :class="{ 'text-[#00A3FF] text-base': selected === 4, 'text-white text-base': selected !== 4 }"
                   >
                     Quelles technologies utilisez-vous pour le développement ?
                   </span>
@@ -235,7 +234,7 @@
                 x-bind:style="selected == 4 ? 'max-height: ' + $refs.container4.scrollHeight + 'px' : ''"
               >
                 <div class="p-6 text-[#ACACAC]">
-                  <p class="text-xl lg-1500:text-base">
+                  <p class="text-base">
                     To do this, load the v3 site key as documented, and then
                     explicitly render v2 using grecaptcha.render.
                   </p>
@@ -251,12 +250,12 @@
             <li class="relative bg-[#191925] rounded-md mb-2">
               <button
                 type="button"
-                class="w-full px-8 py-6 lg-1500:py-4 text-left"
+                class="w-full  px-4 py-4 text-left"
                 @click="selected !== 5 ? selected = 5 : selected = null"
               >
                 <div class="flex items-center justify-between">
                   <span
-                    :class="{ 'text-[#00A3FF] text-xl lg-1500:text-base': selected === 5, 'text-white text-xl lg-1500:text-base': selected !== 5 }"
+                    :class="{ 'text-[#00A3FF] text-base': selected === 5, 'text-white text-base': selected !== 5 }"
                   >
                     La sécurité des données est-elle garantie ?
                   </span>
@@ -285,7 +284,7 @@
                 x-bind:style="selected == 5 ? 'max-height: ' + $refs.container5.scrollHeight + 'px' : ''"
               >
                 <div class="p-6 text-[#ACACAC]">
-                  <p class="text-xl lg-1500:text-base">
+                  <p class="text-base">
                     To do this, load the v3 site key as documented, and then
                     explicitly render v2 using grecaptcha.render. You are
                     allowed to hide the badge as long as you include the
@@ -299,12 +298,12 @@
             <li class="relative bg-[#191925] rounded-md mb-2">
               <button
                 type="button"
-                class="w-full px-8 py-6 lg-1500:py-4 text-left"
+                class="w-full  px-4 py-4 text-left"
                 @click="selected !== 6 ? selected = 6 : selected = null"
               >
                 <div class="flex items-center justify-between">
                   <span
-                    :class="{ 'text-[#00A3FF] text-xl lg-1500:text-base': selected === 6, 'text-white text-xl lg-1500:text-base': selected !== 6 }"
+                    :class="{ 'text-[#00A3FF] text-base': selected === 6, 'text-base text-white lg-1500:text-base': selected !== 6 }"
                   >
                     Offrez-vous des formations pour l’autogestion du site ?
                   </span>
@@ -333,7 +332,7 @@
                 x-bind:style="selected == 6 ? 'max-height: ' + $refs.container6.scrollHeight + 'px' : ''"
               >
                 <div class="p-6 text-[#ACACAC]">
-                  <p class="text-xl lg-1500:text-base">
+                  <p class="text-base">
                     To do this, load the v3 site key as documented, and then
                     explicitly render v2 using grecaptcha.render. You are
                     allowed to hide the badge as long as you include the
@@ -343,10 +342,9 @@
                 </div>
               </div>
             </li>
+
           </ul>
-        </div>
-      </div>
-    </div>
-  </div>
+       </div>
+</article>
 </section>
 {% endblock faq %}

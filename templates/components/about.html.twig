@@ -1,22 +1,23 @@
 {% block about %}
-  <section class=" container h-screen w-full">
+  <section class="mobile-container mb-[100px] md:h-screen w-full">
     {# Title section #}
 
       <h2
-        class="text-4xl lg:text-3xl font-bold tracking-tight text-white sm:text-4xl max-w-2xl mb-4"
+        class="text-3xl font-bold tracking-tight text-white max-w-2xl mb-4"
       >
         Stratégie Digitale Personnalisée. Votre Vision, Notre Mission
       </h2>
 
 
     {# Block content #}
-    <div class="relative lg-1500:h-80 w-[100%]">
+    <div class="relative lg-1500:h-80 w-[100%]"   data-aos="fade-up"
+    data-aos-duration="2000">
       {# Image #}
       <div
-        class="w-[100%] h-80 justify-center items-center overflow-hidden bg-white"
+        class="w-[100%] justify-center items-center overflow-hidden bg-white"
       >
         <img
-          class="w-[100%] object-cover"
+          class="w-[100%] object-cover h-80"
           src="{{ asset('./image/about.webp') }}"
           alt="image a propos"
         />
@@ -26,10 +27,10 @@
       <div
         class="w-[100%%] lg:w-[550px] rounded-md border rounded-tr-none lg:rounded-tr-md lg:rounded-tl-md rounded-tl-none border-[#2B2B36] p-6 bg-[#191925] lg:absolute lg:left-[50px] lg:top-[160px] z-1"
       >
-        <h3 class="text-white text-3xl lg:text-2xl font-semibold">
+        <h3 class="text-white text-2xl font-semibold">
           L’agence Hafo Web Solutions
         </h3>
-        <p class="text-[#ACACAC] text-xl lg:text-base my-3">
+        <p class="text-[#ACACAC] text-base my-3">
           Fraîchement établie, Hafo Web Solutions est votre partenaire
           privilégié pour transformer les visions en réalisations digitales.
           Notre approche, fondée sur une écoute approfondie, garantit des
@@ -38,7 +39,7 @@
         </p>
         <a
           href="#"
-          class="w-[170px] p-3 cursor-pointer flex justify-center items-center text-white rounded-md text-xl lg:text-base bg-[#212E48]"
+          class="w-[180px] p-3 cursor-pointer flex justify-center items-center text-white rounded-md text-base bg-[#212E48]"
           >En Savoir Plus</a
         >
       </div>
