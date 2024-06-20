@@ -89,3 +89,30 @@ body {
 [x-cloak] {
   display: none;
 }
+
+/* Caroussel Blog */
+.carousel {
+  display: flex;
+  overflow: hidden;
+  scroll-behavior: smooth;
+}
+.carousel-item {
+  flex: 0 0 auto;
+  width: 320px;
+  box-sizing: border-box;
+}
+@media (max-width: 1024px) {
+  .carousel-item {
+      flex: 0 0 33.3333%;
+  }
+}
+@media (max-width: 768px) {
+  .carousel-item {
+      flex: 0 0 50%;
+  }
+}
+@media (max-width: 640px) {
+  .carousel-item {
+      flex: 0 0 100%;
+  }
+}
