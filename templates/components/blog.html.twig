@@ -1,0 +1,187 @@
+{% block blog %}
+<section class="mobile-container w-full mb-[100px]">
+  
+    <article class="flex w-full justify-between items-center">
+        <div>
+            <h2 class="text-4xl lg:text-3xl mb-2 font-bold tracking-tight text-white">
+                Nos Posts Récents
+            </h2>
+            <p class="mb-16 text-[#ACACAC]">
+                Dernières Perspectives et Innovations
+            </p>
+           </div>
+        
+            <div class="flex items-center gap-3">
+                <button id="prev" class=" transform -translate-y-1/2 bg-gray-800 text-secondary p-2 rounded">
+                    <img
+                    src="{{ asset('./image/blog/arrow.svg') }}"
+                    alt="icon Définir vos objectifs"
+                    class="w-full "
+                  />
+                </button>
+                <button id="next" class=" transform -translate-y-1/2 bg-gray-800 text-secondary p-2 rounded">
+                    <img
+                    src="{{ asset('./image/blog/arrow.svg') }}"
+                    alt="icon Définir vos objectifs"
+                    class="w-full rotate-180"
+                  />
+                </button>
+            </div>
+    </article>
+
+    <article class="flex gap-4 overflow-hidden carousel" data-aos="fade-up"
+    data-aos-duration="2000">
+          {# Step 01 - Definir objectif #}
+          <a href="#"
+          class="cursor-pointer w-[320px] carousel-item"
+        >
+          <div class="w-full h-[200px] overflow-hidden">
+            <img
+            src="{{ asset('./image/achievements/image.svg') }}"
+            alt="icon Définir vos objectifs"
+            class="w-full"
+          />
+          </div>
+
+          <h3 class="text-secondary font-semibold text-sm mt-[20px]">
+            DESIGN WEB
+          </h3>
+          <p class="text-white mt-2 mb-[20px] font-semibold  text-xl">
+            Les Fondamentaux du Responsive Design
+          </p>
+          </a>
+
+          <a href="#"
+          class="cursor-pointer w-[320px] carousel-item"
+        >
+          <div class="w-full h-[200px] overflow-hidden">
+            <img
+            src="{{ asset('./image/achievements/image.svg') }}"
+            alt="icon Définir vos objectifs"
+            class="w-full"
+          />
+          </div>
+
+          <h3 class="text-secondary font-semibold text-sm mt-[20px]">
+            DESIGN WEB
+          </h3>
+          <p class="text-white mt-2 mb-[20px] font-semibold  text-xl">
+            Les Fondamentaux du Responsive Design
+          </p>
+          </a>
+
+          <a href="#"
+          class="cursor-pointer w-[320px] carousel-item"
+        >
+          <div class="w-full h-[200px] overflow-hidden">
+            <img
+            src="{{ asset('./image/achievements/image.svg') }}"
+            alt="icon Définir vos objectifs"
+            class="w-full"
+          />
+          </div>
+
+          <h3 class="text-secondary font-semibold text-sm mt-[20px]">
+            DESIGN WEB
+          </h3>
+          <p class="text-white mt-2 mb-[20px] font-semibold  text-xl">
+            Les Fondamentaux du Responsive Design
+          </p>
+          </a>
+
+          <a href="#"
+          class="cursor-pointer w-[320px] carousel-item"
+        >
+          <div class="w-full h-[200px] overflow-hidden">
+            <img
+            src="{{ asset('./image/achievements/image.svg') }}"
+            alt="icon Définir vos objectifs"
+            class="w-full"
+          />
+          </div>
+
+          <h3 class="text-secondary font-semibold text-sm mt-[20px]">
+            DESIGN WEB
+          </h3>
+          <p class="text-white mt-2 mb-[20px] font-semibold  text-xl">
+            Les Fondamentaux du Responsive Design
+          </p>
+          </a>
+
+          <a href="#"
+          class="cursor-pointer w-[320px] carousel-item"
+        >
+          <div class="w-full h-[200px] overflow-hidden">
+            <img
+            src="{{ asset('./image/achievements/image.svg') }}"
+            alt="icon Définir vos objectifs"
+            class="w-full"
+          />
+          </div>
+
+          <h3 class="text-secondary font-semibold text-sm mt-[20px]">
+            DESIGN WEB
+          </h3>
+          <p class="text-white mt-2 mb-[20px] font-semibold  text-xl">
+            Les Fondamentaux du Responsive Design
+          </p>
+          </a>
+
+          <a href="#"
+          class="cursor-pointer w-[320px] carousel-item"
+        >
+          <div class="w-full h-[200px] overflow-hidden">
+            <img
+            src="{{ asset('./image/achievements/image.svg') }}"
+            alt="icon Définir vos objectifs"
+            class="w-full"
+          />
+          </div>
+
+          <h3 class="text-secondary font-semibold text-sm mt-[20px]">
+            DESIGN WEB
+          </h3>
+          <p class="text-white mt-2 mb-[20px] font-semibold  text-xl">
+            Les Fondamentaux du Responsive Design
+          </p>
+          </a>
+
+
+
+    
+
+  
+  
+    </article>
+  
+  </section>
+
+
+<script>
+    const carousel = document.querySelector('.carousel');
+    const nextButton = document.getElementById('next');
+    const prevButton = document.getElementById('prev');
+
+    function getScrollAmount() {
+        if (window.innerWidth <= 640) {
+            return 375; // Largeur de défilement pour les téléphones
+        } else {
+            return 320; // Largeur de défilement pour les autres écrans
+        }
+    }
+
+    nextButton.addEventListener('click', () => {
+        carousel.scrollBy({
+            left: getScrollAmount(),
+            behavior: 'smooth'
+        });
+    });
+
+    prevButton.addEventListener('click', () => {
+        carousel.scrollBy({
+            left: -getScrollAmount(),
+            behavior: 'smooth'
+        });
+    });
+</script>
+{% endblock blog %}
