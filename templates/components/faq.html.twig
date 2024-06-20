@@ -1,11 +1,11 @@
 {% block faq %}
-<section class="my-32 lg:my-0 lg-1500:h-screen">
-  <h2 class="text-3xl mb-4 font-bold tracking-tight text-white px-4">
+<section class="mobile-container my-32 lg:my-0 lg-1500:h-screen">
+  <h2 class="text-3xl mb-4 font-bold tracking-tight text-white px-0 md:px-4">
     FAQ
   </h2>
-  <article class="flex flex-col items-center w-full">
+  <article class="flex flex-col md:flex-row items-center md:items-start w-full">
     {# Block Question #}
-    <div class="w-[380px] mb-8">
+    <div class="w-[380px] md:w-1/2 mb-8">
       <p class="text-white text-2xl font-bold mb-2">
         Quels types de services offrez-vous ?
       </p>
@@ -33,10 +33,10 @@
         semaines à plusieurs mois. Un calendrier plus détaillé sera discuté
         après avoir évalué vos besoins spécifiques.
       </p>
-      <div class="flex flex-col">
+      <div class="flex flex-col md:flex-row">
         <a
         href="#"
-          class="py-4 px-8 text-white text-center bg-[#00A3FF] text-base cursor-pointer rounded-lg font-semibold order-last"
+          class="py-4 px-8 text-white text-center bg-[#00A3FF] text-base cursor-pointer rounded-lg font-semibold order-last md:order-first"
           >Nous contacter</a
         >
         <a
@@ -48,7 +48,7 @@
     </div>
 
     {# Block Accordion #}
-       <div class="w-[380px]" x-data="{ selected: 1 }">
+       <div class="w-[380px] md:w-1/2" x-data="{ selected: 1 }">
           <ul class="shadow-box">
 
             <li class="relative bg-[#191925] rounded-md mb-2">

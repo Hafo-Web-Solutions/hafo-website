@@ -1,9 +1,9 @@
 {% block achievements %}
 <section
-  class="mobile-container flex flex-col mt-24 lg:mt-0 gap-4 mb-[100px]"
+  class="mobile-container flex flex-col md:flex-row mt-24 lg:mt-0 gap-4 mb-[100px]"
 >
   {# Image #}
-  <article >
+  <article class="md:w-1/2">
     <img
       src="{{ asset('./image/achievements/image.svg') }}"
       alt="image achievement"
@@ -12,7 +12,7 @@
   </article>
 
   {# Block content #}
-  <article class="">
+  <article class="md:w-1/2">
     <h2 class="text-3xl mb-4 font-bold tracking-tight text-white">
       Hafo, Partenaire de Votre Innovation Digitale
     </h2>
