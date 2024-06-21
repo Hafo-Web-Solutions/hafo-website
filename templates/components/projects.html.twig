@@ -1,0 +1,36 @@
+{% block projects %}
+<section
+  class="mobile-container flex flex-col md:flex-row mt-24 lg:mt-0 gap-4 mb-[100px]"
+>
+
+  {# Block content #}
+  <article class="md:w-1/2">
+    <h2 class="text-3xl mb-4 font-bold tracking-tight text-white md:w-[350px]">
+        Nos Réalisations
+    </h2>
+    <p class="mb-4 text-[#ACACAC] text-sm py-2 px-4 border border-white rounded-xl">
+      Site Vitrine
+    </p>
+    <p class="text-3xl mb-4 font-semibold tracking-tight text-white">
+        PixelPioneer
+    </p>
+    <p class="mb-10 text-[#ACACAC] text-base">
+        PixelPioneer offre une vitrine élégante pour les créatifs digitaux. Découvrez un portfolio dynamique présentant les dernières tendances en design graphique et interactif, propulsant les marques dans l'ère numérique avec style et innovation.
+    </p>
+    <a
+      href="#"
+      class="py-4 px-8 text-white font-semibold bg-[#00A3FF] text-base cursor-pointer rounded-lg"
+      >Voir le projet</a
+    >
+  </article>
+
+    {# Image #}
+    <article class="md:w-1/2">
+        <img
+          src="{{ asset('./image/achievements/image.svg') }}"
+          alt="image achievement"
+          class="w-full h-[600px] object-cover"
+        />
+      </article>
+</section>
+{% endblock projects %}
