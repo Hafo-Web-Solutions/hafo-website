@@ -55,7 +55,7 @@ body {
 }
 .grid li:last-child:after {
   mix-blend-mode: multiply;
-  background: #000000;
+  background: #0000001c;
   border-radius: 8px;
 }
 .grid {
