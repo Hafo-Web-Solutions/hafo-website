@@ -1,21 +1,32 @@
 {% block header %}
+
 <!-- Header section with Alpine.js for interactivity -->
 <header
-  class="relative isolate z-10 hidden-until-scroll"
+  class="relative z-10 hidden-until-scroll"
   x-data="{
     openFlyoutMenu: false,
     openMobileMenu: false,
     showNav: true,
     lastScrollY: 0,
-    fill: false,
     isClicked: false,
     clickX: 0,
     clickY: 0,
-    darkMode: false
+    darkMode: false,
+    selected: null
     }"
   @click.away="openFlyoutMenu = false"
   x-init="
-      window.addEventListener('scroll', () => {
+    window.addEventListener('load', () => {
+      const nav = document.querySelector('nav');
+      if (showNav) {
+        nav.style.display = 'none';
+        setTimeout(() => {
+          nav.style.display = '';
+        }, 30);
+      }
+    });
+  
+    window.addEventListener('scroll', () => {
       currentScrollY = window.scrollY;
       if (currentScrollY > lastScrollY && currentScrollY > 80) {
         showNav = false;
@@ -48,318 +59,486 @@
     });
   "
 >
+
   <!-- Navigation bar -->
   <nav
     :class="{'nav-hidden': !showNav, 'nav-visible': showNav}"
-    class="nav-min:justify-between sm:justify-between sm:px-paddingDemi h-20 fixed left-0 bg-primary right-0 flex items-center border-b border-borderBase nav-lg:px-paddingDemi nav-min:px-paddingDemi lg:px-paddingDemi xl:px-paddingBase md:px-paddingDemi md:justify-between"
-    aria-label="Global"
+    class="fixed w-full bg-primary border-b border-borderBase"
   >
-    <div class="flex items-center">
-      <a href="#" class="-m-1.5 p-1.5">
-        <span class="sr-only"> Hafo Web Solutions </span>
-        <!-- Desktop logo and branding -->
-        <div class="flex items-center">
-          <img
-            class=""
-            src="{{ asset('images/logo-white.svg') }}"
-            alt="logo-white"
-          />
-        </div>
-      </a>
-      <div
-        class="nav-min:hidden border-l border-borderBase h-8 ml-8 nav-sm:ml-8 mr-2.5 nav-sm:mr-0 md:block lg:hidden nav-min:ml-3 nav-min:mr-3"
-      ></div>
-    </div>
-    <!-- Mobile navigation buttons -->
-    <div class="flex lg:hidden space-x-2.5">
-      <button
-        type="button"
-        class="nav-min:hidden nav-min:text-xs sm:text-sm nav-sm:text-sm relative inline-flex items-center gap-x-1.5 rounded-lg px-3 py-2 xl:text-base border border-borderBase font-semibold text-grayText hover:bg-quinternary focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 duration-300 ease-in-out"
-      >
-        Nous Contacter
-      </button>
-      <button
-        type="button"
-        class="nav-min:hidden nav-min:text-xs sm:text-sm nav-sm:text-sm relative inline-flex items-center gap-x-1.5 rounded-lg bg-tertiary px-3 py-2 xl:text-base font-semibold text-white hover:bg-secondary focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 duration-300 ease-in-out"
-      >
-        Prendre RDV
-      </button>
-      <!-- Mobile menu button -->
-      <button
-        type="button"
-        class="h-10 w-10 inline-flex items-center justify-center text-grayText rounded-full border border-borderBase"
-        @click="openMobileMenu = !openMobileMenu"
-      >
-        <span class="sr-only"> Open main menu </span>
-        <svg
-          class="h-6 w-6"
-          fill="none"
-          viewbox="0 0 24 24"
-          stroke-width="1.5"
-          stroke="currentColor"
-          aria-hidden="true"
-        >
-          <path
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"
-          />
-        </svg>
-      </button>
-      <a
-        href="#"
-        @click.prevent="darkMode = !darkMode; document.documentElement.classList.toggle('dark', darkMode)"
-        class="setColor light rounded-full h-10 w-10 flex items-center justify-center border border-borderBase"
-        x-show="!darkMode"
-      >
-        <img
-          src="{{ asset('images/sun.svg') }}"
-          alt="white-theme"
-          class="h-4 w-4"
-      /></a>
-      <a
-        href="#"
-        @click.prevent="darkMode = !darkMode; document.documentElement.classList.toggle('dark', darkMode)"
-        class="setColor dark rounded-full h-10 w-10 flex items-center justify-center border border-borderBase bg-white"
-        x-show="darkMode"
-      >
-        <img
-          src="{{ asset('images/moon.svg') }}"
-          alt="dark-theme"
-          class="h-4 w-4"
-      /></a>
-    </div>
     <div
-      class="border-l border-borderBase h-8 ml-8 nav-sm:ml-8 mr-2.5 nav-sm:mr-0 sm:hidden lg:block nav-min:hidden"
-    ></div>
-    <!-- Desktop navigation links 1/2 -->
-    <div class="hidden lg:flex items-center">
-      <a
-        href="#"
-        class="nav-sm:text-sm flex px-3 nav-sm:px-2 mx-2 items-center py-7 underline-slide xl:text-base font-semibold leading-6 text-grayText 3xl"
-      >
-        Agence
-      </a>
-      <div>
+      class="justify-between h-20 flex items-center default-container sm:container"
+    >
+      <div class="flex items-center">
+        <a href="#">
+          <span class="sr-only"> Hafo Web Solutions </span>
+
+          <!-- Desktop logo and branding -->
+          <div class="flex items-center">
+            <img
+              class=""
+              src="{{ asset('images/logo-white.svg') }}"
+              alt="logo-white"
+            />
+          </div>
+        </a>
+        <div
+          class="nav-min:hidden border-l border-borderBase h-8 ml-8 nav-sm:ml-8 mr-2.5 nav-sm:mr-0 md:block lg:hidden nav-min:ml-3 nav-min:mr-3"
+        ></div>
+      </div>
+
+      <!-- Mobile navigation buttons -->
+      <div class="flex lg:hidden space-x-2.5">
         <button
           type="button"
-          class="nav-sm:text-sm px-3 nav-sm:px-2 mx-2 py-7 xl:text-base flex items-center gap-x-1 font-semibold leading-6 text-grayText"
-          x-on:click.stop="openFlyoutMenu = !openFlyoutMenu"
-          @mouseenter="openFlyoutMenu = true"
-          @mouseleave="openFlyoutMenu = false"
+          class="nav-min:hidden relative inline-flex items-center gap-x-1.5 rounded-lg px-3 py-2 xl:text-base border border-borderBase font-semibold text-grayText hover:text-white hover:border-quinternary hover:bg-quinternary duration-300 ease-in-out"
         >
-          Expertise
+          Nous Contacter
         </button>
-        <!-- Desktop flyout menu -->
-        <div
-          @mouseenter="openFlyoutMenu = true"
-          @mouseleave="openFlyoutMenu = false"
-          class="submenu-container absolute px-3 py-5 transform -translate-x-1/2 mt-4 bg-primary shadow-3xl ring-1 ring-gray-900/5 rounded-lg"
-          x-cloak
-          x-show="openFlyoutMenu"
-          x-transition:enter="transition ease-out duration-200"
-          x-transition:enter-start="opacity-0 translate-y-1"
-          x-transition:enter-end="opacity-100 translate-y-0"
-          x-transition:leave="transition ease-in duration-150"
-          x-transition:leave-start="opacity-100 translate-y-0"
-          x-transition:leave-end="opacity-0 translate-y-1"
+        <button
+          type="button"
+          class="nav-min:hidden relative inline-flex items-center gap-x-1.5 rounded-lg bg-tertiary px-3 py-2 xl:text-base font-semibold text-white hover:bg-secondary duration-300 ease-in-out"
         >
-          <div
-            class="relative mx-auto grid max-w-2xl grid-cols-2 bg-primary rounded-lg"
+          Prendre RDV
+        </button>
+
+        <!-- Mobile menu button -->
+        <button
+          type="button"
+          class="h-10 w-10 inline-flex items-center justify-center text-grayText rounded-full border border-borderBase hover:bg-quinternary hover:border-quinternary hover:text-white duration-300 ease-in-out"
+          @click="openMobileMenu = !openMobileMenu; (openMobileMenu)"
+        >
+          <span class="sr-only"> Open main menu </span>
+          <svg
+            class="h-6 w-6"
+            fill="none"
+            viewbox="0 0 24 24"
+            stroke-width="1.5"
+            stroke="currentColor"
+            aria-hidden="true"
           >
-            <div
-              class="group relative rounded-lg px-6 py-4 text-sm leading-6 hover:bg-whiteTransparency"
-            >
-              <div class="flex items-start menu-item">
-                <div class="flex-shrink-0">
-                  <div
-                    class="flex h-11 w-11 items-center justify-center rounded-lg bg-whiteTransparency group-hover:bg-whiteTransparency"
-                  >
-                    <svg
-                      class="h-6 w-6 text-grayText group-hover:text-secondary"
-                      fill="none"
-                      viewbox="0 0 24 24"
-                      stroke-width="1.5"
-                      stroke="currentColor"
-                      aria-hidden="true"
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"
+            />
+          </svg>
+        </button>
+        <button
+          href="#"
+          @click.prevent="darkMode = !darkMode; document.documentElement.classList.toggle('dark', darkMode)"
+          class="setColor light rounded-full h-10 w-10 flex items-center justify-center border border-borderBase hover:bg-quinternary hover:border-quinternary duration-300 ease-in-out stroke-grayText hover:stroke-white"
+          x-show="!darkMode"
+        >
+          <svg
+            width="18"
+            height="18"
+            viewBox="0 0 18 18"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+            alt="white-theme"
+            class="h-4 w-4"
+          >
+            <g clip-path="url(#clip0_394_2310)">
+              <path
+                d="M9 13C11.2091 13 13 11.2091 13 9C13 6.79086 11.2091 5 9 5C6.79086 5 5 6.79086 5 9C5 11.2091 6.79086 13 9 13Z"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+              <path
+                d="M9 1V2"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+              <path
+                d="M9 16V17"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+              <path
+                d="M3 3L4 4"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+              <path
+                d="M14 14L15 15"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+              <path
+                d="M1 9H2"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+              <path
+                d="M16 9H17"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+              <path
+                d="M3 15L4 14"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+              <path
+                d="M14 4L15 3"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+            </g>
+            <defs>
+              <clipPath id="clip0_394_2310">
+                <rect width="18" height="18" fill="white" />
+              </clipPath>
+            </defs>
+          </svg>
+        </button>
+        <button
+          href="#"
+          @click.prevent="darkMode = !darkMode; document.documentElement.classList.toggle('dark', darkMode)"
+          class="setColor dark rounded-full h-10 w-10 flex items-center justify-center border border-borderBase bg-white stroke-dark hover:stroke-secondary duration-300 ease-in-out"
+          x-show="darkMode"
+        >
+          <svg
+            width="18"
+            height="18"
+            viewBox="0 0 18 18"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+            alt="dark-theme"
+            class="h-4 w-4"
+          >
+            <path
+              d="M9.72072 1C11.237 1.14012 12.682 1.70918 13.8867 2.64059C15.0914 3.572 16.0059 4.82724 16.5232 6.25942C17.0405 7.6916 17.1392 9.2415 16.8078 10.7277C16.4764 12.214 15.7286 13.5751 14.6519 14.6519C13.5751 15.7286 12.214 16.4764 10.7277 16.8078C9.2415 17.1392 7.6916 17.0405 6.25942 16.5232C4.82724 16.0059 3.572 15.0914 2.64059 13.8867C1.70918 12.682 1.14012 11.237 1 9.72072C2.20101 10.6085 3.68075 11.0356 5.1701 10.9246C6.65945 10.8135 8.05947 10.1716 9.11553 9.11553C10.1716 8.05947 10.8135 6.65945 10.9246 5.1701C11.0356 3.68075 10.6085 2.20101 9.72072 1Z"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            />
+          </svg>
+        </button>
+      </div>
+      <div
+        class="border-l border-borderBase h-8 ml-8 nav-sm:ml-4 mr-2.5 nav-sm:mr-0 sm:hidden lg:block nav-min:hidden"
+      ></div>
+
+      <!-- Desktop navigation links 1/2 -->
+      <div class="hidden lg:flex items-center">
+        <div>
+          <button
+            type="button"
+            class="px-3 nav-sm:px-2 mx-2 py-7 xl:text-base flex items-center gap-x-1 font-semibold leading-6 text-grayText hover:text-secondary duration-300 ease-in-out"
+            x-on:click.stop="openFlyoutMenu = !openFlyoutMenu"
+            @mouseenter="openFlyoutMenu = true"
+            @mouseleave="openFlyoutMenu = false"
+          >
+            Expertise
+          </button>
+
+          <!-- Desktop flyout menu -->
+          <div
+            @mouseenter="openFlyoutMenu = true"
+            @mouseleave="openFlyoutMenu = false"
+            class="submenu-container absolute px-3 py-5 transform -translate-x-2/2 shadow-md mt-4 bg-primary border-t border-borderBase ring-1 ring-gray-900/5 rounded-lg-t"
+            x-cloak
+            x-show="openFlyoutMenu"
+            x-transition:enter="transition ease-out duration-300"
+            x-transition:enter-start="opacity-0 translate-x-5"
+            x-transition:enter-end="opacity-100 translate-x-0"
+            x-transition:leave="transition ease-in duration-300"
+            x-transition:leave-start="opacity-100 translate-x-0"
+            x-transition:leave-end="opacity-0 translate-x-5"
+          >
+            <ul class="relative mx-auto grid max-w-2xl bg-primary rounded-lg">
+              <li class="group relative rounded-lg">
+                <a href="#" class="flex items-start menu-item px-6 py-4">
+                  <div class="flex-shrink-0">
+                    <div
+                      class="flex h-11 w-11 items-center justify-center rounded-lg bg-whiteTransparency group-hover:bg-whiteTransparency"
                     >
-                      <polyline points="16 18 22 12 16 6"></polyline>
-                      <polyline points="8 6 2 12 8 18"></polyline>
-                    </svg>
+                      <svg
+                        class="h-6 w-6 text-grayText"
+                        fill="none"
+                        viewbox="0 0 24 24"
+                        stroke-width="1.5"
+                        stroke="currentColor"
+                        aria-hidden="true"
+                      >
+                        <polyline points="16 18 22 12 16 6"></polyline>
+                        <polyline points="8 6 2 12 8 18"></polyline>
+                      </svg>
+                    </div>
                   </div>
-                </div>
-                <div class="ml-4">
-                  <a href="#" class="block font-semibold text-white">
-                    Création de site
-                  </a>
-                  <p class="mt-1 text-grayText">
-                    Développement de site web intuitif au design moderne.
-                  </p>
-                </div>
-              </div>
-            </div>
-            <div
-              class="group relative rounded-lg px-6 py-4 text-sm leading-6 hover:bg-whiteTransparency"
-            >
-              <div class="flex items-start menu-item">
-                <div class="flex-shrink-0">
-                  <div
-                    class="flex h-11 w-11 items-center justify-center rounded-lg bg-whiteTransparency group-hover:bg-whiteTransparency"
-                  >
-                    <svg
-                      class="h-6 w-6 text-gray-600 group-hover:text-secondary"
-                      fill="none"
-                      viewbox="0 0 24 24"
-                      stroke-width="1.5"
-                      stroke="currentColor"
-                      aria-hidden="true"
+                  <div class="ml-4">
+                    <span
+                      class="block font-semibold text-white hover:text-secondary duration-500 ease-in-out group-hover:text-secondary"
                     >
-                      <polyline points="1 4 1 10 7 10"></polyline>
-                      <path d="M3.51 15a9 9 0 1 0 2.13-9.36L1 10"></path>
-                    </svg>
+                      Création de site
+                    </span>
+                    <p class="mt-1 text-grayText">
+                      Développement de site web intuitif au design moderne.
+                    </p>
                   </div>
-                </div>
-                <div class="ml-4">
-                  <a href="#" class="block font-semibold text-white">
-                    Refonte
-                  </a>
-                  <p class="mt-1 text-grayText">
-                    Boostez les performances et le design.
-                  </p>
-                </div>
-              </div>
-            </div>
-            <div
-              class="group relative rounded-lg px-6 py-4 text-sm leading-6 hover:bg-whiteTransparency"
-            >
-              <div class="flex items-start menu-item">
-                <div class="flex-shrink-0">
-                  <div
-                    class="flex h-11 w-11 items-center justify-center rounded-lg bg-whiteTransparency group-hover:bg-whiteTransparency"
-                  >
-                    <svg
-                      class="h-6 w-6 text-gray-600 group-hover:text-secondary"
-                      fill="none"
-                      viewbox="0 0 24 24"
-                      stroke-width="1.5"
-                      stroke="currentColor"
-                      aria-hidden="true"
+                </a>
+              </li>
+              <li class="group relative rounded-lg">
+                <a href="#" class="flex items-start menu-item px-6 py-4">
+                  <div class="flex-shrink-0">
+                    <div
+                      class="flex h-11 w-11 items-center justify-center rounded-lg bg-whiteTransparency group-hover:bg-whiteTransparency"
                     >
-                      <circle cx="12" cy="12" r="3"></circle>
-                      <path
-                        d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"
-                      ></path>
-                    </svg>
+                      <svg
+                        class="h-6 w-6 text-grayText"
+                        fill="none"
+                        viewbox="0 0 24 24"
+                        stroke-width="1.5"
+                        stroke="currentColor"
+                        aria-hidden="true"
+                      >
+                        <polyline points="1 4 1 10 7 10"></polyline>
+                        <path d="M3.51 15a9 9 0 1 0 2.13-9.36L1 10"></path>
+                      </svg>
+                    </div>
                   </div>
-                </div>
-                <div class="ml-4">
-                  <a href="#" class="block font-semibold text-white">
-                    Maintenance
-                  </a>
-                  <p class="mt-1 text-grayText">
-                    Assurez une fiabilité sans faille pour votre site web.
-                  </p>
-                </div>
-              </div>
-            </div>
-            <div
-              class="group relative rounded-lg px-6 py-4 text-sm leading-6 hover:bg-whiteTransparency"
-            >
-              <div class="flex items-start menu-item">
-                <div class="flex-shrink-0">
-                  <div
-                    class="flex h-11 w-11 items-center justify-center rounded-lg bg-whiteTransparency group-hover:bg-whiteTransparency"
-                  >
-                    <svg
-                      class="h-6 w-6 text-gray-600 group-hover:text-secondary"
-                      fill="none"
-                      viewbox="0 0 24 24"
-                      stroke-width="1.5"
-                      stroke="currentColor"
-                      aria-hidden="true"
+                  <div class="ml-4">
+                    <span
+                      class="block font-semibold text-white hover:text-secondary duration-500 ease-in-out group-hover:text-secondary"
                     >
-                      <line x1="18" y1="20" x2="18" y2="10"></line>
-                      <line x1="12" y1="20" x2="12" y2="4"></line>
-                      <line x1="6" y1="20" x2="6" y2="14"></line>
-                    </svg>
+                      Refonte
+                    </span>
+                    <p class="mt-1 text-grayText">
+                      Boostez les performances et le design.
+                    </p>
                   </div>
-                </div>
-                <div class="ml-4">
-                  <a href="#" class="block font-semibold text-white">
-                    Référencement
-                  </a>
-                  <p class="mt-1 text-grayText">
-                    Améliorez votre visibilité grâce à un code optimisé.
-                  </p>
-                </div>
-              </div>
-            </div>
+                </a>
+              </li>
+              <li class="group relative rounded-lg">
+                <a href="#" class="flex items-start menu-item px-6 py-4">
+                  <div class="flex-shrink-0">
+                    <div
+                      class="flex h-11 w-11 items-center justify-center rounded-lg bg-whiteTransparency group-hover:bg-whiteTransparency"
+                    >
+                      <svg
+                        class="h-6 w-6 text-grayText"
+                        fill="none"
+                        viewbox="0 0 24 24"
+                        stroke-width="1.5"
+                        stroke="currentColor"
+                        aria-hidden="true"
+                      >
+                        <circle cx="12" cy="12" r="3"></circle>
+                        <path
+                          d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"
+                        ></path>
+                      </svg>
+                    </div>
+                  </div>
+                  <div class="ml-4">
+                    <span
+                      class="block font-semibold text-white hover:text-secondary duration-500 ease-in-out group-hover:text-secondary"
+                    >
+                      Maintenance
+                    </span>
+                    <p class="mt-1 text-grayText">
+                      Assurez une fiabilité sans faille pour votre site web.
+                    </p>
+                  </div>
+                </a>
+              </li>
+              <li class="group relative rounded-lg">
+                <a href="#" class="flex items-start menu-item px-6 py-4">
+                  <div class="flex-shrink-0">
+                    <div
+                      class="flex h-11 w-11 items-center justify-center rounded-lg bg-whiteTransparency group-hover:bg-whiteTransparency"
+                    >
+                      <svg
+                        class="h-6 w-6 text-grayText"
+                        fill="none"
+                        viewbox="0 0 24 24"
+                        stroke-width="1.5"
+                        stroke="currentColor"
+                        aria-hidden="true"
+                      >
+                        <line x1="18" y1="20" x2="18" y2="10"></line>
+                        <line x1="12" y1="20" x2="12" y2="4"></line>
+                        <line x1="6" y1="20" x2="6" y2="14"></line>
+                      </svg>
+                    </div>
+                  </div>
+                  <div class="ml-4">
+                    <span
+                      class="block font-semibold text-white duration-500 ease-in-out group-hover:text-secondary dur"
+                    >
+                      Référencement
+                    </span>
+                    <p class="mt-1 text-grayText">
+                      Améliorez votre visibilité grâce à un code optimisé.
+                    </p>
+                  </div>
+                </a>
+              </li>
+            </ul>
           </div>
         </div>
+
+        <!-- Desktop navigation links 1/2 -->
+        <a
+          href="#"
+          class="flex px-3 nav-sm:px-2 mx-2 items-center py-7 underline-slide xl:text-base font-semibold leading-6 text-grayText 3xl hover:text-secondary duration-300 ease-in-out"
+        >
+          Réalisations
+        </a>
+        <a
+          href="#"
+          class="flex px-3 nav-sm:px-2 mx-2 items-center py-7 underline-slide xl:text-base font-semibold leading-6 text-grayText hover:text-secondary duration-300 ease-in-out"
+        >
+          Agence
+        </a>
+        <a
+          href="#"
+          class="flex px-3 nav-sm:px-2 mx-2 items-center py-7 underline-slide xl:text-base font-semibold leading-6 text-grayText hover:text-secondary duration-300 ease-in-out"
+        >
+          Services
+        </a>
+        <a
+          href="#"
+          class="flex px-3 nav-sm:px-2 mx-2 items-center py-7 underline-slide xl:text-base font-semibold leading-6 text-grayText hover:text-secondary duration-300 ease-in-out"
+        >
+          Blog
+        </a>
       </div>
-      <!-- Desktop navigation links 2/2 -->
-      <a
-        href="#"
-        class="nav-sm:text-sm flex px-3 nav-sm:px-2 mx-2 items-center py-7 underline-slide xl:text-base font-semibold leading-6 text-grayText"
+
+      <!-- Desktop navigation buttons -->
+      <div
+        class="hidden lg:flex lg:flex-1 lg:justify-end items-center space-x-2.5"
       >
-        Réalisations
-      </a>
-      <a
-        href="#"
-        class="nav-sm:text-sm flex px-3 nav-sm:px-2 mx-2 items-center py-7 underline-slide xl:text-base font-semibold leading-6 text-grayText"
-      >
-        Services
-      </a>
-      <a
-        href="#"
-        class="nav-sm:text-sm flex px-3 nav-sm:px-2 mx-2 items-center py-7 underline-slide xl:text-base font-semibold leading-6 text-grayText"
-      >
-        Blog
-      </a>
-    </div>
-    <!-- Desktop navigation buttons -->
-    <div
-      class="hidden lg:flex lg:flex-1 lg:justify-end items-center space-x-2.5"
-    >
-      <button
-        type="button"
-        class="nav-sm:text-sm relative inline-flex items-center gap-x-1.5 rounded-lg px-3 py-2 xl:text-base border border-borderBase font-semibold text-grayText hover:bg-quinternary focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 duration-300 ease-in-out"
-        @mouseenter="fill = true; event.target.classList.add('no-border')"
-        @mouseleave="fill = false; event.target.classList.remove('no-border')"
-      >
-        Nous Contacter
-      </button>
-      <button
-        type="button"
-        class="nav-sm:text-sm relative inline-flex items-center gap-x-1.5 rounded-lg bg-tertiary px-3 py-2 xl:text-base font-semibold text-white hover:bg-secondary focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 duration-300 ease-in-out"
-      >
-        Prendre RDV
-      </button>
-      <!-- Desktop theme button -->
-      <a
-        href="#"
-        class="setColor light rounded-full h-10 w-10 flex items-center justify-center border border-borderBase hover:bg-quinternary duration-300 ease-in-out"
-        @mouseenter="fill = true; event.target.classList.add('no-border')"
-        @mouseleave="fill = false; event.target.classList.remove('no-border')"
-      >
-        <img
-          src="{{ asset('images/sun.svg') }}"
-          alt="white-theme"
-          class="h-4 w-4"
-      /></a>
-      <a
-        href="#"
-        data-theme="dark"
-        class="hidden setColor dark rounded-full h-10 w-10 items-center justify-center border border-borderBase"
-      >
-        <img
-          src="{{ asset('images/moon.svg') }}"
-          alt="darktheme"
-          class="h-4 w-4"
-      /></a>
+        <button
+          type="button"
+          class="md:text-15 relative inline-flex items-center rounded-lg px-3 py-2 xl:text-base border border-borderBase font-semibold text-grayText hover:bg-quinternary hover:border-quinternary hover:text-white duration-300 ease-in-out"
+        >
+          Nous Contacter
+        </button>
+        <button
+          type="button"
+          class="md:text-15 relative inline-flex items-center rounded-lg bg-tertiary px-3 py-2 xl:text-base font-semibold text-white hover:bg-secondary duration-300 ease-in-out"
+        >
+          Prendre RDV
+        </button>
+
+        <!-- Theme button -->
+        <button
+          href="#"
+          @click.prevent="darkMode = !darkMode; document.documentElement.classList.toggle('dark', darkMode)"
+          class="setColor light rounded-full h-10 w-10 flex items-center justify-center border border-borderBase hover:bg-quinternary hover:border-quinternary duration-300 ease-in-out stroke-grayText hover:stroke-white"
+          x-show="!darkMode"
+        >
+          <svg
+            width="18"
+            height="18"
+            viewBox="0 0 18 18"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+            alt="white-theme"
+            class="h-4 w-4"
+          >
+            <g clip-path="url(#clip0_394_2310)">
+              <path
+                d="M9 13C11.2091 13 13 11.2091 13 9C13 6.79086 11.2091 5 9 5C6.79086 5 5 6.79086 5 9C5 11.2091 6.79086 13 9 13Z"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+              <path
+                d="M9 1V2"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+              <path
+                d="M9 16V17"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+              <path
+                d="M3 3L4 4"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+              <path
+                d="M14 14L15 15"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+              <path
+                d="M1 9H2"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+              <path
+                d="M16 9H17"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+              <path
+                d="M3 15L4 14"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+              <path
+                d="M14 4L15 3"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+            </g>
+            <defs>
+              <clipPath id="clip0_394_2310">
+                <rect width="18" height="18" fill="white" />
+              </clipPath>
+            </defs>
+          </svg>
+        </button>
+        <button
+          href="#"
+          @click.prevent="darkMode = !darkMode; document.documentElement.classList.toggle('dark', darkMode)"
+          class="setColor dark rounded-full h-10 w-10 flex items-center justify-center border border-borderBase bg-white stroke-dark hover:stroke-secondary duration-300 ease-in-out"
+          x-show="darkMode"
+        >
+          <svg
+            width="18"
+            height="18"
+            viewBox="0 0 18 18"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+            alt="dark-theme"
+            class="h-4 w-4"
+          >
+            <path
+              d="M9.72072 1C11.237 1.14012 12.682 1.70918 13.8867 2.64059C15.0914 3.572 16.0059 4.82724 16.5232 6.25942C17.0405 7.6916 17.1392 9.2415 16.8078 10.7277C16.4764 12.214 15.7286 13.5751 14.6519 14.6519C13.5751 15.7286 12.214 16.4764 10.7277 16.8078C9.2415 17.1392 7.6916 17.0405 6.25942 16.5232C4.82724 16.0059 3.572 15.0914 2.64059 13.8867C1.70918 12.682 1.14012 11.237 1 9.72072C2.20101 10.6085 3.68075 11.0356 5.1701 10.9246C6.65945 10.8135 8.05947 10.1716 9.11553 9.11553C10.1716 8.05947 10.8135 6.65945 10.9246 5.1701C11.0356 3.68075 10.6085 2.20101 9.72072 1Z"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            />
+          </svg>
+        </button>
+      </div>
     </div>
   </nav>
-  <!-- Mobile menu -->
+
+  <!-- Mobile menu overlay-->
   <div
     x-show="openMobileMenu"
     x-transition:enter="transition ease-out duration-500"
@@ -368,38 +547,43 @@
     x-transition:leave="transition ease-in"
     x-transition:leave-start="opacity-100"
     x-transition:leave-end="opacity-0"
-    class="fixed inset-0 bg-customBlack z-40"
+    class="fixed bottom-0 inset-0 bg-customBlack z-40"
     @click="openMobileMenu = false"
   ></div>
+
+  <!-- Mobile menu container -->
   <div
-    x-cloak
     x-show="openMobileMenu"
     @click="openMobileMenu = false"
     x-transition:enter="transition ease-out duration-500"
-    x-transition:enter-start="-translate-x-full transform opacity-0"
-    x-transition:enter-end="translate-x-0 transform opacity-100"
+    x-transition:enter-start="-translate-x-full transform"
+    x-transition:enter-end="translate-x-0 transform"
     x-transition:leave="transition ease-in duration-500 transform"
-    x-transition:leave-start="translate-x-0 transform opacity-100"
-    x-transition:leave-end="-translate-x-full transform opacity-0"
-    class="fixed inset-y-0 left-0 z-50 w-screen flex overflow-auto"
+    x-transition:leave-start="translate-x-0 transform"
+    x-transition:leave-end="-translate-x-full transform"
+    class="fixed bottom-0 inset-y-0 left-0 z-50 w-screen flex"
   >
+    <!-- Mobile menu -->
     <div
-      class="fixed inset-y-0 left-0 z-50 w-full overflow-y-auto bg-primary py-6 sm:max-w-sm sm:ring-1 sm:ring-gray-900/10"
+      class="fixed inset-y-0 left-0 z-50 w-full overflow-auto bg-darkMidnightBlue max-w-xs sm:ring-1 sm:ring-gray-900/10"
+      @click.away="openMobileMenu = false; document.body.classList.remove('overflow-hidden', openMobileMenu)"
       @click.stop
     >
-      <div class="flex justify-between h-14 border-b border-borderBase px-6">
-        <a href="#" class="">
-          <span class="sr-only"> Hafo Web Solutions </span>
-          <!-- Mobile menu logo and branding -->
-          <img class="" src="{{ asset('images/logo-white.svg') }}" alt=""
+      <!-- Header -->
+      <div
+        class="flex py-4 px-5 justify-between items-center h-20 mobile-container border-b border-borderBase"
+      >
+        <!-- Logo -->
+        <a href="#">
+          <img src="{{ asset('images/logo-white.svg') }}" alt=""
         /></a>
-        <!-- Mobile menu close button -->
+
+        <!-- Close button -->
         <button
           type="button"
-          class="text-white rounded-full bg-dark h-10 w-10 flex justify-center items-center"
-          @click="openMobileMenu = false"
+          class="h-10 w-10 inline-flex items-center justify-center text-grayText rounded-full border border-borderBase hover:bg-quinternary hover:text-white duration-300 ease-in-out hover:border-quinternary"
+          @click="openMobileMenu = false; document.body.classList.remove('overflow-hidden', openMobileMenu); selected = null"
         >
-          <span class="sr-only"> Close menu </span>
           <svg
             class="h-6 w-6"
             fill="none"
@@ -416,117 +600,179 @@
           </svg>
         </button>
       </div>
-      <!-- Mobile menu navigation links 1/2 -->
-      <div class="mt-6 flow-root px-6">
-        <div class="-my-6 divide-y divide-gray-500/10">
-          <div class="space-y-2 mt-6">
-            <a
-              href="#"
-              class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-grayText"
-            >
-              Agence
-            </a>
-            <div x-data="{ selected: null }" class="-mx-3">
-              <button
-                @click="selected !== 1 ? selected = 1 : selected = null"
-                type="button"
-                class="flex w-full items-center justify-between rounded-lg py-2 pl-3 pr-3.5 text-base font-semibold leading-7 text-grayText"
-              >
-                Expertise
-                <svg
-                  :class="selected === 1 ? 'transform rotate-180' : ''"
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="24"
-                  height="24"
-                  viewbox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  stroke-width="2"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  class="feather feather-chevron-up"
-                >
-                  <polyline points="18 15 12 9 6 15"></polyline>
-                </svg>
-              </button>
-              <!-- Mobile menu accordion -->
-              <div
-                class="mt-2 space-y-2 overflow-hidden transition-all max-h-0 duration-500"
-                x-ref="container1"
-                x-bind:style="selected == 1 ? 'max-height: ' + $refs.container1.scrollHeight + 'px' : ''"
-              >
-                <div class="pl-6 pr-3">
-                  <a
-                    href="#"
-                    class="block py-2 text-sm font-semibold leading-7 text-grayText border-b border-borderBase"
-                  >
-                    Création de site
-                  </a>
-                </div>
-                <div class="pl-6 pr-3">
-                  <a
-                    href="#"
-                    class="block py-2 text-sm font-semibold leading-7 text-grayText border-b border-borderBase"
-                  >
-                    Refonte
-                  </a>
-                </div>
-                <div class="pl-6 pr-3">
-                  <a
-                    href="#"
-                    class="block py-2 text-sm font-semibold leading-7 text-grayText border-b border-borderBase"
-                  >
-                    Maintenance
-                  </a>
-                </div>
-                <div class="pl-6 pr-3">
-                  <a
-                    href="#"
-                    class="block py-2 text-sm font-semibold leading-7 text-grayText border-b border-borderBase"
-                  >
-                    Référencement
-                  </a>
-                </div>
-              </div>
-            </div>
-            <!-- Mobile menu navigation links 2/2 -->
-            <a
-              href="#"
-              class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-grayText"
-            >
-              Réalisations
-            </a>
-            <a
-              href="#"
-              class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-grayText"
-            >
-              Services
-            </a>
-            <a
-              href="#"
-              class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-grayText"
-            >
-              Blog
-            </a>
-          </div>
-          <!-- Mobile menu navigation buttons -->
-          <div
-            class="flex flex-col items-center absolute inset-x-0 bottom-0 pb-12 border-none px-6 hide-on-small-height"
+
+      <!-- Main menu -->
+      <ul class="space-y-2 py-4 px-5">
+        <li>
+          <a
+            href="#"
+            class="py-2 border-b flex border-borderBase font-semibold text-grayText hover:text-secondary duration-300 ease-in-out"
           >
-            <button
-              type="button"
-              class="justify-center w-full h-12 mb-5 inline-flex items-center gap-x-1.5 rounded-lg px-3 py-2 xl:text-base border border-borderBase font-semibold text-grayText hover:bg-quinternary focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 duration-300 ease-in-out"
+            Agence
+          </a>
+        </li>
+        <li>
+          <button
+            @click="selected !== 1 ? selected = 1 : selected = null"
+            type="button"
+            class="py-2 border-b flex border-borderBase w-full items-center justify-between font-semibold text-grayText hover:text-secondary duration-300 ease-in-out"
+            @click.away="selected = null"
+          >
+            Expertise
+            <svg
+              :class="selected === 1 ? 'transform rotate-180' : ''"
+              xmlns="http://www.w3.org/2000/svg"
+              width="16"
+              height="24"
+              viewbox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              class="feather feather-chevron-up"
             >
-              Nous Contacter
-            </button>
-            <button
-              type="button"
-              class="justify-center w-full h-12 inline-flex items-center gap-x-1.5 rounded-lg bg-tertiary px-3 py-2 xl:text-base font-semibold text-white hover:bg-secondary focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 duration-300 ease-in-out"
-            >
-              Prendre RDV
-            </button>
-          </div>
-        </div>
+              <polyline points="18 15 12 9 6 15"></polyline>
+            </svg>
+          </button>
+
+          <!-- Expertise accordion -->
+          <ul
+            class="overflow-hidden transition-all max-h-0 duration-500 pl-4"
+            x-ref="container1"
+            x-bind:style="selected == 1 ? 'max-height: ' + $refs.container1.scrollHeight + 'px' : ''"
+          >
+            <li class=" flex justify-between items-center">
+              <a
+                href="#"
+                class="border-b border-borderBase flex justify-between items-center w-full py-2 text-sm font-semibold leading-7 text-grayText hover:text-secondary duration-300 ease-in-out"
+                onmouseover="this.querySelector('svg').classList.add('text-secondary', 'duration-300', 'ease-in-out')"
+                onmouseout="this.querySelector('svg').classList.remove('text-secondary', 'duration-300', 'ease-in-out')"
+              >
+                <span>Création de site</span>
+                <svg
+                  class="h-4 w-4 text-grayText"
+                  fill="none"
+                  viewbox="0 0 24 24"
+                  stroke-width="1.5"
+                  stroke="currentColor"
+                  aria-hidden="true"
+                >
+                  <polyline points="16 18 22 12 16 6"></polyline>
+                  <polyline points="8 6 2 12 8 18"></polyline>
+                </svg>
+              </a>
+            </li>
+            <li class="flex justify-between items-center">
+              <a
+                href="#"
+                class="border-b border-borderBase flex justify-between items-center w-full py-2 text-sm font-semibold leading-7 text-grayText hover:text-secondary duration-300 ease-in-out"
+                onmouseover="this.querySelector('svg').classList.add('text-secondary', 'duration-300', 'ease-in-out')"
+                onmouseout="this.querySelector('svg').classList.remove('text-secondary', 'duration-300', 'ease-in-out')"
+              >
+                <span>Refonte</span>
+                <svg
+                  class="h-4 w-4 text-grayText"
+                  fill="none"
+                  viewbox="0 0 24 24"
+                  stroke-width="1.5"
+                  stroke="currentColor"
+                  aria-hidden="true"
+                >
+                  <polyline points="1 4 1 10 7 10"></polyline>
+                  <path d="M3.51 15a9 9 0 1 0 2.13-9.36L1 10"></path>
+                </svg>
+              </a>
+            </li>
+            <li class="flex justify-between items-center">
+              <a
+                href="#"
+                class="border-b border-borderBase flex justify-between items-center w-full py-2 text-sm font-semibold leading-7 text-grayText hover:text-secondary duration-300 ease-in-out"
+                onmouseover="this.querySelector('svg').classList.add('text-secondary', 'duration-300', 'ease-in-out')"
+                onmouseout="this.querySelector('svg').classList.remove('text-secondary', 'duration-300', 'ease-in-out')"
+              >
+                <span>Maintenance</span>
+                <svg
+                  class="h-4 w-4 text-grayText"
+                  fill="none"
+                  viewbox="0 0 24 24"
+                  stroke-width="1.5"
+                  stroke="currentColor"
+                  aria-hidden="true"
+                >
+                  <circle cx="12" cy="12" r="3"></circle>
+                  <path
+                    d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"
+                  ></path>
+                </svg>
+              </a>
+            </li>
+            <li class="flex justify-between items-center">
+              <a
+                href="#"
+                class="border-b border-borderBase flex justify-between items-center w-full py-2 text-sm font-semibold leading-7 text-grayText hover:text-secondary duration-300 ease-in-out"
+                onmouseover="this.querySelector('svg').classList.add('text-secondary', 'duration-300', 'ease-in-out')"
+                onmouseout="this.querySelector('svg').classList.remove('text-secondary', 'duration-300', 'ease-in-out')"
+              >
+                <span> Référencement </span>
+                <svg
+                  class="h-4 w-4 text-grayText"
+                  fill="none"
+                  viewbox="0 0 24 24"
+                  stroke-width="1.5"
+                  stroke="currentColor"
+                  aria-hidden="true"
+                >
+                  <line x1="18" y1="20" x2="18" y2="10"></line>
+                  <line x1="12" y1="20" x2="12" y2="4"></line>
+                  <line x1="6" y1="20" x2="6" y2="14"></line>
+                </svg>
+              </a>
+            </li>
+          </ul>
+        </li>
+        <li>
+          <a
+            href="#"
+            class="py-2 border-b flex border-borderBase font-semibold text-grayText hover:text-secondary duration-300 ease-in-out"
+          >
+            Réalisations
+          </a>
+        </li>
+        <li>
+          <a
+            href="#"
+            class="py-2 border-b flex border-borderBase font-semibold text-grayText hover:text-secondary duration-300 ease-in-out"
+          >
+            Services
+          </a>
+        </li>
+        <li>
+          <a
+            href="#"
+            class="py-2 flex font-semibold text-grayText hover:text-secondary duration-300 ease-in-out"
+          >
+            Blog
+          </a>
+        </li>
+      </ul>
+
+      <!-- Buttons -->
+      <div
+        class="flex flex-col items-center absolute bottom-12 inset-x-0 py-4 px-5 first-line:-height gap-y-5 static-on-small-screen"
+      >
+        <button
+          type="button"
+          class="justify-center w-full h-12 items-center rounded-lg xl:text-base border border-borderBase font-semibold text-grayText hover:text-white hover:border-quinternary hover:bg-quinternary duration-300 ease-in-out"
+        >
+          Nous Contacter
+        </button>
+        <button
+          type="button"
+          class="justify-center w-full h-12 items-center rounded-lg bg-tertiary xl:text-base font-semibold text-white hover:bg-secondary duration-300 ease-in-out"
+        >
+          Prendre RDV
+        </button>
       </div>
     </div>
   </div>
