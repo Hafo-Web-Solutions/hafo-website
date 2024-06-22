@@ -1,36 +1,115 @@
 {% block projects %}
 <section
-  class="mobile-container flex flex-col md:flex-row mt-24 lg:mt-0 gap-4 mb-[100px]"
+  class="default-container sm:container flex flex-col md:flex-row mt-24 lg:mt-0 gap-4 mb-[100px]"
 >
 
   {# Block content #}
-  <article class="md:w-1/2">
-    <h2 class="text-3xl mb-4 font-bold tracking-tight text-white md:w-[350px]">
+  <article class="md:w-1/2 sm:px-2">
+    <h2 class="text-3xl mb-5 font-bold tracking-tight text-white md:w-[350px]">
         Nos Réalisations
     </h2>
-    <p class="mb-4 text-[#ACACAC] text-sm py-2 px-4 border border-white rounded-xl">
-      Site Vitrine
-    </p>
-    <p class="text-3xl mb-4 font-semibold tracking-tight text-white">
-        PixelPioneer
-    </p>
-    <p class="mb-10 text-[#ACACAC] text-base">
-        PixelPioneer offre une vitrine élégante pour les créatifs digitaux. Découvrez un portfolio dynamique présentant les dernières tendances en design graphique et interactif, propulsant les marques dans l'ère numérique avec style et innovation.
-    </p>
-    <a
-      href="#"
-      class="py-4 px-8 text-white font-semibold bg-[#00A3FF] text-base cursor-pointer rounded-lg"
-      >Voir le projet</a
-    >
+   <div id="textes">
+   </div>
+
+    <div class="flex items-center gap-3 mt-14">
+        <button id="prevProject" onclick="prevProject()" class=" bg-gray-800 text-secondary p-2 rounded">
+            <img
+            src="{{ asset('./image/blog/arrow.svg') }}"
+            alt="icon Définir vos objectifs"
+            class="w-full "
+          />
+        </button>
+        <button id="nextProject" onclick="nextProject()" class="bg-gray-800 text-secondary p-2 rounded">
+            <img
+            src="{{ asset('./image/blog/arrow.svg') }}"
+            alt="icon Définir vos objectifs"
+            class="w-full rotate-180"
+          />
+        </button>
+    </div>
   </article>
 
     {# Image #}
-    <article class="md:w-1/2">
-        <img
-          src="{{ asset('./image/achievements/image.svg') }}"
+    <article id="imagene" class="md:w-1/2 sm:px-2">
+    </article>
+</section>
+
+<script>
+
+  const images = [
+  './image/achievements/image.svg',
+  './image/project/image2.jpeg',
+  './image/project/image3.jpeg',
+];
+
+const text = [
+{
+  p1: "Site Vitrine",
+  p2: "PixelPioneer",
+  p3: "PixelPioneer offre une vitrine élégante pour les créatifs digitaux. Découvrez un portfolio dynamique présentant les dernières tendances en design graphique et interactif, propulsant les marques dans l'ère numérique avec style et innovation.",
+  p4: "https://copilot.microsoft.com/"
+},
+{
+  p1: "Site Pro",
+  p2: "Orange",
+  p3: "lorejb bjbjbfbjbbfjbjfb bb bbj bjbjbdj b bdbb bb jjb dj blb bb jdb jb dbj dbjdb jjd j dj dbjdjbj dj djjd ",
+  p4: "https://copilot.microsoft.com/"
+},
+{
+  p1: "Site Deb",
+  p2: "Blue",
+  p3: "lorejb bjbjbfbjbbfjbjfb bb bbj bjbjbdj b bdbb bb jjb dj blb bb jdb jb dbj dbjdb jjd j dj dbjdjbj dj djjd ",
+  p4: "https://copilot.microsoft.com/"
+}
+]
+
+function changeText(index){
+  const textes = document.querySelector('#textes');
+  textes.innerHTML = `
+  <p class="mb-4 text-[#ACACAC] text-sm w-[120px] py-2 text-center border-[0.5px] border-white rounded-[100px]">
+    ${text[index].p1}
+  </p>
+  <p class="text-3xl mb-5 font-semibold tracking-tight text-white">
+    ${text[index].p2}
+  </p>
+  <p class="mb-12 text-[#ACACAC] text-base">
+    ${text[index].p3}
+  </p>
+  <a
+    href="${text[index].p4}"
+    class="py-4 px-8 text-white font-semibold bg-[#00A3FF] text-base cursor-pointer rounded-lg"
+    >Voir le projet
+    </a>
+  `
+}
+
+function changeImage(index) {
+  const slide = document.querySelector('#imagene');
+  slide.innerHTML = `
+      <img
+          src="${images[index]}"
           alt="image achievement"
           class="w-full h-[600px] object-cover"
-        />
-      </article>
-</section>
+      />
+  `;
+}
+
+let currentIndex = 0;
+
+function nextProject() {
+  currentIndex = (currentIndex + 1) % images.length;
+  changeImage(currentIndex);
+  changeText(currentIndex)
+}
+
+function prevProject() {
+  currentIndex = (currentIndex - 1 + images.length) % images.length;
+  changeImage(currentIndex);
+  changeText(currentIndex)
+}
+
+// Affiche la première image par défaut
+changeImage(currentIndex);
+changeText(currentIndex);
+</script>
 {% endblock projects %}
