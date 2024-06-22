@@ -2,13 +2,44 @@
 @tailwind components;
 @tailwind utilities;
 
+/* GLOBAL STYLES */
 body {
   font-family: "Roboto", sans-serif;
+}
+/* main::before {
+  content: "";
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  left: 0;
+  top: 0;
+  background-image: url("../../public/image/bg/noise.gif");
+  z-index: -1;
+  opacity: 0.05;
+} */
+main {
+  position: relative;
 }
 .hidden-until-scroll {
   opacity: 0;
   pointer-events: none;
   transition: opacity 0.3s ease;
+}
+
+/* Alpine attributes */
+[x-cloak] {
+  display: none;
+}
+
+/* Particles */
+#particles-js {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-repeat: no-repeat;
+  background-size: 20%;
+  background-position: 50% 50%;
+  z-index: -1;
 }
 
 /* HEADER */
@@ -37,6 +68,7 @@ body {
 }
 
 /* ANIMATIONS */
+/* Direction aware */
 .grid li:hover ~ li:last-child:after,
 .grid li:last-child:hover:after,
 .grid li:hover ~ li:last-child:before,
@@ -88,6 +120,7 @@ body {
   transform: translate3d(-100%, 0%, 0);
 }
 
+/* Border expand */
 .border-expand::before {
   content: "";
   display: block;
@@ -106,6 +139,7 @@ body {
   transform-origin: bottom left;
 }
 
+/* Sibling fade */
 .sibling-fade {
   visibility: hidden;
 }
@@ -131,9 +165,83 @@ body {
   text-overflow: ellipsis;
 }
 
-/* ALPINE ATTRIBUTE */
-[x-cloak] {
-  display: none;
+/* Back to top */
+.rn-progress-parent {
+  position: fixed;
+  right: 30px;
+  bottom: 30px;
+  height: 46px;
+  width: 46px;
+  cursor: pointer;
+  display: block;
+  border-radius: 50px;
+  box-shadow: inset 0 0 0 2px #0d0d12;
+  z-index: 10000;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(15px);
+  -webkit-transition: all 200ms linear;
+  transition: all 200ms linear;
+}
+.rn-progress-parent.rn-backto-top-active {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+.rn-progress-parent::after {
+  position: absolute;
+  font-family: "feather" !important;
+  content: "\e914";
+  text-align: center;
+  line-height: 46px;
+  font-size: 24px;
+  color: #00a3ff;
+  left: 0;
+  top: 0;
+  height: 46px;
+  width: 46px;
+  cursor: pointer;
+  display: block;
+  z-index: 2;
+  -webkit-transition: all 200ms linear;
+  transition: all 200ms linear;
+}
+.rn-progress-parent:hover::after {
+  color: #00a3ff;
+}
+.rn-progress-parent::before {
+  position: absolute;
+  font-family: "feather" !important;
+  content: "\e914";
+  text-align: center;
+  line-height: 46px;
+  font-size: 24px;
+  opacity: 0;
+  background: #0d0d12;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  left: 0;
+  top: 0;
+  height: 46px;
+  width: 46px;
+  cursor: pointer;
+  display: block;
+  z-index: 2;
+  -webkit-transition: all 200ms linear;
+  transition: all 200ms linear;
+}
+.rn-progress-parent:hover::before {
+  opacity: 1;
+}
+.rn-progress-parent svg path {
+  fill: none;
+}
+.rn-progress-parent svg.rn-back-circle path {
+  stroke: #00a3ff;
+  stroke-width: 4;
+  box-sizing: border-box;
+  -webkit-transition: all 200ms linear;
+  transition: all 200ms linear;
 }
 
 /* Caroussel Blog */
@@ -149,16 +257,16 @@ body {
 }
 @media (max-width: 1024px) {
   .carousel-item {
-      flex: 0 0 33.3333%;
+    flex: 0 0 33.3333%;
   }
 }
 @media (max-width: 768px) {
   .carousel-item {
-      flex: 0 0 50%;
+    flex: 0 0 50%;
   }
 }
 @media (max-width: 640px) {
   .carousel-item {
-      flex: 0 0 100%;
+    flex: 0 0 100%;
   }
 }
