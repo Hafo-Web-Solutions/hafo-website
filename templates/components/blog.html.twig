@@ -1,12 +1,20 @@
 {% block blog %}
-<section class="mobile-container w-full mb-[100px]">
+<section class="default-container w-full mb-[100px]">
   
     <article class="flex w-full justify-between items-center">
         <div>
-            <h2 class="text-4xl lg:text-3xl mb-2 font-bold tracking-tight text-white">
+            <h2 class="text-4xl lg:text-3xl mb-2 font-bold tracking-tight text-white"
+            data-sal="slide-up"
+            data-sal-duration="800"
+            data-sal-delay="150"
+            >
                 Nos Posts Récents
             </h2>
-            <p class="mb-16 text-[#ACACAC]">
+            <p class="mb-16 text-[#ACACAC]"
+            data-sal="slide-up"
+            data-sal-duration="800"
+            data-sal-delay="200"
+            >
                 Dernières Perspectives et Innovations
             </p>
            </div>
@@ -29,8 +37,11 @@
             </div>
     </article>
 
-    <article class="flex gap-4 overflow-hidden carousel" data-aos="fade-up"
-    data-aos-duration="2000">
+    <article class="flex gap-4 overflow-hidden carousel sibling-fade"
+    data-sal="slide-up"
+    data-sal-duration="800"
+    data-sal-delay="200"
+    >
           {# Step 01 - Definir objectif #}
           <a href="#"
           class="cursor-pointer w-[320px] carousel-item"
@@ -145,12 +156,6 @@
             Les Fondamentaux du Responsive Design
           </p>
           </a>
-
-
-
-    
-
-  
   
     </article>
   

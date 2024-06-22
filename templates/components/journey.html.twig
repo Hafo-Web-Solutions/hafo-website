@@ -1,25 +1,33 @@
 {% block journey %}
-<section class="mobile-container w-full my-4">
-  <h2 class="text-4xl lg:text-3xl mb-2 font-bold tracking-tight text-white">
+<section class="default-container w-full mb-[100px]">
+  <h2 class="text-4xl lg:text-3xl mb-2 font-bold tracking-tight text-white"
+  data-sal="slide-up"
+  data-sal-duration="800"
+  data-sal-delay="200"
+  >
     Votre Parcours de Réussite
   </h2>
-  <p class="mb-16 text-[#ACACAC]">
+  <p class="mb-16 text-[#ACACAC]"
+  data-sal="slide-up"
+  data-sal-duration="800"
+  data-sal-delay="200"
+  >
     Chaque Étape, Un Pas de Plus Vers Votre Vision
   </p>
-  <article class="flex flex-col justify-center" data-aos="fade-up"
-  data-aos-duration="2000">
-    <!-- flex-wrap -->
-    <div class="flex flex-wrap justify-center items-center">
+  <article class="flex flex-col sm:flex-row sm:flex-wrap justify-center sibling-fade" >
         {# Step 01 - Definir objectif #}
         <a href="#"
-        class="bg-[#191925] hover:bg-transparent border border-transparent hover:border-[#00A3FF] rounded-lg p-6 cursor-pointer group py-4 w-[290px] h-[240px] m-4 mb-8"
+        class="bg-[#191925] rounded-lg p-6 cursor-pointer py-4 w-[290px] h-[240px] m-4 mb-8"
+        data-sal="slide-up"
+  data-sal-duration="800"
+  data-sal-delay="150"
       >
         <div class="flex justify-between relative">
           <p class="text-[#ACACAC] text-sm">ÉTAPE-01</p>
           <img
             src="{{ asset('./image/journey/step1.svg') }}"
             alt="icon Définir vos objectifs"
-            class="absolute w-[60px] md:w-[80px] right-[-60px] top-[-60px] transform transition-all ease-in-out group-hover:scale-[0.5] group-hover:right-[-30px] group-hover:top-[-30px]"
+            class="absolute w-[60px] md:w-[80px] right-[-50px] top-[-50px]"
           />
         </div>
         <h3 class="text-white font-bold text-xl mt-[20px]">
@@ -33,15 +41,18 @@
   
       {# Step 02 - Contactez-nous #}
         <a
-        href="#"
-        class="bg-[#191925] hover:bg-transparent border border-transparent hover:border-[#00A3FF] rounded-lg p-6 cursor-pointer group py-4 w-[290px] h-[240px] m-4 mb-8"
+        href="#" 
+        class="bg-[#191925] rounded-lg p-6 cursor-pointer py-4 w-[290px] h-[240px] m-4 mb-8"
+        data-sal="slide-up"
+        data-sal-duration="800"
+        data-sal-delay="200"
       >
         <div class="flex justify-between relative">
           <p class="text-[#ACACAC] text-sm">ÉTAPE-02</p>
           <img
             src="{{ asset('./image/journey/step2.svg') }}"
             alt="icon Contactez-nous"
-            class="absolute  w-[60px] md:w-[80px] right-[-60px] top-[-60px] transform transition-all ease-in-out group-hover:scale-[0.5] group-hover:right-[-30px] group-hover:top-[-30px]"
+            class="absolute  w-[60px] md:w-[80px] right-[-50px] top-[-50px]"
           />
         </div>
         <h3 class="text-white font-bold text-xl mt-[20px]">Contactez-nous</h3>
@@ -52,20 +63,20 @@
         <img src="{{ asset('./image/expertise/arrow.svg') }}" class="h-5" alt="redirection Contactez-nous" />
         </a>
 
-    </div>
-  
-    <div class="flex flex-wrap justify-center items-center">
       {# Step 03 - Planifions ensemble #}
       <a
       href="#"
-        class="bg-[#191925] hover:bg-transparent border border-transparent hover:border-[#00A3FF] rounded-lg p-6 cursor-pointer group py-4 w-[290px] h-[240px] m-4 mb-8"
+        class="bg-[#191925] rounded-lg p-6 cursor-pointer py-4 w-[290px] h-[240px] m-4 mb-8"
+        data-sal="slide-up"
+        data-sal-duration="800"
+        data-sal-delay="250"
       >
         <div class="flex justify-between relative">
           <p class="text-[#ACACAC] text-sm">ÉTAPE-03</p>
           <img
             src="{{ asset('./image/journey/step3.svg') }}"
             alt="icon Planifions ensemble"
-            class="absolute  w-[60px] md:w-[80px] right-[-60px] top-[-60px] transform transition-all ease-in-out group-hover:scale-[0.5] group-hover:right-[-30px] group-hover:top-[-30px]"
+            class="absolute  w-[60px] md:w-[80px] right-[-50px] top-[-50px]"
           />
         </div>
         <h3 class="text-white font-bold text-xl mt-[20px]">
@@ -81,14 +92,17 @@
       {# Step 04 - Lancement du projet #}
       <a
       href="#"
-        class="bg-[#191925] hover:bg-transparent border border-transparent hover:border-[#00A3FF] rounded-lg p-6 cursor-pointer group py-4 w-[290px] h-[240px] m-4 mb-8"
+        class="bg-[#191925] rounded-lg p-6 cursor-pointer py-4 w-[290px] h-[240px] m-4 mb-8"
+        data-sal="slide-up"
+        data-sal-duration="800"
+        data-sal-delay="300"
       >
         <div class="flex justify-between relative">
           <p class="text-[#ACACAC] text-sm">ÉTAPE-04</p>
           <img
             src="{{ asset('./image/journey/step4.svg') }}"
             alt="icon Lancement du projet"
-            class="absolute  w-[60px] md:w-[80px] right-[-60px] top-[-60px] transform transition-all ease-in-out group-hover:scale-[0.5] group-hover:right-[-30px] group-hover:top-[-30px]"
+            class="absolute  w-[60px] md:w-[80px] right-[-50px] top-[-50px]"
           />
         </div>
         <h3 class="text-white font-bold text-xl mt-[20px]">
@@ -100,8 +114,6 @@
         </p>
         <img src="{{ asset('./image/expertise/arrow.svg') }}" class="h-5" alt="redirection Lancement du projet"/>
       </a>
-    </div>
-
 
   </article>
 
