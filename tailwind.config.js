@@ -47,6 +47,15 @@ module.exports = {
         position: "left, bottom",
         width: "width",
       },
+      transitionTimingFunction: {
+        'custom-ease': 'cubic-bezier(0.17, 0.67, 0, 1.01)',
+      },
+      transitionDuration: {
+        '700': '700ms',
+      },
+      translate: {
+        '10': '10px',
+      },
     },
   },
   plugins: [
