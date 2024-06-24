@@ -2,11 +2,22 @@
 @tailwind components;
 @tailwind utilities;
 
+/* FONT IMPORT */
+@font-face {
+  font-family: 'feather';
+  src: url('../../public/fonts/feather.woff') format('woff'),
+       url('../../public/fonts/feather.ttf') format('truetype'), 
+       url('../../public/fonts/feather.svg#feather') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
 /* GLOBAL STYLES */
 body {
   font-family: "Roboto", sans-serif;
+  background-color: #13131d;
 }
-/* main::before {
+main::before {
   content: "";
   width: 100%;
   height: 100%;
@@ -15,8 +26,9 @@ body {
   top: 0;
   background-image: url("../../public/image/bg/noise.gif");
   z-index: -1;
-  opacity: 0.05;
-} */
+  opacity: 0.03;
+  background-color: rebeccapurple;
+}
 main {
   position: relative;
 }
@@ -29,17 +41,6 @@ main {
 /* Alpine attributes */
 [x-cloak] {
   display: none;
-}
-
-/* Particles */
-#particles-js {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  background-repeat: no-repeat;
-  background-size: 20%;
-  background-position: 50% 50%;
-  z-index: -1;
 }
 
 /* HEADER */
@@ -55,7 +56,7 @@ main {
   display: none;
 }
 .submenu-container {
-  top: 64px;
+  top: 69px;
 }
 .submenu-container::before {
   content: "";
