@@ -15,4 +15,12 @@ class DefaultController extends AbstractController
             'controller_name' => 'DefaultController',
         ]);
     }
+
+    #[Route('agence', name: 'app_agency')]
+    public function agency(): Response
+    {
+        return $this->render('default/agency.html.twig', [
+            'controller_name' => 'DefaultController',
+        ]);
+    }
 }
