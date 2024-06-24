@@ -1,4 +1,29 @@
 {% block expertise %}
+<style>
+/* custom.css */
+@keyframes translateYTo0 {
+  from {
+      transform: translateY(180px);
+  }
+  to {
+      transform: translateY(0);
+  }
+}
+
+.custom-transition {
+  animation: translateYTo0 400ms cubic-bezier(0.17, 0.67, 0, 1.01) forwards;
+}
+
+.custom-transition2 {
+  animation: translateYTo0 600ms cubic-bezier(0.17, 0.67, 0, 1.01) forwards;
+}
+.custom-transition3 {
+  animation: translateYTo0 800ms cubic-bezier(0.17, 0.67, 0, 1.01) forwards;
+}
+.custom-transition4 {
+  animation: translateYTo0 1000ms cubic-bezier(0.17, 0.67, 0, 1.01) forwards;
+}
+</style>
 
 <section
   class="default-container mb-[100px] flex flex-wrap justify-center"
@@ -38,13 +63,14 @@
   </article>
 
   <article class="p-0 m-0">
-    <div class="flex justify-center flex-wrap w-[100%%] sibling-fade">
+    <div class="flex justify-center flex-wrap w-[100%] sibling-fade"
+    data-sal="slide-up"
+    data-sal-duration="800"
+    data-sal-delay="200" 
+    >
         <!-- Création de site -->
-        <a href="#"
-        class="bg-[#191925] rounded-lg p-6 cursor-pointer w-[290px] h-[220px] m-4"
-        data-sal="slide-up"
-        data-sal-duration="800"
-        data-sal-delay="150"
+      <a href="#"
+        class="bg-[#191925] rounded-lg p-6 cursor-pointer w-[290px] h-[220px] m-4 custom-transition"
       >
         <div class="flex justify-between relative">
           <p class="text-[#ACACAC] text-sm">IMPACT</p>
@@ -68,10 +94,7 @@
         </a>
       <!-- Refonte -->
       <a href="#"
-        class="bg-[#191925]  rounded-lg p-6 cursor-pointer w-[290px] h-[220px] m-4"
-        data-sal="slide-up"
-        data-sal-duration="800"
-        data-sal-delay="200"
+        class="bg-[#191925]  rounded-lg p-6 cursor-pointer w-[290px] h-[220px] m-4 custom-transition2"
       >
         <div class="flex justify-between relative">
           <p class="text-[#ACACAC] text-sm">ÉVOLUTION</p>
@@ -95,10 +118,7 @@
       </a>
        <!-- Maintenance -->
         <a href="#"
-        class="bg-[#191925] rounded-lg p-6 cursor-pointer w-[290px] h-[220px] m-4"
-        data-sal="slide-up"
-        data-sal-duration="800"
-        data-sal-delay="250"
+        class="bg-[#191925] rounded-lg p-6 cursor-pointer w-[290px] h-[220px] m-4 custom-transition3"
       >
         <div class="flex justify-between relative h-4">
           <p class="text-[#ACACAC] text-sm">FIABILITÉ</p>
@@ -122,10 +142,7 @@
       </a>
       <!-- Référencement -->
       <a href="#"
-        class="bg-[#191925]  rounded-lg p-6 cursor-pointer w-[290px] h-[220px] m-4"
-        data-sal="slide-up"
-        data-sal-duration="800"
-        data-sal-delay="300"
+        class="bg-[#191925]  rounded-lg p-6 cursor-pointer w-[290px] h-[220px] m-4 custom-transition4"
       >
         <div class="flex justify-between relative">
           <p class="text-[#ACACAC] text-sm">VISIBILITÉ</p>
