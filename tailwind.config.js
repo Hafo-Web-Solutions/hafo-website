@@ -40,7 +40,7 @@ module.exports = {
         // Navigation breakpoints
         "nav-lg": { min: "1158px", max: "1344px" },
         "nav-sm": { min: "769px", max: "1157px" },
-        "nav-min": { min: "0px", max: "639px" },
+        "min-w": { min: "0px", max: "639px" },
         "lg-1500": "1400px",
       },
       transitionProperty: {
