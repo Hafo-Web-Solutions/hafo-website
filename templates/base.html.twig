@@ -23,11 +23,14 @@
     {% endblock %}
   </head>
   <body class="hidden-until-scroll">
-    <main>
+  
+   
       {% include '/components/header.html.twig' %} 
+      <main class="pt-[85px]">
       {% block body %} {% endblock %}
-      {% include '/components/footer.html.twig' %}
     </main>
+      {% include '/components/footer.html.twig' %}
+
     <div class="rn-progress-parent">
       <svg
         class="rn-back-circle svg-inner"

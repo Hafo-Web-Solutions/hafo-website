@@ -1,0 +1,104 @@
+{% extends 'base.html.twig' %} {% block title %} Creation de site {% endblock %}
+{% block body %}
+<!-- Site creation -->
+<section
+  class="mt-[80px] lg:mt-[100px] w-full flex flex-col justify-center items-center"
+>
+  <article
+    class="flex lg:flex-row flex-col gap-8 lg:h-[480px] w-full lg:default-container"
+  >
+    <!-- Title -->
+    <div
+      class="lg:w-1/2 px-8 lg:px-0"
+      data-sal="slide-up"
+      data-sal-duration="800"
+      data-sal-delay="200"
+    >
+      <h1
+        class="text-white lg:text-[45px] text-[32px] font-bold tracking-tight"
+      >
+        Création Sur Mesure
+      </h1>
+      <p class="text-secondary mt-3">Votre vision prend forme numériquement</p>
+      <p class="text-grayText mt-3 mb-8">
+        Avec Hafo Web Solutions, chaque pixel s'aligne sur vos ambitions. Notre
+        méthodologie allie innovation et personnalisation pour donner vie à
+        votre espace digital. Nous ne nous contentons pas de construire des
+        sites; nous façonnons des expériences uniques, captivantes et
+        fonctionnelles qui élèvent votre présence en ligne au-delà des attentes
+        conventionnelles.
+      </p>
+    </div>
+
+    <!-- Image -->
+    <div
+      class="overflow-hidden h-[300px] lg:h-full lg:w-1/2 rounded-md w-screen"
+    >
+      <img
+        src="{{ asset('./image/achievements/image.svg') }}"
+        alt="creation de site"
+        srcset="creation de site"
+        class="object-cover"
+      />
+    </div>
+  </article>
+
+  <!-- Content -->
+  <article
+    class="flex lg:flex-row flex-col gap-8 expertise-lg:h-[250px] lg:h-[220px] w-full lg:mt-[140px] default-container mt-[-142px]"
+  >
+    <!-- Block 1/4 -->
+    <div
+      class="lg:w-1/2 expertise-lg:h-[250px] lg:h-[220px] bg-quaternary xl:sticky xl:top-[100px] xl:mb-0 rounded-md border border-borderBase lg:mt-[-240px] relative p-8 flex flex-col gap-3"
+    >
+      <h3 class="lg:text-[32px] text-[26px] expertise-lg:text-[26px]  font-bold text-white">
+        Vision et Stratégie
+      </h3>
+      <p class="text-grayText">
+        Des fondations solides pour des sites performants. Chez Hafo Web
+        Solutions, nous plongeons dans l'univers de votre marque pour créer une
+        stratégie digitale qui résonne avec votre identité et vos objectifs.
+        Nous transformons vos idées en réalités numériques captivantes.
+      </p>
+    </div>
+
+    <!-- Block 2/4 -->
+    <div
+      class="lg:w-1/2 expertise-lg:h-[250px] lg:h-[220px] lg:border border-0 border-borderBase p-8 flex flex-col gap-3 rounded-md"
+    >
+      <h3 class="lg:text-[32px] text-[26px] expertise-lg:text-[26px] font-bold text-white">
+        Design et Expérience utilisateur
+      </h3>
+      <p class="text-grayText">
+        Design intuitif, expérience mémorable. Notre approche créative met
+        l'accent sur des designs élégants et des interfaces conviviales. Nous
+        conjuguons esthétique et fonctionnalité pour que chaque visite sur votre
+        site soit une invitation au voyage dans votre univers.
+      </p>
+    </div>
+  </article>
+
+  <article
+    class="flex lg:flex-row gap-8 expertise-lg:h-[190px] lg:h-[160px] w-full mt-[20px] lg:mt-[100px] flex-col default-container"
+  >
+    <!-- Block 3/4 -->
+    <div class="lg:w-1/2 h-[160px] p-8 flex flex-col gap-3 justify-center">
+      <h3 class="lg:text-[32px] text-[26px] expertise-lg:text-[26px] font-bold text-white">
+        Technologies Avancée, Avenir Assuré
+      </h3>
+    </div>
+
+    <!-- Block 4/4 -->
+    <div
+      class="lg:w-1/2 border expertise-lg:h-[190px] lg:h-[160px] border-borderBase p-8 flex flex-col rounded-md"
+    >
+      <p class="text-grayText">
+        La technologie au service de l'innovation. Nos solutions de
+        développement web utilisent les dernières technologies pour garantir un
+        site réactif, sécurisé et évolutif. Nous bâtissons votre plateforme en
+        pensant à demain, assurant une présence en ligne durable et influente.
+      </p>
+    </div>
+  </article>
+</section>
+{% endblock %}
