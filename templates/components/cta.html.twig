@@ -1,13 +1,33 @@
 {% block cta %}
-<section class="default-container mb-[100px] w-full flex justify-center items-center">
-  <article
-    class="w-[95%] p-4 h-[320px] rounded-xl bg-[#191925] flex flex-col gap-4 justify-center items-center overflow-hidden relative"
+<div class="container-fluid 2xl:px-[140px]">
+  <div
+  class="mt-20 py-[80px] px-[50px] w-full flex flex-col text-center items-center bg-quaternary rounded-[10px]"
+>
+  <h3
+    class="text-[26px] lg:text-[45px] leading[35px] mb-4 text-white"
+    data-sal="slide-up"
+    data-sal-duration="800"
+    data-sal-delay="150"
   >
-      <h1 class="text-3xl lg-1500:text-4xl font-bold text-white text-center">Vous avez un projet web ?</h1>
-      <p class="text-[#ACACAC] text-center">
-        Contactez-nous via notre formulaire de contact, nous reviendrons vers vous dans <span class="text-[#00A3FF]">un délai de 24h.</span>
-      </p>
-      <a href="#" class="py-3 px-6 bg-[#00A3FF] rounded-md text-white font-semibold">Nous contacter</a>
-  </article>
-</section>
+    Vous avez un projet web ?
+  </h3>
+  <p
+    class="text-grayText text-[20px] mb-8"
+    data-sal="slide-up"
+    data-sal-duration="800"
+    data-sal-delay="150"
+  >
+    Contactez-nous via notre formulaire de contact, nous reviendrons vers vous
+    dans <span class="text-secondary">un délai de 24h.</span>
+  </p>
+  <div
+    class=""
+    data-sal="slide-up"
+    data-sal-duration="800"
+    data-sal-delay="150"
+  >
+    <button class="py-[15px] px-[34px] flex text-white rounded-lg bg-secondary font-medium transition duration-300 ease-in-out hover:bg-tertiary">Demander un devis</button>
+  </div>
+</div>
+</div>
 {% endblock cta %}
