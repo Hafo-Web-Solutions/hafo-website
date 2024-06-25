@@ -4,10 +4,10 @@
 
 /* FONT IMPORT */
 @font-face {
-  font-family: 'feather';
-  src: url('../../public/fonts/feather.woff') format('woff'),
-       url('../../public/fonts/feather.ttf') format('truetype'), 
-       url('../../public/fonts/feather.svg#feather') format('svg');
+  font-family: "feather";
+  src: url("../../public/fonts/feather.woff") format("woff"),
+    url("../../public/fonts/feather.ttf") format("truetype"),
+    url("../../public/fonts/feather.svg#feather") format("svg");
   font-weight: normal;
   font-style: normal;
 }
@@ -70,7 +70,7 @@ main {
 
 /* Feather arrow right */
 .feather {
-  font-family: 'feather' !important;
+  font-family: "feather" !important;
   font-style: normal;
   font-weight: normal;
   font-variant: normal;
@@ -265,77 +265,78 @@ main {
   -webkit-transition: all 200ms linear;
   transition: all 200ms linear;
 
-/* EXPERTISE */
-@keyframes translateYTo0 {
-  from {
+  /* EXPERTISE */
+  @keyframes translateYTo0 {
+    from {
       transform: translateY(180px);
-  }
-  to {
+    }
+    to {
       transform: translateY(0);
+    }
   }
-}
 
-.custom-transition {
-  animation: translateYTo0 400ms cubic-bezier(0.17, 0.67, 0, 1.01) forwards;
-}
+  .custom-transition {
+    animation: translateYTo0 400ms cubic-bezier(0.17, 0.67, 0, 1.01) forwards;
+  }
 
-.custom-transition2 {
-  animation: translateYTo0 600ms cubic-bezier(0.17, 0.67, 0, 1.01) forwards;
-}
-.custom-transition3 {
-  animation: translateYTo0 800ms cubic-bezier(0.17, 0.67, 0, 1.01) forwards;
-}
-.custom-transition4 {
-  animation: translateYTo0 1000ms cubic-bezier(0.17, 0.67, 0, 1.01) forwards;
-}
+  .custom-transition2 {
+    animation: translateYTo0 600ms cubic-bezier(0.17, 0.67, 0, 1.01) forwards;
+  }
+  .custom-transition3 {
+    animation: translateYTo0 800ms cubic-bezier(0.17, 0.67, 0, 1.01) forwards;
+  }
+  .custom-transition4 {
+    animation: translateYTo0 1000ms cubic-bezier(0.17, 0.67, 0, 1.01) forwards;
+  }
 
-/* PROJECTS */
-#image img{
-  animation: fadeInImage 2s forwards;
-}
-#text p,
-#text a {
-  opacity: 0;
-}
-#nextProject:active {
-  background-color: #212E48;
-}
-#prevProject:active {
-  background-color: #212E48;
-}
-
-#text p:nth-child(1) {
-  animation: fadeInText 2s 0ms forwards;
-}
-#text p:nth-child(2) {
-  animation: fadeInText 2s 500ms forwards;
-}
-#text p:nth-child(3) {
-  animation: fadeInText 2s 1000ms forwards;
-}
-#text a {
-  animation: fadeInText 2s 1500ms forwards;
-}
-
-@keyframes fadeInText {
-  0% {
+  /* PROJECTS */
+  #image img {
+    animation: fadeInImage 2s forwards;
+  }
+  #text p,
+  #text a {
     opacity: 0;
   }
-  100% {
-    opacity: 1;
+  #nextProject:active {
+    background-color: #212e48;
   }
-}
+  #prevProject:active {
+    background-color: #212e48;
+  }
 
-@keyframes fadeInImage {
-  0% {
-    animation-timing-function: ease-in;
-    opacity: 0;
+  #text p:nth-child(1) {
+    animation: fadeInText 2s 0ms forwards;
   }
-  25% {
-    opacity: 0;
+  #text p:nth-child(2) {
+    animation: fadeInText 2s 500ms forwards;
   }
-  100% {
-    animation-timing-function: ease-out;
-    opacity: 1;
+  #text p:nth-child(3) {
+    animation: fadeInText 2s 1000ms forwards;
+  }
+  #text a {
+    animation: fadeInText 2s 1500ms forwards;
+  }
+
+  @keyframes fadeInText {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+
+  @keyframes fadeInImage {
+    0% {
+      animation-timing-function: ease-in;
+      opacity: 0;
+    }
+    25% {
+      opacity: 0;
+    }
+    100% {
+      animation-timing-function: ease-out;
+      opacity: 1;
+    }
   }
 }
