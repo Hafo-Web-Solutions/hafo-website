@@ -1,4 +1,48 @@
 {% block projects %}
+<style>
+  .animation-image {
+    animation: imageAnimation 2s forwards;
+  }
+  #textes p, #textes a {
+    opacity: 0; /* Les éléments sont initialement invisibles */
+  }
+
+  #textes p:nth-child(1) {
+    animation: fadeIn 2s 0ms forwards;
+  }
+  #textes p:nth-child(2) {
+    animation: fadeIn 2s 500ms forwards;
+  }
+  #textes p:nth-child(3) {
+    animation: fadeIn 2s 1000ms forwards;
+  }
+  #textes a {
+    animation: fadeIn 2s 1500ms forwards;
+  }
+
+  @keyframes fadeIn {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+
+  @keyframes imageAnimation {
+    0% {
+      animation-timing-function: ease-in;
+      opacity: 0;
+    }
+    25% {
+      opacity: 0;
+    }
+    100% {
+      animation-timing-function: ease-out;
+      opacity: 1;
+    }
+  }
+</style>
 <section
   class="default-container sm:container flex flex-col md:flex-row mt-24 lg:mt-0 gap-4 mb-[100px]"
 >
@@ -72,7 +116,7 @@ function changeText(index){
   <p class="text-3xl mb-5 font-semibold tracking-tight text-white">
     ${text[index].p2}
   </p>
-  <p class="mb-12 text-[#ACACAC] text-base">
+  <p class="mb-12 text-[#ACACAC] text-base h-[100px]">
     ${text[index].p3}
   </p>
   <a
@@ -89,7 +133,7 @@ function changeImage(index) {
       <img
           src="${images[index]}"
           alt="image achievement"
-          class="w-full h-[600px] object-cover"
+          class="w-full h-[600px] object-cover animation-image"
       />
   `;
 }
