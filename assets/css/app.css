@@ -272,6 +272,30 @@ main {
   }
 }
 
+/* EXPERTISE */
+@keyframes translateYTo0 {
+  from {
+      transform: translateY(180px);
+  }
+  to {
+      transform: translateY(0);
+  }
+}
+
+.custom-transition {
+  animation: translateYTo0 400ms cubic-bezier(0.17, 0.67, 0, 1.01) forwards;
+}
+
+.custom-transition2 {
+  animation: translateYTo0 600ms cubic-bezier(0.17, 0.67, 0, 1.01) forwards;
+}
+.custom-transition3 {
+  animation: translateYTo0 800ms cubic-bezier(0.17, 0.67, 0, 1.01) forwards;
+}
+.custom-transition4 {
+  animation: translateYTo0 1000ms cubic-bezier(0.17, 0.67, 0, 1.01) forwards;
+}
+
 /* PROJECTS */
 #image img{
   animation: fadeInImage 2s forwards;
