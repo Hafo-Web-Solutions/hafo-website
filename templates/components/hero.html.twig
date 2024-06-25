@@ -1,28 +1,35 @@
 {% block hero %}
 <section class="h-screen flex justify-center items-center">
+        
         <div class="container h-[400px] overflow-hidden absolute">
             <img src="{{ asset('./image/hero/pattern.svg') }}" class="w-full object-cover opacity-5" alt="pattern hero"/>
         </div>
 
         <article class="w-[500px] flex flex-col justify-center items-center gap-4" >
+            <!-- item title -->
             <p class="text-secondary text-sm"
             data-sal="slide-up"
         data-sal-duration="800"
         data-sal-delay="150"
             >AGENCE HAFO WEB SOLUTIONS</p>
+            <!-- item subtitle -->
             <h2 class="text-white text-4xl font-bold text-center"
             data-sal="slide-up"
         data-sal-duration="800"
         data-sal-delay="200">Transformez Votre Vision en Succès Numérique</h2>
+            
             <p class="text-grayText text-center"
             data-sal="slide-up"
         data-sal-duration="800"
         data-sal-delay="250">Découvrez un monde de possibilité avec des solutions web sur mesure qui captent l’essence de vos idées.</p>
-            <a href="#" class="py-3 px-6 text-white rounded-md bg-secondary cursor-pointer"
+            
+            <a href="#" class="py-3 px-6 text-white rounded-md font-semibold bg-secondary hover:bg-tertiary cursor-pointer z-10"
             data-sal="slide-up"
         data-sal-duration="800"
         data-sal-delay="300"
             >Découvrez nos services</a>
+
+            <!-- item icon with tooltip -->
             <div class="flex flex-col md:flex-row gap-3"
             data-sal="slide-up"
         data-sal-duration="800"
@@ -69,9 +76,10 @@
                         </div>
                     </div>
                 </div>
+
                 <div class="flex gap-3">
 
-                    <div class="relative group">
+                     <div class="relative group">
                         <div class="relative mb-2">
                          <div class="bg-tertiary text-white text-center text-xs rounded py-1 px-2 right-0 bottom-full invisible opacity-0 group-hover:visible group-hover:opacity-100">
                              Stratégie
