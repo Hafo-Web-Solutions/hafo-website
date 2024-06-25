@@ -23,6 +23,7 @@
     },
     "dependencies": {
         "alpinejs": "^3.14.1",
-        "sal.js": "^0.8.5"
+        "sal.js": "^0.8.5",
+        "swiper": "^11.1.4"
     }
 }
