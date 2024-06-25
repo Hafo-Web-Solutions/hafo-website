@@ -1,159 +1,43 @@
 {% block projects %}
-<style>
-  .animation-image {
-    animation: imageAnimation 2s forwards;
-  }
-  #textes p, #textes a {
-    opacity: 0; /* Les éléments sont initialement invisibles */
-  }
-
-  #textes p:nth-child(1) {
-    animation: fadeIn 2s 0ms forwards;
-  }
-  #textes p:nth-child(2) {
-    animation: fadeIn 2s 500ms forwards;
-  }
-  #textes p:nth-child(3) {
-    animation: fadeIn 2s 1000ms forwards;
-  }
-  #textes a {
-    animation: fadeIn 2s 1500ms forwards;
-  }
-
-  @keyframes fadeIn {
-    0% {
-      opacity: 0;
-    }
-    100% {
-      opacity: 1;
-    }
-  }
-
-  @keyframes imageAnimation {
-    0% {
-      animation-timing-function: ease-in;
-      opacity: 0;
-    }
-    25% {
-      opacity: 0;
-    }
-    100% {
-      animation-timing-function: ease-out;
-      opacity: 1;
-    }
-  }
-</style>
 <section
-  class="default-container sm:container flex flex-col md:flex-row mt-24 lg:mt-0 gap-4 mb-[100px]"
+  class="default-container flex flex-col md:flex-row mt-24 lg:mt-0 gap-4 mb-[100px]"
 >
-
-  {# Block content #}
-  <article class="md:w-1/2 sm:px-2">
+  <!-- Block content -->
+  <article class="md:w-1/2 md:px-2">
     <h2 class="text-3xl mb-5 font-bold tracking-tight text-white md:w-[350px]">
-        Nos Réalisations
+      Nos Réalisations
     </h2>
-   <div id="textes">
-   </div>
+    <!-- Text -->
+    <div id="text"></div>
 
+    <!-- Buttons -->
     <div class="flex items-center gap-3 mt-14">
-        <button id="prevProject" onclick="prevProject()" class=" bg-gray-800 text-secondary p-2 rounded">
-            <img
-            src="{{ asset('./image/blog/arrow.svg') }}"
-            alt="icon Définir vos objectifs"
-            class="w-full "
-          />
-        </button>
-        <button id="nextProject" onclick="nextProject()" class="bg-gray-800 text-secondary p-2 rounded">
-            <img
-            src="{{ asset('./image/blog/arrow.svg') }}"
-            alt="icon Définir vos objectifs"
-            class="w-full rotate-180"
-          />
-        </button>
+      <button
+        id="prevProject"
+        onclick="prevProject()"
+        class="bg-gray-800 text-secondary p-2 rounded"
+      >
+        <img
+          src="{{ asset('./image/blog/arrow.svg') }}"
+          alt="icon Définir vos objectifs"
+          class="w-full"
+        />
+      </button>
+      <button
+        id="nextProject"
+        onclick="nextProject()"
+        class="bg-gray-800 text-secondary p-2 rounded"
+      >
+        <img
+          src="{{ asset('./image/blog/arrow.svg') }}"
+          alt="icon Définir vos objectifs"
+          class="w-full rotate-180"
+        />
+      </button>
     </div>
   </article>
 
-    {# Image #}
-    <article id="imagene" class="md:w-1/2 sm:px-2">
-    </article>
+  <!-- Image -->
+  <article id="image" class="md:w-1/2 sm:px-2"></article>
 </section>
-
-<script>
-
-  const images = [
-  './image/achievements/image.svg',
-  './image/project/image2.jpeg',
-  './image/project/image3.jpeg',
-];
-
-const text = [
-{
-  p1: "Site Vitrine",
-  p2: "PixelPioneer",
-  p3: "PixelPioneer offre une vitrine élégante pour les créatifs digitaux. Découvrez un portfolio dynamique présentant les dernières tendances en design graphique et interactif, propulsant les marques dans l'ère numérique avec style et innovation.",
-  p4: "https://copilot.microsoft.com/"
-},
-{
-  p1: "Site Pro",
-  p2: "Orange",
-  p3: "lorejb bjbjbfbjbbfjbjfb bb bbj bjbjbdj b bdbb bb jjb dj blb bb jdb jb dbj dbjdb jjd j dj dbjdjbj dj djjd ",
-  p4: "https://copilot.microsoft.com/"
-},
-{
-  p1: "Site Deb",
-  p2: "Blue",
-  p3: "lorejb bjbjbfbjbbfjbjfb bb bbj bjbjbdj b bdbb bb jjb dj blb bb jdb jb dbj dbjdb jjd j dj dbjdjbj dj djjd ",
-  p4: "https://copilot.microsoft.com/"
-}
-]
-
-function changeText(index){
-  const textes = document.querySelector('#textes');
-  textes.innerHTML = `
-  <p class="mb-4 text-[#ACACAC] text-sm w-[120px] py-2 text-center border-[0.5px] border-white rounded-[100px]">
-    ${text[index].p1}
-  </p>
-  <p class="text-3xl mb-5 font-semibold tracking-tight text-white">
-    ${text[index].p2}
-  </p>
-  <p class="mb-12 text-[#ACACAC] text-base h-[100px]">
-    ${text[index].p3}
-  </p>
-  <a
-    href="${text[index].p4}"
-    class="py-4 px-8 text-white font-semibold bg-[#00A3FF] text-base cursor-pointer rounded-lg"
-    >Voir le projet
-    </a>
-  `
-}
-
-function changeImage(index) {
-  const slide = document.querySelector('#imagene');
-  slide.innerHTML = `
-      <img
-          src="${images[index]}"
-          alt="image achievement"
-          class="w-full h-[600px] object-cover animation-image"
-      />
-  `;
-}
-
-let currentIndex = 0;
-
-function nextProject() {
-  currentIndex = (currentIndex + 1) % images.length;
-  changeImage(currentIndex);
-  changeText(currentIndex)
-}
-
-function prevProject() {
-  currentIndex = (currentIndex - 1 + images.length) % images.length;
-  changeImage(currentIndex);
-  changeText(currentIndex)
-}
-
-// Affiche la première image par défaut
-changeImage(currentIndex);
-changeText(currentIndex);
-</script>
 {% endblock projects %}
