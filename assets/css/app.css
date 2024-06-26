@@ -275,6 +275,7 @@ body {
   box-sizing: border-box;
   -webkit-transition: all 200ms linear;
   transition: all 200ms linear;
+}
 
   /* EXPERTISE */
   @keyframes translateYTo0 {
@@ -304,6 +305,8 @@ body {
   #image img {
     animation: fadeInImage 2s forwards;
   }
+
+
   #text p,
   #text a {
     opacity: 0;
@@ -350,6 +353,7 @@ body {
       opacity: 1;
     }
   }
+<<<<<<< HEAD
 }
 
 /* Cursor */
@@ -410,3 +414,5 @@ body {
   z-index: -1111;
 }
 
+=======
+>>>>>>> f952e44 (page site creation modif for responsive and margin modif CTA)
