@@ -80,6 +80,17 @@ main {
   -moz-osx-font-smoothing: grayscale;
 }
 
+/* Pagination */
+.swiper-container .swiper-pagination.custom-pagination {
+  height: 32px;
+  display: flex;
+  justify-content: center;
+  align-items: end;
+}
+.custom-pagination .swiper-pagination-bullet {
+  background: #00A3FF;
+}
+
 /* ANIMATIONS */
 /* Text ellipsis */
 .text-ellipsis {

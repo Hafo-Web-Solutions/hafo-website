@@ -1,7 +1,9 @@
 {% block blog %}
 <section class="default-container sm:container mt-[80px]">
+  <!-- Section Header Starts -->
   <div class="flex flex-col w-full mb-[50px] xl:flex-row xl:justify-between">
     <div class="mb-4 xl:mb-0">
+      <!-- Title -->
       <h3
         class="text-[24px] md:text-[28px] lg:text-[32px] font-bold text-white"
         data-sal="slide-up"
@@ -11,13 +13,17 @@
         Nos Posts Récents
       </h3>
     </div>
+
+    <!-- Navigation and Link -->
     <div
       class="flex justify-between"
       data-sal="slide-up"
       data-sal-duration="800"
       data-sal-delay="150"
     >
+      <!-- Previous/Next Buttons for Mobile -->
       <div class="lg:flex gap-3 flex xl:hidden">
+        <!-- Previous Button -->
         <button
           id="prev"
           class="flex justify-center items-center bg-quinternary hover:bg-secondary h-[50px] w-[50px] rounded-[6px] duration-300 ease-in-out"
@@ -47,6 +53,8 @@
             />
           </svg>
         </button>
+
+        <!-- Next Button -->
         <button
           id="next"
           class="flex justify-center items-center bg-quinternary hover:bg-secondary h-[50px] w-[50px] rounded-[6px] duration-300 ease-in-out"
@@ -77,6 +85,8 @@
           </svg>
         </button>
       </div>
+
+      <!-- View All Link -->
       <div
         class="flex"
         data-sal="slide-up"
@@ -106,14 +116,51 @@
       </div>
     </div>
   </div>
+  <!-- Section Header Ends -->
 
+  <!-- Blog Posts Slider Starts -->
   <article
-    class="swiper swiper-container flex"
+    class="swiper swiper-container flex pb-8"
     data-sal="slide-up"
     data-sal-duration="800"
     data-sal-delay="150"
   >
     <div class="swiper-wrapper">
+      <!-- Individual Slide Structure (repeat as needed) -->
+      <div class="swiper-slide">
+        <a href="#">
+          <!-- Slide Content -->
+          <div class="p-[18px] bg-whiteTransparency rounded-md">
+            <!-- Image -->
+            <div class="w-full overflow-hidden rounded-md">
+              <img
+                src="https://static.vecteezy.com/system/resources/previews/000/304/787/original/vector-responsive-web-design.jpg"
+                alt="icon Définir vos objectifs"
+                class="object-cover w-full h-full"
+              />
+            </div>
+
+            <!-- Post Details -->
+            <div class="mt-[18px]">
+              <div
+                class="text-secondary font-medium text-[12px] uppercase tracking-[1px]"
+              >
+                lorem ipsum
+              </div>
+              <h4
+                class="text-white text-[23px] mt-[10px] font-semibold text-ellipsis"
+              >
+                Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                Laboriosam, cumque esse ullam magni obcaecati sit modi quidem
+                voluptatem, aut deserunt recusandae, ipsam molestias maiores
+                aspernatur quis eum laborum? Vitae, architecto?
+              </h4>
+            </div>
+          </div>
+        </a>
+      </div>
+
+      <!-- Repeat Similar Slides Here -->
       <div class="swiper-slide">
         <a href="#">
           <div class="p-[18px] bg-whiteTransparency rounded-md">
@@ -142,6 +189,8 @@
           </div>
         </a>
       </div>
+
+      <!-- Repeat Similar Slides Here -->
       <div class="swiper-slide">
         <a href="#">
           <div class="p-[18px] bg-whiteTransparency rounded-md">
@@ -170,34 +219,8 @@
           </div>
         </a>
       </div>
-      <div class="swiper-slide">
-        <a href="#">
-          <div class="p-[18px] bg-whiteTransparency rounded-md">
-            <div class="w-full overflow-hidden rounded-md">
-              <img
-                src="https://static.vecteezy.com/system/resources/previews/000/304/787/original/vector-responsive-web-design.jpg"
-                alt="icon Définir vos objectifs"
-                class="object-cover w-full h-full"
-              />
-            </div>
-            <div class="mt-[18px]">
-              <div
-                class="text-secondary font-medium text-[12px] uppercase tracking-[1px]"
-              >
-                lorem ipsum
-              </div>
-              <h4
-                class="text-white text-[23px] mt-[10px] font-semibold text-ellipsis"
-              >
-                Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                Laboriosam, cumque esse ullam magni obcaecati sit modi quidem
-                voluptatem, aut deserunt recusandae, ipsam molestias maiores
-                aspernatur quis eum laborum? Vitae, architecto?
-              </h4>
-            </div>
-          </div>
-        </a>
-      </div>
+
+      <!-- Repeat Similar Slides Here -->
       <div class="swiper-slide">
         <a href="#">
           <div class="p-[18px] bg-whiteTransparency rounded-md">
@@ -227,9 +250,11 @@
         </a>
       </div>
     </div>
-    <div class="h-10">
-      <div class="swiper-pagination"></div>
-    </div>
+
+    <!-- Swiper Pagination -->
+    <div class="swiper-pagination custom-pagination"></div>
   </article>
+
+  <!-- Blog Posts Slider Ends -->
 </section>
 {% endblock blog %}

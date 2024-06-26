@@ -2,8 +2,9 @@ import "../css/app.css";
 import Alpine from "alpinejs";
 import sal from "sal.js";
 import "sal.js/dist/sal.css";
-import Swiper from "swiper";
-import "swiper/swiper-bundle.css";
+import Swiper from 'swiper/bundle';
+import 'swiper/css/bundle';
+
 
 // Dynamic javaScript import from vendor directory
 const requireContext = require.context("./vendor", true, /\.js$/);
@@ -25,13 +26,13 @@ document.addEventListener("DOMContentLoaded", () => {
 
 // Swiper initialization & blog slider
 document.addEventListener("DOMContentLoaded", () => {
-  const swiperInstance = new Swiper(".swiper-container", {
+  new Swiper(".swiper-container", {
     direction: "horizontal",
     spaceBetween: 32,
     loop: true,
-    speed: 600,
     pagination: {
       el: ".swiper-pagination",
+      clickable: true,
     },
     navigation: {
       nextEl: "#next",
