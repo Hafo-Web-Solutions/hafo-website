@@ -14,7 +14,6 @@
     <div class="flex items-center gap-3 mt-14">
       <button
         id="prevProject"
-        onclick="prevProject()"
         class="bg-tertiary text-secondary p-2 rounded"
       >
         <img
@@ -25,7 +24,6 @@
       </button>
       <button
         id="nextProject"
-        onclick="nextProject()"
         class="bg-tertiary text-secondary p-2 rounded"
       >
         <img
@@ -40,4 +38,11 @@
   <!-- Image -->
   <article id="image" class="md:w-1/2 sm:px-2"></article>
 </section>
+
+<!-- add script to project.js -->
+{% block javascripts %}
+{{
+  encore_entry_script_tags("project")
+}}
+{% endblock %}
 {% endblock projects %}
