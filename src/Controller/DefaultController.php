@@ -35,4 +35,10 @@ class DefaultController extends AbstractController
     {
         return $this->render('default/expertises/redesign.html.twig');
     }
+
+    #[Route('maintenance', name: 'app_expertise_maintenance')]
+    public function expertiseMaintenance(): Response
+    {
+        return $this->render('default/expertises/maintenance.html.twig');
+    }
 }

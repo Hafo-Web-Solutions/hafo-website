@@ -1,0 +1,141 @@
+{% extends 'base.html.twig' %} {% block title %} Refonte {% endblock %} {% block
+body %}
+<!-- Site creation -->
+<section
+  class="mt-[80px] lg:mt-[100px] w-full flex flex-col justify-center items-center"
+>
+  <!-- Content Header -->
+  <article
+    class="flex lg:flex-row flex-col gap-8 lg:h-[480px] w-full lg:default-container 2xl:container-fluid 2xl:px-[140px]"
+  >
+    <!-- Title -->
+    <div class="lg:w-1/2 px-8 lg:px-0">
+      <h1
+        class="text-white lg:text-[45px] md:text-[32px] text-[28px] tracking-tight"
+        data-sal="slide-up"
+        data-sal-duration="800"
+        data-sal-delay="150"
+      >
+        Maintenance Web Proactive
+      </h1>
+      <p
+        class="text-secondary mt-3"
+        data-sal="fade-in"
+        data-sal-duration="800"
+        data-sal-delay="200"
+      >
+        Assurer la Performance et la Sécurité de Votre Site
+      </p>
+      <p
+        class="text-grayText mt-3 mb-8 leading-[28px]"
+        data-sal="fade-in"
+        data-sal-duration="800"
+        data-sal-delay="250"
+      >
+        Un site web est un organisme vivant dans l’écosystème numérique,
+        nécessitant une attention constante pour rester performant et sécurisé.
+        Chez Hafo Web Solutions, notre service de maintenance web va au-delà de
+        la simple gestion technique; nous anticipons les besoins futurs pour
+        assurer la pérennité de votre site.
+      </p>
+    </div>
+
+    <!-- Image -->
+    <div
+      class="overflow-hidden h-[300px] lg:h-full lg:w-1/2 lg:rounded-md w-screen"
+    >
+      <img
+        src="{{ asset('./image/expertise/maintenance/image.jpeg') }}"
+        alt="refonte"
+        class="object-cover"
+      />
+    </div>
+  </article>
+
+  <!-- Content -->
+  <article
+    class="flex lg:flex-row flex-col gap-8 expertise-lg:h-[250px] lg:h-[204px] w-full lg:mt-[140px] default-container mt-[-142px] 2xl:container-fluid 2xl:px-[140px]"
+  >
+    <!-- Block 1/4 -->
+    <div
+      class="lg:w-1/2 expertise-lg:h-[240px] lg:h-[220px] bg-quaternary xl:sticky xl:top-[100px] xl:mb-0 rounded-md border border-borderBase lg:mt-[-240px] relative p-8 flex justify-center flex-col"
+    >
+      <h3
+        class="lg:text-[36px] md:text-[28px] mb-[20px] text-[26px] expertise-lg:text-[28px] leading-10 font-bold text-white"
+        data-sal="slide-up"
+        data-sal-duration="800"
+        data-sal-delay="150"
+      >
+        Support Réactif
+      </h3>
+      <p
+        class="text-grayText leading-[28px]"
+        data-sal="slide-up"
+        data-sal-duration="800"
+        data-sal-delay="150"
+      >
+        En cas de question ou de besoin d’assistance, notre équipe est là pour
+        vous apporter des réponses rapides et des solutions efficaces.
+      </p>
+    </div>
+
+    <!-- Block 2/4 -->
+    <div
+      class="lg:w-1/2 expertise-lg:h-[220px] lg:h-[200px] border border-borderBase p-8 flex justify-center flex-col rounded-md"
+    >
+      <h3
+        class="lg:text-[32px] text-[24px] md:text-[26px] expertise-lg:text-[26px] text-white leading-10 mb-[20px]"
+        data-sal="slide-up"
+        data-sal-duration="800"
+        data-sal-delay="150"
+      >
+        Évolution Agile
+      </h3>
+      <p
+        class="text-grayText leading-[28px]"
+        data-sal="slide-up"
+        data-sal-duration="800"
+        data-sal-delay="150"
+      >
+        Le web ne cesse d’évoluer, et votre site aussi. Nous nous engageons à
+        intégrer les dernières innovations et fonctionnalités pour que votre
+        site reste à la pointe.
+      </p>
+    </div>
+  </article>
+
+  <article
+    class="flex lg:flex-row lg:gap-8 expertise-lg:h-[230px] lg:h-[160px] w-full mt-[80px] lg:mt-[100px] flex-col default-container 2xl:container-fluid 2xl:px-[140px]"
+  >
+    <!-- Block 3/4 -->
+    <div class="lg:w-1/2 flex flex-col justify-center mb-8 lg:mb-0">
+      <h3
+        class="lg:text-[32px] md:text-[26px] text-[24px] expertise-lg:text-[26px] font-bold text-white leading-10"
+        data-sal="slide-up"
+        data-sal-duration="800"
+        data-sal-delay="150"
+      >
+        Sécurité et Performance Optimales
+      </h3>
+    </div>
+
+    <!-- Block 4/4 -->
+    <div
+      class="lg:w-1/2 border expertise-lg:h-[230px] lg:h-[170px] border-borderBase p-8 flex flex-col justify-center items-center rounded-md"
+    >
+      <p
+        class="text-grayText leading-[28px]"
+        data-sal="slide-up"
+        data-sal-duration="800"
+        data-sal-delay="150"
+      >
+        Notre promesse est de veiller sur la santé de votre site. Mises à jour
+        régulières, sauvegardes fiables et surveillance de sécurité proactive
+        pour prévenir les incidents avant qu’ils ne surviennent.
+      </p>
+    </div>
+  </article>
+</section>
+
+<!-- Content CTA -->
+{% include "./components/cta.html.twig" %} {% endblock %}
