@@ -41,4 +41,10 @@ class DefaultController extends AbstractController
     {
         return $this->render('default/expertises/maintenance.html.twig');
     }
+
+    #[Route('referencement', name: 'app_expertise_seo')]
+    public function expertiseSeo(): Response
+    {
+        return $this->render('default/expertises/seo.html.twig');   
+    }
 }
