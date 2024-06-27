@@ -25,8 +25,14 @@ class DefaultController extends AbstractController
     }
 
     #[Route('creation-de-site', name: 'app_expertise_site_creation')]
-    public function expertise(): Response
+    public function expertiseSiteCreation(): Response
     {
         return $this->render('default/expertises/site-creation.html.twig');
+    }
+
+    #[Route('refonte', name: 'app_expertise_redesign')]
+    public function expertiseRedesign(): Response
+    {
+        return $this->render('default/expertises/redesign.html.twig');
     }
 }
