@@ -1,0 +1,142 @@
+{% extends 'base.html.twig' %} {% block title %} Creation de site {% endblock %}
+{% block body %}
+<!-- Site creation -->
+<section
+  class="mt-[80px] lg:mt-[100px] w-full flex flex-col justify-center items-center"
+>
+  <!-- Content Header -->
+  <article
+    class="flex lg:flex-row flex-col gap-8 lg:h-[480px] w-full lg:default-container 2xl:container-fluid 2xl:px-[140px]"
+  >
+    <!-- Title -->
+    <div class="lg:w-1/2 px-8 lg:px-0">
+      <h1
+        class="text-white lg:text-[45px] md:text-[32px] text-[28px] tracking-tight"
+        data-sal="slide-up"
+        data-sal-duration="800"
+        data-sal-delay="150"
+      >
+        Maîtriser le SEO à la Source
+      </h1>
+      <p
+        class="text-secondary mt-3"
+        data-sal="fade-in"
+        data-sal-duration="800"
+        data-sal-delay="200"
+      >
+        Optimisation Intégrée pour une Visibilité Maximale
+      </p>
+      <p
+        class="text-grayText mt-3 mb-8 leading-[28px]"
+        data-sal="fade-in"
+        data-sal-duration="800"
+        data-sal-delay="250"
+      >
+        Un référencement efficace commence au cœur du code. Chez Hafo Web
+        Solutions, notre maîtrise du développement web s’associe à une expertise
+        SEO pointue pour coder votre succès dès la première ligne.
+      </p>
+    </div>
+
+    <!-- Image -->
+    <div
+      class="overflow-hidden h-[300px] lg:h-full lg:w-1/2 lg:rounded-md w-screen"
+    >
+      <img
+        src="{{ asset('./image/expertise/seo/image.jpeg') }}"
+        alt="creation de site"
+        class="object-cover"
+      />
+    </div>
+  </article>
+
+  <!-- Content -->
+  <article
+    class="flex lg:flex-row flex-col gap-8 expertise-lg:h-[250px] lg:h-[232px] w-full lg:mt-[140px] default-container mt-[-142px] 2xl:container-fluid 2xl:px-[140px]"
+  >
+    <!-- Block 1/4 -->
+    <div
+      class="lg:w-1/2 expertise-lg:h-[290px] lg:h-[240px] bg-quaternary xl:sticky xl:top-[100px] xl:mb-0 rounded-md border border-borderBase lg:mt-[-240px] relative p-8 flex justify-center flex-col"
+    >
+      <h3
+        class="lg:text-[36px] md:text-[28px] mb-[20px] text-[26px] expertise-lg:text-[28px] leading-10 font-bold text-white"
+        data-sal="slide-up"
+        data-sal-duration="800"
+        data-sal-delay="150"
+      >
+        Performance Optimale
+      </h3>
+      <p
+        class="text-grayText leading-[28px]"
+        data-sal="slide-up"
+        data-sal-duration="800"
+        data-sal-delay="150"
+      >
+        La vitesse et la réactivité de votre site web sont essentielles pour le
+        SEO. Nous nous assurons que votre site est rapide, réactif et conforme
+        aux dernières directives des moteurs de recherche, favorisant ainsi un
+        meilleur classement.
+      </p>
+    </div>
+
+    <!-- Block 2/4 -->
+    <div
+      class="lg:w-1/2 expertise-lg:h-[250px] lg:h-[230px] border border-borderBase p-8 flex justify-center flex-col rounded-md"
+    >
+      <h3
+        class="lg:text-[32px] text-[24px] md:text-[26px] expertise-lg:text-[26px] text-white leading-10 mb-[20px]"
+        data-sal="slide-up"
+        data-sal-duration="800"
+        data-sal-delay="150"
+      >
+        Codage SEO Précis
+      </h3>
+      <p
+        class="text-grayText leading-[28px]"
+        data-sal="slide-up"
+        data-sal-duration="800"
+        data-sal-delay="150"
+      >
+        Nous écrivons un code propre et structuré, intégrant les meilleures
+        pratiques SEO pour que les moteurs de recherche comprennent et
+        favorisent votre site. Chaque balise, chaque ligne, chaque élément est
+        optimisé pour le référencement.
+      </p>
+    </div>
+  </article>
+
+  <article
+    class="flex lg:flex-row lg:gap-8 expertise-lg:h-[230px] lg:h-[160px] w-full mt-[80px] lg:mt-[100px] flex-col default-container 2xl:container-fluid 2xl:px-[140px]"
+  >
+    <!-- Block 3/4 -->
+    <div class="lg:w-1/2 flex flex-col justify-center mb-8 lg:mb-0">
+      <h3
+        class="lg:text-[32px] md:text-[26px] text-[24px] expertise-lg:text-[26px] font-bold text-white leading-10"
+        data-sal="slide-up"
+        data-sal-duration="800"
+        data-sal-delay="150"
+      >
+       Accessibilité et Structuration
+      </h3>
+    </div>
+
+    <!-- Block 4/4 -->
+    <div
+      class="lg:w-1/2 border expertise-lg:h-[230px] lg:h-[170px] border-borderBase p-8 flex flex-col justify-center items-center rounded-md"
+    >
+      <p
+        class="text-grayText leading-[28px]"
+        data-sal="slide-up"
+        data-sal-duration="800"
+        data-sal-delay="150"
+      >
+        Une architecture de site bien conçue est cruciale pour le SEO. Nous
+        structurons votre contenu de manière logique et accessible, facilitant
+        son indexation et améliorant l’expérience utilisateur.
+      </p>
+    </div>
+  </article>
+</section>
+
+<!-- Content CTA -->
+{% include "./components/cta.html.twig" %} {% endblock %}
