@@ -1,0 +1,370 @@
+{% extends 'base.html.twig' %} {% block title %} Creation de site {% endblock %}
+{% block body %}
+<!-- Site creation -->
+<section
+  class="mt-[80px] lg:mt-[100px] px-8 w-full flex flex-col justify-center items-center lg:default-container 2xl:container-fluid 2xl:px-[140px]"
+>
+  <!-- Content Header -->
+  <article class="flex lg:flex-row flex-col w-full">
+    <!-- Title -->
+    <div class="lg:w-1/2">
+      <h1
+        class="text-white lg:text-[45px] md:text-[32px] text-[28px] tracking-tight"
+        data-sal="slide-up"
+        data-sal-duration="800"
+        data-sal-delay="150"
+      >
+        Nos Services et Tarifs
+      </h1>
+      <p
+        class="text-grayText mt-[20px] leading-[28px]"
+        data-sal="fade-in"
+        data-sal-duration="800"
+        data-sal-delay="200"
+      >
+        Découvrez l’expertise de Hafo Web Solutions, portée par des développeurs
+        full stack passionnés, spécialisés en Symfony. Grâce à une approche
+        innovante et sur mesure, nous offrons des solutions qui combinent
+        créativité et technicité pour optimiser votre présence en ligne.
+      </p>
+    </div>
+  </article>
+
+  <article class="flex flex-col w-full mt-[32px] lg:mt-[40px]">
+    <!-- Title -->
+    <div class="lg:w-1/2 mb-[40px]">
+      <h1
+        class="text-white font-bold lg:text-[32px] md:text-[28px] text-[24px] tracking-tight"
+        data-sal="slide-up"
+        data-sal-duration="800"
+        data-sal-delay="150"
+      >
+        Création de Site Web
+      </h1>
+      <p
+        class="text-grayText mt-[20px] leading-[28px]"
+        data-sal="fade-in"
+        data-sal-duration="800"
+        data-sal-delay="200"
+      >
+        Transformez votre vision en une présence digitale marquante avec nos
+        solutions de création de sites web, adaptées à vos besoins spécifiques.
+      </p>
+    </div>
+
+    <!-- Dictionnary Words -->
+    <div class="w-full lg:flex justify-center lg:mb-0 hidden">
+      <p class="text-white flex justify-center items-center">
+        Cliquez sur
+        <span
+          class="py-3 px-3 border rounded-3xl border-borderBase mx-2 cursor-pointer"
+        >
+          <img
+            src="{{ asset('./image/services/dictionary.svg') }}"
+            alt="dictionary"
+            class="h-6 w-6"
+          />
+        </span>
+        si vous ne comprenez pas certain mots.
+      </p>
+    </div>
+
+    <!-- Tarifs -->
+    <div
+      class="flex lg:flex-row flex-col w-full lg:mt-[40px] mt-[32px] justify-center items-center gap-8"
+    >
+      <!-- Tarif 1 - Basique -->
+      <div
+        class="p-8 bg-quaternary rounded-md w-[320px] h-[594px] flex flex-col justify-between text-white"
+      >
+        <div class="flex flex-col gap-2 mb-3">
+          <div class="flex items-center">
+            <span class="p-3 rounded-md bg-secondary mr-4">00</span>
+            <h3 class="font-bold text-3xl">Basique</h3>
+          </div>
+          <div class="text-grayText flex flex-col gap-4">
+            <p class="text-[40px] text-white">
+              1 200 <span class="text-grayText">€</span>
+            </p>
+            <p class="flex">
+              <span>
+                <img
+                  src="{{ asset('./image/services/checked.svg') }}"
+                  alt="checked"
+                  class="h-6 w-6 mr-2"
+                />
+              </span>
+              Design Responsive
+            </p>
+            <p class="flex">
+              <span>
+                <img
+                  src="{{ asset('./image/services/checked.svg') }}"
+                  alt="checked"
+                  class="h-6 w-6 mr-2"
+                />
+              </span>
+              Contenu Statique
+            </p>
+            <p class="flex">
+              <span>
+                <img
+                  src="{{ asset('./image/services/checked.svg') }}"
+                  alt="checked"
+                  class="h-6 w-6 mr-2"
+                />
+              </span>
+              Page Essentielles
+            </p>
+          </div>
+        </div>
+
+        <div>
+          <p class="text-grayText text-center mt-[20px] text-sm">
+            Parfait pour les petites entreprises ou portfolios personnels
+          </p>
+          <a
+            href="#"
+            class="flex justify-center items-center w-full p-4 rounded-md bg-secondary hover:bg-tertiary text-white mt-[30px] text-bold"
+            >Nous contacter</a
+          >
+        </div>
+      </div>
+
+      <!-- Tarif 2 - Avancé -->
+      <div
+        class="p-8 bg-quaternary rounded-md w-[320px] h-[594px] flex flex-col justify-between text-white"
+      >
+        <div class="flex flex-col gap-2 mb-3">
+          <div class="flex items-center">
+            <span class="p-3 rounded-md bg-secondary mr-4">00</span>
+            <h3 class="font-bold text-3xl">Avancé</h3>
+          </div>
+          <div class="text-grayText flex flex-col gap-4">
+            <p class="text-[40px] text-white">
+              2 800 <span class="text-grayText">€</span>
+            </p>
+            <p class="flex">
+              <span>
+                <img
+                  src="{{ asset('./image/services/checked.svg') }}"
+                  alt="checked"
+                  class="h-6 w-6 mr-2"
+                />
+              </span>
+              Design Personnalisé
+            </p>
+            <p class="flex relative">
+              <span>
+                <img
+                  src="{{ asset('./image/services/checked.svg') }}"
+                  alt="checked"
+                  class="h-6 w-6 mr-2"
+                />
+              </span>
+              Fonctionnalités Avancées
+              <span class="text-xs absolute top-5 left-8"
+                >formulaires (F.I), intégration API, etc.</span
+              >
+            </p>
+            <p class="flex">
+              <span>
+                <img
+                  src="{{ asset('./image/services/checked.svg') }}"
+                  alt="checked"
+                  class="h-6 w-6 mr-2"
+                />
+              </span>
+              Blog Optionnel
+            </p>
+            <p class="flex">
+              <span>
+                <img
+                  src="{{ asset('./image/services/checked.svg') }}"
+                  alt="checked"
+                  class="h-6 w-6 mr-2"
+                />
+              </span>
+              Options Basique
+            </p>
+          </div>
+        </div>
+
+        <div>
+          <p class="text-grayText text-center mt-[20px] text-sm">
+            Adapté aux entreprises en croissance nécessitant plus de
+            fonctionnalités
+          </p>
+          <a
+            href="#"
+            class="flex justify-center items-center w-full p-4 rounded-md bg-secondary hover:bg-tertiary text-white mt-[30px] text-bold"
+            >Nous contacter</a
+          >
+        </div>
+      </div>
+
+      <!-- Tarif 3 - Complexe -->
+      <div
+        class="p-8 bg-quaternary rounded-md w-[320px] h-[594px] flex flex-col justify-between text-white"
+      >
+        <div class="flex flex-col gap-2 mb-3">
+          <div class="flex items-center">
+            <span class="p-3 rounded-md bg-secondary mr-4">00</span>
+            <h3 class="font-bold text-3xl">Complexe</h3>
+          </div>
+          <div class="text-grayText flex flex-col gap-4">
+            <p class="text-[40px] text-white">
+              4 800 <span class="text-grayText">€</span>
+            </p>
+            <p class="flex">
+              <span>
+                <img
+                  src="{{ asset('./image/services/checked.svg') }}"
+                  alt="checked"
+                  class="h-6 w-6 mr-2"
+                />
+              </span>
+              Optimisation de Performance
+            </p>
+            <p class="flex">
+              <span>
+                <img
+                  src="{{ asset('./image/services/checked.svg') }}"
+                  alt="checked"
+                  class="h-6 w-6 mr-2"
+                />
+              </span>
+              E-commerce Optionnel
+            </p>
+            <p class="flex">
+              <span>
+                <img
+                  src="{{ asset('./image/services/checked.svg') }}"
+                  alt="checked"
+                  class="h-6 w-6 mr-2"
+                />
+              </span>
+              Design Avancé
+            </p>
+            <p class="flex">
+              <span>
+                <img
+                  src="{{ asset('./image/services/checked.svg') }}"
+                  alt="checked"
+                  class="h-6 w-6 mr-2"
+                />
+              </span>
+              Sécurité Renforcée
+            </p>
+            <p class="flex">
+              <span>
+                <img
+                  src="{{ asset('./image/services/checked.svg') }}"
+                  alt="checked"
+                  class="h-6 w-6 mr-2"
+                />
+              </span>
+              Options Basique et Avancé
+            </p>
+          </div>
+        </div>
+
+        <div>
+          <p class="text-grayText text-center mt-[20px] text-sm">
+            Idéal pour les grandes entreprises ou projets nécessitant une
+            personnalisation poussée
+          </p>
+          <a
+            href="#"
+            class="flex justify-center items-center w-full p-4 rounded-md bg-secondary hover:bg-tertiary text-white mt-[30px] text-bold"
+            >Nous contacter</a
+          >
+        </div>
+      </div>
+    </div>
+  </article>
+
+  <article class="w-full mt-[100px]">
+    <!-- Development Specifique -->
+    <div class="lg:w-1/2 mb-[40px]">
+      <h1
+        class="text-white font-bold lg:text-[32px] md:text-[28px] text-[24px] tracking-tight"
+        data-sal="slide-up"
+        data-sal-duration="800"
+        data-sal-delay="150"
+      >
+        Développement Spécifique
+      </h1>
+      <p
+        class="text-grayText mt-[20px] leading-[28px]"
+        data-sal="fade-in"
+        data-sal-duration="800"
+        data-sal-delay="200"
+      >
+        Nous offrons des services de développement spécifique, facturés à
+        l’heure, pour répondre à des besoins uniques avec flexibilité et
+        transparence.
+      </p>
+      <p
+        class="text-secondary mt-[20px] font-bold leading-[28px]"
+        data-sal="fade-in"
+        data-sal-duration="800"
+        data-sal-delay="200"
+      >
+        Tarif horaire : <span class="text-grayText font-normal">45 €</span>
+      </p>
+    </div>
+
+    <!-- Tarif Journalier Équipe -->
+    <div class="lg:w-1/2 mb-[40px]">
+      <h1
+        class="text-white font-bold lg:text-[32px] md:text-[28px] text-[24px] tracking-tight"
+        data-sal="slide-up"
+        data-sal-duration="800"
+        data-sal-delay="150"
+      >
+        Tarif Journalier Équipe
+      </h1>
+      <p
+        class="text-grayText mt-[20px] leading-[28px]"
+        data-sal="fade-in"
+        data-sal-duration="800"
+        data-sal-delay="200"
+      >
+        Pour des projets nécessitant une coordination intensive, notre tarif
+        journalier garantit une mobilisation complète de notre équipe.
+      </p>
+      <p
+        class="text-secondary mt-[20px] font-bold leading-[28px]"
+        data-sal="fade-in"
+        data-sal-duration="800"
+        data-sal-delay="200"
+      >
+        Tarif horaire : <span class="text-grayText font-normal">560 €</span>
+      </p>
+    </div>
+
+    <!-- Consultations et Devis Personnalisés -->
+    <div class="lg:w-1/2 mb-[40px]">
+      <h1
+        class="text-white font-bold lg:text-[32px] md:text-[28px] text-[24px] tracking-tight"
+        data-sal="slide-up"
+        data-sal-duration="800"
+        data-sal-delay="150"
+      >
+        Consultations et Devis Personnalisés
+      </h1>
+      <p
+        class="text-grayText mt-[20px] leading-[28px]"
+        data-sal="fade-in"
+        data-sal-duration="800"
+        data-sal-delay="200"
+      >
+        Chaque projet est unique et mérite notre attention détaillée. Bénéficiez
+        d’une <span class="text-secondary ">consultation gratuite</span> pour définir ensemble la stratégie pour
+        votre projet.
+      </p>
+    </div>
+  </article>
+</section>
+{% endblock %}
