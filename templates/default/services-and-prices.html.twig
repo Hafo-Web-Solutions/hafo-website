@@ -1,5 +1,6 @@
 {% extends 'base.html.twig' %} {% block title %} Creation de site {% endblock %}
 {% block body %}
+
 <!-- Site creation -->
 <section
   class="mt-[80px] lg:mt-[100px] px-8 w-full flex flex-col justify-center items-center lg:default-container 2xl:container-fluid 2xl:px-[140px]"
@@ -53,11 +54,14 @@
     </div>
 
     <!-- Dictionnary Words -->
-    <div class="w-full lg:flex justify-center lg:mb-0 hidden">
+    <div class="w-full lg:flex justify-center lg:mb-0 hidden relative">
+      <div class="px-3 py-2 rounded-md bg-tertiary m-2 text-white absolute top-[-70px] div-hover-help hidden">
+        <p class="text-sm text-center text-grayText">Survolez les mots complexes <br> pour des détails</p>
+      </div>
       <p class="text-white flex justify-center items-center">
         Cliquez sur
         <span
-          class="py-3 px-3 border rounded-3xl border-borderBase mx-2 cursor-pointer"
+          class="py-3 px-3 border rounded-3xl border-borderBase mx-2 cursor-pointer button-hover-help"
         >
           <img
             src="{{ asset('./image/services/dictionary.svg') }}"
@@ -76,6 +80,9 @@
       <!-- Tarif 1 - Basique -->
       <div
         class="p-8 bg-quaternary rounded-md w-[320px] h-[594px] flex flex-col justify-between text-white"
+        data-sal="slide-up"
+        data-sal-duration="800"
+        data-sal-delay="150"
       >
         <div class="flex flex-col gap-2 mb-3">
           <div class="flex items-center">
@@ -134,6 +141,9 @@
       <!-- Tarif 2 - Avancé -->
       <div
         class="p-8 bg-quaternary rounded-md w-[320px] h-[594px] flex flex-col justify-between text-white"
+        data-sal="slide-up"
+        data-sal-duration="800"
+        data-sal-delay="200"
       >
         <div class="flex flex-col gap-2 mb-3">
           <div class="flex items-center">
@@ -206,6 +216,9 @@
       <!-- Tarif 3 - Complexe -->
       <div
         class="p-8 bg-quaternary rounded-md w-[320px] h-[594px] flex flex-col justify-between text-white"
+        data-sal="slide-up"
+        data-sal-duration="800"
+        data-sal-delay="250"
       >
         <div class="flex flex-col gap-2 mb-3">
           <div class="flex items-center">
@@ -284,87 +297,170 @@
     </div>
   </article>
 
-  <article class="w-full mt-[100px]">
-    <!-- Development Specifique -->
-    <div class="lg:w-1/2 mb-[40px]">
-      <h1
-        class="text-white font-bold lg:text-[32px] md:text-[28px] text-[24px] tracking-tight"
-        data-sal="slide-up"
-        data-sal-duration="800"
-        data-sal-delay="150"
-      >
-        Développement Spécifique
-      </h1>
-      <p
-        class="text-grayText mt-[20px] leading-[28px]"
-        data-sal="fade-in"
-        data-sal-duration="800"
-        data-sal-delay="200"
-      >
-        Nous offrons des services de développement spécifique, facturés à
-        l’heure, pour répondre à des besoins uniques avec flexibilité et
-        transparence.
-      </p>
-      <p
-        class="text-secondary mt-[20px] font-bold leading-[28px]"
-        data-sal="fade-in"
-        data-sal-duration="800"
-        data-sal-delay="200"
-      >
-        Tarif horaire : <span class="text-grayText font-normal">45 €</span>
-      </p>
+  <article class="w-full mt-[100px] flex flex-col lg:flex-row">
+    <div class="lg:w-1/2">
+      <!-- Development Specifique -->
+      <div class="mb-[40px]">
+        <h1
+          class="text-white font-bold lg:text-[32px] md:text-[28px] text-[24px] tracking-tight"
+          data-sal="slide-up"
+          data-sal-duration="800"
+          data-sal-delay="150"
+        >
+          Développement Spécifique
+        </h1>
+        <p
+          class="text-grayText mt-[20px] leading-[28px]"
+          data-sal="fade-in"
+          data-sal-duration="800"
+          data-sal-delay="200"
+        >
+          Nous offrons des services de développement spécifique, facturés à
+          l’heure, pour répondre à des besoins uniques avec flexibilité et
+          transparence.
+        </p>
+        <p
+          class="text-secondary mt-[20px] font-bold leading-[28px]"
+          data-sal="fade-in"
+          data-sal-duration="800"
+          data-sal-delay="200"
+        >
+          Tarif horaire : <span class="text-grayText font-normal">45 €</span>
+        </p>
+      </div>
+
+      <!-- Tarif Journalier Équipe -->
+      <div class="mb-[40px]">
+        <h1
+          class="text-white font-bold lg:text-[32px] md:text-[28px] text-[24px] tracking-tight"
+          data-sal="slide-up"
+          data-sal-duration="800"
+          data-sal-delay="150"
+        >
+          Tarif Journalier Équipe
+        </h1>
+        <p
+          class="text-grayText mt-[20px] leading-[28px]"
+          data-sal="fade-in"
+          data-sal-duration="800"
+          data-sal-delay="200"
+        >
+          Pour des projets nécessitant une coordination intensive, notre tarif
+          journalier garantit une mobilisation complète de notre équipe.
+        </p>
+        <p
+          class="text-secondary mt-[20px] font-bold leading-[28px]"
+          data-sal="fade-in"
+          data-sal-duration="800"
+          data-sal-delay="200"
+        >
+          Tarif horaire : <span class="text-grayText font-normal">560 €</span>
+        </p>
+      </div>
+
+      <!-- Consultations et Devis Personnalisés -->
+      <div class="mb-[40px]">
+        <h1
+          class="text-white font-bold lg:text-[32px] md:text-[28px] text-[24px] tracking-tight"
+          data-sal="slide-up"
+          data-sal-duration="800"
+          data-sal-delay="150"
+        >
+          Consultations et Devis Personnalisés
+        </h1>
+        <p
+          class="text-grayText mt-[20px] leading-[28px]"
+          data-sal="fade-in"
+          data-sal-duration="800"
+          data-sal-delay="200"
+        >
+          Chaque projet est unique et mérite notre attention détaillée.
+          Bénéficiez d’une
+          <span class="text-secondary">consultation gratuite</span> pour définir
+          ensemble la stratégie pour votre projet.
+        </p>
+      </div>
     </div>
 
-    <!-- Tarif Journalier Équipe -->
-    <div class="lg:w-1/2 mb-[40px]">
-      <h1
-        class="text-white font-bold lg:text-[32px] md:text-[28px] text-[24px] tracking-tight"
-        data-sal="slide-up"
-        data-sal-duration="800"
-        data-sal-delay="150"
+    <!-- Block Refonte, Maintenance, Référencement -->
+    <div class="lg:w-1/2 flex flex-col items-center sibling-fade">
+      <!-- Refonte -->
+      <a
+        href="{{ path('app_expertise_redesign') }}"
+        class="bg-quaternary rounded-lg p-6 cursor-pointer w-[290px] h-[150px] m-6 block"
       >
-        Tarif Journalier Équipe
-      </h1>
-      <p
-        class="text-grayText mt-[20px] leading-[28px]"
-        data-sal="fade-in"
-        data-sal-duration="800"
-        data-sal-delay="200"
-      >
-        Pour des projets nécessitant une coordination intensive, notre tarif
-        journalier garantit une mobilisation complète de notre équipe.
-      </p>
-      <p
-        class="text-secondary mt-[20px] font-bold leading-[28px]"
-        data-sal="fade-in"
-        data-sal-duration="800"
-        data-sal-delay="200"
-      >
-        Tarif horaire : <span class="text-grayText font-normal">560 €</span>
-      </p>
-    </div>
+        <div class="flex justify-between relative">
+          <img
+            style="transition-property: transform, left, bottom"
+            alt="icon refonte"
+            src="{{ asset('./image/expertise/refonte.svg') }}"
+            class="absolute w-[80px] left-[200px] bottom-[0px]"
+          />
+        </div>
+        <h3 class="text-white font-bold text-xl mt-1">Refonte</h3>
+        <p class="text-grayText mt-2 mb-3 text-base">
+          Avancé ou Complexe : 3 800 €
+        </p>
+        <p class="text-grayText mt-2 mb-3 text-base">Basique : 1 000 €</p>
+      </a>
 
-    <!-- Consultations et Devis Personnalisés -->
-    <div class="lg:w-1/2 mb-[40px]">
-      <h1
-        class="text-white font-bold lg:text-[32px] md:text-[28px] text-[24px] tracking-tight"
-        data-sal="slide-up"
-        data-sal-duration="800"
-        data-sal-delay="150"
+      <!-- Maintenance -->
+      <a
+        href="{{ path('app_expertise_redesign') }}"
+        class="bg-quaternary rounded-lg p-6 cursor-pointer w-[290px] h-[150px] m-6 block"
       >
-        Consultations et Devis Personnalisés
-      </h1>
-      <p
-        class="text-grayText mt-[20px] leading-[28px]"
-        data-sal="fade-in"
-        data-sal-duration="800"
-        data-sal-delay="200"
+        <div class="flex justify-between relative">
+          <img
+            style="transition-property: transform, left, bottom"
+            alt="icon refonte"
+            src="{{ asset('./image/expertise/refonte.svg') }}"
+            class="absolute w-[80px] left-[200px] bottom-[0px]"
+          />
+        </div>
+        <h3 class="text-white font-bold text-xl mt-1">Maintenance</h3>
+        <p class="text-grayText mt-2 mb-3 text-base">
+            Basique :  80 €/mois
+        </p>
+        <p class="text-grayText mt-2 mb-3 text-base">Complet : 250 €/mois</p>
+      </a>
+
+      <!-- Référencement -->
+      <a
+        href="{{ path('app_expertise_redesign') }}"
+        class="bg-quaternary rounded-lg p-6 cursor-pointer w-[290px] h-[170px] m-6 block"
       >
-        Chaque projet est unique et mérite notre attention détaillée. Bénéficiez
-        d’une <span class="text-secondary ">consultation gratuite</span> pour définir ensemble la stratégie pour
-        votre projet.
-      </p>
+        <div class="flex justify-between relative">
+          <img
+            style="transition-property: transform, left, bottom"
+            alt="icon refonte"
+            src="{{ asset('./image/expertise/refonte.svg') }}"
+            class="absolute w-[80px] left-[200px] bottom-[0px]"
+          />
+        </div>
+        <h3 class="text-white font-bold text-xl mt-1">Référencement</h3>
+        <p class="text-grayText mt-2 mb-3 text-base">
+          Audit SEO Technique :  450 €
+        </p>
+        <p class="text-grayText mt-2 mb-3 text-base">Optimisation SEO Continue : 250 €/mois</p>
+      </a>
     </div>
   </article>
 </section>
+
+
+<script>
+
+ const help = document.querySelector('.div-hover-help');
+ const button = document.querySelector('.button-hover-help');
+
+ button.addEventListener('mouseover', () => {
+   help.classList.remove('hidden');
+ });
+
+ button.addEventListener('mouseout', () => {
+   help.classList.add('hidden');
+ });
+
+</script>
+
 {% endblock %}
