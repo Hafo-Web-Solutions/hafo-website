@@ -47,4 +47,10 @@ class DefaultController extends AbstractController
     {
         return $this->render('default/expertises/seo.html.twig');   
     }
+
+    #[Route('services-et-tarifs', name: 'app_services_and_prices')]
+    public function servicesAndPrices(): Response
+    {
+        return $this->render('default/services-and-prices.html.twig');
+    }
 }
