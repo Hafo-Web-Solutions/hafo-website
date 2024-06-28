@@ -1,12 +1,12 @@
 {% block journey %}
-<section class="default-container w-full mb-[100px]">
+  <section class="default-container w-full {% if style is defined %}{{ style }} {% else %} mb-[100px] {% endif %}">
   <!-- title section -->
   <h2 class="text-4xl lg:text-3xl mb-2 font-bold tracking-tight text-white"
   data-sal="slide-up"
   data-sal-duration="800"
   data-sal-delay="200"
   >
-    Votre Parcours de Réussite
+    {{ title }}
   </h2>
   <!-- text section -->
   <p class="mb-16 text-grayText"
@@ -14,7 +14,7 @@
   data-sal-duration="800"
   data-sal-delay="200"
   >
-    Chaque Étape, Un Pas de Plus Vers Votre Vision
+    {{ subtitle }}
   </p>
 
   <!-- Step Journey -->

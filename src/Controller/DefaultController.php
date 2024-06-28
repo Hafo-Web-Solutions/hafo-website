@@ -53,4 +53,10 @@ class DefaultController extends AbstractController
     {
         return $this->render('default/services-and-prices.html.twig');
     }
+
+    #[Route('centre-de-support', name: 'app_support_center')]
+    public function supportCenter(): Response
+    {
+        return $this->render('default/support/support-center.html.twig');
+    }
 }

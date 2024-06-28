@@ -1,0 +1,6 @@
+{% extends 'base.html.twig' %} {% block title %} Centre de support {% endblock
+%} {% block body %} {% include "./components/journey.html.twig" with { title:
+"Votre Parcours de Réussite", subtitle: "Chaque Étape, Un Pas de Plus Vers Votre
+Vision", style: "bg-secondary" , style: "mt-[80px] lg:mt-[100px]"} %} {% include
+"./components/faq.html.twig" with { isTitle: false, style: "mt-[80px]
+lg:mt-[100px]", isSupport: true} %} {% endblock %}
