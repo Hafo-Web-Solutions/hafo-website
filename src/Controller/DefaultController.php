@@ -67,11 +67,24 @@ class DefaultController extends AbstractController
         return $this->render('default/support/define-your-goals.html.twig');
     }
 
-    //achievements
     #[Route('nos-realisations', name: 'app_achievements')]
     public function achievements(): Response
     {
         return $this->render('default/achievements/index.html.twig');
+    }
+
+    //Legal Notice
+    #[Route('mentions-legales', name: 'app_legal_notice')]
+    public function legalNotice(): Response
+    {
+        return $this->render('default/legal-notice.html.twig');
+    }
+
+    //Terms of Sales
+    #[Route('conditions-generales-de-vente', name: 'app_terms_of_sales')]
+    public function termsOfSales(): Response
+    {
+        return $this->render('default/terms-of-sales.html.twig');
     }
 
 }
