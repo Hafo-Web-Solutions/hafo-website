@@ -87,4 +87,11 @@ class DefaultController extends AbstractController
         return $this->render('default/terms-of-sales.html.twig');
     }
 
+    //Project Launch
+    #[Route('lancement-du-projet', name: 'app_project_launch')]
+    public function projectLaunch(): Response
+    {
+        return $this->render('default/support/project-launch.html.twig');
+    }
+
 }

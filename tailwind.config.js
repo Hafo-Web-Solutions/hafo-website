@@ -43,6 +43,7 @@ module.exports = {
         "min-w": { min: "0px", max: "639px" },
         "lg-1500": "1400px",
         "expertise-lg": { min: "1024px", max: "1200px" },
+        "expertise-size": "1354px"
       },
       transitionProperty: {
         position: "left, bottom",

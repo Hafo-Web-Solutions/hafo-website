@@ -1,5 +1,5 @@
 {% block journey %}
-  <section class="default-container w-full {% if style is defined %}{{ style }} {% else %} mb-[100px] {% endif %}">
+  <section class="w-full default-container 2xl:container-fluid 2xl:px-[140px] mb-[100px] {% if style is defined %}{{ style }} {% else %} mb-[100px] {% endif %}">
   <!-- title section -->
   <h2 class="text-4xl lg:text-3xl mb-2 font-bold tracking-tight text-white"
   data-sal="slide-up"
@@ -66,7 +66,7 @@
 
       <!-- Step 03 - Planifions ensemble -->
       <a
-      href="#"
+      href="{{ path('app_define_your_goals') }}"
         class="bg-quaternary rounded-lg p-6 cursor-pointer py-4 w-[290px] h-[240px] m-4 mb-8"
       >
         <div class="flex justify-between relative">
@@ -89,7 +89,7 @@
   
       <!-- Step 04 - Lancement du projet -->
       <a
-      href="#"
+      href="{{ path('app_project_launch') }}"
         class="bg-quaternary rounded-lg p-6 cursor-pointer py-4 w-[290px] h-[240px] m-4 mb-8"
       >
         <div class="flex justify-between relative">
