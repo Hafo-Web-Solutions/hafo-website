@@ -11,6 +11,7 @@ Encore
     .setPublicPath('/build')
     .addEntry('app', './assets/js/app.js')
     .addEntry('project', './assets/js/project.js')
+    .addEntry('define', './assets/js/define.js')
     .enablePostCssLoader()
     .splitEntryChunks()
     .enableSingleRuntimeChunk()
