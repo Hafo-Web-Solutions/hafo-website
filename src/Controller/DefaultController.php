@@ -67,4 +67,11 @@ class DefaultController extends AbstractController
         return $this->render('default/support/define-your-goals.html.twig');
     }
 
+    //achievements
+    #[Route('nos-realisations', name: 'app_achievements')]
+    public function achievements(): Response
+    {
+        return $this->render('default/achievements/index.html.twig');
+    }
+
 }
