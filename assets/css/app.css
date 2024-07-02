@@ -416,3 +416,39 @@ body {
 .div-hover-help {
   transition: opacity 0.3s ease, visibility 0.3s ease;
 }
+
+/* DEFINE YOUR GOALS */
+.hidden-div {
+  display: none;
+}
+textarea {
+  resize: none;
+}
+
+.select-container {
+  position: relative;
+  display: inline-block;
+}
+.select-input {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+
+}
+.select-container::after {
+  content: '\e92e';
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    font-family: "feather";
+    transform: translateY(-50%);
+    color: #00a3ff;
+    font-size: 18px;
+}
+.select-input {
+  padding-right: 30px;
+}
+.select-input option {
+  background-color: #171721;
+  color: #fff;
+}

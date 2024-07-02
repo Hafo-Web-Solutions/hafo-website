@@ -3,6 +3,7 @@
 namespace App\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Attribute\Route;
 
@@ -59,4 +60,11 @@ class DefaultController extends AbstractController
     {
         return $this->render('default/support/support-center.html.twig');
     }
+
+    #[Route('definir-vos-objectifs', name: 'app_define_your_goals')]
+    public function defineYourGoals(): Response
+    {
+        return $this->render('default/support/define-your-goals.html.twig');
+    }
+
 }
