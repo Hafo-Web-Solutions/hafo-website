@@ -1,0 +1,133 @@
+{% extends 'base.html.twig' %} {% block title %} Creation de site {% endblock %}
+{% block body %}
+<!-- Site creation -->
+<section
+  class="mt-[80px] lg:mt-[100px] w-full flex flex-col justify-center items-center"
+>
+<!-- Content Header -->
+  <article
+    class="flex lg:flex-row flex-col gap-8 lg:h-[480px] w-full lg:default-container 2xl:container-fluid 2xl:px-[140px]"
+  >
+    <!-- Title -->
+    <div
+      class="lg:w-1/2 px-8 lg:px-0"
+    >
+      <h1
+        class="text-white lg:text-[45px] md:text-[32px] text-[28px] tracking-tight"
+        data-sal="slide-up"
+        data-sal-duration="800"
+        data-sal-delay="150"
+      >
+        Création Sur Mesure
+      </h1>
+      <p class="text-secondary mt-3"
+      data-sal="fade-in"
+      data-sal-duration="800"
+      data-sal-delay="200"
+      >Votre vision prend forme numériquement</p>
+      <p class="text-grayText mt-3 mb-8 leading-[28px]"
+      data-sal="fade-in"
+      data-sal-duration="800"
+      data-sal-delay="250"
+      >
+        Avec Hafo Web Solutions, chaque pixel s'aligne sur vos ambitions. Notre
+        méthodologie allie innovation et personnalisation pour donner vie à
+        votre espace digital. Nous ne nous contentons pas de construire des
+        sites; nous façonnons des expériences uniques, captivantes et
+        fonctionnelles qui élèvent votre présence en ligne au-delà des attentes
+        conventionnelles.
+      </p>
+    </div>
+
+    <!-- Image -->
+    <div
+      class="overflow-hidden h-[300px] lg:h-full lg:w-1/2 lg:rounded-md w-screen"
+    >
+      <img
+        src="{{ asset('./image/expertise/creation/image.jpeg') }}"
+        alt="creation de site"
+        class="object-cover"
+      />
+    </div>
+  </article>
+
+  <!-- Content -->
+  <article
+    class="flex lg:flex-row flex-col gap-8 expertise-lg:h-[250px] lg:h-[232px] w-full lg:mt-[140px] default-container mt-[-142px] 2xl:container-fluid 2xl:px-[140px]"
+  >
+    <!-- Block 1/4 -->
+    <div
+      class="lg:w-1/2 expertise-lg:h-[290px] lg:h-[240px] bg-quaternary xl:sticky xl:top-[100px] xl:mb-0 rounded-md border border-borderBase lg:mt-[-240px] relative p-8 flex justify-center flex-col"
+    >
+      <h3 class="lg:text-[36px] md:text-[28px] mb-[20px] text-[26px] expertise-lg:text-[28px] leading-10 font-bold text-white"
+        data-sal="slide-up"
+        data-sal-duration="800"
+        data-sal-delay="150">
+        Vision et Stratégie
+      </h3>
+      <p class="text-grayText leading-[28px]"
+        data-sal="slide-up"
+        data-sal-duration="800"
+        data-sal-delay="150">
+        Des fondations solides pour des sites performants. Chez Hafo Web
+        Solutions, nous plongeons dans l'univers de votre marque pour créer une
+        stratégie digitale qui résonne avec votre identité et vos objectifs.
+        Nous transformons vos idées en réalités numériques captivantes.
+      </p>
+    </div>
+
+    <!-- Block 2/4 -->
+    <div
+      class="lg:w-1/2 expertise-lg:h-[250px] lg:h-[230px] border border-borderBase p-8 flex justify-center flex-col rounded-md"
+    >
+      <h3 class="lg:text-[32px] text-[24px] md:text-[26px] expertise-lg:text-[26px] text-white leading-10 mb-[20px]"
+        data-sal="slide-up"
+        data-sal-duration="800"
+        data-sal-delay="150">
+        Design et Expérience utilisateur
+      </h3>
+      <p class="text-grayText leading-[28px]"
+        data-sal="slide-up"
+        data-sal-duration="800"
+        data-sal-delay="150">
+        Design intuitif, expérience mémorable. Notre approche créative met
+        l'accent sur des designs élégants et des interfaces conviviales. Nous
+        conjuguons esthétique et fonctionnalité pour que chaque visite sur votre
+        site soit une invitation au voyage dans votre univers.
+      </p>
+    </div>
+  </article>
+
+  <article
+    class="flex lg:flex-row lg:gap-8 expertise-lg:h-[230px] lg:h-[160px] w-full mt-[80px] lg:mt-[100px] flex-col default-container 2xl:container-fluid 2xl:px-[140px]"
+  >
+    <!-- Block 3/4 -->
+    <div class="lg:w-1/2 flex flex-col justify-center mb-8 lg:mb-0">
+      <h3 class="lg:text-[32px] md:text-[26px] text-[24px] expertise-lg:text-[26px] font-bold text-white leading-10 "
+        data-sal="slide-up"
+        data-sal-duration="800"
+        data-sal-delay="150">
+        Technologies Avancée, <br> Avenir Assuré
+      </h3>
+    </div>
+
+    <!-- Block 4/4 -->
+    <div
+      class="lg:w-1/2 border expertise-lg:h-[230px] lg:h-[170px] border-borderBase p-8 flex flex-col justify-center items-center rounded-md"
+    >
+      <p class="text-grayText leading-[28px]" 
+        data-sal="slide-up"
+        data-sal-duration="800"
+        data-sal-delay="150">
+        La technologie au service de l'innovation. Nos solutions de
+        développement web utilisent les dernières technologies pour garantir un
+        site réactif, sécurisé et évolutif. Nous bâtissons votre plateforme en
+        pensant à demain, assurant une présence en ligne durable et influente.
+      </p>
+    </div>
+  </article>
+</section>
+
+<!-- Content CTA -->
+{% include "./components/cta.html.twig" %} 
+{% endblock %}

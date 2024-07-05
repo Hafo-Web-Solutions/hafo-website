@@ -1,0 +1,195 @@
+{% extends 'base.html.twig' %} {% block title %} Definir vos objectifs {%
+endblock %} {% block javascripts %}
+{{ parent() }}
+{{ encore_entry_script_tags("define") }}
+{% endblock %} {% block body %}
+
+<section
+  class="mt-[80px] lg:mt-[100px] w-full default-container 2xl:container-fluid 2xl:px-[140px]"
+>
+  <!-- Content Header -->
+  <article class="flex lg:flex-row flex-col gap-8 lg:h-[480px]">
+    <!-- Title -->
+    <div class="lg:w-1/2 px-8 lg:px-0">
+      <h2
+        class="text-white lg:text-[45px] md:text-[32px] text-[28px] tracking-tight"
+        data-sal="slide-up"
+        data-sal-duration="800"
+        data-sal-delay="150"
+      >
+        Définir vos Objectifs
+      </h2>
+      <p
+        class="text-grayText mt-3 mb-8 leading-[28px]"
+        data-sal="fade-in"
+        data-sal-duration="800"
+        data-sal-delay="250"
+      >
+        Nous vous proposons de sélectionner le type de projet que vous envisagez
+        pour vous fournir un questionnaire adapté à vos besoins spécifiques.
+      </p>
+      <h2
+        class="text-white lg:text-[32px] md:text-[28px] text-[26px] tracking-tight"
+        data-sal="slide-up"
+        data-sal-duration="800"
+        data-sal-delay="150"
+      >
+        Comment utiliser cet outil ?
+      </h2>
+      <p
+        class="text-grayText mt-3 mb-8 leading-[28px]"
+        data-sal="fade-in"
+        data-sal-duration="800"
+        data-sal-delay="250"
+      >
+        Suivez ces étapes simples pour tirer le meilleur parti de notre
+        questionnaire :
+      </p>
+      <p class="text-grayText mt-3 mb-8 leading-[28px]">
+        1. <span class="font-bold">Choisissez le type de projet</span> qui
+        correspond à vos besoins. <br />
+        2. <span class="font-bold">Répondez aux questions spécifiques</span> à
+        ce type de projet pour nous aider à mieux comprendre vos objectifs.
+        <br />
+        3. <span class="font-bold">Téléchargez vos réponses</span> en format PDF
+        à la fin du questionnaire. <br />
+        4. <span class="font-bold">Envoyez-nous le PDF</span>via notre page de
+        contact pour une consultation personnalisée.
+      </p>
+    </div>
+
+    <!-- Image -->
+    <div
+      class="overflow-hidden h-[300px] lg:h-full lg:w-1/2 lg:rounded-md w-screen"
+    >
+      <img
+        src="{{ asset('./image/support/define.jpeg') }}"
+        alt="creation de site"
+        class="object-cover"
+      />
+    </div>
+  </article>
+
+  <article class="mt-[80px] lg:mt-[100px] mx-auto w-full">
+    <div class="flex flex-col justify-center items-center mt-[20px] w-full">
+      <h2
+        class="lg:w-[91%] w-full text-white lg:text-[32px] md:text-[28px] text-[26px] tracking-tight"
+      >
+        Questionnaire de définition de vos objectifs
+      </h2>
+
+      <!-- Div pour les messages d'erreur -->
+      <div class="mt-2 w-full lg:w-[91%]">
+        <div class="w-full lg:w-1/2">
+          <div id="statusMessages" role="alert"></div>
+        </div>
+      </div>
+
+      <!-- Div pour les questions -->
+      <div class="flex flex-col mt-[50px] relative w-full lg:w-[91%] mb-4">
+        <div class="lg:w-1/2 flex flex-col">
+          <label for="type" class="text-grayText text-sm font-medium mb-2">
+            Type de projet<span class="text-secondary">*</span>
+          </label>
+          <div class="select-container bg-primary lg:w-1/2 flex items-center">
+            <select
+              id="type"
+              class="form-contact-input bg-quaternary select-input w-full rounded-[4px] border border-borderBase bg-opacityBlue h-[50px] px-4 text-white text-sm font-light focus:outline-none focus:ring focus:ring-secondary"
+            >
+              <option selected>-Sélectionnez le type de votre projet-</option>
+              <option value="1">Site Vitrine</option>
+              <option value="2">Site Web</option>
+              <option value="3">Site Complexe</option>
+            </select>
+          </div>
+        </div>
+      </div>
+
+      <div
+        class="flex flex-col lg:flex-row gap-4 flex-wrap items-center justify-center w-full"
+      >
+        <div class="w-full lg:w-[45%] conditional-div">
+          <label for="message" class="mb-4 text-sm text-grayText"
+            >1/5. Quels sont les objectifs principaux de votre site d'entreprise
+            ?<span class="text-secondary">*</span></label
+          >
+          <textarea
+            placeholder="Exemple : Augmenter la notoriété de la marque, améliorer l'engagement client, etc."
+            rows="5"
+            resize="none"
+            class="p-2.5 w-full mt-2 text-sm text-grayText bg-quaternary rounded-md border border-borderBase"
+          ></textarea>
+        </div>
+
+        <div class="w-full lg:w-[45%] conditional-div hidden-div">
+          <label for="message" class="mb-2 text-sm text-grayText"
+            >2/5. Quelles fonctionnalités spécifiques votre site doit-il inclure
+            pour atteindre ces objectifs ?<span class="text-secondary"
+              >*</span
+            ></label
+          >
+          <textarea
+            placeholder="Formulaire de contact, présentation des services, section témoignages, blog d'entreprise, etc."
+            rows="5"
+            resize="none"
+            class="p-2.5 w-full mt-2 text-sm text-grayText bg-quaternary rounded-md border border-borderBase"
+          ></textarea>
+        </div>
+
+        <div class="w-full lg:w-[45%] conditional-div hidden-div">
+          <label for="message" class="mb-2 text-sm text-grayText"
+            >3/5. Comment mesurez-vous le succès de votre site d'entreprise
+            ?<span class="text-secondary">*</span></label
+          >
+          <textarea
+            placeholder="Taux de conversion, trafic web, durée des sessions utilisateur, etc."
+            rows="5"
+            resize="none"
+            class="p-2.5 w-full mt-2 text-sm text-grayText bg-quaternary rounded-md border border-borderBase"
+          ></textarea>
+        </div>
+
+        <div class="w-full lg:w-[45%] conditional-div hidden-div">
+          <label for="message" class="mb-2 text-sm text-grayText"
+            >4/5. Avez-vous des intégrations spécifiques à incorporer ?</label
+          >
+          <textarea
+            placeholder="Systèmes de réservation, intégration CRM, newsletters, etc."
+            rows="5"
+            resize="none"
+            class="p-2.5 w-full mt-2 text-sm text-grayText bg-quaternary rounded-md border border-borderBase"
+          ></textarea>
+        </div>
+
+        <div class="w-full lg:w-[45%] conditional-div hidden-div">
+          <label for="message" class="mb-2 text-sm text-grayText"
+            >5/5. Quel est votre public cible ?<span class="text-secondary"
+              >*</span
+            ></label
+          >
+          <textarea
+            placeholder="Détails démographiques, préférences, comportements en ligne, etc."
+            rows="5"
+            resize="none"
+            class="p-2.5 w-full mt-2 text-sm text-grayText bg-quaternary rounded-md border border-borderBase"
+          ></textarea>
+        </div>
+
+        <div
+          class="h-[150px] lg:w-[45%] bg-slate-400 opacity-0 hidden lg:block"
+        ></div>
+      </div>
+
+      <div class="lg:w-[91%] w-full">
+        <button
+          id="download-button"
+          class="px-4 py-2 bg-secondary rounded-md text-white mt-[20px]"
+        >
+          Telecharger
+        </button>
+      </div>
+    </div>
+  </article>
+</section>
+
+{% endblock %}

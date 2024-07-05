@@ -4,6 +4,8 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>{% block title %} Welcome! {% endblock %}</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.4.0/jspdf.umd.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <link
       rel="icon"
       href=""
@@ -23,11 +25,14 @@
     {% endblock %}
   </head>
   <body class="hidden-until-scroll">
-    <main>
+  
+   
       {% include '/components/header.html.twig' %} 
+      <main class="pt-[85px]">
       {% block body %} {% endblock %}
-      {% include '/components/footer.html.twig' %}
     </main>
+      {% include '/components/footer.html.twig' %}
+
     <div class="rn-progress-parent">
       <svg
         class="rn-back-circle svg-inner"

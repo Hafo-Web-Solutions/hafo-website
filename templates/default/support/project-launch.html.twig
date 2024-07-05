@@ -1,0 +1,152 @@
+{% extends 'base.html.twig' %} {% block title %} Lancement du projet {% endblock
+%} {% block javascripts %}
+{{ parent() }}
+{{ encore_entry_script_tags("define") }}
+{% endblock %} {% block body %}
+
+<section
+  class="mt-[80px] lg:mt-[100px] w-full default-container 2xl:container-fluid 2xl:px-[140px]"
+>
+  <!-- Content Header -->
+  <article class="flex flex-col lg:w-1/2">
+    <h2
+      class="text-white lg:text-[45px] md:text-[32px] text-[28px] tracking-tight"
+      data-sal="slide-up"
+      data-sal-duration="800"
+      data-sal-delay="150"
+    >
+      Lancement du projet
+    </h2>
+    <p
+      class="text-secondary mt-3 leading-[28px]"
+      data-sal="fade-in"
+      data-sal-duration="800"
+      data-sal-delay="250"
+    >
+      Lancez-vous avec confiance.
+    </p>
+    <p
+      class="text-grayText mt-3 leading-[28px]"
+      data-sal="fade-in"
+      data-sal-duration="800"
+      data-sal-delay="250"
+    >
+      Lorsque votre stratégie est validée, nous passons à l’action. Nous
+      activons le plan précis que nous avons établi ensemble pour réaliser vos
+      objectifs. Chaque étape est soigneusement préparée pour assurer un
+      démarrage fluide et établir une présence en ligne efficace et adaptée à
+      vos besoins.
+    </p>
+  </article>
+
+  <article class="flex lg:flex-row flex-col gap-8 mt-[80px] lg:mt-[100px] mx-auto w-full">
+    <!-- Image -->
+    <div
+      class="overflow-hidden h-[300px] w-full lg:h-[800px] lg:w-1/2 lg:rounded-md"
+    >
+      <img
+        src="{{ asset('./image/support/launch.jpeg') }}"
+        alt="creation de site"
+        class="object-cover w-full h-full hover:scale-110 transition-transform duration-500"
+      />
+    </div>
+
+    <div class="lg:w-1/2 flex flex-col gap-4 lg:gap-8  mt-[80px] lg:mt-[0px] ">
+      <div>
+        <h2
+          class="text-white lg:text-[28px] md:text-[26px] text-[24px] tracking-tight"
+          data-sal="slide-up"
+          data-sal-duration="800"
+          data-sal-delay="150"
+        >
+          Validation Technique et Planification
+        </h2>
+        <p
+          class="text-secondary mt-3 leading-[28px]"
+          data-sal="fade-in"
+          data-sal-duration="800"
+          data-sal-delay="250"
+        >
+          Des bases solides pour une performance optimale.
+        </p>
+        <p
+          class="text-grayText mt-3 mb-8 leading-[28px]"
+          data-sal="fade-in"
+          data-sal-duration="800"
+          data-sal-delay="250"
+        >
+          Nous commençons par une validation technique pour nous assurer que
+          toutes les spécifications correspondent parfaitement à vos attentes.
+          Cette phase inclut l’organisation des ressources nécessaires, la
+          planification des étapes clés et la mise en place des systèmes
+          essentiels. Elle garantit que tout est prêt pour un développement sans
+          accroc.
+        </p>
+      </div>
+
+      <div>
+        <h2
+          class="text-white lg:text-[28px] md:text-[26px] text-[24px] tracking-tight"
+          data-sal="slide-up"
+          data-sal-duration="800"
+          data-sal-delay="150"
+        >
+          Développement et Intégration
+        </h2>
+        <p
+          class="text-secondary mt-3 leading-[28px]"
+          data-sal="fade-in"
+          data-sal-duration="800"
+          data-sal-delay="250"
+        >
+          Transformez les plans en réalité fonctionnelle.
+        </p>
+        <p
+          class="text-grayText mt-3 mb-8 leading-[28px]"
+          data-sal="fade-in"
+          data-sal-duration="800"
+          data-sal-delay="250"
+        >
+          Cette phase est le cœur du développement de votre site ou application.
+          Notre équipe construit et intègre les fonctionnalités prévues,
+          utilisant des méthodes agiles pour une adaptation rapide et efficace.
+          Nous nous assurons que chaque élément fonctionne harmonieusement pour
+          répondre à vos besoins spécifiques.
+        </p>
+      </div>
+
+      <div>
+        <h2
+          class="text-white lg:text-[28px] md:text-[26px] text-[24px] tracking-tight"
+          data-sal="slide-up"
+          data-sal-duration="800"
+          data-sal-delay="150"
+        >
+          Tests et Assurance Qualité
+        </h2>
+        <p
+          class="text-secondary mt-3 leading-[28px]"
+          data-sal="fade-in"
+          data-sal-duration="800"
+          data-sal-delay="250"
+        >
+          Assurez la qualité avant le lancement.
+        </p>
+        <p
+          class="text-grayText mt-3 mb-8 leading-[28px]"
+          data-sal="fade-in"
+          data-sal-duration="800"
+          data-sal-delay="250"
+        >
+          Nous soumettons votre projet à une série de tests pour vérifier que
+          tout fonctionne parfaitement. Ces tests comprennent la sécurité, la
+          compatibilité et la performance. L’objectif est détecter et résoudre
+          tout problème avant le lancement, garantissant ainsi une expérience
+          utilisateur fluide et sécurisée dès le départ.
+        </p>
+      </div>
+    </div>
+  </article>
+</section>
+
+{% endblock %}

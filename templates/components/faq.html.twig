@@ -1,6 +1,10 @@
 {% block faq %}
-<section class="default-container my-32 lg:my-0 lg-1500:h-screen">
-<h2 class="text-3xl mb-4 font-bold tracking-tight text-white px-0">FAQ</h2>
+<section class="w-full default-container 2xl:container-fluid 2xl:px-[140px] lg:my-0 {% if style is defined %}{{ style }} {% else %} my-[80px] lg:my-[100px]  {% endif %}">
+  <!-- if Variable "isTitle" does not exist. -->
+  {% if isTitle is not defined %}
+    <h2 class="text-3xl mb-4 font-bold tracking-tight text-white px-0">FAQ</h2>
+  {% endif %}
+
 <article class="flex gap-3 flex-col md:flex-row items-center md:items-start w-full">
     <!-- Block Question -->
     <div class=" md:w-1/2 mb-8">
@@ -37,11 +41,13 @@
           class="py-4 px-8 text-white text-center bg-secondary hover:bg-tertiary text-base cursor-pointer rounded-lg font-semibold order-last md:order-first"
           >Nous contacter</a
         >
+        {% if isSupport is not defined %}
         <a
-        href="#"
+          href="{{ path('app_support_center') }}" 
           class="py-4 px-8 text-white text-center cursor-pointer text-base rounded-lg font-semibold"
           >Centre de Support</a
         >
+        {% endif %}
       </div>
     </div>
 

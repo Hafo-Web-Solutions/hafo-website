@@ -1,4 +1,3 @@
-const ProjectsComponent = () => {
   // Images
   const images = [
     "./image/achievements/image.svg",
@@ -85,6 +84,3 @@ const ProjectsComponent = () => {
   // Display the first image by default
   changeImage(currentIndex);
   changeText(currentIndex);
-};
-
-export default ProjectsComponent;

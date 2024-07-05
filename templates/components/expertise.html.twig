@@ -1,6 +1,6 @@
 {% block expertise %}
-<section class="default-container mb-[100px] flex flex-wrap justify-center">
-  <article class="mb-16 w-min-[380px]">
+<section class="w-full default-container 2xl:container-fluid 2xl:px-[140px] mb-[100px] flex flex-col expertise-size:flex-row flex-wrap justify-center">
+  <article class="mb-16 w-min-[380px] expertise-size:w-1/2">
     <h2
       class="text-3xl font-bold tracking-tight text-white"
       data-sal="slide-up"
@@ -29,7 +29,7 @@
       optimale. Vos ambitions sont au coeur de notre démarche créative
     </p>
     <a
-      href="#"
+      href="{{ path('app_services_and_prices') }}"
       class="py-4 px-8 text-white font-semibold bg-secondary hover:bg-tertiary cursor-pointer rounded-lg"
       data-sal="slide-up"
       data-sal-duration="800"
@@ -38,7 +38,7 @@
     </a>
   </article>
 
-  <article class="p-0 m-0">
+  <article class="p-0 m-0 expertise-size:w-1/2">
     <div
       class="flex justify-center flex-wrap w-[100%] sibling-fade"
       data-sal="slide-up"
@@ -47,7 +47,7 @@
     >
       <!-- Création de site -->
       <a
-        href="#"
+        href="{{ path('app_expertise_site_creation') }}"
         class="bg-quaternary rounded-lg p-6 cursor-pointer w-[290px] h-[220px] m-4 custom-transition"
       >
         <div class="flex justify-between relative">
@@ -73,7 +73,7 @@
 
       <!-- Refonte -->
       <a
-        href="#"
+        href="{{ path('app_expertise_redesign') }}"
         class="bg-quaternary rounded-lg p-6 cursor-pointer w-[290px] h-[220px] m-4 custom-transition2"
       >
         <div class="flex justify-between relative">
@@ -99,7 +99,7 @@
 
       <!-- Maintenance -->
       <a
-        href="#"
+        href="{{ path('app_expertise_maintenance') }}"
         class="bg-quaternary rounded-lg p-6 cursor-pointer w-[290px] h-[220px] m-4 custom-transition3"
       >
         <div class="flex justify-between relative h-4">
@@ -125,7 +125,7 @@
 
       <!-- Référencement -->
       <a
-        href="#"
+        href="{{ path('app_expertise_seo') }}" 
         class="bg-quaternary rounded-lg p-6 cursor-pointer w-[290px] h-[220px] m-4 custom-transition4"
       >
         <div class="flex justify-between relative">
