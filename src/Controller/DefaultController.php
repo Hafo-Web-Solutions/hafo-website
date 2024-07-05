@@ -94,4 +94,11 @@ class DefaultController extends AbstractController
         return $this->render('default/support/project-launch.html.twig');
     }
 
+    //Let's Plan Together
+    #[Route('planifions-ensemble', name: 'app_lets_plan_together')]
+    public function letsPlanTogether(): Response
+    {
+        return $this->render('default/support/lets-plan-together.html.twig');
+    }
+
 }

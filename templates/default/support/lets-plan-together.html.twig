@@ -1,0 +1,244 @@
+{% extends 'base.html.twig' %} {% block title %} Planifions Ensemble {% endblock
+%}
+{% block javascripts %}
+{{ parent() }}
+{{ encore_entry_script_tags("plan") }}
+{% endblock %} 
+{% block body %}
+<style>
+  body {
+    font-family: Arial, Helvetica, sans-serif;
+  }
+  .number {
+    font-size: 100px;
+    font-weight: bold;
+    color: gray;
+  }
+  .parent {
+    height: 300px;
+    width: 4px;
+    background-color: #282832;
+    display: block;
+    position: relative;
+    overflow: hidden;
+  }
+  .child {
+    opacity: 0;
+    position: absolute;
+    width: 100%;
+    height: 0;
+    background-color: #00a3ff;
+    transition: height 0.1s ease; /* Transition pour un effet plus fluide */
+  }
+  .section {
+    margin-top: 100px;
+    margin-bottom: 100px;
+
+  }
+  
+  .testt {
+    width: 100px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+
+  .block-content p:nth-child(1) {
+    color: #00a3ff;
+    font-size: 16px;
+  }
+  .block-content p:nth-child(2) {
+    color: #acacac;
+  }
+
+  /* Animation fadein */
+  .block-content {
+    opacity: 0;
+  }
+  .block-content {
+
+    display: none;
+
+    color: white;
+
+    /* animation: fadeInText 2s 1500ms forwards; */
+    animation: slideUpFadeIn 1s ease-in-out forwards;
+  }
+  @keyframes slideUpFadeIn {
+    0% {
+      opacity: 0;
+      transform: translateY(10px); /* Start position */
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0); /* End position */
+    }
+  }
+  @keyframes fadeInText {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+</style>
+
+<section
+  class="mt-[80px] lg:mt-[100px] w-full default-container 2xl:container-fluid 2xl:px-[140px]"
+>
+  <!-- Content Header -->
+  <article class="flex lg:flex-row flex-col gap-8 lg:h-[480px]">
+    <!-- Title -->
+    <div class="lg:w-1/2 px-8 lg:px-0">
+      <h2
+        class="text-white lg:text-[45px] md:text-[32px] text-[28px] tracking-tight"
+        data-sal="slide-up"
+        data-sal-duration="800"
+        data-sal-delay="150"
+      >
+        Planifions Ensemble
+      </h2>
+      <p
+        class="text-grayText mt-3 mb-8 leading-[28px]"
+        data-sal="fade-in"
+        data-sal-duration="800"
+        data-sal-delay="250"
+      >
+        Notre objectif est de transformer vos visions en réalité de manière
+        structurée et efficace. Cette page vous guidera à travers les éléments
+        essentiels de notre processus de planification, assurant que chaque
+        étape de votre projet est bien pensée et alignée avec vos objectifs
+        finaux.
+      </p>
+      <h2
+        class="text-white lg:text-[32px] md:text-[28px] text-[26px] tracking-tight"
+        data-sal="slide-up"
+        data-sal-duration="800"
+        data-sal-delay="150"
+      >
+        Pourquoi est-il essentiel de planifier ?
+      </h2>
+      <p
+        class="text-grayText mt-3 mb-8 leading-[28px]"
+        data-sal="fade-in"
+        data-sal-duration="800"
+        data-sal-delay="250"
+      >
+        Une bonne planification est la clé du succès de tout projet. Elle permet
+        d'identifier les ressources nécessaires, de fixer des délais réalistes,
+        et d'établir des critères clairs pour mesurer le progrès et la réussite
+        du projet. Nous prenons ce processus au sérieux pour garantir que vos
+        attentes sont non seulement rencontrées mais dépassées.
+      </p>
+    </div>
+
+    <!-- Image -->
+    <div
+      class="overflow-hidden h-[300px] lg:h-full lg:w-1/2 lg:rounded-md"
+    >
+      <img
+        src="{{ asset('./image/support/define.jpeg') }}"
+        alt="creation de site"
+        class="object-cover"
+      />
+    </div>
+  </article>
+
+  <article>
+   
+    <!-- .article {
+    padding: 0 140px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+      .blockk {
+    display: flex;
+    height: 400px;
+    width: 500px;
+    justify-content: space-between;
+  }
+
+
+    
+  .testt {
+    width: 100px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+      width: 350px;
+    padding-top: 40px;
+    flex-direction: column;
+    gap: 15px;
+  } -->
+
+    <section class="section">
+      <h2 class="text-white lg:text-[32px] md:text-[28px] text-[26px] tracking-tight">Les Étapes de Notre Planification</h2>
+      <article class="lg:px-[140px] flex flex-col">
+        <!-- block 1/3 -->
+        <div class="block-item flex gap-4 justify-between h-[400px] w-full md:w-[300px] lg:w-[500px]">
+          <div class="testt">
+            <p class="number">01</p>
+            <span class="parent">
+              <div class="child"></div>
+            </span>
+          </div>
+          <div class="block-content w-[350px] pt-[40px] flex-col gap-[15px]">
+            <p>Définition des Objectifs</p>
+            <p class="blabla">
+              Nous reprendrons les objectifs définis dans la phase initiale pour
+              nous assurer que notre équipe est alignée et comprend ce que vous
+              souhaitez atteindre.
+            </p>
+          </div>
+        </div>
+        <!-- block 2/3 -->
+        <div class="block-item flex gap-4 justify-between h-[400px] w-full md:w-[300px] lg:w-[500px]">
+          <div class="testt">
+            <p class="number">02</p>
+            <span class="parent">
+              <div class="child"></div>
+            </span>
+          </div>
+          <div class="block-content w-[350px] pt-[40px] flex-col gap-[15px]">
+            <p>Évaluation des Ressources et des Contraintes</p>
+            <p class="blabla">
+              Analyse des ressources disponibles, y compris le budget, les
+              technologies, et le personnel. Identification des contraintes
+              potentielles qui pourraient influencer le calendrier ou la qualité
+              du projet.
+            </p>
+          </div>
+        </div>
+        <!-- block 3/3 -->
+        <div class="block-item flex gap-4 justify-between h-[400px] w-full md:w-[300px] lg:w-[500px]">
+          <div class="testt">
+            <p class="number">03</p>
+            <span class="parent">
+              <div class="child"></div>
+            </span>
+          </div>
+          <div class="block-content w-[350px] pt-[40px] flex-col gap-[15px]">
+            <p>Élaboration du Plan d'Action</p>
+            <p class="blabla">
+              Développement d'un plan étape par étape qui détaille toutes les
+              actions nécessaires pour atteindre les objectifs fixés. Ce plan
+              inclura des jalons et des échéances pour chaque phase du projet.
+            </p>
+          </div>
+        </div>
+      </article>
+    </section>
+  </article>
+</section>
+
+<script>
+  window.addEventListener("scroll", function () {
+    console.log(window.scrollY);
+  });
+</script>
+{% endblock %}
