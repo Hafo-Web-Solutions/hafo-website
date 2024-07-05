@@ -91,6 +91,50 @@ body {
   background: #00a3ff;
 }
 
+/* Input file */
+.file-upload-input {
+  background-color: rgba(36, 36, 53, 0.3412);
+  border: 1px solid #282832;
+  color: #ACACAC;
+}
+.file-upload-input::file-selector-button {
+  display: none;
+}
+
+
+#contact_subject {
+  color: #ACACAC;
+}
+
+
+.select-container {
+  position: relative;
+  display: inline-block;
+}
+.select-input {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+
+}
+.select-container::after {
+  content: '\e92e';
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    font-family: "feather";
+    transform: translateY(-50%);
+    color: #00a3ff;
+    font-size: 18px;
+}
+.select-input {
+  padding-right: 30px;
+}
+.select-input option {
+  background-color: #171721;
+  color: #fff;
+}
+
 /* ANIMATIONS */
 /* Text ellipsis */
 .text-ellipsis {

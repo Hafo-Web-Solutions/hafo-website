@@ -27,7 +27,7 @@ document.addEventListener("DOMContentLoaded", () => {
       });
   
       // Hover on elements
-      document.querySelectorAll("a, button, .cursor-pointer").forEach((el) => {
+      document.querySelectorAll("a, button, input, select, textarea, .cursor-pointer").forEach((el) => {
         el.addEventListener("mouseenter", () => {
           cursorInner.classList.add("cursor-hover");
           cursorOuter.classList.add("cursor-hover");

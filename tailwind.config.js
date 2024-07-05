@@ -17,6 +17,7 @@ module.exports = {
         customBlack: "rgba(0, 0, 0, 0.8)",
         darkBlue: "#242435",
         darkMidnightBlue: "#151521",
+        opacityBlue: "rgba(36, 36, 53, 0.3412)",
       },
       boxShadow: {
         "3xl": "0 0 15px rgba(0,0,0,.15)",
