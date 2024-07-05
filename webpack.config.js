@@ -10,6 +10,7 @@ Encore
     .setOutputPath('public/build/')
     .setPublicPath('/build')
     .addEntry('app', './assets/js/app.js')
+    .addEntry('contact', './assets/js/contact.js')
     .enablePostCssLoader()
     .splitEntryChunks()
     .enableSingleRuntimeChunk()

@@ -1,0 +1,393 @@
+{% extends 'base.html.twig' %} {% block title %} Nous contacter {% endblock %}
+{% block javascripts %}
+{{ parent() }}
+{{ encore_entry_script_tags("contact") }}
+<script src="https://www.google.com/recaptcha/api.js" async defer></script>
+{% endblock %} {% block body %}
+
+<!-- Add some spacing at the top of the page -->
+<div class="h-20 w-full"></div>
+
+<!-- Main container for the contact form and information -->
+<div
+  class="mt-20 flex flex-col lg:justify-between lg:flex-row marker:justify-between lg:gap-8 sm:container default-container"
+>
+  <!-- Contact information -->
+  <div class="lg:w-1/2">
+    <div>
+      <h1
+        class="text-white text-[28px] md:text-[32px] lg:md:text-[36px] font-bold mb-6"
+      >
+        Nous contacter
+      </h1>
+      <p class="text-grayText">
+        En quête d'une agence web fiable pour votre projet ? Prenez contact avec
+        nous et explorez nos solutions sur-mesure.
+      </p>
+    </div>
+    <div class="border-t border-borderBase w-[100px] my-10"></div>
+    <div class="mb-10">
+      <h2 class="text-base text-grayText">Hafo Web Solutions</h2>
+      <ul>
+        <li class="my-2.5">
+          <!-- Phone number link -->
+          <a
+            class="border-expand relative text-base text-grayText hover:text-secondary duration-300 ease-in-out"
+            href="tel:06 18 86 59 97"
+            >06 18 86 59 97</a
+          >
+        </li>
+        <li>
+          <!-- Email link -->
+          <a
+            class="border-expand relative text-base text-grayText hover:text-secondary duration-300 ease-in-out"
+            href="mailto:contact@hafowebsolutions.fr"
+            >contact@hafowebsolutions.fr</a
+          >
+        </li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- Contact form -->
+  {{
+    form_start(form_contact, {
+      attr: {
+        class: "lg:w-1/2"
+      }
+    })
+  }}
+
+  <!-- Last name & first name fields -->
+  <div class="flex flex-col lg:flex-row lg:gap-4">
+    <!-- Last name field -->
+    <div class="flex flex-col lg:w-1/2">
+      <label
+        for="{{ form_contact.lastName.vars.id }}"
+        class="text-grayText text-sm font-medium mb-2"
+      >
+        Nom<span class="text-secondary">*</span>
+      </label>
+      {{
+        form_widget(form_contact.lastName, {
+          attr: {
+            class:
+              "form-contact-input w-full rounded-[4px] border border-borderBase bg-opacityBlue h-[50px] px-4 text-white text-sm font-light focus:outline-none focus:ring focus:ring-secondary focus:ring-[1px]",
+            placeholder: "Nom"
+          }
+        })
+      }}
+      <span
+        class="text-red-500 text-xs mt-1.5 form-contact-error"
+        id="lastNameError"
+      >
+        {{ form_errors(form_contact.lastName) }}
+      </span>
+    </div>
+
+    <!-- First name field -->
+    <div class="flex flex-col mt-6 lg:w-1/2 lg:mt-0">
+      <label
+        for="{{ form_contact.firstName.vars.id }}"
+        class="text-grayText text-sm font-medium mb-2"
+      >
+        Prénom<span class="text-secondary">*</span>
+      </label>
+      {{
+        form_widget(form_contact.firstName, {
+          attr: {
+            class:
+              "form-contact-input w-full rounded-[4px] border border-borderBase bg-opacityBlue h-[50px] px-4 text-white text-sm font-light focus:outline-none focus:ring focus:ring-secondary focus:ring-[1px]",
+            placeholder: "Prénom"
+          }
+        })
+      }}
+      <span
+        class="text-red-500 text-xs mt-1.5 form-contact-error"
+        id="firstNameError"
+        >{{ form_errors(form_contact.firstName) }}
+      </span>
+    </div>
+  </div>
+
+  <!-- Email & phone fields -->
+  <div class="flex flex-col mt-6 lg:flex-row lg:gap-4">
+    <!-- Email field -->
+    <div class="flex flex-col lg:w-1/2">
+      <label
+        for="{{ form_contact.email.vars.id }}"
+        class="text-grayText text-sm font-medium mb-2"
+      >
+        Email<span class="text-secondary">*</span>
+      </label>
+      {{
+        form_widget(form_contact.email, {
+          attr: {
+            class:
+              "form-contact-input w-full rounded-[4px] border border-borderBase bg-opacityBlue h-[50px] px-4 text-white text-sm font-light focus:outline-none focus:ring focus:ring-secondary focus:ring-[1px]",
+            placeholder: "Email"
+          }
+        })
+      }}
+      <span
+        class="text-red-500 text-xs mt-1.5 form-contact-error"
+        id="emailError"
+        >{{ form_errors(form_contact.email) }}
+      </span>
+    </div>
+
+    <!-- Phone field -->
+    <div class="flex flex-col mt-6 lg:w-1/2 lg:mt-0">
+      {{
+        form_label(form_contact.phone, null, {
+          label_attr: { class: "text-grayText text-sm font-medium mb-2" }
+        })
+      }}
+      {{
+        form_widget(form_contact.phone, {
+          attr: {
+            class:
+              "form-contact-input w-full rounded-[4px] border border-borderBase bg-opacityBlue h-[50px] px-4 text-white text-sm font-light focus:outline-none focus:ring focus:ring-secondary focus:ring-[1px]",
+            placeholder: "Téléphone"
+          }
+        })
+      }}
+      <span
+        class="text-red-500 text-xs mt-1.5 form-contact-error"
+        id="phoneError"
+        >{{ form_errors(form_contact.phone) }}
+      </span>
+    </div>
+  </div>
+
+  <!-- Company & attachment fields -->
+  <div class="flex flex-col mt-6 lg:flex-row lg:gap-4">
+    <!-- Company field -->
+    <div class="flex flex-col lg:w-1/2">
+      {{
+        form_label(form_contact.company, null, {
+          label_attr: { class: "text-grayText text-sm font-medium mb-2" }
+        })
+      }}
+      {{
+        form_widget(form_contact.company, {
+          attr: {
+            class:
+              "form-contact-input w-full rounded-[4px] border border-borderBase bg-opacityBlue h-[50px] px-4 text-white text-sm font-light focus:outline-none focus:ring focus:ring-secondary focus:ring-[1px]",
+            placeholder: "Société"
+          }
+        })
+      }}
+      <span
+        class="text-red-500 text-xs mt-1.5 form-contact-error"
+        id="companyError"
+        >{{ form_errors(form_contact.company) }}
+      </span>
+    </div>
+
+    <!-- Attachment field -->
+    <div class="flex flex-col mt-6 lg:w-1/2 lg:mt-0">
+      {{
+        form_label(form_contact.attachment, null, {
+          label_attr: { class: "text-grayText text-sm font-medium mb-2" }
+        })
+      }}
+      <div class="relative">
+        {{
+          form_widget(form_contact.attachment, {
+            attr: {
+              class:
+                "form-contact-input w-full rounded-[4px] border border-borderBase pt-[15px] bg-opacityBlue h-[50px] px-4 text-sm font-light file-upload-input"
+            }
+          })
+        }}
+        <span class="absolute right-3 top-1/2 transform -translate-y-1/2">
+          <svg
+            width="21"
+            height="21"
+            viewBox="0 0 21 21"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M18.7605 9.6688L10.7192 17.7101C9.73413 18.6952 8.39803 19.2486 7.00487 19.2486C5.61171 19.2486 4.27561 18.6952 3.2905 17.7101C2.30538 16.7249 1.75195 15.3888 1.75195 13.9957C1.75195 12.6025 2.30538 11.2664 3.2905 10.2813L11.3317 2.24005C11.9885 1.58331 12.8792 1.21436 13.808 1.21436C14.7368 1.21436 15.6275 1.58331 16.2842 2.24005C16.941 2.89679 17.3099 3.78753 17.3099 4.7163C17.3099 5.64508 16.941 6.53581 16.2842 7.19255L8.23425 15.2338C7.90588 15.5622 7.46051 15.7467 6.99612 15.7467C6.53174 15.7467 6.08637 15.5622 5.758 15.2338C5.42963 14.9054 5.24515 14.4601 5.24515 13.9957C5.24515 13.5313 5.42963 13.0859 5.758 12.7576L13.1867 5.33755"
+              stroke="#00A3FF"
+              stroke-width="1.3"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            />
+          </svg>
+        </span>
+      </div>
+      <span
+        class="text-red-500 text-xs mt-1.5 form-contact-error"
+        id="attachmentError"
+      >
+        {{ form_errors(form_contact.attachment) }}
+      </span>
+    </div>
+  </div>
+
+  <!-- Subject field -->
+  <div class="flex flex-col mt-6">
+    <label
+      for="{{ form_contact.subject.vars.id }}"
+      class="text-grayText text-sm font-medium mb-2"
+    >
+      Sujet<span class="text-secondary">*</span>
+    </label>
+    <div class="select-container">
+      {{
+        form_widget(form_contact.subject, {
+          attr: {
+            class:
+              "form-contact-input select-input w-full rounded-[4px] border border-borderBase bg-opacityBlue h-[50px] px-4 text-white text-sm font-light focus:outline-none focus:ring focus:ring-secondary focus:ring-[1px]"
+          }
+        })
+      }}
+      <span
+        class="text-red-500 text-xs mt-1.5 form-contact-error"
+        id="subjectError"
+        >{{ form_errors(form_contact.subject) }}
+      </span>
+    </div>
+  </div>
+
+  <!-- Message field -->
+  <div class="flex flex-col mt-6">
+    <label
+      for="{{ form_contact.message.vars.id }}"
+      class="text-grayText text-sm font-medium mb-2"
+    >
+      Message<span class="text-secondary">*</span>
+    </label>
+    <div>
+      {{
+        form_widget(form_contact.message, {
+          attr: {
+            class:
+              "form-contact-input w-full rounded-[4px] border border-borderBase bg-opacityBlue h-[150px] px-4 text-white text-sm font-light pt-3 focus:outline-none focus:ring focus:ring-secondary focus:ring-[1px]",
+            placeholder: "Votre message"
+          }
+        })
+      }}
+      <span
+        class="text-red-500 text-xs mt-1.5 form-contact-error"
+        id="messageError"
+        >{{ form_errors(form_contact.message) }}
+      </span>
+    </div>
+  </div>
+
+  <!-- Consent field -->
+  <div class="flex flex-col mt-6">
+    <div class="flex items-center">
+      <div class="flex items-center">
+        {{
+          form_widget(form_contact.consent, {
+            attr: { class: "form-contact-input" }
+          })
+        }}
+      </div>
+      <label
+        for="{{ form_contact.consent.vars.id }}"
+        class="text-grayText text-xs font-medium ml-2"
+      >
+        J'accepte les
+        <a href="" class="text-secondary">Mentions Légales</a> et les
+        <a href="" class="text-secondary">Conditions Générales de Vente</a
+        >.<span class="text-secondary">*</span>
+      </label>
+    </div>
+    <span
+      class="text-red-500 text-xs mt-1.5 form-contact-error"
+      id="consentError"
+      >{{ form_errors(form_contact.consent) }}
+    </span>
+  </div>
+
+  <!-- Submit button -->
+  <div class="flex flex-col mt-6">
+    <div>
+      <button
+        class="g-recaptcha rounded-[10px] bg-secondary h-[50px] px-[32px] py-[16px] text-white font-medium tracking-[0.5px] flex items-center hover:bg-tertiary duration-300 ease-in-out"
+        data-sitekey="{{ recaptcha_public_key }}"
+        data-callback="onSubmit"
+        data-action="submit"
+      >
+        Envoyer
+      </button>
+    </div>
+  </div>
+
+  <!-- advertising -->
+  <div class="text-grayText text-xs mt-6">
+    Tous les champs marqués d'un astérisque (<span class="text-secondary"
+      >*</span
+    >) sont requis.
+  </div>
+  {{ form_end(form_contact) }}
+</div>
+
+<!-- Modal Overlay -->
+<div
+  x-data="{ open: true }"
+  id="confirmationModal"
+  class="hidden fixed inset-0 bg-customBlack z-40 items-center justify-center"
+  x-show="open"
+  @click="open = false"
+  data-sal="fade"
+  data-sal-duration="800"
+  data-sal-selay="150"
+>
+  <!-- Modal Content -->
+  <div
+    class="rounded-[10px] p-6 bg-darkMidnightBlue sm:my-8 sm:w-full sm:max-w-sm sm:p-6"
+    @click.stop
+    data-sal="slide-down"
+    data-sal-duration="800"
+    data-sal-selay="150"
+  >
+    <div>
+      <div
+        class="mx-auto flex h-12 w-12 items-center justify-center rounded-full bg-tertiary"
+      >
+        <svg
+          class="h-6 w-6 text-secondary"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke-width="1.5"
+          stroke="currentColor"
+          aria-hidden="true"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            d="M4.5 12.75l6 6 9-13.5"
+          />
+        </svg>
+      </div>
+      <div class="mt-3 text-center sm:mt-5">
+        <h3 class="text-base font-semibold leading-6 text-white">
+          Message envoyé
+        </h3>
+        <div class="mt-2">
+          <p class="text-sm text-grayText">
+            Merci de nous avoir contactés. Nous reviendrons vers vous
+            rapidement.
+          </p>
+        </div>
+      </div>
+    </div>
+    <div class="mt-5 sm:mt-6">
+      <button
+        type="button"
+        class="flex w-full justify-center rounded-[10px] bg-secondary px-3 py-2 font-medium text-white hover:bg-tertiary duration-300 ease-in-out"
+        @click="open = false"
+      >
+        Fermer
+      </button>
+    </div>
+  </div>
+</div>
+{% endblock %}
