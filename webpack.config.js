@@ -13,6 +13,7 @@ Encore
     .addEntry('contact', './assets/js/contact.js')
     .addEntry('project', './assets/js/project.js')
     .addEntry('define', './assets/js/define.js')
+    .addEntry('plan', './assets/js/plan.js')
     .enablePostCssLoader()
     .splitEntryChunks()
     .enableSingleRuntimeChunk()
