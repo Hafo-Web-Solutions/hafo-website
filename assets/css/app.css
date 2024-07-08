@@ -496,3 +496,62 @@ textarea {
   background-color: #171721;
   color: #fff;
 }
+
+/* PLAN */
+.block-number-plan {
+  font-size: 100px;
+  font-weight: bold;
+  color: gray;
+}
+.parent-plan {
+  height: 300px;
+  width: 4px;
+  background-color: #282832;
+  display: block;
+  position: relative;
+}
+.child-plan {
+  opacity: 0;
+  position: absolute;
+  width: 100%;
+  height: 0;
+  background-color: #00a3ff;
+  transition: height 0.1s ease; /* Transition pour un effet plus fluide */
+}
+
+.block-progress-plan {
+  width: 100px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.block-content-plan p:nth-child(1) {
+  color: #00a3ff;
+  font-size: 16px;
+}
+.block-content-plan p:nth-child(2) {
+  color: #acacac;
+}
+
+/* Animation fadein */
+.block-content-plan {
+  opacity: 0;
+}
+.block-content-plan {
+  display: none;
+  color: white;
+  animation: slideUpFadeIn 1s ease-in-out forwards;
+}
+
+@keyframes slideUpFadeIn {
+  0% {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+

@@ -10,7 +10,7 @@ endblock %} {% block javascripts %}
   <!-- Content Header -->
   <article class="flex lg:flex-row flex-col gap-8 lg:h-[480px]">
     <!-- Title -->
-    <div class="lg:w-1/2 px-8 lg:px-0">
+    <div class="lg:w-1/2">
       <h2
         class="text-white lg:text-[45px] md:text-[32px] text-[28px] tracking-tight"
         data-sal="slide-up"
@@ -60,12 +60,12 @@ endblock %} {% block javascripts %}
 
     <!-- Image -->
     <div
-      class="overflow-hidden h-[300px] lg:h-full lg:w-1/2 lg:rounded-md w-screen"
+      class="overflow-hidden h-[300px] lg:h-full lg:w-1/2 lg:rounded-md"
     >
       <img
         src="{{ asset('./image/support/define.jpeg') }}"
         alt="creation de site"
-        class="object-cover"
+        class="object-cover hover:scale-150 transition-transform duration-500 ease-in-out"
       />
     </div>
   </article>
@@ -118,6 +118,8 @@ endblock %} {% block javascripts %}
             rows="5"
             resize="none"
             class="p-2.5 w-full mt-2 text-sm text-grayText bg-quaternary rounded-md border border-borderBase"
+            id="textarea1"
+            required
           ></textarea>
         </div>
 
@@ -133,6 +135,8 @@ endblock %} {% block javascripts %}
             rows="5"
             resize="none"
             class="p-2.5 w-full mt-2 text-sm text-grayText bg-quaternary rounded-md border border-borderBase"
+            id="textarea2"
+            required
           ></textarea>
         </div>
 
@@ -146,32 +150,37 @@ endblock %} {% block javascripts %}
             rows="5"
             resize="none"
             class="p-2.5 w-full mt-2 text-sm text-grayText bg-quaternary rounded-md border border-borderBase"
+            id="textarea3"
+            required
           ></textarea>
         </div>
 
         <div class="w-full lg:w-[45%] conditional-div hidden-div">
           <label for="message" class="mb-2 text-sm text-grayText"
-            >4/5. Avez-vous des intégrations spécifiques à incorporer ?</label
+            >4/5.Quel est votre public cible ?<span class="text-secondary"
+              >*</span
+            ></label
           >
           <textarea
             placeholder="Systèmes de réservation, intégration CRM, newsletters, etc."
             rows="5"
             resize="none"
             class="p-2.5 w-full mt-2 text-sm text-grayText bg-quaternary rounded-md border border-borderBase"
+            id="textarea4"
+            required
           ></textarea>
         </div>
 
         <div class="w-full lg:w-[45%] conditional-div hidden-div">
           <label for="message" class="mb-2 text-sm text-grayText"
-            >5/5. Quel est votre public cible ?<span class="text-secondary"
-              >*</span
-            ></label
+            >5/5. Avez-vous des intégrations spécifiques à incorporer ?</label
           >
           <textarea
             placeholder="Détails démographiques, préférences, comportements en ligne, etc."
             rows="5"
             resize="none"
             class="p-2.5 w-full mt-2 text-sm text-grayText bg-quaternary rounded-md border border-borderBase"
+            id="textarea5"
           ></textarea>
         </div>
 
@@ -187,6 +196,11 @@ endblock %} {% block javascripts %}
         >
           Telecharger
         </button>
+        <p class="text-grayText text-xs mt-6">
+          Tous les champs marqués d'un astérisque (<span class="text-secondary"
+            >*</span
+          >) sont requis.
+        </p>
       </div>
     </div>
   </article>
