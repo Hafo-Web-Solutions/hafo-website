@@ -46,7 +46,7 @@ class DefaultController extends AbstractController
     #[Route('referencement', name: 'app_expertise_seo')]
     public function expertiseSeo(): Response
     {
-        return $this->render('default/expertises/seo.html.twig');   
+        return $this->render('default/expertises/seo.html.twig');
     }
 
     #[Route('services-et-tarifs', name: 'app_services_and_prices')]
@@ -70,7 +70,90 @@ class DefaultController extends AbstractController
     #[Route('nos-realisations', name: 'app_achievements')]
     public function achievements(): Response
     {
-        return $this->render('default/achievements/index.html.twig');
+        //en attendant de mettre les données dans le database
+        $achievements = [
+            [
+                'id' => '1',
+                'title' => 'Réalisation 1',
+                'category' => 'Site Vitrine',
+                'href' => '#'
+            ],
+            [
+                'id' => '2',
+                'title' => 'Réalisation 2',
+                'category' => 'Site Web',
+                'href' => '#'
+            ],
+            [
+                'id' => '3',
+                'title' => 'Réalisation 3',
+                'category' => 'Site Complexe',
+                'href' => '#'
+            ],
+            [
+                'id' => '4',
+                'title' => 'Réalisation 4',
+                'category' => 'Site Autre',
+                'href' => '#'
+            ],
+        ];
+
+        return $this->render(
+            'default/achievements/index.html.twig',
+            [
+                'achievements' => $achievements,
+            ]
+        );
+    }
+
+    #[Route('nos-realisations/{id}', name: 'app_achievement')]
+    public function achievement(string $id): Response
+    {
+        //en attendant de mettre les données dans le database
+        $achievements = [
+            [
+                'id' => '1',
+                'title' => 'Réalisation 1',
+                'category' => 'Site Vitrine',
+                'href' => '#'
+            ],
+            [
+                'id' => '2',
+                'title' => 'Réalisation 2',
+                'category' => 'Site Web',
+                'href' => '#'
+            ],
+            [
+                'id' => '3',
+                'title' => 'Réalisation 3',
+                'category' => 'Site Complexe',
+                'href' => '#'
+            ],
+            [
+                'id' => '4',
+                'title' => 'Réalisation 4',
+                'category' => 'Site Autre',
+                'href' => '#'
+            ],
+        ];
+
+        $achievement = [];
+        if ($id === '1') {
+            $achievement = $achievements[0];
+        }
+        if ($id === '2') {
+            $achievement = $achievements[1];
+        }
+        if ($id === '3') {
+            $achievement = $achievements[2];
+        }
+        if ($id === '4') {
+            $achievement = $achievements[3];
+        }
+
+        return $this->render('default/achievements/achievement.html.twig', [
+            'achievement' => $achievement,
+        ]);
     }
 
     //Legal Notice
@@ -100,5 +183,4 @@ class DefaultController extends AbstractController
     {
         return $this->render('default/support/lets-plan-together.html.twig');
     }
-
 }

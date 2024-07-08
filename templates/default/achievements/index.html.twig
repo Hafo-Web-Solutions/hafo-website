@@ -37,8 +37,8 @@
   <article
     class="flex lg:flex-row flex-col gap-8 lg:justify-center items-center flex-wrap w-full default-container 2xl:container-fluid 2xl:px-[140px] mt-[80px] lg:mt-[100px]"
   >
-    <!-- Block 1/4 -->
-    <a href="#" class="w-[320px] h-[300px] flex flex-col justify-between">
+    {% for achievement in achievements %}
+    <a href="{{ path('app_achievement', {id: achievement.id }) }}" class="w-[320px] h-[300px] flex flex-col justify-between">
       <div
         class="w-full h-[250px] rounded-md overflow-hidden"
         data-sal="slide-up"
@@ -58,7 +58,7 @@
           data-sal-duration="800"
           data-sal-delay="200"
         >
-          SITE VITRINE
+          {{ achievement.category }}
         </p>
         <h3
           class="llg:text-[28px] text-[24px] md:text-[26px] expertise-lg:text-[26px] text-white"
@@ -66,112 +66,11 @@
           data-sal-duration="800"
           data-sal-delay="250"
         >
-          Nom du site
+          {{ achievement.title }}
         </h3>
       </div>
     </a>
-
-    <!-- Block 2/4 -->
-    <a href="#" class="w-[320px] h-[300px] flex flex-col justify-between">
-      <div
-        class="w-full h-[250px] rounded-md overflow-hidden"
-        data-sal="slide-up"
-        data-sal-duration="800"
-        data-sal-delay="150"
-      >
-        <img
-          src="{{ asset('./image/expertise/creation/image.jpeg') }}"
-          alt="image d'une realisation"
-          class="w-full h-full object-cover hover:scale-150 transition-transform duration-500 ease-in-out"
-        />
-      </div>
-      <div>
-        <p
-          class="text-secondary my-[10px] text-sm"
-          data-sal="slide-up"
-          data-sal-duration="800"
-          data-sal-delay="200"
-        >
-          SITE VITRINE
-        </p>
-        <h3
-          class="lg:text-[28px] text-[24px] md:text-[26px] expertise-lg:text-[26px] text-white"
-          data-sal="slide-up"
-          data-sal-duration="800"
-          data-sal-delay="250"
-        >
-          Nom du site
-        </h3>
-      </div>
-    </a>
-
-    <!-- Block 3/4 -->
-    <a href="#" class="w-[320px] h-[300px] flex flex-col justify-between">
-      <div
-        class="w-full h-[250px] rounded-md overflow-hidden"
-        data-sal="slide-up"
-        data-sal-duration="800"
-        data-sal-delay="150"
-      >
-        <img
-          src="{{ asset('./image/expertise/creation/image.jpeg') }}"
-          alt="image d'une realisation"
-          class="w-full h-full object-cover hover:scale-150 transition-transform duration-500 ease-in-out"
-        />
-      </div>
-      <div>
-        <p
-          class="text-secondary my-[10px] text-sm"
-          data-sal="slide-up"
-          data-sal-duration="800"
-          data-sal-delay="200"
-        >
-          SITE VITRINE
-        </p>
-        <h3
-          class="lg:text-[28px] text-[24px] md:text-[26px] expertise-lg:text-[26px] text-white"
-          data-sal="slide-up"
-          data-sal-duration="800"
-          data-sal-delay="250"
-        >
-          Nom du site
-        </h3>
-      </div>
-    </a>
-
-    <!-- Block 4/4 -->
-    <a href="#" class="w-[320px] h-[300px] flex flex-col justify-between">
-      <div
-        class="w-full h-[250px] rounded-md overflow-hidden"
-        data-sal="slide-up"
-        data-sal-duration="800"
-        data-sal-delay="150"
-      >
-        <img
-          src="{{ asset('./image/expertise/creation/image.jpeg') }}"
-          alt="image d'une realisation"
-          class="w-full h-full object-cover hover:scale-150 transition-transform duration-500 ease-in-out"
-        />
-      </div>
-      <div>
-        <p
-          class="text-secondary my-[10px] text-sm"
-          data-sal="slide-up"
-          data-sal-duration="800"
-          data-sal-delay="200"
-        >
-          SITE VITRINE
-        </p>
-        <h3
-          class="lg:text-[28px] text-[24px] md:text-[26px] expertise-lg:text-[26px] text-white"
-          data-sal="slide-up"
-          data-sal-duration="800"
-          data-sal-delay="250"
-        >
-          Nom du site
-        </h3>
-      </div>
-    </a>
+    {% endfor %}
   </article>
 </section>
 
