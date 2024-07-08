@@ -15,18 +15,39 @@ document.addEventListener("DOMContentLoaded", function () {
     statusMessageDiv.innerHTML = "";
 
     let errors = [];
+    let errorsNumber = [];
 
     // Vérifie que les quatre premiers textarea ne sont pas vides
     for (let i = 0; i < 4; i++) {
       if (!textareas[i].value.trim()) {
         errors.push(`Veuillez remplir la question ${i + 1}.`);
+        errorsNumber.push(i + 1);
       }
     }
 
     // Vérifie que le champ select n'est pas vide
     if (select.value !== "1" && select.value !== "2" && select.value !== "3") {
       errors.push("Veuillez sélectionner une option pour le type.");
+      errorsNumber.push(0);
     }
+
+    function errorMessage(index, selectValue) {
+      if (errorsNumber.includes(index)) {
+        let selectError = document.querySelector(selectValue);
+        selectError.classList.add("border-red-500");
+      }else{
+        let selectError = document.querySelector(selectValue);
+        selectError.classList.remove("border-red-500"); 
+      }
+    }
+
+    errorMessage(0, "select");
+    errorMessage(1, "#textarea1");
+    errorMessage(2, "#textarea2");
+    errorMessage(3, "#textarea3");
+    errorMessage(4, "#textarea4");
+
+
 
     // Si des erreurs sont trouvées, les affiche dans la div et retourne false
     if (errors.length > 0) {
@@ -97,7 +118,7 @@ document.addEventListener("DOMContentLoaded", function () {
     const selectedOption = document.getElementById("type").value;
     const selectOptions = [
       { id: "1", value: "Site vitrine" },
-      { id: "2", value: "Site" },
+      { id: "2", value: "Site Web" },
       { id: "3", value: "Site complexe" },
     ];
     const selectedText =
@@ -112,8 +133,8 @@ document.addEventListener("DOMContentLoaded", function () {
       "1/5. Quels sont les objectifs principaux de votre site d'entreprise ?",
       "2/5. Quelles fonctionnalités spécifiques votre site doit-il inclure pour atteindre ces objectifs ?",
       "3/5. Comment mesurez-vous le succès de votre site d'entreprise ?",
-      "4/5. Avez-vous des intégrations spécifiques à incorporer ?",
-      "5/5. Quel est votre public cible ?",
+      "4/5. Quel est votre public cible ?",
+      "5/5. Avez-vous des intégrations spécifiques à incorporer ?",
     ];
 
     let yPos = 30; // Position de départ pour le texte
