@@ -183,4 +183,11 @@ class DefaultController extends AbstractController
     {
         return $this->render('default/support/lets-plan-together.html.twig');
     }
+
+    //Make an Appointment
+    #[Route('appointment', name: 'app_make_an_appointment')]
+    public function makeAnAppointment(): Response
+    {
+        return $this->render('default/make-an-appointment.html.twig');
+    }
 }
