@@ -35,7 +35,7 @@ module.exports = {
         50: "50px",
       },
       fontSize: {
-        '15': '15px',
+        15: "15px",
       },
       screens: {
         // Navigation breakpoints
@@ -44,20 +44,20 @@ module.exports = {
         "min-w": { min: "0px", max: "639px" },
         "lg-1500": "1400px",
         "expertise-lg": { min: "1024px", max: "1200px" },
-        "expertise-size": "1354px"
+        "expertise-size": "1354px",
       },
       transitionProperty: {
         position: "left, bottom",
         width: "width",
       },
       transitionTimingFunction: {
-        'custom-ease': 'cubic-bezier(0.17, 0.67, 0, 1.01)',
+        "custom-ease": "cubic-bezier(0.17, 0.67, 0, 1.01)",
       },
       transitionDuration: {
-        '700': '700ms',
+        700: "700ms",
       },
       translate: {
-        '10': '10px',
+        10: "10px",
       },
     },
   },
@@ -68,6 +68,32 @@ module.exports = {
           ".static-on-small-screen": {
             position: "static",
           },
+        },
+        // blue-button
+        ".blue-button": {
+          padding: "1rem 2rem",
+          color: "#ffffff",
+          fontWeight: "500",
+          backgroundColor: "#00A3FF",
+          "&:hover": {
+            backgroundColor: "#212E48",
+          },
+          borderRadius: "10px",
+          letterSpacing: "0.5px",
+          transition: "all 0.3s ease-in-out",
+        },
+        // darkBlue-button
+        ".darkBlue-button": {
+          padding: "1rem 2rem",
+          color: "#ffffff",
+          fontWeight: "500",
+          backgroundColor: "#212E48",
+          "&:hover": {
+            backgroundColor: "#00A3FF",
+          },
+          borderRadius: "10px",
+          letterSpacing: "0.5px",
+          transition: "all 0.3s ease-in-out",
         },
       };
 

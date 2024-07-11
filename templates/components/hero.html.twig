@@ -1,125 +1,218 @@
 {% block hero %}
-<section class="h-screen flex justify-center items-center">
-        
-        <div class="container h-[400px] overflow-hidden absolute">
-            <img src="{{ asset('./image/hero/pattern.svg') }}" class="w-full object-cover opacity-5" alt="pattern hero"/>
+<section class="height-nav sm:container default-container flex justify-center items-center">
+  {#
+  <div class="container h-[400px] overflow-hidden absolute">
+    <img
+      src="{{ asset('./image/hero/pattern.svg') }}"
+      class="w-full object-cover opacity-5"
+      alt="pattern hero"
+    />
+  </div>
+  #}
+  <article class="md:w-4/6 flex flex-col justify-center items-center mb-[100px]">
+    <p
+      class="text-secondary uppercase font-medium tracking-[1px] mb-[10px]"
+    >
+      AGENCE HAFO WEB SOLUTIONS
+    </p>
+    <h1
+      class="text-white text-[34px] md:text-[38px] lg:text-[50px] font-bold text-center mb-[20px] leading-[1.19]"
+    >
+      Transformez Votre Vision en Succès Numérique
+    </h1>
+    <p
+      class="text-grayText text-center leading-[28px] mb-[30px]"
+    >
+      Découvrez un monde de possibilités avec des solutions web sur mesure qui
+      captent l'essence de vos idées et transforment votre vision en réalité
+      digitale.
+    </p>
+    <a
+      href="{{ path('app_services_and_prices') }}"
+    >
+      <button
+        class="blue-button"
+      >
+        Découvrez nos services
+      </button>
+    </a>
+
+    <!-- item icon with tooltip -->
+    <div
+      class="hidden flex-col md:flex-row gap-3"
+    >
+      <div class="flex gap-[15px]">
+        <a class="relative group cursor-pointer">
+          <div class="relative mb-2">
+            <div
+              class="bg-tertiary text-white text-center text-sm rounded-[5px] py-[5px] px-2 right-0 bottom-full invisible opacity-0 group-hover:visible group-hover:opacity-100"
+            >
+              Stratégie
+              <svg
+                class="absolute text-tertiary h-2 w-full left-0 top-full"
+                x="0px"
+                y="0px"
+                viewBox="0 0 255 255"
+                xml:space="preserve"
+              >
+                <polygon class="fill-current" points="0,0 127.5,127.5 255,0" />
+              </svg>
+            </div>
+          </div>
+
+          <div
+            class="w-[60px] h-[60px] p-[10px] rounded-md bg-[#24243557] border border-borderBase flex justify-center items-center"
+          >
+            <img
+              src="{{ asset('./image/hero/strategy.svg') }}"
+              alt="strategy icon"
+            />
+          </div>
+        </a>
+
+        <div class="relative group">
+          <div class="relative mb-2">
+            <div
+              class="bg-tertiary text-white text-center text-xs rounded py-1 px-2 right-0 bottom-full invisible opacity-0 group-hover:visible group-hover:opacity-100"
+            >
+              Stratégie
+              <svg
+                class="absolute text-tertiary h-2 w-full left-0 top-full"
+                x="0px"
+                y="0px"
+                viewBox="0 0 255 255"
+                xml:space="preserve"
+              >
+                <polygon class="fill-current" points="0,0 127.5,127.5 255,0" />
+              </svg>
+            </div>
+          </div>
+
+          <div
+            class="w-[60px] h-[60px] p-[10px] rounded-md bg-[#24243557] border border-borderBase flex justify-center items-center"
+          >
+            <img
+              src="{{ asset('./image/hero/code.svg') }}"
+              alt="strategy icon"
+            />
+          </div>
         </div>
 
-        <article class="w-[500px] flex flex-col justify-center items-center gap-4" >
-            <!-- item title -->
-            <p class="text-secondary text-sm"
-            data-sal="slide-up"
-        data-sal-duration="800"
-        data-sal-delay="150"
-            >AGENCE HAFO WEB SOLUTIONS</p>
-            <!-- item subtitle -->
-            <h2 class="text-white text-4xl font-bold text-center"
-            data-sal="slide-up"
-        data-sal-duration="800"
-        data-sal-delay="200">Transformez Votre Vision en Succès Numérique</h2>
-            
-            <p class="text-grayText text-center"
-            data-sal="slide-up"
-        data-sal-duration="800"
-        data-sal-delay="250">Découvrez un monde de possibilité avec des solutions web sur mesure qui captent l’essence de vos idées.</p>
-            
-            <a href="{{ path('app_services_and_prices') }}" class="py-3 px-6 text-white rounded-md font-semibold bg-secondary hover:bg-tertiary cursor-pointer z-10"
-            data-sal="slide-up"
-        data-sal-duration="800"
-        data-sal-delay="300"
-            >Découvrez nos services</a>
-
-            <!-- item icon with tooltip -->
-            <div class="flex flex-col md:flex-row gap-3"
-            data-sal="slide-up"
-        data-sal-duration="800"
-        data-sal-delay="350"
+        <div class="relative group">
+          <div class="relative mb-2">
+            <div
+              class="bg-tertiary text-white text-center text-xs rounded py-1 px-2 right-0 bottom-full invisible opacity-0 group-hover:visible group-hover:opacity-100"
             >
-                <div class="flex gap-3">
-
-                    <div class="relative group">
-                        <div class="relative mb-2">
-                         <div class="bg-tertiary text-white text-center text-xs rounded py-1 px-2 right-0 bottom-full invisible opacity-0 group-hover:visible group-hover:opacity-100">
-                             Stratégie
-                             <svg class="absolute text-tertiary h-2 w-full left-0 top-full" x="0px" y="0px" viewBox="0 0 255 255" xml:space="preserve"><polygon class="fill-current" points="0,0 127.5,127.5 255,0"/></svg>
-                           </div>
-                        </div>
-         
-                        <div class="w-16 h-16 rounded-md bg-primary border-2 border-borderBase flex justify-center items-center">
-                         <img src="{{ asset('./image/hero/strategy.svg') }}" class="w-10 h-10" alt="strategy icon">
-                        </div>
-                    </div>
-
-                    <div class="relative group">
-                        <div class="relative mb-2">
-                         <div class="bg-tertiary text-white text-center text-xs rounded py-1 px-2 right-0 bottom-full invisible opacity-0 group-hover:visible group-hover:opacity-100">
-                             Stratégie
-                             <svg class="absolute text-tertiary h-2 w-full left-0 top-full" x="0px" y="0px" viewBox="0 0 255 255" xml:space="preserve"><polygon class="fill-current" points="0,0 127.5,127.5 255,0"/></svg>
-                           </div>
-                        </div>
-         
-                        <div class="w-16 h-16 rounded-md bg-primary border-2 border-borderBase flex justify-center items-center">
-                         <img src="{{ asset('./image/hero/code.svg') }}" class="w-10 h-10" alt="strategy icon">
-                        </div>
-                    </div>
-
-                    <div class="relative group">
-                        <div class="relative mb-2">
-                         <div class="bg-tertiary text-white text-center text-xs rounded py-1 px-2 right-0 bottom-full invisible opacity-0 group-hover:visible group-hover:opacity-100">
-                             Stratégie
-                             <svg class="absolute text-tertiary h-2 w-full left-0 top-full" x="0px" y="0px" viewBox="0 0 255 255" xml:space="preserve"><polygon class="fill-current" points="0,0 127.5,127.5 255,0"/></svg>
-                           </div>
-                        </div>
-         
-                        <div class="w-16 h-16 rounded-md bg-primary border-2 border-borderBase flex justify-center items-center">
-                         <img src="{{ asset('./image/hero/design.svg') }}" class="w-10 h-10" alt="strategy icon">
-                        </div>
-                    </div>
-                </div>
-
-                <div class="flex gap-3">
-
-                     <div class="relative group">
-                        <div class="relative mb-2">
-                         <div class="bg-tertiary text-white text-center text-xs rounded py-1 px-2 right-0 bottom-full invisible opacity-0 group-hover:visible group-hover:opacity-100">
-                             Stratégie
-                             <svg class="absolute text-tertiary h-2 w-full left-0 top-full" x="0px" y="0px" viewBox="0 0 255 255" xml:space="preserve"><polygon class="fill-current" points="0,0 127.5,127.5 255,0"/></svg>
-                           </div>
-                        </div>
-         
-                        <div class="w-16 h-16 rounded-md bg-primary border-2 border-borderBase flex justify-center items-center">
-                         <img src="{{ asset('./image/hero/secure.svg') }}" class="w-10 h-10" alt="strategy icon">
-                        </div>
-                    </div>
-
-                    <div class="relative group flex flex-col justify-center">
-                        <div class="relative mb-2">
-                         <div class="bg-tertiary text-white text-center text-xs rounded py-1 px-2 right-0 bottom-full invisible opacity-0 group-hover:visible group-hover:opacity-100">
-                             Maintena
-                             <svg class="absolute text-tertiary h-2 w-full left-0 top-full" x="0px" y="0px" viewBox="0 0 255 255" xml:space="preserve"><polygon class="fill-current" points="0,0 127.5,127.5 255,0"/></svg>
-                           </div>
-                        </div>
-         
-                        <div class="w-16 h-16 rounded-md bg-primary border-2 border-borderBase flex justify-center items-center">
-                         <img src="{{ asset('./image/hero/maintenance.svg') }}" class="w-10 h-10" alt="strategy icon">
-                        </div>
-                    </div>
-            
-                    <div class="relative group">
-                        <div class="relative mb-2">
-                         <div class="bg-tertiary text-white text-center text-xs rounded py-1 px-2 right-0 bottom-full invisible opacity-0 group-hover:visible group-hover:opacity-100">
-                             Seo
-                             <svg class="absolute text-tertiary h-2 w-full left-0 top-full" x="0px" y="0px" viewBox="0 0 255 255" xml:space="preserve"><polygon class="fill-current" points="0,0 127.5,127.5 255,0"/></svg>
-                           </div>
-                        </div>
-         
-                        <div class="w-16 h-16 rounded-md bg-primary border-2 border-borderBase flex justify-center items-center">
-                         <img src="{{ asset('./image/hero/seo.svg') }}" class="w-10 h-10" alt="strategy icon">
-                        </div>
-                    </div>
-                </div>
+              Stratégie
+              <svg
+                class="absolute text-tertiary h-2 w-full left-0 top-full"
+                x="0px"
+                y="0px"
+                viewBox="0 0 255 255"
+                xml:space="preserve"
+              >
+                <polygon class="fill-current" points="0,0 127.5,127.5 255,0" />
+              </svg>
             </div>
-        </article>
-    </article>
+          </div>
+
+          <div
+            class="w-[60px] h-[60px] p-[10px] rounded-md bg-[#24243557] border border-borderBase flex justify-center items-center"
+          >
+            <img
+              src="{{ asset('./image/hero/design.svg') }}"
+              alt="strategy icon"
+            />
+          </div>
+        </div>
+      </div>
+
+      <div class="flex gap-[15px]">
+        <div class="relative group">
+          <div class="relative mb-2">
+            <div
+              class="bg-tertiary text-white text-center text-xs rounded py-1 px-2 right-0 bottom-full invisible opacity-0 group-hover:visible group-hover:opacity-100"
+            >
+              Stratégie
+              <svg
+                class="absolute text-tertiary h-2 w-full left-0 top-full"
+                x="0px"
+                y="0px"
+                viewBox="0 0 255 255"
+                xml:space="preserve"
+              >
+                <polygon class="fill-current" points="0,0 127.5,127.5 255,0" />
+              </svg>
+            </div>
+          </div>
+
+          <div
+            class="w-[60px] h-[60px] p-[10px] rounded-md bg-[#24243557] border border-borderBase flex justify-center items-center"
+          >
+            <img
+              src="{{ asset('./image/hero/secure.svg') }}"
+              alt="strategy icon"
+            />
+          </div>
+        </div>
+
+        <div class="relative group flex flex-col justify-center">
+          <div class="relative mb-2">
+            <div
+              class="bg-tertiary text-white text-center text-xs rounded py-1 px-2 right-0 bottom-full invisible opacity-0 group-hover:visible group-hover:opacity-100"
+            >
+              Maintenance
+              <svg
+                class="absolute text-tertiary h-2 w-full left-0 top-full"
+                x="0px"
+                y="0px"
+                viewBox="0 0 255 255"
+                xml:space="preserve"
+              >
+                <polygon class="fill-current" points="0,0 127.5,127.5 255,0" />
+              </svg>
+            </div>
+          </div>
+
+          <div
+            class="w-[60px] h-[60px] p-[10px] rounded-md bg-[#24243557] border border-borderBase flex justify-center items-center"
+          >
+            <img
+              src="{{ asset('./image/hero/maintenance.svg') }}"
+              alt="strategy icon"
+            />
+          </div>
+        </div>
+
+        <div class="relative group">
+          <div class="relative mb-2">
+            <div
+              class="bg-tertiary text-white text-center text-xs rounded py-1 px-2 right-0 bottom-full invisible opacity-0 group-hover:visible group-hover:opacity-100"
+            >
+              Seo
+              <svg
+                class="absolute text-tertiary h-2 w-full left-0 top-full"
+                x="0px"
+                y="0px"
+                viewBox="0 0 255 255"
+                xml:space="preserve"
+              >
+                <polygon class="fill-current" points="0,0 127.5,127.5 255,0" />
+              </svg>
+            </div>
+          </div>
+
+          <div
+            class="w-[60px] h-[60px] p-[10px] rounded-md bg-[#24243557] border border-borderBase flex justify-center items-center"
+          >
+            <img
+              src="{{ asset('./image/hero/seo.svg') }}"
+              alt="strategy icon"
+            />
+          </div>
+        </div>
+      </div>
+    </div>
+  </article>
 </section>
 {% endblock hero %}

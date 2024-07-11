@@ -1,24 +1,22 @@
 {% block expertise %}
-<section class="w-full default-container 2xl:container-fluid 2xl:px-[140px] mb-[100px] flex flex-col expertise-size:flex-row flex-wrap justify-center">
-  <article class="mb-16 w-min-[380px] expertise-size:w-1/2">
-    <h2
-      class="text-3xl font-bold tracking-tight text-white"
-      data-sal="slide-up"
-      data-sal-duration="800"
-      data-sal-delay="150"
-    >
-      Explorez notre Savoir-Faire
-    </h2>
+<section
+  class="mt-[80px] lg:mt-[100px] w-full default-container sm:container flex flex-col lg:items-center gap-x-8 2xl:h-screen 2xl:items-center xl:items-center xl:gap-0 2xl:flex-row 2xl:mt-0"
+>
+  <article
+    class="mb-[75px] w-min-[380px] lg:w-full flex flex-col xl:flex-start 2xl:mb-[200px]"
+  >
+    <div data-sal="slide-up" data-sal-duration="800" data-sal-delay="150">
+      <p class="text-secondary uppercase font-medium tracking-[1px] mb-[10px]">
+        Votre projet, notre expertise
+      </p>
+      <h2
+        class="text-[34px] md:text-[38px] xl:text-[50px] font-bold tracking-tight text-white leading-[1.19]"
+      >
+        Explorez notre Savoir-Faire
+      </h2>
+    </div>
     <p
-      class="text-secondary mt-3 text-base"
-      data-sal="slide-up"
-      data-sal-duration="800"
-      data-sal-delay="200"
-    >
-      Votre projet, notre expertise
-    </p>
-    <p
-      class="text-grayText mt-3 mb-8 text-base"
+      class="text-grayText mt-[10px] mb-[30px] text-base leading-[28px]"
       data-sal="slide-up"
       data-sal-duration="800"
       data-sal-delay="200"
@@ -30,123 +28,115 @@
     </p>
     <a
       href="{{ path('app_services_and_prices') }}"
-      class="py-4 px-8 text-white font-semibold bg-secondary hover:bg-tertiary cursor-pointer rounded-lg"
       data-sal="slide-up"
       data-sal-duration="800"
-      data-sal-delay="200"
-      >Découvrez nos services
-    </a>
+      data-sal-delay="300"
+      ><button class="blue-button">Découvrez nos services</button></a
+    >
   </article>
 
-  <article class="p-0 m-0 expertise-size:w-1/2">
+  <article class="p-0 m-0 lg:w-full lg:items-center lg:flex lg:justify-center">
     <div
-      class="flex justify-center flex-wrap w-[100%] sibling-fade"
-      data-sal="slide-up"
-      data-sal-duration="800"
-      data-sal-delay="200"
+      class="flex flex-col justify-center items-center w-[100%] gap-[47px] md:flex-row md:flex-wrap 2xl:mt-0 lg:mt-0 lg:grid lg:grid-cols-2 lg:w-auto"
     >
       <!-- Création de site -->
       <a
         href="{{ path('app_expertise_site_creation') }}"
-        class="bg-quaternary rounded-lg p-6 cursor-pointer w-[290px] h-[220px] m-4 custom-transition"
+        class="blur-intensify bg-whiteTransparency rounded-[6px] px-[30px] py-[25px] w-[300px] border border-borderBase translate-effect"
+        data-sal="slide-up"
+        data-sal-duration="800"
+        data-sal-delay="150"
       >
         <div class="flex justify-between relative">
-          <p class="text-grayText text-sm">IMPACT</p>
+          <p class="text-grayText font-semibold opacity-[0.1]">IMPACT</p>
           <img
             style="transition-property: transform, left, bottom"
             alt="icon cretion de site"
             src="{{ asset('./image/expertise/creation.svg') }}"
-            class="absolute w-[80px] left-[200px] bottom-[0px]"
+            class="absolute h-[80px] left-[173px] bottom-[-15px]"
           />
         </div>
-        <h3 class="text-white font-bold text-xl mt-1">Création de site</h3>
-        <p class="text-grayText mt-2 mb-3 text-base">
+        <h3 class="text-white font-bold text-[25px] mt-[30px]">
+          Création de site
+        </h3>
+        <p class="text-grayText mt-[10px] text-base leading-[28px]">
           Développement de site web intuitif au design moderne pour une présence
           numérique forte.
         </p>
-        <img
-          src="{{ asset('./image/expertise/arrow.svg') }}"
-          class="h-5"
-          alt="redirection Création de site"
-        />
       </a>
 
       <!-- Refonte -->
       <a
         href="{{ path('app_expertise_redesign') }}"
-        class="bg-quaternary rounded-lg p-6 cursor-pointer w-[290px] h-[220px] m-4 custom-transition2"
+        class="blur-intensify bg-whiteTransparency rounded-[6px] px-[30px] py-[25px] w-[300px] border border-borderBase translate-effect"
+        data-sal="slide-up"
+        data-sal-duration="800"
+        data-sal-delay="200"
       >
         <div class="flex justify-between relative">
-          <p class="text-grayText text-sm">ÉVOLUTION</p>
+          <p class="text-grayText font-semibold opacity-[0.1]">ÉVOLUTION</p>
           <img
             style="transition-property: transform, left, bottom"
             alt="icon refonte"
             src="{{ asset('./image/expertise/refonte.svg') }}"
-            class="absolute w-[80px] left-[200px] bottom-[0px]"
+            class="absolute h-[80px] left-[173px] bottom-[-15px]"
           />
         </div>
-        <h3 class="text-white font-bold text-xl mt-1">Refonte</h3>
-        <p class="text-grayText mt-2 mb-3 text-base">
+        <h3 class="text-white font-bold text-[25px] mt-[30px]">Refonte</h3>
+        <p class="text-grayText mt-[10px] text-base leading-[28px]">
           Boostez votre présence en ligne avec une refonte de site axée sur la
           performance et le design.
         </p>
-        <img
-          src="{{ asset('./image/expertise/arrow.svg') }}"
-          class="h-5"
-          alt="redirection Refonte"
-        />
       </a>
 
       <!-- Maintenance -->
       <a
         href="{{ path('app_expertise_maintenance') }}"
-        class="bg-quaternary rounded-lg p-6 cursor-pointer w-[290px] h-[220px] m-4 custom-transition3"
+        class="blur-intensify bg-whiteTransparency rounded-[6px] px-[30px] py-[25px] w-[300px] border border-borderBase translate-effect"
+        data-sal="slide-up"
+        data-sal-duration="800"
+        data-sal-delay="250"
       >
-        <div class="flex justify-between relative h-4">
-          <p class="text-grayText text-sm">FIABILITÉ</p>
+        <div class="flex justify-between relative">
+          <p class="text-grayText font-semibold opacity-[0.1]">FIABILITÉ</p>
           <img
             style="transition-property: transform, left, bottom"
             alt="icon maintenance"
             src="{{ asset('./image/expertise/maintenance.svg') }}"
-            class="absolute w-[80px] left-[200px] bottom-[0px]"
+            class="absolute h-[80px] left-[173px] bottom-[-15px]"
           />
         </div>
-        <h3 class="text-white font-bold text-xl mt-2">Maintenance</h3>
-        <p class="text-grayText mt-2 mb-3 text-base">
+        <h3 class="text-white font-bold text-[25px] mt-[30px]">Maintenance</h3>
+        <p class="text-grayText mt-[10px] text-base leading-[28px]">
           Maintenance proactive et support continu pour assurer une fiabilité
-          sans faille de votre site web.
+          sans faille.
         </p>
-        <img
-          src="{{ asset('./image/expertise/arrow.svg') }}"
-          class="h-5"
-          alt="redirection Maintenance"
-        />
       </a>
 
       <!-- Référencement -->
       <a
-        href="{{ path('app_expertise_seo') }}" 
-        class="bg-quaternary rounded-lg p-6 cursor-pointer w-[290px] h-[220px] m-4 custom-transition4"
+        href="{{ path('app_expertise_seo') }}"
+        class="blur-intensify bg-whiteTransparency rounded-[6px] px-[30px] py-[25px] w-[300px] border border-borderBase translate-effect"
+        data-sal="slide-up"
+        data-sal-duration="800"
+        data-sal-delay="300"
       >
         <div class="flex justify-between relative">
-          <p class="text-grayText text-sm">VISIBILITÉ</p>
+          <p class="text-grayText font-semibold opacity-[0.1]">VISIBILITÉ</p>
           <img
             style="transition-property: transform, left, bottom"
             alt="icon référencement"
             src="{{ asset('./image/expertise/referencement.svg') }}"
-            class="absolute w-[80px] left-[200px] bottom-[0px]"
+            class="absolute h-[80px] left-[173px] bottom-[-15px]"
           />
         </div>
-        <h3 class="text-white font-bold text-xl mt-1">Référencement</h3>
-        <p class="text-grayText mt-2 mb-3 text-base">
-          Améliorez votre visibilité avec un référencement naturel efficace,
-          grâce à un code optimisé.
+        <h3 class="text-white font-bold text-[25px] mt-[30px]">
+          Référencement
+        </h3>
+        <p class="text-grayText mt-[10px] text-base leading-[28px]">
+          Améliorez votre visibilité avec un référencement naturel efficace, et
+          un code optimisé.
         </p>
-        <img
-          src="{{ asset('./image/expertise/arrow.svg') }}"
-          class="h-5"
-          alt="redirection Référencement"
-        />
       </a>
     </div>
   </article>
