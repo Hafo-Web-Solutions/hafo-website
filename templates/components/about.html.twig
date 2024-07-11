@@ -1,56 +1,44 @@
 {% block about %}
-  <section class="default-container mb-[100px] md:h-screen w-full">
-     <!-- title section -->
+<section class="w-full flex flex-col lg:flex-row items-center gap-x-[64px] lg:bg-opacityBlue">
+  <!-- Image -->
+  <article class="order-2 w-full lg:order-1 lg:w-1/2">
+    <img
+      src="{{ asset('./image/about.webp') }}"
+      alt="image achievement"
+      class="w-full h-[300px] sm:h-[400px] md:h-[500px] lg:h-[600px] object-cover"
+    />
+  </article>
+
+  <!-- Block content -->
+  <article class="py-[80px] bg-opacityBlue lg:bg-transparent order-1 lg:order-2 lg:w-1/2 default-container lg:mb-[0px] lg:px-0 lg:p-0 lg:pr-[64px]">
+    <div data-sal="slide-up" data-sal-duration="800" data-sal-selay="150">
       <h2
-        class="text-3xl font-bold tracking-tight text-white max-w-2xl mb-4"
-        data-sal="slide-up"
-        data-sal-duration="800"
-        data-sal-delay="100"
+        class="text-[34px] md:text-[38px] xl:text-[50px] font-bold tracking-tight mb-[10px] text-white leading-[1.19]"
       >
-        Stratégie Digitale Personnalisée. Votre Vision, Notre Mission
+        Hafo Web Solutions
       </h2>
-
-
-    <!-- Block content -->
-    <div class="relative lg-1500:h-80 w-[100%]"
-    >
-      <!-- Image -->
-      <div
-        class="w-[100%] justify-center items-center overflow-hidden bg-white"
-        data-sal="slide-up"
-        data-sal-duration="800"
-        data-sal-delay="100"
-      >
-        <img
-          class="w-[100%] object-cover h-80"
-          src="{{ asset('./image/about.webp') }}"
-          alt="image a propos"
-        />
-      </div>
-
-      <!-- Content -->
-      <div
-        class="w-[100%%] lg:w-[550px] rounded-md border rounded-tr-none lg:rounded-tr-md lg:rounded-tl-md rounded-tl-none border-borderBase p-6 bg-quaternary lg:absolute lg:left-[50px] lg:top-[160px] z-1"
-        data-sal="slide-up"
-        data-sal-duration="800"
-        data-sal-delay="400"
-        >
-        <h3 class="text-white text-2xl font-semibold">
-          L’agence Hafo Web Solutions
-        </h3>
-        <p class="text-grayText text-base my-3">
-          Fraîchement établie, Hafo Web Solutions est votre partenaire
-          privilégié pour transformer les visions en réalisations digitales.
-          Notre approche, fondée sur une écoute approfondie, garantit des
-          solutions qui non seulement répondent à vos besoins immédiats mais
-          préparent également le terrain pour un succès futur.
-        </p>
-        <a
-          href="#"
-          class="w-[180px] p-3 cursor-pointer flex justify-center items-center text-white rounded-md text-base font-semibold bg-tertiary hover:bg-secondary"
-          >En Savoir Plus</a
-        >
-      </div>
+      <p class="text-secondary uppercase font-medium tracking-[1px] mb-[20px]">
+        Innovation et Sur-Mesure
+      </p>
     </div>
-  </section>
+    <p
+      class="text-grayText mt-[20px] mb-[30px] text-base leading-[28px]"
+      data-sal="slide-up"
+      data-sal-duration="800"
+      data-sal-selay="200"
+    >
+      Chez Hafo Web Solutions, l'innovation est la clé de voûte de notre offre.
+      Nous construisons des expériences web sur-mesure, alliant technologie de
+      pointe et créativité, pour concrétiser vos ambitions digitales. Chaque
+      projet est une nouvelle aventure où vos idées prennent vie.
+    </p>
+    <a
+      href="{{ path('app_agency') }}"
+      data-sal="slide-up"
+      data-sal-duration="800"
+      data-sal-selay="250"
+      ><button class="blue-button">Découvrir notre agence</button></a
+    >
+  </article>
+</section>
 {% endblock about %}

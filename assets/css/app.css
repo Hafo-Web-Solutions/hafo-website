@@ -38,6 +38,11 @@ body {
   transition: opacity 0.3s ease;
 }
 
+/* Hero */
+.height-nav {
+  height: calc(100vh - 85px);
+}
+
 /* Alpine attributes */
 [x-cloak] {
   display: none;
@@ -136,6 +141,35 @@ body {
 }
 
 /* ANIMATIONS */
+/* Blur intensify */
+.blur-intensify::after {
+  position: absolute;
+  background: #00a3ff;
+  opacity: 0;
+  left: 50%;
+  top: 50%;
+  height: 30px;
+  width: 30px;
+  transform: translate(-50%, -50%);
+  content: "";
+  filter: blur(80px);
+  z-index: -1;
+  transition: opacity 0.5s ease, filter 0.5s ease;
+}
+.blur-intensify:hover::after {
+  opacity: 1;
+  filter: blur(60px);
+}
+
+
+/* Translate effect */
+.translate-effect {
+  transition: transform 0.3s ease-in-out !important;
+}
+.translate-effect:hover {
+  transform: translateY(-10px);
+}
+
 /* Text ellipsis */
 .text-ellipsis {
   display: -webkit-box;
@@ -554,4 +588,3 @@ textarea {
     transform: translateY(0);
   }
 }
-
