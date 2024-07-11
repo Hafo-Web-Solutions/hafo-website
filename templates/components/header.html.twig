@@ -381,7 +381,7 @@
           Nous Contacter
         </button>
         <button
-          type="button"
+          onclick="Calendly.initPopupWidget({url: 'https://calendly.com/cedric-hafowebsolutions/30min'});return false;"
           class="md:text-15 relative inline-flex items-center rounded-[10px] bg-tertiary px-3 py-2 xl:text-base font-medium text-white hover:bg-secondary duration-300 ease-in-out"
         >
           Prendre RDV
@@ -723,7 +723,7 @@
           Nous Contacter
         </button>
         <button
-          type="button"
+        onclick="Calendly.initPopupWidget({url: 'https://calendly.com/cedric-hafowebsolutions/30min'});return false;"
           class="justify-center w-full h-12 items-center rounded-[10px] bg-tertiary xl:text-base font-medium text-white hover:bg-secondary duration-300 ease-in-out"
         >
           Prendre RDV
@@ -733,3 +733,6 @@
   </div>
 </header>
 {% endblock %}
+
+<link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
+<script src="https://assets.calendly.com/assets/external/widget.js" type="text/javascript" async></script>
