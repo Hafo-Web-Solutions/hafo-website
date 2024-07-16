@@ -1,0 +1,188 @@
+{% extends 'base.html.twig' %} {% block title %} Blog {% endblock %} {% block
+body %}
+<!-- Blog -->
+<section
+  class="mt-[80px] lg:mt-[100px] w-full default-container sm:container flex gap-x-8 2xl:h-screen xl:gap-8"
+>
+  <article
+    class="mb-[75px] w-min-[380px] lg:w-2/3 flex flex-col xl:flex-start 2xl:mb-[200px]"
+  >
+    <div data-sal="slide-up" data-sal-duration="800" data-sal-delay="150">
+      <h2
+        class="text-[24px] md:text-[28px] xl:text-[36px] font-bold tracking-tight text-white leading-[1.19]"
+      >
+        L’Art du Debugging avec Symfony : Techniques Avancer
+      </h2>
+    </div>
+    <p
+      class="text-grayText mt-[10px] mb-[30px] text-base leading-[28px]"
+      data-sal="slide-up"
+      data-sal-duration="800"
+      data-sal-delay="200"
+    >
+      09 Avr, 2024
+    </p>
+    <div class="w-full h-[512px] bg-slate-500">
+      <img
+        src="{{ asset('./image/blog/image.png') }}"
+        alt="image blog 1"
+        class="w-full h-full object-cover"
+      />
+    </div>
+    <div class="flex flex-col gap-y-4 mt-6 text-grayText">
+      <p>
+        Nobis eleifend option congue nihil imperdiet doming id quod mazim
+        placerat facer possim assum. Typi non habent claritatem insitam; est
+        usus legentis in iis qui facit eorum claritatem. Investigationes
+        demonstraverunt lectores legere me lius quod ii legunt saepius. Claritas
+        est etiam processus dynamicus, qui sequitur mutationem consuetudium
+        lectorum.
+      </p>
+      <p class="text-white font-bold text-[20px] leading-[28px]">
+        Nobis eleifend option conguenes.
+      </p>
+      <p>
+        Mauris tempor, orci id pellentesque convallis, massa mi congue eros, sed
+        posuere massa nunc quis dui. Integer ornare varius mi, in vehicula orci
+        scelerisque sed. Fusce a massa nisi. Curabitur sit amet suscipit nisl.
+        Sed eget nisl laoreet, suscipit enim nec, viverra eros. Nunc imperdiet
+        risus leo, in rutrum erat dignissim id.
+      </p>
+      <p>
+        Ut rhoncus vestibulum facilisis. Duis et lorem vitae ligula cursus
+        venenatis. Class aptent taciti sociosqu ad litora torquent per conubia
+        nostra, per inceptos himenaeos. Nunc vitae nisi tortor. Morbi leo nulla,
+        posuere vel lectus a, egestas posuere lacus. Fusce eleifend hendrerit
+        bibendum. Morbi nec efficitur ex.
+      </p>
+      <p class="text-white font-bold text-[20px] leading-[28px]">
+        Mauris tempor, orci id pellentesque.
+      </p>
+      <p>
+        Nulla non ligula vel nisi blandit egestas vel eget leo. Praesent
+        fringilla dapibus dignissim. Pellentesque quis quam enim. Vestibulum
+        ultrices, leo id suscipit efficitur, odio lorem rhoncus dolor, a
+        facilisis neque mi ut ex. Quisque tempor urna a nisi pretium, a pretium
+        massa tristique. Nullam in aliquam diam. Maecenas at nibh gravida,
+        ornare eros non, commodo ligula. Sed efficitur sollicitudin auctor.
+        Quisque nec imperdiet purus, in ornare odio. Quisque odio felis,
+        vestibulum et.
+      </p>
+    </div>
+
+    <div class="mt-[80px] lg:mt-[100px]">
+      <p class="text-white font-semibold text-[24px] md:text-[26px] xl:text-[28px]">Publication Associée</p>
+      <div class="flex gap-4 mt-4">
+        <div class="flex flex-col gap-2 w-[280px]">
+           <div class="w-full h-[180px] bg-slate-500 rounded-md overflow-hidden">
+            <img src="{{ asset('./image/blog/image.png') }}" alt="image blog 1" class="w-full h-full object-cover hover:scale-150 transition-transform duration-500 ease-in-out">
+           </div>
+           <p class="text-secondary text-[12px]">EXPÉRIENCE UTILISATEUR</p>
+           <p class="text-white">Design UX/UI : Créer des Expériences Utilisateurs...</p>
+        </div>
+        <div class="md:flex flex-col gap-2 w-[280px] hidden">
+          <div class="w-full h-[180px] bg-slate-500 rounded-md overflow-hidden">
+            <img src="{{ asset('./image/blog/image.png') }}" alt="image blog 1" class="w-full h-full object-cover hover:scale-150 transition-transform duration-500 ease-in-out">
+          </div>
+          <p class="text-secondary text-[12px]">EXPÉRIENCE UTILISATEUR</p>
+          <p class="text-white">Design UX/UI : Créer des Expériences Utilisateurs...</p>
+       </div>
+       <div class="lg:flex flex-col gap-2 w-[280px] hidden">
+        <div class="w-full h-[180px] bg-slate-500 rounded-md overflow-hidden">
+          <img src="{{ asset('./image/blog/image.png') }}" alt="image blog 1" class="w-full h-full object-cover hover:scale-150 transition-transform duration-500 ease-in-out">
+        </div>
+        <p class="text-secondary text-[12px]">EXPÉRIENCE UTILISATEUR</p>
+        <p class="text-white">Design UX/UI : Créer des Expériences Utilisateurs...</p>
+     </div>
+
+      </div>
+    </div>
+  </article>
+
+  <article class="lg:w-1/3 lg:px-2 hidden lg:flex flex-col gap-y-8">
+    <div class="w-full border border-borderBase rounded-md overflow-hidden">
+      <div class="flex items-center py-3 px-5 bg-tertiary">
+        <h2 class="text-white font-semibold text-[20px] leading-[28px]">
+          Posts Récents
+        </h2>
+      </div>
+
+      <div class="p-5 w-full border-b border-borderBase mt-4">
+        <p class="text-white">Placerat facer possim habent assum.</p>
+        <p class="text-grayText">UX Design</p>
+      </div>
+      <div class="p-5 w-full border-b border-borderBase">
+        <p class="text-white">Placerat facer possim habent assum.</p>
+        <p class="text-grayText">UX Design</p>
+      </div>
+      <div class="p-5 w-full">
+        <p class="text-white">Placerat facer possim habent assum.</p>
+        <p class="text-grayText">UX Design</p>
+      </div>
+    </div>
+
+    <div class="w-full border border-borderBase rounded-md overflow-hidden">
+      <div class="flex items-center py-3 px-5 bg-tertiary">
+        <h2 class="text-white font-semibold text-[20px] leading-[28px]">
+          Tags
+        </h2>
+      </div>
+
+      <div class="p-5 w-full flex flex-wrap gap-3">
+        <p
+          class="text-grayText px-4 py-2 rounded-full border border-borderBase"
+        >
+          Développement
+        </p>
+        <p
+          class="text-grayText px-4 py-2 rounded-full border border-borderBase"
+        >
+          IA
+        </p>
+        <p
+          class="text-grayText px-4 py-2 rounded-full border border-borderBase"
+        >
+          Symfony
+        </p>
+        <p
+          class="text-grayText px-4 py-2 rounded-full border border-borderBase"
+        >
+          E-commerce
+        </p>
+        <p
+          class="text-grayText px-4 py-2 rounded-full border border-borderBase"
+        >
+          Interface utilisateur
+        </p>
+        <p
+          class="text-grayText px-4 py-2 rounded-full border border-borderBase"
+        >
+          UX
+        </p>
+      </div>
+    </div>
+
+    <div class="w-full border border-borderBase rounded-md overflow-hidden">
+      <div class="flex items-center py-3 px-5 bg-tertiary">
+        <h2 class="text-white font-semibold text-[20px] leading-[28px]">
+          Posts Récents
+        </h2>
+      </div>
+
+      <div class="px-5 py-4 mt-4 w-full border-b border-borderBase">
+        <p class="text-grayText">Développement Web</p>
+      </div>
+      <div class="px-5 py-4 w-full border-b border-borderBase">
+        <p class="text-grayText">Design et UX/UI</p>
+      </div>
+      <div class="px-5 py-4 w-full border-b border-borderBase">
+        <p class="text-grayText">SEO et Marketing Digital</p>
+      </div>
+      <div class="px-5 py-4 w-full">
+        <p class="text-grayText">Gestion de Projet et Conseils d’Affaires</p>
+      </div>
+    </div>
+  </article>
+</section>
+
+{% endblock %}
