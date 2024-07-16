@@ -1,2 +1,14 @@
 {
+    "sqltools.connections": [
+        {
+            "previewLimit": 50,
+            "server": "localhost",
+            "port": 60566,
+            "askForPassword": true,
+            "driver": "PostgreSQL",
+            "name": "hafo",
+            "database": "app_hafo",
+            "username": "admin_hafo2024"
+        }
+    ]
 }
