@@ -190,4 +190,42 @@ class DefaultController extends AbstractController
     {
         return $this->render('default/make-an-appointment.html.twig');
     }
+
+    //Blog
+    #[Route('blog', name: 'app_blog')]
+    public function blog(): Response
+    {
+        return $this->render('default/blog/index.html.twig');
+    }
+
+    //Blog by slug
+    #[Route('/blog/{slug}', name: 'app_blog_detail')]
+    public function blogDetail(string $slug): Response
+    {
+        $blog = [];
+
+        if ($slug === 'blog-1') {
+            $blog = [
+                'title' => 'Blog 1',
+                'subtitle' => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus.',
+                'image' => './image/blog/blog-1.jpg',
+            ];
+        } elseif ($slug === 'blog-2') {
+            $blog = [
+                'title' => 'Blog 2',
+                'subtitle' => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus.',
+                'image' => './image/blog/blog-2.jpg',
+            ];
+        } else {
+            // Handle case when the blog is not found, for example, redirect to a 404 page
+            throw $this->createNotFoundException('The blog does not exist');
+        }
+    
+        return $this->render('default/blog/blog.html.twig', [
+            'blog' => $blog,
+        ]);
+    }
+
+
+
 }

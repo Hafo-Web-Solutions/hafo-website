@@ -4,28 +4,30 @@
 >
   <!-- Block content -->
   <article class="md:w-1/2 md:px-2">
-    <h2 class="text-3xl mb-5 font-bold tracking-tight text-white md:w-[350px]">
+    <h2 class="text-3xl mb-5 font-bold tracking-tight text-white md:w-[350px]"
+    data-sal="slide-up"
+    data-sal-duration="800"
+    data-sal-delay="150"
+    >
       Nos Réalisations
     </h2>
     <!-- Text -->
-    <div id="text"></div>
+    <div id="text" class="hidden md:block"></div>
 
     <!-- Buttons -->
-    <div class="flex items-center gap-3 mt-14">
-      <button
-        id="prevProject"
-        class="bg-tertiary text-secondary p-2 rounded"
-      >
+    <div class="flex items-center gap-3 mt-2 md:mt-14"
+    data-sal="slide-up"
+    data-sal-duration="800"
+    data-sal-delay="200"
+    >
+      <button id="prevProject" class="bg-tertiary text-secondary p-2 rounded">
         <img
           src="{{ asset('./image/blog/arrow.svg') }}"
           alt="icon Définir vos objectifs"
           class="w-full"
         />
       </button>
-      <button
-        id="nextProject"
-        class="bg-tertiary text-secondary p-2 rounded"
-      >
+      <button id="nextProject" class="bg-tertiary text-secondary p-2 rounded">
         <img
           src="{{ asset('./image/blog/arrow.svg') }}"
           alt="icon Définir vos objectifs"
@@ -35,14 +37,108 @@
     </div>
   </article>
 
+  <!-- Project Version Mobile -->
+  <div id="project" class="md:hidden"
+  data-sal="slide-up"
+  data-sal-duration="800"
+  data-sal-delay="250"
+  >
+    <article class="project-container">
+      <div class="project-content">
+        <div class="project-block border ">
+          <a href="#" class="project-content-redirect">
+            <p class="text-white text-[26px]">FFFhhvy ruuuue ufufufr fr fu frufr ufrufrfr ufrufrufruu</p>
+          </a>
+          <img
+            class="h-full w-full object-cover"
+            src="{{ asset('/image/project/image-1.webp') }}"
+            alt=""
+          />
+          <div class="project-block-content-parent">
+            <div
+              class="project-block-content-children  bg-tertiary"
+            >
+              <div class="m-4">
+                <p class="text-xl font-semibold">JUJUSTU KAISEN</p>
+                <p class="text-sm text-secondary">Site Vitrine</p>
+              </div>
+              <div class="project-content-redirect-icon bg-secondary">
+                <img
+                  src="./image/project/icon/arrow-white.webp"
+                  alt="icon Définir vos objectifs"
+                  class="w-full rotate-[320deg]"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="project-block border ">
+          <a href="#" class="project-content-redirect">
+            <p class="text-white text-[26px]">FFFhhvy ruuuue ufufufr fr fu frufr ufrufrfr ufrufrufruu</p>
+          </a>
+          <img
+            class="h-full w-full object-cover"
+            src="{{ asset('/image/project/image-2.webp') }}"
+            alt=""
+          />
+          <div class="project-block-content-parent">
+            <div
+              class="project-block-content-children  bg-tertiary"
+            >
+              <div class="m-4">
+                <p class="text-xl font-semibold">JUJUSTU KAISEN</p>
+                <p class="text-sm text-secondary">Site Vitrine</p>
+              </div>
+              <div class="project-content-redirect-icon bg-secondary">
+                <img
+                  src="./image/project/icon/arrow-white.webp"
+                  alt="icon Définir vos objectifs"
+                  class="w-full rotate-[320deg]"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="project-block border ">
+          <a href="#" class="project-content-redirect">
+            <p class="text-white text-[26px]">FFFhhvy ruuuue ufufufr fr fu frufr ufrufrfr ufrufrufruu</p>
+          </a>
+          <img
+            class="h-full w-full object-cover"
+            src="{{ asset('/image/project/image-3.webp') }}"
+            alt=""
+          />
+          <div class="project-block-content-parent">
+            <div
+              class="project-block-content-children  bg-tertiary"
+            >
+              <div class="m-4">
+                <p class="text-xl font-semibold">JUJUSTU KAISEN</p>
+                <p class="text-sm text-secondary">Site Vitrine</p>
+              </div>
+              <div class="project-content-redirect-icon bg-secondary">
+                <img
+                  src="./image/project/icon/arrow-white.webp"
+                  alt="icon Définir vos objectifs"
+                  class="w-full rotate-[320deg]"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+
+
+      </div>
+    </article>
+  </div>
+
   <!-- Image -->
-  <article id="image" class="md:w-1/2 sm:px-2"></article>
+  <article id="image" class="md:w-1/2 sm:px-2 hidden md:block"></article>
 </section>
 
 <!-- add script to project.js -->
 {% block javascripts %}
-{{
-  encore_entry_script_tags("project")
-}}
-{% endblock %}
-{% endblock projects %}
+{{ encore_entry_script_tags("project") }}
+{% endblock %} {% endblock projects %}
