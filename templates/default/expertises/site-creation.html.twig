@@ -1,133 +1,263 @@
-{% extends 'base.html.twig' %} {% block title %} Creation de site {% endblock %}
-{% block body %}
-<!-- Site creation -->
-<section
-  class="mt-[80px] lg:mt-[100px] w-full flex flex-col justify-center items-center"
->
-<!-- Content Header -->
+{% extends 'base.html.twig' %} {% block title %} Création de site web - Hafo {%
+endblock %} {% block body %}
+
+<!-- Site Creation -->
+<section class="default-mt flex flex-col justify-center items-center w-full">
+  <!-- Header -->
   <article
-    class="flex lg:flex-row flex-col gap-8 lg:h-[480px] w-full lg:default-container 2xl:container-fluid 2xl:px-[140px]"
+    class="flex flex-col w-full gap-[40px] sm:container lg:flex-row lg:default-container"
   >
-    <!-- Title -->
-    <div
-      class="lg:w-1/2 px-8 lg:px-0"
-    >
+    <div class="px-8 lg:px-0 lg:w-1/2">
       <h1
-        class="text-white lg:text-[45px] md:text-[32px] text-[28px] tracking-tight"
+        class="default-h responsive-h1 mb-[10px]"
         data-sal="slide-up"
         data-sal-duration="800"
         data-sal-delay="150"
       >
-        Création Sur Mesure
+        Création de site web
       </h1>
-      <p class="text-secondary mt-3"
-      data-sal="fade-in"
-      data-sal-duration="800"
-      data-sal-delay="200"
-      >Votre vision prend forme numériquement</p>
-      <p class="text-grayText mt-3 mb-8 leading-[28px]"
-      data-sal="fade-in"
-      data-sal-duration="800"
-      data-sal-delay="250"
+      <p
+        class="default-bp mt-[10px]"
+        data-sal="fade-in"
+        data-sal-duration="800"
+        data-sal-delay="200"
       >
-        Avec Hafo Web Solutions, chaque pixel s'aligne sur vos ambitions. Notre
-        méthodologie allie innovation et personnalisation pour donner vie à
-        votre espace digital. Nous ne nous contentons pas de construire des
-        sites; nous façonnons des expériences uniques, captivantes et
-        fonctionnelles qui élèvent votre présence en ligne au-delà des attentes
-        conventionnelles.
+        Votre présence en ligne, notre expertise
+      </p>
+      <p
+        class="default-p mt-[20px]"
+        data-sal="fade-in"
+        data-sal-duration="800"
+        data-sal-delay="250"
+      >
+        Chez Hafo Web Solutions, nous savons qu'un site internet performant est
+        essentiel pour votre succès. Nous mettons notre expertise en
+        développement web à votre service pour créer des sites sur mesure,
+        sécurisés et évolutifs, parfaitement adaptés à vos besoins.
       </p>
     </div>
-
-    <!-- Image -->
-    <div
-      class="overflow-hidden h-[300px] lg:h-full lg:w-1/2 lg:rounded-md w-screen"
-    >
+    <div class="lg:w-1/2">
       <img
         src="{{ asset('./image/expertise/creation/image.jpeg') }}"
         alt="creation de site"
-        class="object-cover"
+        class="object-cover h-[560px] w-full"
       />
     </div>
   </article>
 
   <!-- Content -->
-  <article
-    class="flex lg:flex-row flex-col gap-8 expertise-lg:h-[250px] lg:h-[232px] w-full lg:mt-[140px] default-container mt-[-142px] 2xl:container-fluid 2xl:px-[140px]"
+  <div
+    class="default-container flex flex-col w-full mt-[-100px] gap-[40px] sm:container lg:flex-row lg:mt-0"
   >
-    <!-- Block 1/4 -->
-    <div
-      class="lg:w-1/2 expertise-lg:h-[290px] lg:h-[240px] bg-quaternary xl:sticky xl:top-[100px] xl:mb-0 rounded-md border border-borderBase lg:mt-[-240px] relative p-8 flex justify-center flex-col"
+    <!-- Block Project -->
+    <article
+      class="default-border relative flex flex-col justify-center bg-quaternary py-[50px] px-[40px] lg:sticky lg:w-1/2 lg:top-[100px] lg:h-[393px] lg:mt-[-260px] xl:mb-0"
     >
-      <h3 class="lg:text-[36px] md:text-[28px] mb-[20px] text-[26px] expertise-lg:text-[28px] leading-10 font-bold text-white"
+      <h2
+        class="default-h responsive-h2 mb-[20px]"
         data-sal="slide-up"
         data-sal-duration="800"
-        data-sal-delay="150">
-        Vision et Stratégie
-      </h3>
-      <p class="text-grayText leading-[28px]"
+        data-sal-delay="150"
+      >
+        Votre projet sur mesure
+      </h2>
+      <p
+        class="default-p mb-[40px]"
         data-sal="slide-up"
         data-sal-duration="800"
-        data-sal-delay="150">
-        Des fondations solides pour des sites performants. Chez Hafo Web
-        Solutions, nous plongeons dans l'univers de votre marque pour créer une
-        stratégie digitale qui résonne avec votre identité et vos objectifs.
-        Nous transformons vos idées en réalités numériques captivantes.
+        data-sal-delay="200"
+      >
+        Nous vous accompagnons dans la réalisation de votre projet web de A à Z.
+        En tenant compte de vos besoins spécifiques et de votre vision, nous
+        transformons vos idées en un site performant et esthétique. Grâce à
+        notre savoir-faire, nous assurons une réalisation professionnelle de
+        votre projet.
       </p>
-    </div>
+      <a
+        href="{{ path('app_contact') }}"
+        data-sal="slide-up"
+        data-sal-duration="800"
+        data-sal-selay="250"
+        ><button class="darkBlue-button">Demandez un devis gratuit</button></a
+      >
+    </article>
 
-    <!-- Block 2/4 -->
-    <div
-      class="lg:w-1/2 expertise-lg:h-[250px] lg:h-[230px] border border-borderBase p-8 flex justify-center flex-col rounded-md"
-    >
-      <h3 class="lg:text-[32px] text-[24px] md:text-[26px] expertise-lg:text-[26px] text-white leading-10 mb-[20px]"
+    <!-- Block Approach -->
+    <article class="default-mt flex flex-col justify-center lg:w-1/2">
+      <h2
+        class="responsive-h2 default-h mb-[20px]"
         data-sal="slide-up"
         data-sal-duration="800"
-        data-sal-delay="150">
-        Design et Expérience utilisateur
-      </h3>
-      <p class="text-grayText leading-[28px]"
+        data-sal-delay="150"
+      >
+        Notre approche
+      </h2>
+      <div class="approach">
+        <ul class="default-p">
+          <li
+            class="mb-[10px] pl-[20px] relative"
+            data-sal="slide-up"
+            data-sal-duration="800"
+            data-sal-delay="200"
+          >
+            <strong>Analyse des besoins</strong> : Compréhension approfondie de
+            vos objectifs et besoins spécifiques pour concevoir un site qui
+            reflète parfaitement votre identité.
+          </li>
+          <li
+            class="mb-[10px] pl-[20px] relative"
+            data-sal="slide-up"
+            data-sal-duration="800"
+            data-sal-delay="250"
+          >
+            <strong>Conception UX et webdesign</strong> : Création d'interfaces
+            attrayantes et intuitives garantissant une expérience utilisateur
+            optimale, pensée pour attirer et retenir vos visiteurs.
+          </li>
+          <li
+            class="mb-[10px] pl-[20px] relative"
+            data-sal="slide-up"
+            data-sal-duration="800"
+            data-sal-delay="300"
+          >
+            <strong>Développement et intégration</strong> : Développement de
+            sites web robustes et performants avec Symfony, adaptés à tout type
+            de projet, qu'il s'agisse de sites vitrines, e-commerce ou
+            applications web complexes.
+          </li>
+          <li
+            class="mb-[10px] pl-[20px] relative"
+            data-sal="slide-up"
+            data-sal-duration="800"
+            data-sal-delay="350"
+          >
+            <strong>Tests et optimisation</strong> : Tests rigoureux pour
+            garantir un fonctionnement parfait sur tous les appareils et
+            navigateurs, optimisation des performances pour un chargement rapide
+            des pages.
+          </li>
+          <li
+            class="pl-[20px] relative"
+            data-sal="slide-up"
+            data-sal-duration="800"
+            data-sal-delay="400"
+          >
+            <strong>Lancement et suivi</strong> : Mise en ligne et suivi
+            post-lancement pour garantir sécurité et performance continue, avec
+            des services de maintenance incluant mises à jour régulières et
+            surveillance proactive.
+          </li>
+        </ul>
+      </div>
+    </article>
+  </div>
+
+  <!-- Block Maintenance -->
+  <article
+    class="default-container default-mt flex flex-col w-full sm:container lg:flex-row lg:gap-8 lg:mt-[100px]"
+  >
+    <div class="flex flex-col justify-center mb-8 lg:w-1/2 lg:mb-0">
+      <h2
+        class="default-h responsive-h2 mb-[20px] lg:mb-0"
         data-sal="slide-up"
         data-sal-duration="800"
-        data-sal-delay="150">
-        Design intuitif, expérience mémorable. Notre approche créative met
-        l'accent sur des designs élégants et des interfaces conviviales. Nous
-        conjuguons esthétique et fonctionnalité pour que chaque visite sur votre
-        site soit une invitation au voyage dans votre univers.
+        data-sal-delay="150"
+      >
+        Assurez la pérennité de votre site
+      </h2>
+    </div>
+    <div class="default-border flex flex-col justify-center p-[25px] lg:w-1/2">
+      <p
+        class="default-p mb-[40px]"
+        data-sal="slide-up"
+        data-sal-duration="800"
+        data-sal-delay="200"
+      >
+        La création de votre site web n'est que le début. Notre service de
+        maintenance garantit que votre site reste sécurisé, performant et à
+        jour. Confiez-nous la maintenance de votre site pour une tranquillité
+        d'esprit total.
       </p>
+      <a
+        href="{{ path('app_expertise_maintenance') }}"
+        data-sal="slide-up"
+        data-sal-duration="800"
+        data-sal-selay="250"
+        ><button class="darkBlue-button">
+          Découvrez notre service de maintenance
+        </button></a
+      >
     </div>
   </article>
 
-  <article
-    class="flex lg:flex-row lg:gap-8 expertise-lg:h-[230px] lg:h-[160px] w-full mt-[80px] lg:mt-[100px] flex-col default-container 2xl:container-fluid 2xl:px-[140px]"
-  >
-    <!-- Block 3/4 -->
-    <div class="lg:w-1/2 flex flex-col justify-center mb-8 lg:mb-0">
-      <h3 class="lg:text-[32px] md:text-[26px] text-[24px] expertise-lg:text-[26px] font-bold text-white leading-10 "
-        data-sal="slide-up"
-        data-sal-duration="800"
-        data-sal-delay="150">
-        Technologies Avancée, <br> Avenir Assuré
-      </h3>
-    </div>
+  <!-- Component Projects -->
+  {% include "./components/projects.html.twig" %}
 
-    <!-- Block 4/4 -->
-    <div
-      class="lg:w-1/2 border expertise-lg:h-[230px] lg:h-[170px] border-borderBase p-8 flex flex-col justify-center items-center rounded-md"
-    >
-      <p class="text-grayText leading-[28px]" 
-        data-sal="slide-up"
-        data-sal-duration="800"
-        data-sal-delay="150">
-        La technologie au service de l'innovation. Nos solutions de
-        développement web utilisent les dernières technologies pour garantir un
-        site réactif, sécurisé et évolutif. Nous bâtissons votre plateforme en
-        pensant à demain, assurant une présence en ligne durable et influente.
-      </p>
-    </div>
-  </article>
+  <!-- Component Blog -->
+  {% include "./components/blog.html.twig" %}
+
+  <!-- Component CTA -->
+  <!-- Title -->
+  {% set title = "Prêt à démarrer votre projet ?" %}
+  <!-- Content -->
+  {% set content %} Contactez-nous dès maintenant pour discuter de vos besoins
+  et obtenir une estimation précise.
+  <span class="text-secondary">Nous reviendrons vers vous sous 24h.</span>
+  {% endset %}
+  <!-- Button -->
+  {% set button = "Demandez un devis gratuit" %}
+  <!-- CTA -->
+  {% include "./components/cta.html.twig" %}
+
+  <!-- Component FAQ -->
+  <!-- Question 1 -->
+  {% set faq_question1_title = "Pourquoi choisir le framework Symfony ?" %} {%
+  set faq_question1_content = "Symfony est un framework PHP puissant, flexible
+  et sécurisé, idéal pour des projets web robustes et évolutifs. Il permet de
+  développer des fonctionnalités sur mesure tout en garantissant une haute
+  performance." %}
+  <!-- Question 2 -->
+  {% set faq_question2_title = "Quels types de sites pouvez-vous créer ?" %} {%
+  set faq_question2_content = "Nous créons des sites vitrines, e-commerce,
+  applications web complexes, et bien plus, adaptés à vos besoins spécifiques.
+  Chaque projet est unique et conçu pour refléter votre identité et répondre à
+  vos objectifs." %}
+  <!-- Question 3 -->
+  {% set faq_question3_title = "Comment gérez-vous la maintenance du site ?" %}
+  {% set faq_question3_content = "Nous assurons la maintenance continue avec des
+  mises à jour régulières, une surveillance proactive, et des interventions
+  rapides pour garantir que votre site reste sécurisé et performant. Ces
+  services sont proposés sous forme de forfaits adaptés à vos besoins." %}
+  <!-- Question 4 -->
+  {% set faq_question4_title = "Quels sont les délais de création d'un site web
+  ?" %} {% set faq_question4_content = "Les délais varient selon la complexité :
+  de quelques semaines pour un site vitrine à plusieurs mois pour une
+  application complexe. Nous fournissons une estimation précise après l'analyse
+  de vos besoins." %}
+  <!-- Question 5 -->
+  {% set faq_question5_title = "Quels sont les coûts de création d'un site web
+  ?" %} {% set faq_question5_content = "Les coûts dépendent de la complexité et
+  des fonctionnalités requises. Nous proposons des devis personnalisés pour
+  chaque projet, vous assurant une solution adaptée à votre budget." %}
+  <!-- Question 6 -->
+  {% set faq_question6_title = "Proposez-vous des solutions d'hébergement web ?"
+  %} {% set faq_question6_content = "Oui, nous proposons des services
+  d'hébergement incluant gestion de la sécurité, mises à jour régulières, et
+  support technique pour garantir la disponibilité et la performance de votre
+  site web." %}
+  <!-- Question 7 -->
+  {% set faq_question7_title = "Comment intégrez-vous l'optimisation SEO ?" %}{%
+  set faq_question7_content = "Nous intégrons des pratiques SEO dès le début du
+  projet pour améliorer la visibilité de votre site sur les moteurs de
+  recherche, attirant ainsi plus de visiteurs qualifiés." %}
+  <!-- Question 8 -->
+  {% set faq_question8_title = "Quel accompagnement offrez-vous après le
+  lancement ?" %} {% set faq_question8_content = "Après le lancement, nous
+  offrons un accompagnement pour assurer que tout se passe bien et pour
+  effectuer les ajustements nécessaires. Ce suivi initial est inclus dans le
+  projet. Pour des besoins à long terme, nous proposons des contrats de
+  maintenance." %}
+  <!-- FAQ -->
+  {% include "./components/faq.html.twig" %}
 </section>
-
-<!-- Content CTA -->
-{% include "./components/cta.html.twig" %} 
 {% endblock %}

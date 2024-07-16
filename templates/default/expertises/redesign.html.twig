@@ -1,144 +1,268 @@
-{% extends 'base.html.twig' %} {% block title %} Refonte {% endblock %} {% block
-body %}
-<!-- Site creation -->
-<section
-  class="mt-[80px] lg:mt-[100px] w-full flex flex-col justify-center items-center"
->
-  <!-- Content Header -->
+{% extends 'base.html.twig' %} {% block title %} Refonte de site web - Hafo {%
+endblock %} {% block body %}
+
+<!-- Site Redesign -->
+<section class="default-mt flex flex-col justify-center items-center w-full">
+  <!-- Header -->
   <article
-    class="flex lg:flex-row flex-col gap-8 lg:h-[480px] w-full lg:default-container 2xl:container-fluid 2xl:px-[140px]"
+    class="flex flex-col w-full gap-[40px] sm:container lg:flex-row lg:default-container"
   >
-    <!-- Title -->
-    <div class="lg:w-1/2 px-8 lg:px-0">
+    <div class="px-8 lg:px-0 lg:w-1/2">
       <h1
-        class="text-white lg:text-[45px] md:text-[32px] text-[28px] tracking-tight"
+        class="default-h responsive-h1 mb-[10px]"
         data-sal="slide-up"
         data-sal-duration="800"
         data-sal-delay="150"
       >
-        Refonte de Site Web
+        Refonte de site web
       </h1>
       <p
-        class="text-secondary mt-3"
+        class="default-bp mt-[10px]"
         data-sal="fade-in"
         data-sal-duration="800"
         data-sal-delay="200"
       >
-        Revitaliser Votre Présence en Ligne avec Innovation
+        Modernisez votre présence en ligne
       </p>
       <p
-        class="text-grayText mt-3 mb-8 leading-[28px]"
+        class="default-p mt-[20px]"
         data-sal="fade-in"
         data-sal-duration="800"
         data-sal-delay="250"
       >
-        Dans l’écosystème digital en constante évolution, un site web peut
-        rapidement se retrouver dépassé. Chez Hafo Web Solutions, nous
-        revigorerons votre site avec une refonte stratégique qui marie
-        innovation et pertinence, garantissant que votre présence en ligne reste
-        compétitive et alignée avec les dernières tendances.
+        Chez Hafo Web Solutions, nous comprenons l'importance d'une présence en
+        ligne à jour et performante. Notre service de refonte de site web vous
+        permet de moderniser votre site pour offrir une meilleure expérience
+        utilisateur et rester compétitif.
       </p>
     </div>
-
-    <!-- Image -->
-    <div
-      class="overflow-hidden h-[300px] lg:h-full lg:w-1/2 lg:rounded-md w-screen"
-    >
+    <div class="lg:w-1/2">
       <img
-        src="{{ asset('./image/expertise/redesign/image.jpeg') }}"
-        alt="refonte"
-        class="object-cover"
+        src="{{ asset('./image/expertise/creation/image.jpeg') }}"
+        alt="creation de site"
+        class="object-cover h-[560px] w-full"
       />
     </div>
   </article>
 
   <!-- Content -->
-  <article
-    class="flex lg:flex-row flex-col gap-8 expertise-lg:h-[250px] lg:h-[232px] w-full lg:mt-[140px] default-container mt-[-142px] 2xl:container-fluid 2xl:px-[140px]"
+  <div
+    class="default-container flex flex-col w-full mt-[-100px] gap-[40px] sm:container lg:flex-row lg:mt-0"
   >
-    <!-- Block 1/4 -->
-    <div
-      class="lg:w-1/2 expertise-lg:h-[290px] lg:h-[240px] bg-quaternary xl:sticky xl:top-[100px] xl:mb-0 rounded-md border border-borderBase lg:mt-[-240px] relative p-8 flex justify-center flex-col"
+    <!-- Block Optimization -->
+    <article
+      class="default-border relative flex flex-col justify-center bg-quaternary py-[50px] px-[40px] lg:sticky lg:w-1/2 lg:top-[100px] lg:h-[393px] lg:mt-[-260px] xl:mb-0"
     >
-      <h3
-        class="lg:text-[36px] md:text-[28px] mb-[20px] text-[26px] expertise-lg:text-[28px] leading-10 font-bold text-white"
+      <h2
+        class="default-h responsive-h2 mb-[20px]"
         data-sal="slide-up"
         data-sal-duration="800"
         data-sal-delay="150"
       >
-        Diagnostic Complet
-      </h3>
+        Revitalisez votre présence
+      </h2>
       <p
-        class="text-grayText leading-[28px]"
+        class="default-p mb-[40px]"
         data-sal="slide-up"
         data-sal-duration="800"
-        data-sal-delay="150"
+        data-sal-delay="200"
       >
-        Nous commençons par un audit exhaustif pour identifier les aspects de
-        votre site qui nécessitent une amélioration, que ce soit en termes de
-        design, d’expérience utilisateur, de performances techniques ou de
-        conformité SEO.
+        Transformez votre site web pour qu'il soit à la pointe de la technologie
+        et réponde aux attentes de vos utilisateurs. Nous modernisons votre
+        design, améliorons les performances techniques et assurons une
+        transition fluide vers un site mobile responsive. Profitez d'une
+        expérience utilisateur optimale et d'un site performant qui attire et
+        retient vos visiteurs.
       </p>
-    </div>
+      <a
+        href="{{ path('app_contact') }}"
+        data-sal="slide-up"
+        data-sal-duration="800"
+        data-sal-selay="250"
+        ><button class="darkBlue-button">Demandez un audit gratuit</button></a
+      >
+    </article>
 
-    <!-- Block 2/4 -->
-    <div
-      class="lg:w-1/2 expertise-lg:h-[250px] lg:h-[230px] border border-borderBase p-8 flex justify-center flex-col rounded-md"
-    >
-      <h3
-        class="lg:text-[32px] text-[24px] md:text-[26px] expertise-lg:text-[26px] text-white leading-10 mb-[20px]"
+    <!-- Block Approach -->
+    <article class="default-mt flex flex-col justify-center lg:w-1/2">
+      <h2
+        class="responsive-h2 default-h mb-[20px]"
         data-sal="slide-up"
         data-sal-duration="800"
         data-sal-delay="150"
       >
-        SEO Affiné
-      </h3>
+        Notre approche
+      </h2>
+      <div class="approach">
+        <ul class="default-p">
+          <li
+            class="mb-[10px] pl-[20px] relative"
+            data-sal="slide-up"
+            data-sal-duration="800"
+            data-sal-delay="200"
+          >
+            <strong>Audit complet du site actuel</strong> : Analyse détaillée de
+            votre site existant pour identifier les points forts et les domaines
+            à améliorer. Nous évaluons la performance technique, le design, et
+            l'expérience utilisateur.
+          </li>
+          <li
+            class="mb-[10px] pl-[20px] relative"
+            data-sal="slide-up"
+            data-sal-duration="800"
+            data-sal-delay="250"
+          >
+            <strong>Conception et design UX/UI</strong> : Création de maquettes
+            et de prototypes centrés sur l'utilisateur pour garantir une
+            navigation intuitive et un design moderne. Nous collaborons avec
+            vous pour refléter votre identité visuelle.
+          </li>
+          <li
+            class="mb-[10px] pl-[20px] relative"
+            data-sal="slide-up"
+            data-sal-duration="800"
+            data-sal-delay="300"
+          >
+            <strong>Optimisation du contenu</strong> : Réécriture et
+            optimisation du contenu existant pour améliorer la clarté, la
+            pertinence et le SEO. Nous nous assurons que votre message est
+            cohérent et engageant.
+          </li>
+          <li
+            class="mb-[10px] pl-[20px] relative"
+            data-sal="slide-up"
+            data-sal-duration="800"
+            data-sal-delay="350"
+          >
+            <strong>Développement et intégration</strong> : Mise en œuvre des
+            nouvelles fonctionnalités et technologies pour améliorer la
+            performance et la sécurité de votre site. Nous utilisons les
+            dernières pratiques de développement pour garantir un site robuste
+            et évolutif.
+          </li>
+          <li
+            class="mb-[10px] pl-[20px] relative"
+            data-sal="slide-up"
+            data-sal-duration="800"
+            data-sal-delay="400"
+          >
+            <strong>Tests et lancement</strong> : Tests rigoureux pour assurer
+            la compatibilité sur tous les appareils et navigateurs. Nous
+            effectuons des tests de performance et de sécurité avant le
+            lancement.
+          </li>
+          <li
+            class="pl-[20px] relative"
+            data-sal="slide-up"
+            data-sal-duration="800"
+            data-sal-delay="450"
+          >
+            <strong>Suivi et support post-lancement</strong> : Suivi
+            post-lancement pour assurer une transition en douceur et répondre à
+            tous les besoins supplémentaires. Nous offrons des services de
+            maintenance pour garantir la pérennité de votre site.
+          </li>
+        </ul>
+      </div>
+    </article>
+  </div>
+
+  <!-- Block Creation -->
+  <article
+    class="default-container default-mt flex flex-col w-full sm:container lg:flex-row lg:gap-8 lg:mt-[100px]"
+  >
+    <div class="flex flex-col justify-center mb-8 lg:w-1/2 lg:mb-0">
+      <h2
+        class="default-h responsive-h2 mb-[20px] lg:mb-0"
+        data-sal="slide-up"
+        data-sal-duration="800"
+        data-sal-delay="150"
+      >
+        Votre nouveau site sur mesure
+      </h2>
+    </div>
+    <div class="default-border flex flex-col justify-center p-[25px] lg:w-1/2">
       <p
-        class="text-grayText leading-[28px]"
+        class="default-p mb-[40px]"
         data-sal="slide-up"
         data-sal-duration="800"
-        data-sal-delay="150"
+        data-sal-delay="200"
       >
-        Un site refondu est une toile vierge pour le SEO. Nous intégrons des
-        stratégies de référencement naturel pour vous assurer un meilleur
-        classement et plus de visibilité dès le relancement de votre site.
+        Lancez votre nouvelle présence en ligne avec un site web sur mesure,
+        adapté à vos besoins et objectifs. Notre équipe vous accompagne de la
+        conception à la réalisation pour un résultat optimal.
       </p>
+      <a
+        href="{{ path('app_expertise_site_creation') }}"
+        data-sal="slide-up"
+        data-sal-duration="800"
+        data-sal-selay="250"
+        ><button class="darkBlue-button">Commencez votre projet</button></a
+      >
     </div>
   </article>
 
-  <article
-    class="flex lg:flex-row lg:gap-8 expertise-lg:h-[230px] lg:h-[160px] w-full mt-[80px] lg:mt-[100px] flex-col default-container 2xl:container-fluid 2xl:px-[140px]"
-  >
-    <!-- Block 3/4 -->
-    <div class="lg:w-1/2 flex flex-col justify-center mb-8 lg:mb-0">
-      <h3
-        class="lg:text-[32px] md:text-[26px] text-[24px] expertise-lg:text-[26px] font-bold text-white leading-10"
-        data-sal="slide-up"
-        data-sal-duration="800"
-        data-sal-delay="150"
-      >
-        Optimisation Performante
-      </h3>
-    </div>
+  <!-- Component Projects -->
+  {% include "./components/projects.html.twig" %}
 
-    <!-- Block 4/4 -->
-    <div
-      class="lg:w-1/2 border expertise-lg:h-[230px] lg:h-[170px] border-borderBase p-8 flex flex-col justify-center items-center rounded-md"
-    >
-      <p
-        class="text-grayText leading-[28px]"
-        data-sal="slide-up"
-        data-sal-duration="800"
-        data-sal-delay="150"
-      >
-        Une refonte n’est pas seulement visuelle. Nous peaufinons le code source
-        et la structure de votre site pour des temps de chargement réduits, une
-        meilleure indexation par les moteurs de recherche et une accessibilité
-        optimisée.
-      </p>
-    </div>
-  </article>
+  <!-- Component Blog -->
+  {% include "./components/blog.html.twig" %}
+
+  <!-- Component CTA -->
+  <!-- Title -->
+  {% set title = "Prêt à moderniser votre site web ?" %}
+  <!-- Content -->
+  {% set content %} Contactez-nous dès maintenant pour discuter de vos besoins
+  en refonte de site et obtenir une analyse précise de votre site actuel.
+  <span class="text-secondary">Nous reviendrons vers vous sous 24h.</span>
+  {% endset %}
+  <!-- Button -->
+  {% set button = "Demandez un audit de refonte gratuit" %}
+  <!-- CTA -->
+  {% include "./components/cta.html.twig" %}
+
+  <!-- Component FAQ -->
+  <!-- Question 1 -->
+  {% set faq_question1_title = "Pourquoi devrais-je envisager une refonte de
+  site web ?" %} {% set faq_question1_content = "La refonte permet d'améliorer
+  l'expérience utilisateur, de moderniser le design, et d'optimiser les
+  performances techniques, ce qui peut augmenter le trafic et les conversions."
+  %}
+  <!-- Question 2 -->
+  {% set faq_question2_title = "Quels sont les signes indiquant qu'une refonte
+  est nécessaire ?" %} {% set faq_question2_content = "Des signes incluent un
+  design daté, une faible performance, des difficultés de navigation, et un taux
+  de conversion faible." %}
+  <!-- Question 3 -->
+  {% set faq_question3_title = "Combien de temps prend une refonte de site web
+  ?" %} {% set faq_question3_content = "Le délai varie selon la complexité du
+  projet, allant de quelques semaines à plusieurs mois. Une estimation précise
+  est fournie après l'analyse de vos besoins." %}
+  <!-- Question 4 -->
+  {% set faq_question4_title = "Quels sont les coûts associés à une refonte de
+  site web ?" %} {% set faq_question4_content = "Les coûts dépendent de la
+  complexité et des fonctionnalités requises. Nous proposons des devis
+  personnalisés pour chaque projet." %}
+  <!-- Question 5 -->
+  {% set faq_question5_title = "Est-ce que mon site sera hors ligne pendant la
+  refonte ?" %} {% set faq_question5_content = "Non, nous travaillons sur une
+  version de développement et effectuons la transition finale rapidement pour
+  minimiser les interruptions." %}
+  <!-- Question 6 -->
+  {% set faq_question6_title = "Puis-je conserver mon contenu actuel lors de la
+  refonte ?" %} {% set faq_question6_content = "Oui, nous pouvons réutiliser et
+  optimiser votre contenu actuel tout en intégrant de nouveaux éléments." %}
+  <!-- Question 7 -->
+  {% set faq_question7_title = "Comment assurer la continuité du SEO pendant la
+  refonte ?" %}{% set faq_question7_content = "Nous intégrons des pratiques SEO
+  dès le début pour préserver et améliorer votre positionnement sur les moteurs
+  de recherche." %}
+  <!-- Question 8 -->
+  {% set faq_question8_title = "Que se passe-t-il après le lancement du nouveau
+  site ?" %} {% set faq_question8_content = "Nous offrons un suivi
+  post-lancement pour assurer une transition en douceur et des services de
+  maintenance pour garantir la pérennité de votre site." %}
+  <!-- FAQ -->
+  {% include "./components/faq.html.twig" %}
 </section>
-
-<!-- Content CTA -->
-{% include "./components/cta.html.twig" %} {% endblock %}
+{% endblock %}
