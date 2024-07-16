@@ -1,362 +1,337 @@
 {% block faq %}
-<section
-  class="w-full default-container sm:container lg:my-0 {% if style is defined %}{{
-    style
-  }} {% else %} my-[80px] lg:my-[100px]  {% endif %}"
->
-  <!-- if Variable "isTitle" does not exist. -->
-  {% if isTitle is not defined %}
-  <h2
-    class="text-[34px] md:text-[38px] xl:text-[50px] font-bold tracking-tight mb-[20px] text-white leading-[1.19]"
-    data-sal="slide-up"
-    data-sal-duration="800"
-    data-sal-delay="150"
+<section class="default-container w-full sm:container lg:my-0">
+  <article
+    class="default-mt flex flex-col items-center w-full mt-5 gap-x-8 md:items-start lg:flex-row"
   >
-    FAQ
-  </h2>
-  {% endif %}
-
-  <article class="flex flex-col items-center md:items-start w-full lg:flex-row gap-x-[64px]">
-    <!-- Block Question -->
-    <div class="lg:w-1/2 mb-[40px] sm:mb-[50px]">
-      <div
-        class="mb-[30px]"
-        data-sal="slide-up"
-        data-sal-duration="800"
-        data-sal-delay="200"
-      >
-        <p class="text-white text-[20px] md:text-[24px] lg:text-[26px] font-bold mb-[15px]">
-          Quels types de services offrez-vous ?
-        </p>
-        <p class="text-grayText text-base mb-3 leading-[28px]">
-          Nous proposons une gamme complète de services de développement web, y
-          compris la création de sites web sur mesure, la refonte de sites
-          existants, l'optimisation SEO intégrée par le code, et des services de
-          maintenance et de support continus.
+    <!-- Block Questions -->
+    <div class="lg:w-1/2">
+      <!-- Block Question 1 -->
+      {% if faq_question1_title is defined %}
+      <div data-sal="slide-up" data-sal-duration="800" data-sal-delay="200">
+        <h4 class="default-h responsive-h4">
+          {{ faq_question1_title }}
+        </h4>
+        <p class="default-p mt-4">
+          {{ faq_question1_content }}
         </p>
       </div>
+      {% endif %}
+
+      <!-- Block Question 2 -->
+      {% if faq_question2_title is defined %}
       <div
-        class="mb-[30px]"
+        class="mt-8"
         data-sal="slide-up"
         data-sal-duration="800"
         data-sal-delay="250"
       >
-        <p class="text-white text-[20px] md:text-[24px] lg:text-[26px] font-bold mb-[15px]">
-          Combien coûte la création d’un site ?
-        </p>
-        <p class="text-grayText text-base mb-3 leading-[28px]">
-          Le coût varie selon plusieurs facteurs, y compris la complexité du
-          site, les fonctionnalités requises et la stratégie de contenu. Nous
-          recommandons une consultation gratuite pour établir un devis
-          personnalisé adapté à vos besoins spécifiques.
+        <h4 class="default-h responsive-h4">
+          {{ faq_question2_title }}
+        </h4>
+        <p class="default-p mt-4">
+          {{ faq_question2_content }}
         </p>
       </div>
+      {% endif %}
+
+      <!-- Block Question 3 -->
+      {% if faq_question3_title is defined %}
       <div
-        class="mb-[30px]"
+        class="mt-8"
         data-sal="slide-up"
         data-sal-duration="800"
         data-sal-delay="300"
       >
-        <p class="text-white text-[20px] md:text-[24px] lg:text-[26px] font-bold mb-[15px]">
-          Quel est le délai typique pour un projet ?
-        </p>
-        <p class="text-grayText text-base mb-6 leading-[28px]">
-          Cela dépend de la complexité, des fonctionnalités requises et des
-          retours du client. En général, un projet peut prendre de quelques
-          semaines à plusieurs mois. Un calendrier plus détaillé sera discuté
-          après avoir évalué vos besoins spécifiques.
+        <h4 class="default-h responsive-h4">
+          {{ faq_question3_title }}
+        </h4>
+        <p class="default-p mt-4">
+          {{ faq_question3_content }}
         </p>
       </div>
+      {% endif %}
       <div
-        class="flex gap-[15px] md:flex-row"
+        class="flex mt-8 gap-4 md:flex-row"
         data-sal="slide-up"
         data-sal-duration="800"
         data-sal-delay="350"
       >
-        <a
-          href="#"
-          class="py-[10px] px-[16px] text-white rounded-[10px] font-medium bg-secondary hover:bg-tertiary cursor-pointer tracking-[0.5px] ease-in-out duration-300"
-          >Nous contacter</a
+        <a href="{{ path('app_contact') }}"
+          ><button
+            class="py-3 px-4 text-white rounded-[10px] font-medium bg-secondary hover:bg-tertiary tracking-[0.5px] ease-in-out duration-300"
+          >
+            Nous contacter
+          </button></a
         >
-        <a
-          href="{{ path('app_support_center') }}"
-          class="py-[10px] px-[16px] text-white rounded-[10px] font-medium hover:bg-secondary bg-tertiary cursor-pointer tracking-[0.5px] ease-in-out duration-300"
-          >Centre de Support</a
+        <a href="{{ path('app_support_center') }}"
+          ><button
+            class="py-3 px-4 text-white rounded-[10px] font-medium hover:bg-secondary bg-tertiary tracking-[0.5px] ease-in-out duration-300"
+          >
+            Centre de Support
+          </button></a
         >
       </div>
     </div>
 
     <!-- Block Accordion -->
-    <div class="lg:w-1/2" x-data="{ selected: 1 }">
-      <ul>
-        <li
-          class="relative bg-opacityBlue rounded-[5px] mb-[10px]"
-          data-sal="slide-up"
-          data-sal-duration="800"
-          data-sal-delay="150"
+    <ul class="mt-10 lg:mt-0 lg:w-1/2" x-data="{ selected: 1 }">
+      <!-- Block Question 1 -->
+      {% if faq_question4_title is defined %}
+      <li
+        class="relative bg-opacityBlue rounded-md"
+        data-sal="slide-up"
+        data-sal-duration="800"
+        data-sal-delay="150"
+      >
+        <button
+          type="button"
+          class="w-full bg-whiteTransparency rounded-t-md px-5"
+          @click="selected !== 1 ? selected = 1 : selected = null"
         >
-          <button
-            type="button"
-            class="w-full px-5"
-            @click="selected !== 1 ? selected = 1 : selected = null"
-          >
-            <div class="flex items-center justify-between h-[70px]">
-              <span
-                class="text-base text-left md:text-[20px] lg:text-xl"
-                :class="{ 'text-secondary text-base': selected === 1, 'text-white text-base': selected !== 1 }"
+          <div class="flex items-center justify-between h-[70px]">
+            <h4
+              class="text-left md:text-xl"
+              :class="{ 'text-secondary ease-in-out duration-300': selected === 1, 'text-white ease-in-out duration-300': selected !== 1 }"
+            >
+              {{ faq_question4_title }}
+            </h4>
+            <span class="ico-plus">
+              <svg
+                :class="selected === 1 ? 'transform rotate-180' : ''"
+                xmlns="http://www.w3.org/2000/svg"
+                width="24"
+                height="24"
+                viewbox="0 0 24 24"
+                fill="none"
+                :stroke="selected === 1 ? '#00A3FF' : 'white'"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                class="feather feather-chevron-up"
               >
-                Comment puis-je suivre l’avancement de mon projet ?
-              </span>
-              <span class="ico-plus">
-                <svg
-                  :class="selected === 1 ? 'transform rotate-180' : ''"
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="24"
-                  height="24"
-                  viewbox="0 0 24 24"
-                  fill="none"
-                  :stroke="selected === 1 ? '#00A3FF' : 'white'"
-                  stroke-width="2"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  class="feather feather-chevron-up"
-                >
-                  <polyline points="18 15 12 9 6 15"></polyline>
-                </svg>
-              </span>
-            </div>
-          </button>
-          <div
-            class="relative overflow-hidden transition-all max-h-0 duration-700"
-            x-ref="container1"
-            x-bind:style="selected == 1 ? 'max-height: ' + $refs.container1.scrollHeight + 'px' : ''"
-          >
-            <div class="px-[20px] py-[10px] text-grayText">
-              <p class="text-base">
-                Nous fournissons des mises à jour régulières sur l’avancement du
-                projet à travers des réunions virtuelles et des rapports d’étape
-                envoyés par e-mail. Cela vous permet de rester informé et
-                d’apporter vos commentaires tout au long du projet.
-              </p>
-            </div>
+                <polyline points="18 15 12 9 6 15"></polyline>
+              </svg>
+            </span>
           </div>
-        </li>
+        </button>
+        <div
+          class="relative overflow-hidden transition-all max-h-0 duration-300"
+          x-ref="container1"
+          x-bind:style="selected == 1 ? 'max-height: ' + $refs.container1.scrollHeight + 'px' : ''"
+        >
+          <p class="default-p py-3 px-5">
+            {{ faq_question4_content }}
+          </p>
+        </div>
+      </li>
+      {% endif %}
 
-        <li
-          class="relative bg-opacityBlue rounded-[5px] mb-[10px]"
-          data-sal="slide-up"
-          data-sal-duration="800"
-          data-sal-delay="200"
+      <!-- Block Question 2 -->
+      {% if faq_question5_title is defined %}
+      <li
+        class="relative bg-opacityBlue rounded-md mt-3"
+        data-sal="slide-up"
+        data-sal-duration="800"
+        data-sal-delay="200"
+      >
+        <button
+          type="button"
+          class="w-full bg-whiteTransparency rounded-t-md px-5"
+          @click="selected !== 2 ? selected = 2 : selected = null"
         >
-          <button
-            type="button"
-            class="w-full px-5"
-            @click="selected !== 2 ? selected = 2 : selected = null"
-          >
-            <div class="flex items-center justify-between h-[70px]">
-              <span
-                class="text-base text-left md:text-[20px] lg:text-xl"
-                :class="{ 'text-secondary text-base': selected === 2, 'text-white text-base': selected !== 2 }"
-              >
-                Comment modifier mon projet en cours de route ?
-              </span>
+          <div class="flex items-center justify-between h-[70px]">
+            <h4
+              class="text-left md:text-xl"
+              :class="{ 'text-secondary ease-in-out duration-300': selected === 2, 'text-white ease-in-out duration-300': selected !== 2 }"
+            >
+              {{ faq_question5_title }}
+            </h4>
+            <span class="ico-plus">
               <span class="ico-plus">
-                <span class="ico-plus">
-                  <svg
-                    :class="selected === 2 ? 'transform rotate-180' : ''"
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="24"
-                    height="24"
-                    viewbox="0 0 24 24"
-                    fill="none"
-                    :stroke="selected === 2 ? '#00A3FF' : 'white'"
-                    stroke-width="2"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    class="feather feather-chevron-up"
-                  >
-                    <polyline points="18 15 12 9 6 15"></polyline>
-                  </svg>
-                </span>
+                <svg
+                  :class="selected === 2 ? 'transform rotate-180' : ''"
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="24"
+                  height="24"
+                  viewbox="0 0 24 24"
+                  fill="none"
+                  :stroke="selected === 2 ? '#00A3FF' : 'white'"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  class="feather feather-chevron-up"
+                >
+                  <polyline points="18 15 12 9 6 15"></polyline>
+                </svg>
               </span>
-            </div>
-          </button>
-          <div
-            class="relative overflow-hidden transition-all max-h-0 duration-700"
-            x-ref="container2"
-            x-bind:style="selected == 2 ? 'max-height: ' + $refs.container2.scrollHeight + 'px' : ''"
-          >
-            <div class="p-6 text-grayText">
-              <p class="text-base">
-                For reCAPTCHA v3, create a separate key for testing
-                environments. Scores may not be accurate as reCAPTCHA v3 relies
-                on seeing real traffic. For reCAPTCHA v2, use the following test
-                keys. You will always get No CAPTCHA and all verification
-                requests will pass.
-              </p>
-            </div>
+            </span>
           </div>
-        </li>
+        </button>
+        <div
+          class="relative overflow-hidden transition-all max-h-0 duration-300"
+          x-ref="container2"
+          x-bind:style="selected == 2 ? 'max-height: ' + $refs.container2.scrollHeight + 'px' : ''"
+        >
+          <p class="default-p p-6">
+            {{ faq_question5_content }}
+          </p>
+        </div>
+      </li>
+      {% endif %}
 
-        <li
-          class="relative bg-opacityBlue rounded-[5px] mb-[10px]"
-          data-sal="slide-up"
-          data-sal-duration="800"
-          data-sal-delay="250"
+      <!-- Block Question 3 -->
+      {% if faq_question6_title is defined %}
+      <li
+        class="relative bg-opacityBlue rounded-md mt-3"
+        data-sal="slide-up"
+        data-sal-duration="800"
+        data-sal-delay="250"
+      >
+        <button
+          type="button"
+          class="w-full bg-whiteTransparency rounded-t-md px-5"
+          @click="selected !== 3 ? selected = 3 : selected = null"
         >
-          <button
-            type="button"
-            class="w-full px-5"
-            @click="selected !== 3 ? selected = 3 : selected = null"
-          >
-            <div class="flex items-center justify-between h-[70px]">
-              <span
-                class="text-base text-left md:text-[20px] lg:text-xl"
-                :class="{ 'text-secondary text-base': selected === 3, 'text-white text-base': selected !== 3 }"
+          <div class="flex items-center justify-between h-[70px]">
+            <h4
+              class="text-left md:text-xl"
+              :class="{ 'text-secondary ease-in-out duration-300': selected === 3, 'text-white ease-in-out duration-300': selected !== 3 }"
+            >
+              {{ faq_question6_title }}
+            </h4>
+            <span class="ico-plus">
+              <svg
+                :class="selected === 3 ? 'transform rotate-180' : ''"
+                xmlns="http://www.w3.org/2000/svg"
+                width="24"
+                height="24"
+                viewbox="0 0 24 24"
+                fill="none"
+                :stroke="selected === 3 ? '#00A3FF' : 'white'"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                class="feather feather-chevron-up"
               >
-                Comment vous assurez-vous que le site répond à mes attentes ?
-              </span>
-              <span class="ico-plus">
-                <svg
-                  :class="selected === 3 ? 'transform rotate-180' : ''"
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="24"
-                  height="24"
-                  viewbox="0 0 24 24"
-                  fill="none"
-                  :stroke="selected === 3 ? '#00A3FF' : 'white'"
-                  stroke-width="2"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  class="feather feather-chevron-up"
-                >
-                  <polyline points="18 15 12 9 6 15"></polyline>
-                </svg>
-              </span>
-            </div>
-          </button>
-          <div
-            class="relative overflow-hidden transition-all max-h-0 duration-700"
-            x-ref="container3"
-            x-bind:style="selected == 3 ? 'max-height: ' + $refs.container3.scrollHeight + 'px' : ''"
-          >
-            <div class="px-[20px] py-[10px] text-grayText">
-              <p class="text-base">
-                To do this, load the v3 site key as documented, and then
-                explicitly render v2 using grecaptcha.render. You are allowed to
-                hide the badge as long as you include the reCAPTCHA branding
-                visibly in the user flow. Please include the following text:
-              </p>
-            </div>
+                <polyline points="18 15 12 9 6 15"></polyline>
+              </svg>
+            </span>
           </div>
-        </li>
+        </button>
+        <div
+          class="relative overflow-hidden transition-all max-h-0 duration-300"
+          x-ref="container3"
+          x-bind:style="selected == 3 ? 'max-height: ' + $refs.container3.scrollHeight + 'px' : ''"
+        >
+          <p class="default-p py-3 px-5">
+            {{ faq_question6_content }}
+          </p>
+        </div>
+      </li>
+      {% endif %}
 
-        <li
-          class="relative bg-opacityBlue rounded-[5px] mb-[10px]"
-          data-sal="slide-up"
-          data-sal-duration="800"
-          data-sal-delay="300"
+      <!-- Block Question 4 -->
+      {% if faq_question7_title is defined %}
+      <li
+        class="relative bg-opacityBlue rounded-md mt-3"
+        data-sal="slide-up"
+        data-sal-duration="800"
+        data-sal-delay="300"
+      >
+        <button
+          type="button"
+          class="w-full bg-whiteTransparency rounded-t-md px-5"
+          @click="selected !== 4 ? selected = 4 : selected = null"
         >
-          <button
-            type="button"
-            class="w-full px-5"
-            @click="selected !== 4 ? selected = 4 : selected = null"
-          >
-            <div class="flex items-center justify-between h-[70px]">
-              <span
-                class="text-base text-left md:text-[20px] lg:text-xl"
-                :class="{ 'text-secondary text-base': selected === 4, 'text-white text-base': selected !== 4 }"
+          <div class="flex items-center justify-between h-[70px]">
+            <h4
+              class="text-left md:text-xl"
+              :class="{ 'text-secondary ease-in-out duration-300': selected === 4, 'text-white ease-in-out duration-300': selected !== 4 }"
+            >
+              {{ faq_question7_title }}
+            </h4>
+            <span class="ico-plus">
+              <svg
+                :class="selected === 4 ? 'transform rotate-180' : ''"
+                xmlns="http://www.w3.org/2000/svg"
+                width="24"
+                height="24"
+                viewbox="0 0 24 24"
+                fill="none"
+                :stroke="selected === 4 ? '#00A3FF' : 'white'"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                class="feather feather-chevron-up"
               >
-                Quelles technologies utilisez-vous pour le développement ?
-              </span>
-              <span class="ico-plus">
-                <svg
-                  :class="selected === 4 ? 'transform rotate-180' : ''"
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="24"
-                  height="24"
-                  viewbox="0 0 24 24"
-                  fill="none"
-                  :stroke="selected === 4 ? '#00A3FF' : 'white'"
-                  stroke-width="2"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  class="feather feather-chevron-up"
-                >
-                  <polyline points="18 15 12 9 6 15"></polyline>
-                </svg>
-              </span>
-            </div>
-          </button>
-          <div
-            class="relative overflow-hidden transition-all max-h-0 duration-700"
-            x-ref="container4"
-            x-bind:style="selected == 4 ? 'max-height: ' + $refs.container4.scrollHeight + 'px' : ''"
-          >
-            <div class="px-[20px] py-[10px] text-grayText">
-              <p class="text-base">
-                To do this, load the v3 site key as documented, and then
-                explicitly render v2 using grecaptcha.render. You are allowed to
-                hide the badge as long as you include the reCAPTCHA branding
-                visibly in the user flow. Please include the following text:
-              </p>
-            </div>
+                <polyline points="18 15 12 9 6 15"></polyline>
+              </svg>
+            </span>
           </div>
-        </li>
-        <li
-          class="relative bg-opacityBlue rounded-[5px] mb-[10px]"
-          data-sal="slide-up"
-          data-sal-duration="800"
-          data-sal-delay="350"
+        </button>
+        <div
+          class="relative overflow-hidden transition-all max-h-0 duration-300"
+          x-ref="container4"
+          x-bind:style="selected == 4 ? 'max-height: ' + $refs.container4.scrollHeight + 'px' : ''"
         >
-          <button
-            type="button"
-            class="w-full px-5"
-            @click="selected !== 5 ? selected = 5 : selected = null"
-          >
-            <div class="flex items-center justify-between h-[70px]">
-              <span
-                class="text-base text-left md:text-[20px] lg:text-xl"
-                :class="{ 'text-secondary text-base': selected === 5, 'text-white text-base': selected !== 5 }"
+          <p class="default-p py-3 px-5">
+            {{ faq_question7_content }}
+          </p>
+        </div>
+      </li>
+      {% endif %}
+
+      <!-- Block Question 5 -->
+      {% if faq_question8_title is defined %}
+      <li
+        class="relative bg-opacityBlue rounded-md mt-3"
+        data-sal="slide-up"
+        data-sal-duration="800"
+        data-sal-delay="350"
+      >
+        <button
+          type="button"
+          class="w-full bg-whiteTransparency rounded-t-md px-5"
+          @click="selected !== 5 ? selected = 5 : selected = null"
+        >
+          <div class="flex items-center justify-between h-[70px]">
+            <h4
+              class="text-left md:text-xl"
+              :class="{ 'text-secondary ease-in-out duration-300': selected === 5, 'text-white ease-in-out duration-300': selected !== 5 }"
+            >
+              {{ faq_question8_title }}
+            </h4>
+            <span class="ico-plus">
+              <svg
+                :class="selected === 5 ? 'transform rotate-180' : ''"
+                xmlns="http://www.w3.org/2000/svg"
+                width="24"
+                height="24"
+                viewbox="0 0 24 24"
+                fill="none"
+                :stroke="selected === 5 ? '#00A3FF' : 'white'"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                class="feather feather-chevron-up"
               >
-                La sécurité des données est-elle garantie ?
-              </span>
-              <span class="ico-plus">
-                <svg
-                  :class="selected === 5 ? 'transform rotate-180' : ''"
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="24"
-                  height="24"
-                  viewbox="0 0 24 24"
-                  fill="none"
-                  :stroke="selected === 5 ? '#00A3FF' : 'white'"
-                  stroke-width="2"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  class="feather feather-chevron-up"
-                >
-                  <polyline points="18 15 12 9 6 15"></polyline>
-                </svg>
-              </span>
-            </div>
-          </button>
-          <div
-            class="relative overflow-hidden transition-all max-h-0 duration-700"
-            x-ref="container5"
-            x-bind:style="selected == 5 ? 'max-height: ' + $refs.container5.scrollHeight + 'px' : ''"
-          >
-            <div class="px-[20px] py-[10px] text-grayText">
-              <p class="text-base">
-                To do this, load the v3 site key as documented, and then
-                explicitly render v2 using grecaptcha.render. You are allowed to
-                hide the badge as long as you include the reCAPTCHA branding
-                visibly in the user flow. Please include the following text:
-              </p>
-            </div>
+                <polyline points="18 15 12 9 6 15"></polyline>
+              </svg>
+            </span>
           </div>
-        </li>
-      </ul>
-    </div>
+        </button>
+        <div
+          class="relative overflow-hidden transition-all max-h-0 duration-300"
+          x-ref="container5"
+          x-bind:style="selected == 5 ? 'max-height: ' + $refs.container5.scrollHeight + 'px' : ''"
+        >
+          <p class="default-p py-3 px-5">
+            {{ faq_question8_content }}
+          </p>
+        </div>
+      </li>
+      {% endif %}
+    </ul>
   </article>
 </section>
 {% endblock faq %}

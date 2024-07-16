@@ -69,7 +69,7 @@ module.exports = {
             position: "static",
           },
         },
-        // blue-button
+        // button
         ".blue-button": {
           padding: "1rem 2rem",
           color: "#ffffff",
@@ -82,7 +82,6 @@ module.exports = {
           letterSpacing: "0.5px",
           transition: "all 0.3s ease-in-out",
         },
-        // darkBlue-button
         ".darkBlue-button": {
           padding: "1rem 2rem",
           color: "#ffffff",
@@ -94,6 +93,131 @@ module.exports = {
           borderRadius: "10px",
           letterSpacing: "0.5px",
           transition: "all 0.3s ease-in-out",
+        },
+
+        // Title
+        ".default-h": {
+          fontWeight: "700",
+          color: "#ffffff",
+          lineHeight: "1.23",
+        },
+        ".responsive-h1": {
+          fontSize: "34px",
+          "@screen sm": {
+            fontSize: "36px",
+          },
+          "@screen md": {
+            fontSize: "38px",
+          },
+          "@screen lg": {
+            fontSize: "44px",
+          },
+          "@screen xl": {
+            fontSize: "50px",
+          },
+        },
+        ".responsive-h2": {
+          fontSize: "28px",
+          "@screen sm": {
+            fontSize: "30px",
+          },
+          "@screen md": {
+            fontSize: "32px",
+          },
+          "@screen lg": {
+            fontSize: "36px",
+          },
+          "@screen xl": {
+            fontSize: "40px",
+          },
+        },
+        ".responsive-h3": {
+          fontSize: "24px",
+          "@screen sm": {
+            fontSize: "26px",
+          },
+          "@screen md": {
+            fontSize: "28px",
+          },
+          "@screen lg": {
+            fontSize: "30px",
+          },
+          "@screen xl": {
+            fontSize: "32px",
+          },
+        },
+        ".responsive-h4": {
+          fontSize: "20px",
+          "@screen sm": {
+            fontSize: "22px",
+          },
+          "@screen md": {
+            fontSize: "24px",
+          },
+          "@screen lg": {
+            fontSize: "26px",
+          },
+          "@screen xl": {
+            fontSize: "28px",
+          },
+        },
+        ".responsive-h5": {
+          fontSize: "18px",
+          "@screen sm": {
+            fontSize: "20px",
+          },
+          "@screen md": {
+            fontSize: "22px",
+          },
+          "@screen lg": {
+            fontSize: "24px",
+          },
+          "@screen xl": {
+            fontSize: "26px",
+          },
+        },
+        ".responsive-h6": {
+          fontSize: "16px",
+          "@screen sm": {
+            fontSize: "18px",
+          },
+          "@screen md": {
+            fontSize: "20px",
+          },
+          "@screen lg": {
+            fontSize: "22px",
+          },
+          "@screen xl": {
+            fontSize: "24px",
+          },
+        },
+
+        // Paragraphe
+        ".default-p": {
+          color: "#ACACAC",
+          lineHeight: "28px",
+        },
+        ".default-bp": {
+          color: "#00A3FF",
+          lineHeight: "28px",
+          textTransform: "uppercase",
+          fontWeight: "500",
+          letterSpacing: "1px",
+        },
+
+        // Border
+        ".default-border": {
+          borderColor: "#282832",
+          borderRadius: "6px",
+          borderWidth: "1px",
+        },
+
+        // Margin
+        ".default-mt": {
+          marginTop: "80px",
+          "@screen lg": {
+            marginTop: "100px",
+          },
         },
       };
 

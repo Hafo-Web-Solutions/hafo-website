@@ -1,36 +1,27 @@
 {% block cta %}
-<div class="container-fluid default-container 2xl:px-[140px]">
+<div
+  class="default-container 2xl:px-[140px]"
+  data-sal="slide-up"
+  data-sal-duration="800"
+  data-sal-delay="150"
+>
   <div
-    class="mt-20 lg:mt-[100px] py-[55px] px-[30px] w-full flex flex-col text-center items-center bg-opacityBlue rounded-[10px]"
+    class="default-mt flex flex-col text-center items-center w-full bg-opacityBlue rounded-[10px] py-14 px-8"
   >
-    <h3
-      class="text-[34px] md:text-[38px] font-bold leading[35px] mb-[20px] text-white leading-[1.19]"
-      data-sal="slide-up"
-      data-sal-duration="800"
-      data-sal-delay="150"
-    >
-      Vous avez un projet web ?
+    <h3 class="default-h responsive-h3">
+      {{ title|default('Vous avez un projet web ?') }}
     </h3>
-    <p
-      class="text-grayText mb-8 leading-[28px]"
-      data-sal="slide-up"
-      data-sal-duration="800"
-      data-sal-delay="200"
-    >
-      Contactez-nous via notre formulaire de contact, nous reviendrons vers vous
-      dans <span class="text-secondary">un délai de 24h.</span>
+    <p class="default-p mt-5">
+      {{ content|default('Contactez-nous via notre formulaire de contact, nous
+      reviendrons vers vous dans
+      <span class="text-secondary">un délai de 24h.</span>')|raw }}
     </p>
-    <div
-      class=""
-      data-sal="slide-up"
-      data-sal-duration="800"
-      data-sal-delay="250"
-    >
-      <button
-        class="blue-button"
-      >
-        Demander un devis
-      </button>
+    <div class="mt-8">
+      <a href="{{ path('app_contact') }}">
+        <button class="blue-button">
+          {{ button|default('Demander un devis') }}
+        </button>
+      </a>
     </div>
   </div>
 </div>
