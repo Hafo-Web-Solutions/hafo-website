@@ -43,7 +43,7 @@ class Post
     /**
      * @var Collection<int, Image>
      */
-    #[ORM\ManyToMany(targetEntity: Image::class, mappedBy: 'post')]
+    #[ORM\ManyToMany(targetEntity: Image::class, mappedBy: 'post', cascade: ['persist', 'remove'])]
     private Collection $images;
 
     public function __construct()
