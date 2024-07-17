@@ -138,7 +138,7 @@ body {
 }
 
 /* List dots */
-.approach ul li::before {
+.bullet-point li::before {
   content: "";
   position: absolute;
   left: 0;
