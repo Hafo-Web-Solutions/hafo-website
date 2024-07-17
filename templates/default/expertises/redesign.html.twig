@@ -5,11 +5,11 @@ endblock %} {% block body %}
 <section class="default-mt flex flex-col justify-center items-center w-full">
   <!-- Header -->
   <article
-    class="flex flex-col w-full gap-[40px] sm:container lg:flex-row lg:default-container"
+    class="flex flex-col w-full gap-10 sm:container lg:flex-row lg:default-container"
   >
     <div class="px-8 lg:px-0 lg:w-1/2">
       <h1
-        class="default-h responsive-h1 mb-[10px]"
+        class="default-h responsive-h1 mb-3"
         data-sal="slide-up"
         data-sal-duration="800"
         data-sal-delay="150"
@@ -47,40 +47,42 @@ endblock %} {% block body %}
 
   <!-- Content -->
   <div
-    class="default-container flex flex-col w-full mt-[-100px] gap-[40px] sm:container lg:flex-row lg:mt-0"
+    class="default-container flex flex-col w-full mt-[-100px] sm:container lg:gap-10 lg:flex-row lg:mt-0"
   >
     <!-- Block Optimization -->
-    <article
-      class="default-border relative flex flex-col justify-center bg-quaternary py-[50px] px-[40px] lg:sticky lg:w-1/2 lg:top-[100px] lg:h-[393px] lg:mt-[-260px] xl:mb-0"
-    >
-      <h2
-        class="default-h responsive-h2 mb-[20px]"
-        data-sal="slide-up"
-        data-sal-duration="800"
-        data-sal-delay="150"
+    <article class="lg:w-1/2">
+      <div
+        class="default-border relative flex flex-col justify-center bg-quaternary py-12 px-10 lg:sticky lg:top-[185px] lg:mt-[-200px] xl:mb-0"
       >
-        Revitalisez votre présence
-      </h2>
-      <p
-        class="default-p mb-[40px]"
-        data-sal="slide-up"
-        data-sal-duration="800"
-        data-sal-delay="200"
-      >
-        Transformez votre site web pour qu'il soit à la pointe de la technologie
-        et réponde aux attentes de vos utilisateurs. Nous modernisons votre
-        design, améliorons les performances techniques et assurons une
-        transition fluide vers un site mobile responsive. Profitez d'une
-        expérience utilisateur optimale et d'un site performant qui attire et
-        retient vos visiteurs.
-      </p>
-      <a
-        href="{{ path('app_contact') }}"
-        data-sal="slide-up"
-        data-sal-duration="800"
-        data-sal-selay="250"
-        ><button class="darkBlue-button">Demandez un audit gratuit</button></a
-      >
+        <h2
+          class="default-h responsive-h2 mb-[20px]"
+          data-sal="slide-up"
+          data-sal-duration="800"
+          data-sal-delay="150"
+        >
+          Revitalisez votre présence
+        </h2>
+        <p
+          class="default-p mb-[40px]"
+          data-sal="slide-up"
+          data-sal-duration="800"
+          data-sal-delay="200"
+        >
+          Transformez votre site web pour qu'il soit à la pointe de la
+          technologie et réponde aux attentes de vos utilisateurs. Nous
+          modernisons votre design, améliorons les performances techniques et
+          assurons une transition fluide vers un site mobile responsive.
+          Profitez d'une expérience utilisateur optimale et d'un site performant
+          qui attire et retient vos visiteurs.
+        </p>
+        <a
+          href="{{ path('app_contact') }}"
+          data-sal="slide-up"
+          data-sal-duration="800"
+          data-sal-selay="250"
+          ><button class="darkBlue-button">Demandez un audit gratuit</button></a
+        >
+      </div>
     </article>
 
     <!-- Block Approach -->
@@ -93,77 +95,72 @@ endblock %} {% block body %}
       >
         Notre approche
       </h2>
-      <div class="approach">
-        <ul class="default-p">
-          <li
-            class="mb-[10px] pl-[20px] relative"
-            data-sal="slide-up"
-            data-sal-duration="800"
-            data-sal-delay="200"
-          >
-            <strong>Audit complet du site actuel</strong> : Analyse détaillée de
-            votre site existant pour identifier les points forts et les domaines
-            à améliorer. Nous évaluons la performance technique, le design, et
-            l'expérience utilisateur.
-          </li>
-          <li
-            class="mb-[10px] pl-[20px] relative"
-            data-sal="slide-up"
-            data-sal-duration="800"
-            data-sal-delay="250"
-          >
-            <strong>Conception et design UX/UI</strong> : Création de maquettes
-            et de prototypes centrés sur l'utilisateur pour garantir une
-            navigation intuitive et un design moderne. Nous collaborons avec
-            vous pour refléter votre identité visuelle.
-          </li>
-          <li
-            class="mb-[10px] pl-[20px] relative"
-            data-sal="slide-up"
-            data-sal-duration="800"
-            data-sal-delay="300"
-          >
-            <strong>Optimisation du contenu</strong> : Réécriture et
-            optimisation du contenu existant pour améliorer la clarté, la
-            pertinence et le SEO. Nous nous assurons que votre message est
-            cohérent et engageant.
-          </li>
-          <li
-            class="mb-[10px] pl-[20px] relative"
-            data-sal="slide-up"
-            data-sal-duration="800"
-            data-sal-delay="350"
-          >
-            <strong>Développement et intégration</strong> : Mise en œuvre des
-            nouvelles fonctionnalités et technologies pour améliorer la
-            performance et la sécurité de votre site. Nous utilisons les
-            dernières pratiques de développement pour garantir un site robuste
-            et évolutif.
-          </li>
-          <li
-            class="mb-[10px] pl-[20px] relative"
-            data-sal="slide-up"
-            data-sal-duration="800"
-            data-sal-delay="400"
-          >
-            <strong>Tests et lancement</strong> : Tests rigoureux pour assurer
-            la compatibilité sur tous les appareils et navigateurs. Nous
-            effectuons des tests de performance et de sécurité avant le
-            lancement.
-          </li>
-          <li
-            class="pl-[20px] relative"
-            data-sal="slide-up"
-            data-sal-duration="800"
-            data-sal-delay="450"
-          >
-            <strong>Suivi et support post-lancement</strong> : Suivi
-            post-lancement pour assurer une transition en douceur et répondre à
-            tous les besoins supplémentaires. Nous offrons des services de
-            maintenance pour garantir la pérennité de votre site.
-          </li>
-        </ul>
-      </div>
+      <ul class="default-p bullet-point">
+        <li
+          class="mb-3 pl-5 relative"
+          data-sal="slide-up"
+          data-sal-duration="800"
+          data-sal-delay="200"
+        >
+          <strong>Audit complet du site actuel</strong> : Analyse détaillée de
+          votre site existant pour identifier les points forts et les domaines à
+          améliorer. Nous évaluons la performance technique, le design, et
+          l'expérience utilisateur.
+        </li>
+        <li
+          class="mb-3 pl-5 relative"
+          data-sal="slide-up"
+          data-sal-duration="800"
+          data-sal-delay="250"
+        >
+          <strong>Conception et design UX/UI</strong> : Création de maquettes et
+          de prototypes centrés sur l'utilisateur pour garantir une navigation
+          intuitive et un design moderne. Nous collaborons avec vous pour
+          refléter votre identité visuelle.
+        </li>
+        <li
+          class="mb-3 pl-5 relative"
+          data-sal="slide-up"
+          data-sal-duration="800"
+          data-sal-delay="300"
+        >
+          <strong>Optimisation du contenu</strong> : Réécriture et optimisation
+          du contenu existant pour améliorer la clarté, la pertinence et le SEO.
+          Nous nous assurons que votre message est cohérent et engageant.
+        </li>
+        <li
+          class="mb-3 pl-5 relative"
+          data-sal="slide-up"
+          data-sal-duration="800"
+          data-sal-delay="350"
+        >
+          <strong>Développement et intégration</strong> : Mise en œuvre des
+          nouvelles fonctionnalités et technologies pour améliorer la
+          performance et la sécurité de votre site. Nous utilisons les dernières
+          pratiques de développement pour garantir un site robuste et évolutif.
+        </li>
+        <li
+          class="mb-3 pl-5 relative"
+          data-sal="slide-up"
+          data-sal-duration="800"
+          data-sal-delay="400"
+        >
+          <strong>Tests et lancement</strong> : Tests rigoureux pour assurer la
+          compatibilité sur tous les appareils et navigateurs. Nous effectuons
+          des tests de performance et de sécurité avant le lancement.
+        </li>
+        <li
+          class="pl-5 relative"
+          data-sal="slide-up"
+          data-sal-duration="800"
+          data-sal-delay="450"
+        >
+          <strong>Suivi et support post-lancement</strong> : Suivi
+          post-lancement pour assurer une transition en douceur et répondre à
+          tous les besoins supplémentaires. Nous offrons des services de
+          maintenance pour garantir la pérennité de votre site.
+        </li>
+      </ul>
     </article>
   </div>
 
