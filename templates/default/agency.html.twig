@@ -1,120 +1,195 @@
-{% extends 'base.html.twig' %} {% block title %} Agence {% endblock %} {% block
-body %} {# Agency #}
+{% extends 'base.html.twig' %} {% block title %} L'agence Hafo Web Solutions {%
+endblock %} {% block body %}
+
+<!-- Agency -->
 <section>
-  {# Hero #}
-  <div class="h-20 w-full"></div>
-  <div class="mt-20 lg:mt-100 default-container nav-min:px-4 sm:container">
-    <h2
-      class="text-[28px] md:text-[32px] pb-[50px] text-white lg:text-[45px] leading-[1.23]"
+  <!-- Header -->
+  <div
+    class="default-mt default-container pb-[80px] lg:pb-[100px] nav-min:px-4 sm:container"
+  >
+    <h1
+      class="default-h responsive-h1 text-center"
       data-sal="slide-up"
       data-sal-duration="800"
       data-sal-selay="150"
     >
-      Équipes Dédiées.<br/>
-      Pour Des Rêves Déterminés
-    </h2>
+      Agence web Hafo Web Solutions
+    </h1>
+    <p
+      class="default-bp mt-3 text-center"
+      data-sal="fade-in"
+      data-sal-duration="800"
+      data-sal-delay="200"
+    >
+      Équipes dédiées. pour des rêves déterminés
+    </p>
+    <p
+      class="default-p mt-5 text-center lg:px-[150px] xl:px-[250px] 2xl:px-[350px]"
+      data-sal="fade-in"
+      data-sal-duration="800"
+      data-sal-delay="250"
+    >
+      Chez Hafo Web Solutions, nous croyons en l'importance de l'innovation et
+      de l'approche sur-mesure. Notre équipe travaille sans relâche pour
+      transformer vos idées en solutions web performantes et adaptées à vos
+      besoins spécifiques. Découvrez notre expertise et notre approche
+      collaborative.
+    </p>
   </div>
 
-  {# Block 1/3 #}
+  <!-- Image -->
   <div class="2xl:container-fluid 2xl:px-[140px]">
     <img
-      class="w-full object-cover rounded-lg h-[560px]"
+      class="w-full object-cover h-[560px]"
       src="{{ asset('./image/about.webp') }}"
       alt="image agence"
     />
   </div>
 
+  <!-- Content -->
   <div class="default-container nav-min:px-4 sm:container">
-    <div class="lg:grid lg:grid-cols-2 lg:gap-8">
+    <!-- Block Inovation -->
+    <div class="lg:grid lg:grid-cols-2 lg:gap-10">
       <div>
         <div
-          class="xl:sticky xl:top-[100px] xl:mb-0 lg:mb-100 default-container sm:container rounded-md py-12 px-10 bg-quaternary border border-borderBase mt-[-128px] relative"
+          class="default-container default-border relative py-12 px-10 bg-quaternary mt-[-128px] sm:container lg:sticky lg:top-[185px] xl:mb-0"
         >
-          <h3
-            class="text-white text-[26px] mb-5 leading-10 md:text-[28px] font-bold lg:text-[36px]"
+          <h2
+            class="default-h responsive-h2 mb-5"
             data-sal="slide-up"
             data-sal-duration="800"
             data-sal-selay="150"
           >
-            Innovation et Sur-Mesure
-          </h3>
+            Innovation et sur-mesure
+          </h2>
           <p
-            class="text-[#ACACAC] text-base my-3 mb-10 leading-[28px] md:text-lg"
+            class="default-p my-3 mb-10"
             data-sal="slide-up"
             data-sal-duration="800"
-            data-sal-selay="150"
+            data-sal-selay="200"
           >
-            Chez Hafo Web Solutions, l'innovation est la clé de voûte de notre
-            offre. Nous construisons des expériences web sur-mesure, alliant
-            technologie de pointe et créativité, pour concrétiser vos ambitions
-            digitales. Chaque projet est une nouvelle aventure où vos idées
-            prennent vie.
+            L'innovation est au cœur de notre approche. Nous construisons des
+            sites web sur-mesure, alliant technologie avancée et créativité,
+            pour répondre à vos besoins précis. Chaque projet est une nouvelle
+            aventure où vos idées prennent forme.
           </p>
-          <button
-            href="#"
-            type="button"
-            class="py-[15px] px-[34px] flex text-white rounded-lg bg-tertiary font-semibold transition duration-300 ease-in-out hover:bg-secondary"
+          <a
+            href="{{ path('app_contact') }}"
+            data-sal="slide-up"
+            data-sal-duration="800"
+            data-sal-selay="250"
+            ><button class="darkBlue-button">
+              Découvrez nos expertises
+            </button></a
           >
-            Voir Notre Blog
-          </button>
         </div>
       </div>
 
-      {# Block 2/3 #}
-      <div
-        class="mt-8 lg:mt-0 rounded-md py-12 px-10 border border-borderBase xl:mt-[140px]"
-      >
-        <h3
-          class="text-white text-[24px] mb-5 md:text-[26px] lg:text-[32px]"
-          data-sal="slide-up"
-          data-sal-duration="800"
-          data-sal-selay="150"
-        >
-          Expertise Collaborative
-        </h3>
-        <p
-          class="text-[#ACACAC] text-base md:my-0 md:mb-0 leading-[28px] md:text-lg"
-          data-sal="slide-up"
-          data-sal-duration="800"
-          data-sal-selay="150"
-        >
-          L'expertise ne se décrète pas, elle se démontre. C'est pourquoi nous
-          privilégions l'approche collaborative, travaillant main dans la main
-          avec vous pour forger une présence en ligne qui se distingue. Notre
-          engagement ? Une qualité irréprochable et une écoute attentive pour
-          des solutions qui résonnent avec votre marché.
-        </p>
+      <div class="default-mt">
+        <!-- Block Our Values -->
+        <div>
+          <h2
+            class="default-h responsive-h2 mb-5"
+            data-sal="slide-up"
+            data-sal-duration="800"
+            data-sal-selay="150"
+          >
+            Nos valeurs
+          </h2>
+          <ul class="default-p bullet-point">
+            <li
+              class="mb-4 pl-5 relative"
+              data-sal="slide-up"
+              data-sal-duration="800"
+              data-sal-selay="200"
+            >
+              <strong>Innovation Continue</strong><br />Nous intégrons les
+              dernières technologies pour offrir des solutions innovantes.
+            </li>
+            <li
+              class="mb-4 pl-5 relative"
+              data-sal="slide-up"
+              data-sal-duration="800"
+              data-sal-selay="250"
+            >
+              <strong> Transparence et Intégrité</strong><br />Chaque étape de
+              votre projet est réalisée avec transparence et intégrité.
+            </li>
+            <li
+              class="pl-5 relative"
+              data-sal="slide-up"
+              data-sal-duration="800"
+              data-sal-selay="300"
+            >
+              <strong> Approche Centrée sur le Client </strong><br />Votre
+              satisfaction est notre priorité. Nous collaborons étroitement avec
+              vous pour comprendre et répondre à vos besoins.
+            </li>
+          </ul>
+        </div>
+
+        <!-- Block Expertise Collaborative -->
+        <div class="default-mt default-border py-12 px-10">
+          <h2
+            class="default-h responsive-h2 mb-5"
+            data-sal="slide-up"
+            data-sal-duration="800"
+            data-sal-selay="150"
+          >
+            Expertise Collaborative
+          </h2>
+          <p
+            class="default-p md:my-0 md:mb-0"
+            data-sal="slide-up"
+            data-sal-duration="800"
+            data-sal-selay="200"
+          >
+            L'expertise se démontre par l'action. Nous privilégions une approche
+            collaborative, travaillant main dans la main avec vous pour créer
+            une présence en ligne distincte. Notre engagement ? Une qualité
+            irréprochable et une écoute attentive pour des solutions qui
+            correspondent à votre marché.
+          </p>
+        </div>
       </div>
     </div>
 
-    {# Block 3/3 #}
+    <!-- Block Collaboration -->
     <div
-      class="mt-20 lg:items-center lg:gap-8 lg:mt-100 lg:grid lg:grid-cols-2"
+      class="default-mt lg:items-center lg:gap-10 lg:mt-100 lg:grid lg:grid-cols-2"
     >
-      <h3
-        class="text-white text-[24px] mb-8 leading-[45px] md:text-[26px] lg:text-[32px] lg:mb-0 font-bold"
+      <h2
+        class="default-h responsive-h2 mb-8 lg:mb-0"
         data-sal="slide-up"
         data-sal-duration="800"
         data-sal-selay="150"
       >
-        Collaboration Créative pour une Transformation Numérique Durable
-      </h3>
+        Collaboration et transformation numérique
+      </h2>
       <p
-        class="text-[#ACACAC] text-base rounded-md p-6 border border-borderBase leading-[28px] md:text-lg"
+        class="default-p default-border p-6"
         data-sal="slide-up"
         data-sal-duration="800"
         data-sal-selay="150"
       >
-        Dans un monde numérique qui évolue à la vitesse de l'éclair, nous
-        restons agiles et réactifs pour vous offrir des solutions optimales.
-        Notre duo dynamique s'adapte à vos besoins en temps réel, assurant une
-        mise en œuvre rapide et efficace pour que votre projet numérique
-        prospère.
+        Dans un monde numérique en constante évolution, nous restons agiles et
+        réactifs pour vous offrir des solutions optimales. Notre déquipe
+        dynamique s'adapte à vos besoins en temps réel, assurant une mise en
+        œuvre rapide et efficace pour que votre projet numérique prospère.
       </p>
     </div>
   </div>
 
-  {# CTA #} {% include "./components/cta.html.twig" %} {# Blog #} {% include
-  "./components/blog.html.twig" %}
+  <!-- Component CTA -->
+  <!-- Content -->
+  {% set content %} Contactez-nous dès maintenant pour discuter de vos besoins
+  et obtenir une estimation précise.
+  <span class="text-secondary">Nous reviendrons vers vous sous 24h.</span>
+  {% endset %}
+  <!-- CTA -->
+  {% include "./components/cta.html.twig" %}
+
+  <!-- Component Blog -->
+  {% include "./components/blog.html.twig" %}
 </section>
 {% endblock %}
