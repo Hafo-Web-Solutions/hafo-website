@@ -13,12 +13,26 @@
       <div class="w-[100px] h-[100px] bg-grayText mb-3"
       data-sal="slide-up"
       data-sal-duration="800"
-      data-sal-delay="150"></div>
+      data-sal-delay="150">
+       {# set image for project #}
+      {% set image = achievement.getImageByType('logo') %}
+                 {# Afficher l'image de type 'logo' #}
+                 {% if image %}
+                     <img src="{{ asset('/images/products/' ~ image.getImage() ) }}" alt="{{ image.getType()  }}"
+                     class="w-full h-full object-cover">
+                 {% else %}
+                     <p>Aucune image principale disponible</p>
+                 {% endif %}
+    </div>
       <p class="mb-3 text-secondary text-sm"
       data-sal="slide-up"
       data-sal-duration="800"
       data-sal-delay="200"
-      >{{ achievement.category }}</p>
+      >
+      {% if achievement.category is defined %}
+      {{ achievement.category }}
+      {% endif %}
+    </p>
       <h1
         class="text-white lg:text-[45px] md:text-[32px] text-[28px] tracking-tight"
         data-sal="slide-up"
@@ -33,14 +47,10 @@
         data-sal-duration="800"
         data-sal-delay="250"
       >
-        Entrer dans le monde du numérique avec aisance et expertise. Chez Hafo
-        Web Solutions, nous donnons vie à vos idées avec des solutions web
-        sur-mesure qui allient performance, design moderne et expérience
-        utilisateur optimale. Notre approche unique met vos ambitions au cœur de
-        notre processus créatif.
+        {{ achievement.description }}
       </p>
       <a
-        href="{{ achievement.href }}"
+        href="{{ achievement.link }}"
         class="py-4 px-8 text-white font-semibold bg-[#00A3FF] hover:bg-tertiary text-base cursor-pointer rounded-lg"
         data-sal="slide-up"
         data-sal-duration="800"
@@ -51,11 +61,13 @@
 
     <div class="lg:w-[40%] px-8 lg:px-0 lg:pl-16">
       <div class="overflow-hidden">
-        <img
-          src="{{ asset('/image/expertise/creation/image.jpeg') }}"
-          alt="image d'une realisation"
-          class="w-full h-full object-cover hover:scale-150 transition-transform duration-500 ease-in-out"
-        />
+               {# Afficher l'image de type 'main' #}
+    {% if image %}
+        <img src="{{ asset('/images/products/' ~ image.getImage() ) }}" alt="{{ image.getType()  }}"
+        class="w-full h-full object-cover hover:scale-150 transition-transform duration-500 ease-in-out">
+    {% else %}
+        <p>Aucune image principale disponible</p>
+    {% endif %}
       </div>
     </div>
   </article>
@@ -69,22 +81,27 @@
     data-sal-duration="800"
     data-sal-delay="200"
     >
-      <img
-        src="{{ asset('/image/expertise/creation/image.jpeg') }}"
-        alt="image d'une realisation"
-        class="w-full h-full object-cover hover:scale-150 transition-transform duration-500 ease-in-out"
-      />
+                  
+     {# Afficher l'image de type 'first' #}
+    {% if image %}
+        <img src="{{ asset('/images/products/' ~ image.getImage() ) }}" alt="{{ image.getType()  }}"
+        class="project-image w-full h-full object-cover hover:scale-150 transition-transform duration-500 ease-in-out">
+    {% else %}
+        <p>Aucune image principale disponible</p>
+    {% endif %}
     </div>
     <div class="w-full md:w-[40%] px-8 lg:px-0 overflow-hidden"
     data-sal="slide-up"
     data-sal-duration="800"
     data-sal-delay="300"
     >
-      <img
-        src="{{ asset('/image/expertise/creation/image.jpeg') }}"
-        alt="image d'une realisation"
-        class="w-full h-full object-cover hover:scale-150 transition-transform duration-500 ease-in-out"
-      />
+                  {# Afficher l'image de type 'second' #}
+    {% if image %}
+        <img src="{{ asset('/images/products/' ~ image.getImage() ) }}" alt="{{ image.getType()  }}"
+        class="w-full h-full object-cover hover:scale-150 transition-transform duration-500 ease-in-out">
+    {% else %}
+        <p>Aucune image principale disponible</p>
+    {% endif %}
     </div>
   </article>
 
@@ -96,17 +113,13 @@
     data-sal="slide-up"
     data-sal-duration="800"
     data-sal-delay="150"
-    >Focus sur le projet</h2>
+    >{{ achievement.focusTitle }}</h2>
     <p class="text-grayText w-[80%] text-base text-center"
     data-sal="slide-up"
     data-sal-duration="800"
     data-sal-delay="200"
     >
-      Entrer dans le monde du numérique avec aisance et expertise. Chez Hafo Web
-      Solutions, nous donnons vie à vos idées avec des solutions web sur-mesure
-      qui allient performance, design moderne et expérience utilisateur
-      optimale. Notre approche unique met vos ambitions au cœur de notre
-      processus créatif.
+      {{ achievement.focusDescription}}
     </p>
   </article>
 </section>

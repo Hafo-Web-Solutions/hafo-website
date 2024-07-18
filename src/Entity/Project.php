@@ -34,13 +34,13 @@ class Project
     /**
      * @var Collection<int, Image>
      */
-    #[ORM\ManyToMany(targetEntity: Image::class, mappedBy: 'project')]
+    #[ORM\ManyToMany(targetEntity: Image::class, mappedBy: 'project', cascade: ['persist', 'remove'])]
     private Collection $images;
 
     /**
      * @var Collection<int, Tag>
      */
-    #[ORM\ManyToMany(targetEntity: Tag::class, mappedBy: 'project')]
+    #[ORM\ManyToMany(targetEntity: Tag::class, inversedBy: 'projects')]
     private Collection $tags;
 
     public function __construct()
@@ -166,5 +166,16 @@ class Project
         }
 
         return $this;
+    }
+
+    public function getImageByType(string $type): ?Image
+    {
+        foreach ($this->images as $image) {
+            if ($image->getType() === $type) {
+                return $image;
+            }
+        }
+
+        return null;
     }
 }

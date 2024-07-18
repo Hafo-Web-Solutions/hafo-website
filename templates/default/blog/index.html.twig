@@ -29,82 +29,29 @@
 
 </section>
 
-<!-- ttttttttttt -->
-
-
 <article class="w-full justify-center default-container sm:container flex 2xl:h-screen gap-18">
   <div class="flex w-[92%] mt-4 flex-wrap justify-center gap-8">
-    <a href="{{ path('app_blog_detail', {slug: 'blog-1'}) }}" class="flex flex-col gap-2 w-[280px]">
-       <div class="w-full h-[180px] bg-slate-500 rounded-md overflow-hidden">
-        <img src="{{ asset('./image/blog/image.png') }}" alt="image blog 1" class="w-full h-full object-cover hover:scale-150 transition-transform duration-500 ease-in-out">
-       </div>
-       <p class="text-secondary text-[12px]">EXPÉRIENCE UTILISATEUR</p>
-       <p class="text-white">Design UX/UI : Créer des Expériences Utilisateurs...</p>
-    </a>
-
-    <a href="{{ path('app_blog_detail', {slug: 'blog-1'}) }}" class="md:flex flex-col gap-2 w-[280px] hidden">
+    {% for blog in blog %}
+    <a href="{{ path('app_blog_detail', {id: blog.id}) }}" class="flex flex-col gap-2 w-[280px]">
       <div class="w-full h-[180px] bg-slate-500 rounded-md overflow-hidden">
-        <img src="{{ asset('./image/blog/image.png') }}" alt="image blog 1" class="w-full h-full object-cover hover:scale-150 transition-transform duration-500 ease-in-out">
+       {% set mainImage = blog.getImageByType('post') %}
+       {% set dd = blog.getImageByType('post')%}
+       {% if mainImage %}
+           <img src="{{ asset('/images/products/' ~ mainImage.getImage() ) }}" alt="{{ dd.getType()  }}"
+           class="w-full h-full object-cover hover:scale-150 transition-transform duration-500 ease-in-out">
+       {% else %}
+           <p>Aucune image principale disponible</p>
+       {% endif %}
       </div>
       <p class="text-secondary text-[12px]">EXPÉRIENCE UTILISATEUR</p>
-      <p class="text-white">Design UX/UI : Créer des Expériences Utilisateurs...</p>
+      <p class="text-white">{{ blog.title }}</p>
    </a>
-   <a href="{{ path('app_blog_detail', {slug: 'blog-1'}) }}" class="lg:flex flex-col gap-2 w-[280px] hidden">
-    <div class="w-full h-[180px] bg-slate-500 rounded-md overflow-hidden">
-      <img src="{{ asset('./image/blog/image.png') }}" alt="image blog 1" class="w-full h-full object-cover hover:scale-150 transition-transform duration-500 ease-in-out">
-    </div>
-    <p class="text-secondary text-[12px]">EXPÉRIENCE UTILISATEUR</p>
-    <p class="text-white">Design UX/UI : Créer des Expériences Utilisateurs...</p>
- </a>
- <a href="{{ path('app_blog_detail', {slug: 'blog-1'}) }}" class="lg:flex flex-col gap-2 w-[280px] hidden">
-  <div class="w-full h-[180px] bg-slate-500 rounded-md overflow-hidden">
-    <img src="{{ asset('./image/blog/image.png') }}" alt="image blog 1" class="w-full h-full object-cover hover:scale-150 transition-transform duration-500 ease-in-out">
-  </div>
-  <p class="text-secondary text-[12px]">EXPÉRIENCE UTILISATEUR</p>
-  <p class="text-white">Design UX/UI : Créer des Expériences Utilisateurs...</p>
-</a> 
-<!-- yyyyyyyyyyyàààà -->
-<a href="{{ path('app_blog_detail', {slug: 'blog-2'}) }}" class="lg:flex flex-col gap-2 w-[280px] hidden">
-  <div class="w-full h-[180px] bg-slate-500 rounded-md overflow-hidden">
-    <img src="{{ asset('./image/blog/image.png') }}" alt="image blog 1" class="w-full h-full object-cover hover:scale-150 transition-transform duration-500 ease-in-out">
-  </div>
-  <p class="text-secondary text-[12px]">EXPÉRIENCE UTILISATEUR</p>
-  <p class="text-white">Design UX/UI : Créer des Expériences Utilisateurs...</p>
-</a> 
-<a href="{{ path('app_blog_detail', {slug: 'blog-2'}) }}" class="lg:flex flex-col gap-2 w-[280px] hidden">
-  <div class="w-full h-[180px] bg-slate-500 rounded-md overflow-hidden">
-    <img src="{{ asset('./image/blog/image.png') }}" alt="image blog 1" class="w-full h-full object-cover hover:scale-150 transition-transform duration-500 ease-in-out">
-  </div>
-  <p class="text-secondary text-[12px]">EXPÉRIENCE UTILISATEUR</p>
-  <p class="text-white">Design UX/UI : Créer des Expériences Utilisateurs...</p>
-</a> 
-<a href="{{ path('app_blog_detail', {slug: 'blog-2'}) }}" class="lg:flex flex-col gap-2 w-[280px] hidden">
-  <div class="w-full h-[180px] bg-slate-500 rounded-md overflow-hidden">
-    <img src="{{ asset('./image/blog/image.png') }}" alt="image blog 1" class="w-full h-full object-cover hover:scale-150 transition-transform duration-500 ease-in-out">
-  </div>
-  <p class="text-secondary text-[12px]">EXPÉRIENCE UTILISATEUR</p>
-  <p class="text-white">Design UX/UI : Créer des Expériences Utilisateurs...</p>
-</a> 
-<a href="{{ path('app_blog_detail', {slug: 'blog-2'}) }}" class="lg:flex flex-col gap-2 w-[280px] hidden">
-  <div class="w-full h-[180px] bg-slate-500 rounded-md overflow-hidden">
-    <img src="{{ asset('./image/blog/image.png') }}" alt="image blog 1" class="w-full h-full object-cover hover:scale-150 transition-transform duration-500 ease-in-out">
-  </div>
-  <p class="text-secondary text-[12px]">EXPÉRIENCE UTILISATEUR</p>
-  <p class="text-white">Design UX/UI : Créer des Expériences Utilisateurs...</p>
-</a> 
-
+    {% endfor %}
   </div>
 </article>
 
-<article class="w-full flex justify-center mt-[50px]">
-  <div class="flex gap-1 p-1 border border-borderBase rounded-md">
-    <button class="bg-tertiary text-white px-4 py-2 rounded-sm">Précédent</button>
-    <button class="bg-tertiary text-white px-4 py-2 rounded-sm">1</button>
-    <button class="bg-tertiary text-white px-4 py-2 rounded-sm">2</button>
-    <button class="bg-tertiary text-white px-4 py-2 rounded-sm">3</button>
-     <button class="bg-tertiary text-white px-4 py-2 rounded-sm">Suivant</button>
-  </div>
-</article>
-
-
+ {# Display navigation #}
+ <div class="navigation">
+  {{ knp_pagination_render(blog, 'bundles/KnpPaginator/Pagination/pagination.html.twig') }}
+</div>
 {% endblock %}

@@ -662,3 +662,14 @@ textarea {
   text-align: center;
   margin: 10px;
 }
+
+.project-image {
+  width: 100% !important;
+  object-fit: cover !important;
+}
+
+/* BLOG */
+
+.post-tag::first-letter {
+  text-transform: uppercase
+}

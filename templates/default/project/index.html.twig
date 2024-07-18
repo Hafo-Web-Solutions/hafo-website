@@ -45,11 +45,16 @@
         data-sal-duration="800"
         data-sal-delay="150"
       >
-        <img
-          src="{{ asset('./image/expertise/creation/image.jpeg') }}"
-          alt="image d'une realisation"
-          class="w-full h-full object-cover hover:scale-150 transition-transform duration-500 ease-in-out"
-        />
+     
+          {# Afficher l'image de type 'main' #}
+    {% set mainImage = achievement.getImageByType('main') %}
+    {% set dd = achievement.getImageByType('main')%}
+    {% if mainImage %}
+        <img src="{{ asset('/images/products/' ~ mainImage.getImage() ) }}" alt="{{ dd.getType()  }}"
+        class="w-full h-full object-cover hover:scale-150 transition-transform duration-500 ease-in-out">
+    {% else %}
+        <p>Aucune image principale disponible</p>
+    {% endif %}
       </div>
       <div>
         <p
@@ -58,7 +63,7 @@
           data-sal-duration="800"
           data-sal-delay="200"
         >
-          {{ achievement.category }}
+         kkkkkk
         </p>
         <h3
           class="llg:text-[28px] text-[24px] md:text-[26px] expertise-lg:text-[26px] text-white"
