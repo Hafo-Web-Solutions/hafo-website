@@ -94,7 +94,7 @@
         data-sal-delay="150"
       >
         <a
-          href=""
+          href="{{ path('app_blog') }}"
           class="uppercase flex items-center text-grayText text-[14px] font-medium hover:text-secondary transition duration-300 ease-in-out"
           >voir tout
           <svg
@@ -126,18 +126,23 @@
     data-sal-delay="150"
   >
     <div class="swiper-wrapper">
+      {% for post in posts %}
       <!-- Individual Slide Structure (repeat as needed) -->
       <div class="swiper-slide">
-        <a href="#">
+        <a href="{{ path('app_blog_detail', { id: post.id }) }}">
           <!-- Slide Content -->
           <div class="p-[18px] bg-whiteTransparency rounded-md">
             <!-- Image -->
             <div class="w-full overflow-hidden rounded-md">
+              {% set image = post.getImageByType('post') %} {% if image %}
               <img
-                src="https://static.vecteezy.com/system/resources/previews/000/304/787/original/vector-responsive-web-design.jpg"
-                alt="icon Définir vos objectifs"
+                src="{{ asset('/images/products/' ~ image.getImage() ) }}"
+                alt="{{ image.getType() }}"
                 class="object-cover w-full h-full"
               />
+              {% else %}
+              <p>Aucune image principale disponible</p>
+              {% endif %}
             </div>
 
             <!-- Post Details -->
@@ -145,110 +150,20 @@
               <div
                 class="text-secondary font-medium text-[12px] uppercase tracking-[1px]"
               >
-                lorem ipsum
+                {% for category in post.category %}
+                {{ category.name }}
+                {% endfor %}
               </div>
               <h4
                 class="text-white text-[23px] mt-[10px] font-semibold text-ellipsis"
               >
-                Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                Laboriosam, cumque esse ullam magni obcaecati sit modi quidem
-                voluptatem, aut deserunt recusandae, ipsam molestias maiores
-                aspernatur quis eum laborum? Vitae, architecto?
+                {{ post.content | raw }}
               </h4>
             </div>
           </div>
         </a>
       </div>
-
-      <!-- Repeat Similar Slides Here -->
-      <div class="swiper-slide">
-        <a href="#">
-          <div class="p-[18px] bg-whiteTransparency rounded-md">
-            <div class="w-full overflow-hidden rounded-md">
-              <img
-                src="https://static.vecteezy.com/system/resources/previews/000/304/787/original/vector-responsive-web-design.jpg"
-                alt="icon Définir vos objectifs"
-                class="object-cover w-full h-full"
-              />
-            </div>
-            <div class="mt-[18px]">
-              <div
-                class="text-secondary font-medium text-[12px] uppercase tracking-[1px]"
-              >
-                lorem ipsum
-              </div>
-              <h4
-                class="text-white text-[23px] mt-[10px] font-semibold text-ellipsis"
-              >
-                Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                Laboriosam, cumque esse ullam magni obcaecati sit modi quidem
-                voluptatem, aut deserunt recusandae, ipsam molestias maiores
-                aspernatur quis eum laborum? Vitae, architecto?
-              </h4>
-            </div>
-          </div>
-        </a>
-      </div>
-
-      <!-- Repeat Similar Slides Here -->
-      <div class="swiper-slide">
-        <a href="#">
-          <div class="p-[18px] bg-whiteTransparency rounded-md">
-            <div class="w-full overflow-hidden rounded-md">
-              <img
-                src="https://static.vecteezy.com/system/resources/previews/000/304/787/original/vector-responsive-web-design.jpg"
-                alt="icon Définir vos objectifs"
-                class="object-cover w-full h-full"
-              />
-            </div>
-            <div class="mt-[18px]">
-              <div
-                class="text-secondary font-medium text-[12px] uppercase tracking-[1px]"
-              >
-                lorem ipsum
-              </div>
-              <h4
-                class="text-white text-[23px] mt-[10px] font-semibold text-ellipsis"
-              >
-                Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                Laboriosam, cumque esse ullam magni obcaecati sit modi quidem
-                voluptatem, aut deserunt recusandae, ipsam molestias maiores
-                aspernatur quis eum laborum? Vitae, architecto?
-              </h4>
-            </div>
-          </div>
-        </a>
-      </div>
-
-      <!-- Repeat Similar Slides Here -->
-      <div class="swiper-slide">
-        <a href="#">
-          <div class="p-[18px] bg-whiteTransparency rounded-md">
-            <div class="w-full overflow-hidden rounded-md">
-              <img
-                src="https://static.vecteezy.com/system/resources/previews/000/304/787/original/vector-responsive-web-design.jpg"
-                alt="icon Définir vos objectifs"
-                class="object-cover w-full h-full"
-              />
-            </div>
-            <div class="mt-[18px]">
-              <div
-                class="text-secondary font-medium text-[12px] uppercase tracking-[1px]"
-              >
-                lorem ipsum
-              </div>
-              <h4
-                class="text-white text-[23px] mt-[10px] font-semibold text-ellipsis"
-              >
-                Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                Laboriosam, cumque esse ullam magni obcaecati sit modi quidem
-                voluptatem, aut deserunt recusandae, ipsam molestias maiores
-                aspernatur quis eum laborum? Vitae, architecto?
-              </h4>
-            </div>
-          </div>
-        </a>
-      </div>
+      {% endfor %}
     </div>
 
     <!-- Swiper Pagination -->

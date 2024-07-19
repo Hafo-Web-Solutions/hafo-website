@@ -43,7 +43,7 @@ class Post
     /**
      * @var Collection<int, Image>
      */
-    #[ORM\ManyToMany(targetEntity: Image::class, mappedBy: 'post')]
+    #[ORM\ManyToMany(targetEntity: Image::class, mappedBy: 'post', cascade: ['persist', 'remove'])]
     private Collection $images;
 
     public function __construct()
@@ -180,4 +180,17 @@ class Post
 
         return $this;
     }
+
+    public function getImageByType(string $type): ?Image
+    {
+        foreach ($this->images as $image) {
+            if ($image->getType() === $type) {
+                return $image;
+            }
+        }
+
+        return null;
+    }
+
+
 }

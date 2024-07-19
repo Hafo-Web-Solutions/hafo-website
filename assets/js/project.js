@@ -1,4 +1,5 @@
-//if width is less than 1024px, display the mobile version
+
+
 if (window.innerWidth < 768) {
   let current = 0;
   function calculateCurrent() {
@@ -79,6 +80,7 @@ if (window.innerWidth < 768) {
       p4: "https://copilot.microsoft.com/",
     },
   ];
+ 
 
   // Change text
   function changeText(index) {
@@ -139,5 +141,4 @@ if (window.innerWidth < 768) {
   // Display the first image by default
   changeImage(currentIndex);
   changeText(currentIndex);
-  changeProjectMobile(currentIndex);
 }

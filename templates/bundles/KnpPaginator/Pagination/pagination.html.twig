@@ -1,0 +1,31 @@
+{# templates/bundles/KnpPaginator/Pagination/pagination.html.twig #}
+{% if pageCount > 1 %}
+    <div class="pagination w-full flex justify-center mt-[50px]">
+        <ul class="pagination justify-content-center flex gap-1 p-1 border border-borderBase rounded-md">
+
+            {# Previous button #}
+            {% if previous is defined %}
+                    <a class="page-link bg-tertiary text-white px-4 py-2 rounded-sm" href="{{ path(route, query|merge({(pageParameterName): previous})) }}">Précédent</a>
+            {% else %}     
+                    <span class="page-link bg-tertiary text-white px-4 py-2 rounded-sm disabled">Précédent</span>
+            {% endif %}
+
+            {# Page numbers #}
+            {% for page in pagesInRange %}
+                {% if page != current %}
+                        <a class="page-link bg-tertiary text-white px-4 py-2 rounded-sm" href="{{ path(route, query|merge({(pageParameterName): page})) }}">{{ page }}</a>
+                {% else %}
+                        <span class="page-link active bg-secondary text-white px-4 py-2 rounded-sm">{{ page }}</span>
+                {% endif %}
+            {% endfor %}
+
+            {# Next button #}
+            {% if next is defined %}
+                    <a class="page-link bg-tertiary text-white px-4 py-2 rounded-sm" href="{{ path(route, query|merge({(pageParameterName): next})) }}">Suivant</a>
+            {% else %}
+                    <span class="page-link bg-tertiary text-white px-4 py-2 rounded-sm disabled">Suivant</span>
+            {% endif %}
+
+        </ul>
+    </div>
+{% endif %}

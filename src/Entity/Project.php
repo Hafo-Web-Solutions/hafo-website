@@ -34,19 +34,19 @@ class Project
     /**
      * @var Collection<int, Image>
      */
-    #[ORM\ManyToMany(targetEntity: Image::class, mappedBy: 'project')]
+    #[ORM\ManyToMany(targetEntity: Image::class, mappedBy: 'project', cascade: ['persist', 'remove'])]
     private Collection $images;
 
     /**
      * @var Collection<int, Tag>
      */
-    #[ORM\ManyToMany(targetEntity: Tag::class, mappedBy: 'project')]
-    private Collection $tags;
+    #[ORM\ManyToMany(targetEntity: Tag::class, inversedBy: 'projects')]
+    private Collection $tag;
 
     public function __construct()
     {
         $this->images = new ArrayCollection();
-        $this->tags = new ArrayCollection();
+        $this->tag = new ArrayCollection();
     }
 
     public function getId(): ?int
@@ -144,15 +144,15 @@ class Project
     /**
      * @return Collection<int, Tag>
      */
-    public function getTags(): Collection
+    public function getTag(): Collection
     {
-        return $this->tags;
+        return $this->tag;
     }
 
     public function addTag(Tag $tag): static
     {
-        if (!$this->tags->contains($tag)) {
-            $this->tags->add($tag);
+        if (!$this->tag->contains($tag)) {
+            $this->tag->add($tag);
             $tag->addProject($this);
         }
 
@@ -161,10 +161,21 @@ class Project
 
     public function removeTag(Tag $tag): static
     {
-        if ($this->tags->removeElement($tag)) {
+        if ($this->tag->removeElement($tag)) {
             $tag->removeProject($this);
         }
 
         return $this;
+    }
+
+    public function getImageByType(string $type): ?Image
+    {
+        foreach ($this->images as $image) {
+            if ($image->getType() === $type) {
+                return $image;
+            }
+        }
+
+        return null;
     }
 }

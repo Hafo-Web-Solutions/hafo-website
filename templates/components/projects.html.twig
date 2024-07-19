@@ -45,21 +45,27 @@
   >
     <article class="project-container">
       <div class="project-content">
+        {% for project in projects %}
         <div class="project-block border ">
-          <a href="#" class="project-content-redirect">
-            <p class="text-white text-[26px]">FFFhhvy ruuuue ufufufr fr fu frufr ufrufrfr ufrufrufruu</p>
+          <a href="{{ path('app_achievement', { id: project.id }) }}" class="project-content-redirect">
+            <p class="text-white text-[26px]">{{ project.description }}</p>
           </a>
+          {% set image = project.getImageByType('main') %}
+           {% if image %}
           <img
             class="h-full w-full object-cover"
-            src="{{ asset('/image/project/image-1.webp') }}"
-            alt=""
+            src="{{ asset('/images/products/' ~ image.getImage() ) }}"
+            alt="{{ image.getType() }}"
           />
+          {% else %}
+          <p>Aucune image principale disponible</p>
+          {% endif %}
           <div class="project-block-content-parent">
             <div
               class="project-block-content-children  bg-tertiary"
             >
               <div class="m-4">
-                <p class="text-xl font-semibold">JUJUSTU KAISEN</p>
+                <p class="text-xl font-semibold">{{ project.title }}</p>
                 <p class="text-sm text-secondary">Site Vitrine</p>
               </div>
               <div class="project-content-redirect-icon bg-secondary">
@@ -72,64 +78,7 @@
             </div>
           </div>
         </div>
-
-        <div class="project-block border ">
-          <a href="#" class="project-content-redirect">
-            <p class="text-white text-[26px]">FFFhhvy ruuuue ufufufr fr fu frufr ufrufrfr ufrufrufruu</p>
-          </a>
-          <img
-            class="h-full w-full object-cover"
-            src="{{ asset('/image/project/image-2.webp') }}"
-            alt=""
-          />
-          <div class="project-block-content-parent">
-            <div
-              class="project-block-content-children  bg-tertiary"
-            >
-              <div class="m-4">
-                <p class="text-xl font-semibold">JUJUSTU KAISEN</p>
-                <p class="text-sm text-secondary">Site Vitrine</p>
-              </div>
-              <div class="project-content-redirect-icon bg-secondary">
-                <img
-                  src="./image/project/icon/arrow-white.webp"
-                  alt="icon Définir vos objectifs"
-                  class="w-full rotate-[320deg]"
-                />
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div class="project-block border ">
-          <a href="#" class="project-content-redirect">
-            <p class="text-white text-[26px]">FFFhhvy ruuuue ufufufr fr fu frufr ufrufrfr ufrufrufruu</p>
-          </a>
-          <img
-            class="h-full w-full object-cover"
-            src="{{ asset('/image/project/image-3.webp') }}"
-            alt=""
-          />
-          <div class="project-block-content-parent">
-            <div
-              class="project-block-content-children  bg-tertiary"
-            >
-              <div class="m-4">
-                <p class="text-xl font-semibold">JUJUSTU KAISEN</p>
-                <p class="text-sm text-secondary">Site Vitrine</p>
-              </div>
-              <div class="project-content-redirect-icon bg-secondary">
-                <img
-                  src="./image/project/icon/arrow-white.webp"
-                  alt="icon Définir vos objectifs"
-                  class="w-full rotate-[320deg]"
-                />
-              </div>
-            </div>
-          </div>
-        </div>
-
-
+        {% endfor %}
       </div>
     </article>
   </div>

@@ -676,3 +676,18 @@ textarea {
   text-align: center;
   margin: 10px;
 }
+
+.project-image {
+  width: 100% !important;
+  object-fit: cover !important;
+}
+
+.project-tag::first-letter {
+  text-transform: uppercase
+}
+
+/* BLOG */
+
+.post-tag::first-letter {
+  text-transform: uppercase
+}

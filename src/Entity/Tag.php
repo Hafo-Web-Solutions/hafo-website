@@ -27,13 +27,18 @@ class Tag
     /**
      * @var Collection<int, Project>
      */
-    #[ORM\ManyToMany(targetEntity: Project::class, inversedBy: 'tags')]
-    private Collection $project;
+    #[ORM\ManyToMany(targetEntity: Project::class, mappedBy: 'tag')]
+    private Collection $projects;
 
     public function __construct()
     {
         $this->posts = new ArrayCollection();
-        $this->project = new ArrayCollection();
+        $this->projects = new ArrayCollection();
+    }
+
+    public function __toString(): string
+    {
+        return $this->name;
     }
 
     public function getId(): ?int
@@ -83,15 +88,15 @@ class Tag
     /**
      * @return Collection<int, Project>
      */
-    public function getProject(): Collection
+    public function getProjects(): Collection
     {
-        return $this->project;
+        return $this->projects;
     }
 
     public function addProject(Project $project): static
     {
-        if (!$this->project->contains($project)) {
-            $this->project->add($project);
+        if (!$this->projects->contains($project)) {
+            $this->projects->add($project);
         }
 
         return $this;
@@ -99,7 +104,7 @@ class Tag
 
     public function removeProject(Project $project): static
     {
-        $this->project->removeElement($project);
+        $this->projects->removeElement($project);
 
         return $this;
     }
