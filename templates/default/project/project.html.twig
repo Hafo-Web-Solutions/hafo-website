@@ -1,128 +1,146 @@
 {% extends 'base.html.twig' %} {% block title %} Nos réalisations {% endblock %}
 {% block body %}
-<!-- Site creation -->
+<!-- Hero Project Main Content -->
 <section
-  class="mt-[80px] lg:mt-[100px] w-full flex flex-col justify-center items-center"
+  class="w-full flex flex-col lg:flex-row gap-x-[64px] xl:container xl:m-auto"
 >
-  <!-- Content Header -->
+  <!-- Block content -->
   <article
-    class="flex w-full lg:flex-row flex-col justify-center lg:default-container 2xl:container-fluid 2xl:px-[140px]"
+    class="pt-[80px] lg:py-0 lg:bg-transparent lg:w-1/2 default-container lg:mb-[0px] lg:pl-[64px] lg:mt-[100px]"
   >
-    <!-- Title -->
-    <div class="lg:w-1/2 px-8 lg:px-0 mb-10 lg:mb-0">
-      <div class="w-[100px] h-[100px] bg-grayText mb-3"
+    <div data-sal="slide-up" data-sal-duration="800" data-sal-selay="150">
+      <div class="w-[100px] h-[100px] bg-grayText mb-3">
+        {# set image for project #} {% set image =
+        achievement.getImageByType('logo') %} {# Afficher l'image de type 'logo'
+        #} {% if image %}
+        <img
+          src="{{ asset('/images/products/' ~ image.getImage() ) }}"
+          alt="{{ image.getType() }}"
+          class="w-full h-full object-cover"
+        />
+        {% else %}
+        <p>Aucune image principale disponible</p>
+        {% endif %}
+      </div>
+      <h2
+        class="text-[34px] md:text-[38px] xl:text-[50px] font-bold tracking-tight mb-[10px] text-white leading-[1.19]"
+      >
+        {{ achievement.title }}
+      </h2>
+      <p class="text-secondary uppercase font-medium tracking-[1px] mb-[20px]">
+        {% for tag in achievement.tag %}
+        {{ tag.name }}
+        {% endfor %}
+      </p>
+    </div>
+    <p
+      class="text-grayText mt-[20px] mb-[30px] text-base leading-[28px]"
       data-sal="slide-up"
       data-sal-duration="800"
-      data-sal-delay="150">
-       {# set image for project #}
-      {% set image = achievement.getImageByType('logo') %}
-                 {# Afficher l'image de type 'logo' #}
-                 {% if image %}
-                     <img src="{{ asset('/images/products/' ~ image.getImage() ) }}" alt="{{ image.getType()  }}"
-                     class="w-full h-full object-cover">
-                 {% else %}
-                     <p>Aucune image principale disponible</p>
-                 {% endif %}
-    </div>
-      <p class="mb-3 text-secondary text-sm"
+      data-sal-selay="200"
+    >
+      {{ achievement.description }}
+    </p>
+    <a
+      href="{{ achievement.link }}"
+      data-sal="slide-up"
+      data-sal-duration="800"
+      data-sal-selay="250"
+      ><button class="blue-button">Voir le projet</button></a
+    >
+  </article>
+  <!-- Image -->
+  <article
+    class="w-full lg:w-1/2 flex justify-center items-center lg:pr-[64px] pt-[80px] lg:py-0 lg:mt-[100px]"
+  >
+    {% set image = achievement.getImageByType('main') %} {# Afficher l'image de
+    type 'main' #} {% if image %}
+    <img
+      src="{{ asset('/images/products/' ~ image.getImage() ) }}"
+      alt="{{ image.getType() }}"
+      class="w-full h-[300px] sm:h-[400px] md:h-[500px] lg:h-full"
+    />
+    {% else %}
+    <p>Aucune image principale disponible</p>
+    {% endif %}
+  </article>
+</section>
+
+<!-- Project Two Picture -->
+<section
+  class="w-full flex flex-col lg:flex-row items-center gap-x-[64px] xl:container xl:m-auto"
+>
+  <!-- Image -->
+  <article
+    class="w-full lg:w-1/2 flex justify-center items-center lg:pl-16 mt-[80px] lg:mt-[100px]"
+  >
+    <div
+      class="w-full h-[300px] sm:h-[400px] md:h-[500px] overflow-hidden"
       data-sal="slide-up"
       data-sal-duration="800"
       data-sal-delay="200"
-      >
-      {% if achievement.category is defined %}
-      {{ achievement.category }}
+    >
+      {# Afficher l'image de type 'first' #} {% set image =
+      achievement.getImageByType('first') %} {% if image %}
+      <img
+        src="{{ asset('/images/products/' ~ image.getImage() ) }}"
+        alt="{{ image.getType() }}"
+        class="w-full h-full object-cover hover:scale-150 transition-transform duration-500 ease-in-out"
+      />
+      {% else %}
+      <p>Aucune image principale disponible</p>
       {% endif %}
-    </p>
-      <h1
-        class="text-white lg:text-[45px] md:text-[32px] text-[28px] tracking-tight"
-        data-sal="slide-up"
-        data-sal-duration="800"
-        data-sal-delay="250"
-      >
-        {{ achievement.title }}
-      </h1>
-      <p
-        class="text-grayText mt-3 mb-8 leading-[28px]"
-        data-sal="slide-up"
-        data-sal-duration="800"
-        data-sal-delay="250"
-      >
-        {{ achievement.description }}
-      </p>
-      <a
-        href="{{ achievement.link }}"
-        class="py-4 px-8 text-white font-semibold bg-[#00A3FF] hover:bg-tertiary text-base cursor-pointer rounded-lg"
-        data-sal="slide-up"
-        data-sal-duration="800"
-        data-sal-delay="250"
-        >Voir le projet
-      </a>
-    </div>
-
-    <div class="lg:w-[40%] px-8 lg:px-0 lg:pl-16">
-      <div class="overflow-hidden">
-               {# Afficher l'image de type 'main' #}
-    {% if image %}
-        <img src="{{ asset('/images/products/' ~ image.getImage() ) }}" alt="{{ image.getType()  }}"
-        class="w-full h-full object-cover hover:scale-150 transition-transform duration-500 ease-in-out">
-    {% else %}
-        <p>Aucune image principale disponible</p>
-    {% endif %}
-      </div>
     </div>
   </article>
-
-  <!-- Content Image -->
+  <!-- Image -->
   <article
-    class="flex lg:flex-row flex-col gap-8 lg:justify-center items-center flex-wrap w-full default-container 2xl:container-fluid 2xl:px-[140px] mt-[80px] lg:mt-[100px]"
+    class="w-full lg:w-1/2 flex justify-center items-center lg:pr-16 mt-[80px] lg:mt-[100px]"
   >
-    <div class="w-full md:w-[40%] px-8 lg:px-0 overflow-hidden"
-    data-sal="slide-up"
-    data-sal-duration="800"
-    data-sal-delay="200"
+    <div
+      class="w-full h-[300px] sm:h-[400px] md:h-[500px] overflow-hidden"
+      data-sal="slide-up"
+      data-sal-duration="800"
+      data-sal-delay="200"
     >
-                  
-     {# Afficher l'image de type 'first' #}
-    {% if image %}
-        <img src="{{ asset('/images/products/' ~ image.getImage() ) }}" alt="{{ image.getType()  }}"
-        class="project-image w-full h-full object-cover hover:scale-150 transition-transform duration-500 ease-in-out">
-    {% else %}
-        <p>Aucune image principale disponible</p>
-    {% endif %}
-    </div>
-    <div class="w-full md:w-[40%] px-8 lg:px-0 overflow-hidden"
-    data-sal="slide-up"
-    data-sal-duration="800"
-    data-sal-delay="300"
-    >
-                  {# Afficher l'image de type 'second' #}
-    {% if image %}
-        <img src="{{ asset('/images/products/' ~ image.getImage() ) }}" alt="{{ image.getType()  }}"
-        class="w-full h-full object-cover hover:scale-150 transition-transform duration-500 ease-in-out">
-    {% else %}
-        <p>Aucune image principale disponible</p>
-    {% endif %}
+      {# Afficher l'image de type 'second' #} {% set image =
+      achievement.getImageByType('second') %} {% if image %}
+      <img
+        src="{{ asset('/images/products/' ~ image.getImage() ) }}"
+        alt="{{ image.getType() }}"
+        class="w-full h-full object-cover hover:scale-150 transition-transform duration-500 ease-in-out"
+      />
+      {% else %}
+      <p>Aucune image principale disponible</p>
+      {% endif %}
     </div>
   </article>
+</section>
 
-  <!-- Content Text -->
+<!-- Project Focus Description -->
+<section
+  class="mt-[80px] lg:mt-[100px] w-full flex flex-col justify-center items-center"
+>
+  <!-- Content Focus -->
   <article
-    class="flex flex-col gap-4 items-center w-full default-container 2xl:container-fluid 2xl:px-[140px] mt-[80px] lg:mt-[100px]"
+    class="flex flex-col gap-4 items-center w-full default-container 2xl:container-fluid 2xl:px-[140px]"
   >
-    <h2 class="text-3xl mb-4 font-bold tracking-tight text-white"
-    data-sal="slide-up"
-    data-sal-duration="800"
-    data-sal-delay="150"
-    >{{ achievement.focusTitle }}</h2>
-    <p class="text-grayText w-[80%] text-base text-center"
-    data-sal="slide-up"
-    data-sal-duration="800"
-    data-sal-delay="200"
+    <h2
+      class="text-3xl mb-4 font-bold tracking-tight text-white"
+      data-sal="slide-up"
+      data-sal-duration="800"
+      data-sal-delay="150"
     >
-      {{ achievement.focusDescription}}
+      {{ achievement.focusTitle }}
+    </h2>
+    <p
+      class="text-grayText w-[100%] md:w-[80%] text-base text-center"
+      data-sal="slide-up"
+      data-sal-duration="800"
+      data-sal-delay="200"
+    >
+      {{ achievement.focusDescription }}
     </p>
   </article>
 </section>
 
-{% include 'components/cta.html.twig' %}
-{% endblock %}
+{% include 'components/cta.html.twig' %} {% endblock %}
