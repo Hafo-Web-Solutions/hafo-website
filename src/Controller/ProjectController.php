@@ -10,7 +10,6 @@ use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Attribute\Route;
-use Symfony\Component\Validator\Constraints\Json;
 
 class ProjectController extends AbstractController
 {
@@ -46,9 +45,9 @@ class ProjectController extends AbstractController
     }
 
     #[Route('/nos-realisations/ajax', name: 'app_achievements_ajax')]
-public function achievementsAjax(): JsonResponse
-{
-    // Return a simple JSON response
-    return new JsonResponse(['status' => 'success', 'message' => 'This is a test response']);
-}
+    public function achievementsAjax(): JsonResponse
+    {
+        // Return a simple JSON response
+        return new JsonResponse(['status' => 'success', 'message' => 'This is a test response']);
+    }
 }

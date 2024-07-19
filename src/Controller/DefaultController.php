@@ -5,7 +5,6 @@ namespace App\Controller;
 use App\Repository\PostRepository;
 use App\Repository\ProjectRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
-use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Attribute\Route;
 
@@ -14,11 +13,9 @@ class DefaultController extends AbstractController
     #[Route('/', name: 'app_default')]
     public function index(PostRepository $postRepository, ProjectRepository $projectRepository): Response
     {
-
         $posts = $postRepository->findAll([], ['id' => 'DESC'], 4);
         $projects = $projectRepository->findAll([], ['id' => 'DESC'], 3);
         return $this->render('default/index.html.twig', [
-            'controller_name' => 'DefaultController',
             'posts' => $posts,
             'projects' => $projects,
         ]);
@@ -108,7 +105,5 @@ class DefaultController extends AbstractController
     {
         return $this->render('default/make-an-appointment.html.twig');
     }
-
-
 
 }

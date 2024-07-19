@@ -8,7 +8,6 @@ use EasyCorp\Bundle\EasyAdminBundle\Controller\AbstractCrudController;
 use EasyCorp\Bundle\EasyAdminBundle\Field\AssociationField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\CollectionField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\IdField;
-use EasyCorp\Bundle\EasyAdminBundle\Field\TextEditorField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\TextField;
 
 class ProjectCrudController extends AbstractCrudController
@@ -17,7 +16,6 @@ class ProjectCrudController extends AbstractCrudController
     {
         return Project::class;
     }
-
     
     public function configureFields(string $pageName): iterable
     {
@@ -28,7 +26,7 @@ class ProjectCrudController extends AbstractCrudController
             TextField::new('focusTitle'),
             TextField::new('focusDescription')->hideOnIndex(),
             TextField::new('link'),
-            AssociationField::new('tags'),
+            AssociationField::new('tag'),
             CollectionField::new('images')->setEntryType(ImageType::class),
         ];
     }

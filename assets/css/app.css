@@ -668,6 +668,10 @@ textarea {
   object-fit: cover !important;
 }
 
+.project-tag::first-letter {
+  text-transform: uppercase
+}
+
 /* BLOG */
 
 .post-tag::first-letter {
