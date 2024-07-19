@@ -23,8 +23,10 @@ class BlogController extends AbstractController
         $blog = $paginator->paginate(
             $query, /* query NOT result */
             $request->query->getInt('page', 1), /*page number*/
-            2 /*limit per page*/
+            4 /*limit per page*/
         );
+
+        //modif pagination recent DESC
 
         return $this->render('default/blog/index.html.twig', [
             'blog' => $blog,
