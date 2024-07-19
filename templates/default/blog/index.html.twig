@@ -1,20 +1,15 @@
-{% extends 'base.html.twig' %}
-
-{% block title %} Blog {% endblock %}
-
-{% block body %}
-<!-- Blog -->
+{% extends 'base.html.twig' %} {% block title %} Blog {% endblock %} {% block
+body %}
 <section
-  class="mt-[80px] lg:mt-[100px] w-full default-container justify-center sm:container flex gap-x-8 2xl:h-screen xl:gap-8"
+  class="mt-[80px] lg:mt-[100px] w-full default-container justify-center sm:container"
 >
-  <article
-    class="w-[90%] flex flex-col"
-  >
+  <!-- Header Blog -->
+  <article class="w-[90%] flex flex-col">
     <div data-sal="slide-up" data-sal-duration="800" data-sal-delay="150">
       <h2
         class="text-[24px] md:text-[28px] xl:text-[36px] font-bold tracking-tight text-white leading-[1.19]"
       >
-      Notre Blog
+        Notre Blog
       </h2>
     </div>
     <p
@@ -23,35 +18,78 @@
       data-sal-duration="800"
       data-sal-delay="200"
     >
-    Décryptage Expert du Monde Digital
+      Décryptage Expert du Monde Digital
     </p>
   </article>
 
+  <!-- Blog List -->
+  <article class="w-full justify-center default-container sm:container">
+    <div class="flex w-full mt-4 flex-wrap justify-center gap-8">
+      {% for blog in blog %}
+      <a
+        href="{{ path('app_blog_detail', { id: blog.id }) }}"
+        class="flex flex-col gap-2 w-[280px]"
+      >
+        <div class="w-full h-[180px] bg-slate-500 rounded-md overflow-hidden">
+          {% set image = blog.getImageByType('post') %} {% if image %}
+          <img
+            src="{{ asset('/images/products/' ~ image.getImage() ) }}"
+            alt="{{ image.getType() }}"
+            class="w-full h-full object-cover hover:scale-150 transition-transform duration-500 ease-in-out"
+          />
+          {% else %}
+          <p>Aucune image principale disponible</p>
+          {% endif %}
+        </div>
+        <div>
+          <p class="text-secondary text-[12px]">EXPÉRIENCE UTILISATEUR</p>
+          <p class="text-white">{{ blog.title }}</p>
+        </div>
+      </a>
+      {% endfor %}
+    </div>
+  </article>
+  <!-- Blog List Duplicata After Add Reel Post -->
+  <article class="w-full justify-center default-container sm:container">
+    <div class="flex w-full mt-4 flex-wrap justify-center gap-8">
+      {% for blog in blog %}
+      <a
+        href="{{ path('app_blog_detail', { id: blog.id }) }}"
+        class="flex flex-col gap-2 w-[280px]"
+      >
+        <div class="w-full h-[180px] bg-slate-500 rounded-md overflow-hidden">
+          {% set image = blog.getImageByType('post') %} {% if image %}
+          <img
+            src="{{ asset('/images/products/' ~ image.getImage() ) }}"
+            alt="{{ image.getType() }}"
+            class="w-full h-full object-cover hover:scale-150 transition-transform duration-500 ease-in-out"
+          />
+          {% else %}
+          <p>Aucune image principale disponible</p>
+          {% endif %}
+        </div>
+        <div>
+          <p class="text-secondary text-[12px]">
+            {% if blog.category|length > 0 %}
+            {{ blog.category|first.name }}
+            {% else %} No categories available. {% endif %}
+          </p>
+          <p class="text-white">{{ blog.title }}</p>
+        </div>
+      </a>
+      {% endfor %}
+    </div>
+  </article>
+
+  {# Display navigation pagination #}
+  <div class="navigation">
+    {{
+      knp_pagination_render(
+        blog,
+        "bundles/KnpPaginator/Pagination/pagination.html.twig"
+      )
+    }}
+  </div>
 </section>
 
-<article class="w-full justify-center default-container sm:container flex 2xl:h-screen gap-18">
-  <div class="flex w-[92%] mt-4 flex-wrap justify-center gap-8">
-    {% for blog in blog %}
-    <a href="{{ path('app_blog_detail', {id: blog.id}) }}" class="flex flex-col gap-2 w-[280px]">
-      <div class="w-full h-[180px] bg-slate-500 rounded-md overflow-hidden">
-       {% set mainImage = blog.getImageByType('post') %}
-       {% set dd = blog.getImageByType('post')%}
-       {% if mainImage %}
-           <img src="{{ asset('/images/products/' ~ mainImage.getImage() ) }}" alt="{{ dd.getType()  }}"
-           class="w-full h-full object-cover hover:scale-150 transition-transform duration-500 ease-in-out">
-       {% else %}
-           <p>Aucune image principale disponible</p>
-       {% endif %}
-      </div>
-      <p class="text-secondary text-[12px]">EXPÉRIENCE UTILISATEUR</p>
-      <p class="text-white">{{ blog.title }}</p>
-   </a>
-    {% endfor %}
-  </div>
-</article>
-
- {# Display navigation #}
- <div class="navigation">
-  {{ knp_pagination_render(blog, 'bundles/KnpPaginator/Pagination/pagination.html.twig') }}
-</div>
 {% endblock %}

@@ -1,17 +1,19 @@
 {% extends 'base.html.twig' %} {% block title %} Nos réalisations {% endblock %}
 {% block body %}
-<section class="height-nav sm:container  flex justify-center mt-[80px] lg:mt-[100px]">
-  <article class="md:w-4/6 flex flex-col justify-center items-center mb-[100px]">
+<section>
+  <!-- Header Project Block -->
+<article class="sm:container default-container flex justify-center mt-[80px] lg:mt-[100px]">
+  <div class="md:w-4/6 flex flex-col justify-center items-center">
     <h1
       class="text-white text-[28px] md:text-[34px] lg:text-[38px] font-bold text-center mb-[20px] leading-[1.19]"
       data-sal="slide-up"
       data-sal-duration="800"
       data-sal-delay="150"
       >
-    Nos réalisations
+    Nos réalisations
     </h1>
     <p
-      class="text-grayText text-center leading-[28px] mb-[30px]"
+      class="text-grayText text-center leading-[28px]"
       data-sal="slide-up"
       data-sal-duration="800"
       data-sal-delay="200"
@@ -22,50 +24,15 @@
     utilisateur optimale. Notre approche unique met vos ambitions au cœur de
     notre processus créatif.
     </p>
+  </div>
+</article>
 
-  </article>
-</section>
-
-
-
-
-<!-- iubiiyvybu****************************************************************************** -->
-<!-- Site creation -->
-<section
+<!-- Project Block -->
+<article
   class="mt-[80px] lg:mt-[100px] w-full flex flex-col justify-center items-center"
 >
-  <!-- Content Header -->
-  <article
-    class="flex w-full justify-center lg:default-container 2xl:container-fluid 2xl:px-[140px]"
-  >
-    <!-- Title -->
-    <div class="lg:w-1/2 px-8 lg:px-0">
-      <h1
-        class="text-white lg:text-[45px] md:text-[32px] text-[28px] tracking-tight text-center"
-        data-sal="slide-up"
-        data-sal-duration="800"
-        data-sal-delay="150"
-      >
-        Nos réalisations
-      </h1>
-      <p
-        class="text-grayText mt-3 mb-8 leading-[28px] text-center"
-        data-sal="slide-up"
-        data-sal-duration="800"
-        data-sal-delay="200"
-      >
-        Entrer dans le monde du numérique avec aisance et expertise. Chez Hafo
-        Web Solutions, nous donnons vie à vos idées avec des solutions web
-        sur-mesure qui allient performance, design moderne et expérience
-        utilisateur optimale. Notre approche unique met vos ambitions au cœur de
-        notre processus créatif.
-      </p>
-    </div>
-  </article>
-
-  <!-- Content -->
-  <article
-    class="flex lg:flex-row flex-col gap-8 lg:justify-center items-center flex-wrap w-full default-container 2xl:container-fluid 2xl:px-[140px] mt-[80px] lg:mt-[100px]"
+  <div
+    class="flex lg:flex-row flex-col gap-8 lg:justify-center items-center flex-wrap w-full default-container 2xl:container-fluid 2xl:px-[140px]"
   >
     {% for achievement in achievements %}
     <a href="{{ path('app_achievement', {id: achievement.id }) }}" class="w-[320px] h-[300px] flex flex-col justify-between">
@@ -75,12 +42,10 @@
         data-sal-duration="800"
         data-sal-delay="150"
       >
-     
-          {# Afficher l'image de type 'main' #}
-    {% set mainImage = achievement.getImageByType('main') %}
-    {% set dd = achievement.getImageByType('main')%}
-    {% if mainImage %}
-        <img src="{{ asset('/images/products/' ~ mainImage.getImage() ) }}" alt="{{ dd.getType()  }}"
+    {# Afficher l'image de type 'main' #}
+    {% set image = achievement.getImageByType('main') %}
+    {% if image %}
+        <img src="{{ asset('/images/products/' ~ image.getImage() ) }}" alt="{{ image.getType()  }}"
         class="w-full h-full object-cover hover:scale-150 transition-transform duration-500 ease-in-out">
     {% else %}
         <p>Aucune image principale disponible</p>
@@ -88,12 +53,14 @@
       </div>
       <div>
         <p
-          class="text-secondary my-[10px] text-sm"
+          class="text-secondary mt-[10px] text-sm uppercase"
           data-sal="slide-up"
           data-sal-duration="800"
           data-sal-delay="200"
         >
-         kkkkkk
+       {% for tag in achievement.tag %}
+          {{ tag.name }}
+        {% endfor %}
         </p>
         <h3
           class="llg:text-[28px] text-[24px] md:text-[26px] expertise-lg:text-[26px] text-white"
@@ -106,7 +73,8 @@
       </div>
     </a>
     {% endfor %}
-  </article>
+  </div>
+</article>
 </section>
 
 {% endblock %}

@@ -1,3 +1,4 @@
+const { get } = require("core-js/core/dict");
 
 
 if (window.innerWidth < 768) {
@@ -11,14 +12,14 @@ if (window.innerWidth < 768) {
 
   // Add event listener for window resize to recalculate the value
   window.addEventListener("resize", calculateCurrent);
-  let jhon = document.querySelector(".project-content");
+  let projectContent = document.querySelector(".project-content");
 
   function next() {
     if (current === 0) {
       return;
     }
-    jhon.style.right = `-${current - (window.innerWidth - 64)}px`;
-    jhon.animate(
+    projectContent.style.right = `-${current - (window.innerWidth - 64)}px`;
+    projectContent.animate(
       [
         { right: `-${current}px` },
         { right: `-${current - (window.innerWidth - 64)}px` },
@@ -35,8 +36,8 @@ if (window.innerWidth < 768) {
     if (current === (window.innerWidth - 64) * 2) {
       return;
     }
-    jhon.style.right = `-${current + (window.innerWidth - 64)}px`;
-    jhon.animate(
+    projectContent.style.right = `-${current + (window.innerWidth - 64)}px`;
+    projectContent.animate(
       [
         { right: `-${current}px` },
         { right: `-${current + (window.innerWidth - 64)}px` },
@@ -52,6 +53,8 @@ if (window.innerWidth < 768) {
   document.querySelector("#nextProject").addEventListener("click", next);
   document.querySelector("#prevProject").addEventListener("click", prev);
 } else {
+
+  
   // Images
   const images = [
     "./image/project/image-1.webp",
