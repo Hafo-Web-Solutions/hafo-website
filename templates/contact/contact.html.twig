@@ -5,9 +5,6 @@
 <script src="https://www.google.com/recaptcha/api.js" async defer></script>
 {% endblock %} {% block body %}
 
-<!-- Add some spacing at the top of the page -->
-<div class="h-20 w-full"></div>
-
 <!-- Main container for the contact form and information -->
 <div
   class="mt-20 flex flex-col lg:justify-between lg:flex-row marker:justify-between lg:gap-8 sm:container default-container"
@@ -66,7 +63,7 @@
         for="{{ form_contact.lastName.vars.id }}"
         class="text-grayText text-sm font-medium mb-2"
       >
-        Nom<span class="text-secondary">*</span>
+        Nom <span class="text-secondary">*</span>
       </label>
       {{
         form_widget(form_contact.lastName, {
@@ -91,7 +88,7 @@
         for="{{ form_contact.firstName.vars.id }}"
         class="text-grayText text-sm font-medium mb-2"
       >
-        Prénom<span class="text-secondary">*</span>
+        Prénom <span class="text-secondary">*</span>
       </label>
       {{
         form_widget(form_contact.firstName, {
@@ -118,7 +115,7 @@
         for="{{ form_contact.email.vars.id }}"
         class="text-grayText text-sm font-medium mb-2"
       >
-        Email<span class="text-secondary">*</span>
+        Email <span class="text-secondary">*</span>
       </label>
       {{
         form_widget(form_contact.email, {
@@ -234,7 +231,7 @@
       for="{{ form_contact.subject.vars.id }}"
       class="text-grayText text-sm font-medium mb-2"
     >
-      Sujet<span class="text-secondary">*</span>
+      Sujet <span class="text-secondary">*</span>
     </label>
     <div class="select-container">
       {{
@@ -259,7 +256,7 @@
       for="{{ form_contact.message.vars.id }}"
       class="text-grayText text-sm font-medium mb-2"
     >
-      Message<span class="text-secondary">*</span>
+      Message <span class="text-secondary">*</span>
     </label>
     <div>
       {{
@@ -296,7 +293,7 @@
         J'accepte les
         <a href="" class="text-secondary">Mentions Légales</a> et les
         <a href="" class="text-secondary">Conditions Générales de Vente</a
-        >.<span class="text-secondary">*</span>
+        >. <span class="text-secondary">*</span>
       </label>
     </div>
     <span
