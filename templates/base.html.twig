@@ -6,7 +6,18 @@
     <title>{% block title %} Welcome! {% endblock %}</title>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.4.0/jspdf.umd.min.js"></script>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <link rel="icon" type="image/x-icon" href="/images/favicon4.ico">
+    <!-- Début de widget de lien Calendly -->
+    <link
+      href="https://assets.calendly.com/assets/external/widget.css"
+      rel="stylesheet"
+    />
+    <script
+      src="https://assets.calendly.com/assets/external/widget.js"
+      type="text/javascript"
+      async
+    ></script>
+    <!-- Fin de widget de lien Calendly -->
+    <link rel="icon" type="image/x-icon" href="/images/favicon4.ico" />
     <link
       href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap"
       rel="stylesheet"
@@ -22,13 +33,9 @@
     {% endblock %}
   </head>
   <body class="hidden-until-scroll">
-  
-   
-      {% include '/components/header.html.twig' %} 
-      <main class="pt-[85px]">
-      {% block body %} {% endblock %}
-    </main>
-      {% include '/components/footer.html.twig' %}
+    {% include '/components/header.html.twig' %}
+    <main class="pt-[85px]">{% block body %} {% endblock %}</main>
+    {% include '/components/footer.html.twig' %}
 
     <div class="rn-progress-parent">
       <svg
