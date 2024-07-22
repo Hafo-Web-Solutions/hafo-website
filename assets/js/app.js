@@ -18,6 +18,18 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 });
 
+// Calendly initialization
+document.addEventListener("DOMContentLoaded", () => {
+  document.getElementById('rdv-button').addEventListener('click', function() {
+    Calendly.initPopupWidget({url: 'https://calendly.com/hafowebsolutions/30min'});
+    return false;
+  });
+  document.getElementById('rdv-button2').addEventListener('click', function() {
+    Calendly.initPopupWidget({url: 'https://calendly.com/cedric-hafowebsolutions/30min'});
+    return false;
+  });
+});
+
 // AlpineJS initialization
 document.addEventListener("DOMContentLoaded", () => {
   window.Alpine = Alpine;
