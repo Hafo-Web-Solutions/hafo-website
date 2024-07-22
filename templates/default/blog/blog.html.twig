@@ -26,7 +26,7 @@ endblock %} {% block body %}
       {# Afficher l'image de type 'post' #} {% set image =
       blog.getImageByType('post') %} {% if image %}
       <img
-        src="{{ asset('/images/products/' ~ image.getImage() ) }}"
+        src="{{ asset('/images/uploads/' ~ image.getImage() ) }}"
         alt="{{ image.getType() }}"
         class="w-full h-full object-cover"
       />

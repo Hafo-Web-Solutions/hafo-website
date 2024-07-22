@@ -33,7 +33,7 @@ body %}
         <div class="w-full h-[180px] bg-slate-500 rounded-md overflow-hidden">
           {% set image = blog.getImageByType('post') %} {% if image %}
           <img
-            src="{{ asset('/images/products/' ~ image.getImage() ) }}"
+            src="{{ asset('/images/uploads/' ~ image.getImage() ) }}"
             alt="{{ image.getType() }}"
             class="w-full h-full object-cover hover:scale-150 transition-transform duration-500 ease-in-out"
           />
@@ -60,7 +60,7 @@ body %}
         <div class="w-full h-[180px] bg-slate-500 rounded-md overflow-hidden">
           {% set image = blog.getImageByType('post') %} {% if image %}
           <img
-            src="{{ asset('/images/products/' ~ image.getImage() ) }}"
+            src="{{ asset('/images/uploads/' ~ image.getImage() ) }}"
             alt="{{ image.getType() }}"
             class="w-full h-full object-cover hover:scale-150 transition-transform duration-500 ease-in-out"
           />

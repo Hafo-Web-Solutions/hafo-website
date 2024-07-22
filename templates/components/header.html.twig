@@ -185,7 +185,8 @@
       <!-- Desktop navigation links 1/2 -->
       <div class="hidden lg:flex items-center">
         <div>
-          <button
+          <a href="{{ path('app_expertise') }}">
+            <button
             type="button"
             class="px-3 nav-sm:px-2 mx-2 py-[30px] xl:text-base flex items-center gap-x-1 font-medium leading-6 text-grayText hover:text-secondary duration-300 ease-in-out"
             x-on:click.stop="openFlyoutMenu = !openFlyoutMenu"
@@ -194,6 +195,7 @@
           >
             Expertise
           </button>
+          </a>
 
           <!-- Desktop flyout menu -->
           <div
@@ -559,6 +561,7 @@
       <!-- Main menu -->
       <ul class="space-y-2 py-4 px-5">
         <li>
+          <a href="{{ path('app_expertise') }}">
           <button
             @click="selected !== 1 ? selected = 1 : selected = null"
             type="button"
@@ -582,6 +585,7 @@
               <polyline points="18 15 12 9 6 15"></polyline>
             </svg>
           </button>
+          </a>
 
           <!-- Expertise accordion -->
           <ul

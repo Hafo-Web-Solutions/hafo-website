@@ -26,13 +26,15 @@
       combinant performance, esthétique moderne et expérience utilisateur
       optimale. Vos ambitions sont au coeur de notre démarche créative
     </p>
-    <a
-      href="{{ path('app_services_and_prices') }}"
-      data-sal="slide-up"
-      data-sal-duration="800"
-      data-sal-delay="300"
-      ><button class="blue-button">Découvrez nos services</button></a
-    >
+   {% if redirect is defined %}
+   <a
+   href="{{ path('app_services_and_prices') }}"
+   data-sal="slide-up"
+   data-sal-duration="800"
+   data-sal-delay="300"
+   ><button class="blue-button">Découvrez nos services</button></a
+ >
+ {% endif %}
   </article>
 
   <article class="p-0 m-0 lg:w-full lg:items-center lg:flex lg:justify-center">
