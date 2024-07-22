@@ -10,7 +10,7 @@ use Doctrine\Migrations\AbstractMigration;
 /**
  * Auto-generated Migration: Please modify to your needs!
  */
-final class Version20240718232323 extends AbstractMigration
+final class Version20240722153913 extends AbstractMigration
 {
     public function getDescription(): string
     {
@@ -28,10 +28,9 @@ final class Version20240718232323 extends AbstractMigration
         $this->addSql('ALTER TABLE tag_project DROP CONSTRAINT fk_1d82fd44bad26311');
         $this->addSql('ALTER TABLE tag_project DROP CONSTRAINT fk_1d82fd44166d1f9c');
         $this->addSql('DROP TABLE tag_project');
+        $this->addSql('ALTER TABLE image ADD size VARCHAR(255) DEFAULT NULL');
+        $this->addSql('ALTER TABLE image ADD updated_at TIMESTAMP(0) WITHOUT TIME ZONE DEFAULT NULL');
         $this->addSql('ALTER TABLE image ALTER image DROP NOT NULL');
-        $this->addSql('ALTER TABLE image ALTER size DROP NOT NULL');
-        $this->addSql('ALTER TABLE image ALTER updated_at TYPE TIMESTAMP(0) WITHOUT TIME ZONE');
-        $this->addSql('ALTER TABLE image ALTER updated_at DROP NOT NULL');
         $this->addSql('COMMENT ON COLUMN image.updated_at IS \'(DC2Type:datetime_immutable)\'');
     }
 
@@ -47,10 +46,8 @@ final class Version20240718232323 extends AbstractMigration
         $this->addSql('ALTER TABLE project_tag DROP CONSTRAINT FK_91F26D60166D1F9C');
         $this->addSql('ALTER TABLE project_tag DROP CONSTRAINT FK_91F26D60BAD26311');
         $this->addSql('DROP TABLE project_tag');
+        $this->addSql('ALTER TABLE image DROP size');
+        $this->addSql('ALTER TABLE image DROP updated_at');
         $this->addSql('ALTER TABLE image ALTER image SET NOT NULL');
-        $this->addSql('ALTER TABLE image ALTER size SET NOT NULL');
-        $this->addSql('ALTER TABLE image ALTER updated_at TYPE TIMESTAMP(0) WITHOUT TIME ZONE');
-        $this->addSql('ALTER TABLE image ALTER updated_at SET NOT NULL');
-        $this->addSql('COMMENT ON COLUMN image.updated_at IS NULL');
     }
 }
