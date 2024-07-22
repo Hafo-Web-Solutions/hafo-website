@@ -2,19 +2,27 @@
 
 namespace App\Controller;
 
-use App\Repository\PostRepository;
-use App\Repository\ProjectRepository;
+use App\Entity\Post;
+use App\Entity\Project;
+use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Attribute\Route;
 
 class DefaultController extends AbstractController
 {
-    #[Route('/', name: 'app_default')]
-    public function index(PostRepository $postRepository, ProjectRepository $projectRepository): Response
+
+    public function __construct(private EntityManagerInterface $em)
     {
-        $posts = $postRepository->findAll([], ['id' => 'DESC'], 4);
-        $projects = $projectRepository->findAll([], ['id' => 'DESC'], 3);
+        $this->em = $em;
+    }
+
+    #[Route('/', name: 'app_default')]
+    public function index(): Response
+    {
+        $posts = $this->em->getRepository(Post::class)->findAll(['id' => 'DESC'], 4);
+        $projects = $this->em->getRepository(Project::class)->findAll(['id' => 'DESC'], 3);
+
         return $this->render('default/index.html.twig', [
             'posts' => $posts,
             'projects' => $projects,
@@ -24,33 +32,60 @@ class DefaultController extends AbstractController
     #[Route('agence', name: 'app_agency')]
     public function agency(): Response
     {
+        $posts = $this->em->getRepository(Post::class)->findAll(['id' => 'DESC'], 4);
         return $this->render('default/agency.html.twig', [
-            'controller_name' => 'DefaultController',
+            'posts' => $posts,
         ]);
+    }
+
+    #[Route('expertise', name: 'app_expertise')]
+    public function expertise(): Response
+    {
+        return $this->render('default/expertises/index.html.twig');
     }
 
     #[Route('creation-de-site', name: 'app_expertise_site_creation')]
     public function expertiseSiteCreation(): Response
     {
-        return $this->render('default/expertises/site-creation.html.twig');
+        $posts = $this->em->getRepository(Post::class)->findAll(['id' => 'DESC'], 4);
+        $projects = $this->em->getRepository(Project::class)->findAll(['id' => 'DESC'], 3);
+        return $this->render('default/expertises/site-creation.html.twig', [
+            'posts' => $posts,
+            'projects' => $projects,
+        ]);
     }
 
     #[Route('refonte', name: 'app_expertise_redesign')]
     public function expertiseRedesign(): Response
     {
-        return $this->render('default/expertises/redesign.html.twig');
+        $posts = $this->em->getRepository(Post::class)->findAll(['id' => 'DESC'], 4);
+        $projects = $this->em->getRepository(Project::class)->findAll(['id' => 'DESC'], 3);
+        return $this->render('default/expertises/redesign.html.twig', [
+            'posts' => $posts,
+            'projects' => $projects,
+        ]);
     }
 
     #[Route('maintenance', name: 'app_expertise_maintenance')]
     public function expertiseMaintenance(): Response
     {
-        return $this->render('default/expertises/maintenance.html.twig');
+        $posts = $this->em->getRepository(Post::class)->findAll(['id' => 'DESC'], 4);
+        $projects = $this->em->getRepository(Project::class)->findAll(['id' => 'DESC'], 3);
+        return $this->render('default/expertises/maintenance.html.twig', [
+            'posts' => $posts,
+            'projects' => $projects,
+        ]);
     }
 
     #[Route('referencement', name: 'app_expertise_seo')]
     public function expertiseSeo(): Response
     {
-        return $this->render('default/expertises/seo.html.twig');
+        $posts = $this->em->getRepository(Post::class)->findAll(['id' => 'DESC'], 4);
+        $projects = $this->em->getRepository(Project::class)->findAll(['id' => 'DESC'], 3);
+        return $this->render('default/expertises/seo.html.twig', [
+            'posts' => $posts,
+            'projects' => $projects,
+        ]);
     }
 
     #[Route('services-et-tarifs', name: 'app_services_and_prices')]

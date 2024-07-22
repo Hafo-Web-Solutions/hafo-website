@@ -11,8 +11,8 @@
     >
       Nos Réalisations
     </h2>
-    <!-- Text -->
-    <div id="text" class="hidden md:block"></div>
+    <!-- Content Text -->
+    <div id="content-project-desktop" class="hidden md:block"></div>
 
     <!-- Buttons -->
     <div class="flex items-center gap-3 mt-2 md:mt-14"
@@ -54,7 +54,7 @@
            {% if image %}
           <img
             class="h-full w-full object-cover"
-            src="{{ asset('/images/products/' ~ image.getImage() ) }}"
+            src="{{ asset('/images/uploads/' ~ image.getImage() ) }}"
             alt="{{ image.getType() }}"
           />
           {% else %}
@@ -84,7 +84,7 @@
   </div>
 
   <!-- Image -->
-  <article id="image" class="md:w-1/2 sm:px-2 hidden md:block"></article>
+  <article id="image-project-desktop" class="md:w-1/2 sm:px-2 hidden md:block"></article>
 </section>
 
 <!-- add script to project.js -->

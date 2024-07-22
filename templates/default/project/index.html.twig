@@ -45,7 +45,7 @@
     {# Afficher l'image de type 'main' #}
     {% set image = achievement.getImageByType('main') %}
     {% if image %}
-        <img src="{{ asset('/images/products/' ~ image.getImage() ) }}" alt="{{ image.getType()  }}"
+        <img src="{{ asset('/images/uploads/' ~ image.getImage() ) }}" alt="{{ image.getType()  }}"
         class="w-full h-full object-cover hover:scale-150 transition-transform duration-500 ease-in-out">
     {% else %}
         <p>Aucune image principale disponible</p>

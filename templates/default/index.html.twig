@@ -5,7 +5,7 @@
 {% block body %}
   {% include "./components/hero.html.twig" %}
   {% include "./components/about.html.twig" %}
-  {% include "./components/expertise.html.twig" %}
+  {% include "./components/expertise.html.twig" with { redirect: true } %}
   {% include "./components/achievements.html.twig" %}
   {% include "./components/journey.html.twig" with { title:
     "Votre Parcours de Réussite", subtitle: "Chaque Étape, Un Pas de Plus Vers Votre

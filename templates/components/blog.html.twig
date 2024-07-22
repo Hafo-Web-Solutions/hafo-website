@@ -136,7 +136,7 @@
             <div class="w-full overflow-hidden rounded-md">
               {% set image = post.getImageByType('post') %} {% if image %}
               <img
-                src="{{ asset('/images/products/' ~ image.getImage() ) }}"
+                src="{{ asset('/images/uploads/' ~ image.getImage() ) }}"
                 alt="{{ image.getType() }}"
                 class="object-cover w-full h-full"
               />
