@@ -1,28 +1,14 @@
-{% extends 'base.html.twig' %} {% block title %} Creation de site {% endblock %}
-{% block body %}
+{% extends 'base.html.twig' %} {% block title %} Services et tarifs - Hafo Web
+Solutions {% endblock %} {% block body %}
 
 <!-- Site creation -->
-<section
-  class="mt-[80px] lg:mt-[100px] px-8 w-full flex flex-col justify-center items-center lg:default-container 2xl:container-fluid 2xl:px-[140px]"
->
+<section class="default-mt default-container sm:container">
   <!-- Content Header -->
-  <article class="flex lg:flex-row flex-col w-full">
+  <article class="flex flex-col lg:flex-row">
     <!-- Title -->
-    <div class="lg:w-1/2">
-      <h1
-        class="text-white lg:text-[45px] md:text-[32px] text-[28px] tracking-tight"
-        data-sal="slide-up"
-        data-sal-duration="800"
-        data-sal-delay="150"
-      >
-        Nos Services et Tarifs
-      </h1>
-      <p
-        class="text-grayText mt-[20px] leading-[28px]"
-        data-sal="fade-in"
-        data-sal-duration="800"
-        data-sal-delay="200"
-      >
+    <div class="lg:w-3/4 xl:w-1/2">
+      <h1 class="default-h responsive-h1">Nos Services et Tarifs</h1>
+      <p class="default-p mt-3">
         Découvrez l’expertise de Hafo Web Solutions, portée par des développeurs
         full stack passionnés, spécialisés en Symfony. Grâce à une approche
         innovante et sur mesure, nous offrons des solutions qui combinent
@@ -31,286 +17,330 @@
     </div>
   </article>
 
-  <article class="flex flex-col w-full mt-[32px] lg:mt-[40px]">
+  <article class="mt-10 flex flex-col">
     <!-- Title -->
-    <div class="lg:w-1/2 mb-[40px]">
-      <h1
-        class="text-white font-bold lg:text-[32px] md:text-[28px] text-[24px] tracking-tight"
-        data-sal="slide-up"
-        data-sal-duration="800"
-        data-sal-delay="150"
-      >
-        Création de Site Web
-      </h1>
-      <p
-        class="text-grayText mt-[20px] leading-[28px]"
-        data-sal="fade-in"
-        data-sal-duration="800"
-        data-sal-delay="200"
-      >
-        Transformez votre vision en une présence digitale marquante avec nos
-        solutions de création de sites web, adaptées à vos besoins spécifiques.
-      </p>
+    <div class="lg:w-1/2 mb-10">
+      <h2 class="default-h responsive-h2">Développement de site web</h2>
     </div>
-
-    <!-- Dictionnary Words -->
-    <div class="w-full lg:flex justify-center lg:mb-0 hidden relative">
-      <div class="px-3 py-2 rounded-md bg-tertiary m-2 text-white absolute top-[-70px] div-hover-help hidden">
-        <p class="text-sm text-center text-grayText">Survolez les mots complexes <br> pour des détails</p>
-      </div>
-      <p class="text-white flex justify-center items-center">
-        Cliquez sur
-        <span
-          class="py-3 px-3 border rounded-3xl border-borderBase mx-2 cursor-pointer button-hover-help"
+    <!-- Prices -->
+    <div class="lg:w-full lg:items-center lg:flex lg:justify-center">
+      <div
+        class="flex flex-col justify-center items-center w-[100%] gap-10 md:flex-row md:flex-wrap 2xl:mt-0 lg:mt-0 lg:grid lg:grid-cols-2 lg:w-auto 2xl:grid-cols-4"
+      >
+        <!-- Basic -->
+        <div
+          class="default-border translate-effect bg-opacityBlue p-8 w-[320px] flex flex-col justify-between"
         >
-          <img
-            src="{{ asset('./image/services/dictionary.svg') }}"
-            alt="dictionary"
-            class="h-6 w-6"
-          />
-        </span>
-        si vous ne comprenez pas certain mots.
-      </p>
-    </div>
-
-    <!-- Tarifs -->
-    <div
-      class="flex lg:flex-row flex-col w-full lg:mt-[40px] mt-[32px] justify-center items-center gap-8"
-    >
-      <!-- Tarif 1 - Basique -->
-      <div
-        class="p-8 bg-quaternary rounded-md w-[320px] h-[594px] flex flex-col justify-between text-white"
-        data-sal="slide-up"
-        data-sal-duration="800"
-        data-sal-delay="150"
-      >
-        <div class="flex flex-col gap-2 mb-3">
-          <div class="flex items-center">
-            <span class="p-3 rounded-md bg-secondary mr-4">00</span>
-            <h3 class="font-bold text-3xl">Basique</h3>
+          <div class="flex flex-col">
+            <h3 class="default-h responsive-h3 pb-3">Basique</h3>
+            <p class="default-p mb-8">
+              Idéal pour les petites entreprises ou portfolios individuels
+            </p>
+            <div class="flex flex-col">
+              <p class="text-[54px] text-white">1200 €</p>
+              <p class="default-p italic text-sm">
+                Prix indicatif, devis gratuit.
+              </p>
+              <p class="text-white font-medium text-lg mt-8 mb-3">
+                Comprends :
+              </p>
+              <ul class="text-grayText mb-10">
+                <li class="mb-3 flex flex-col">
+                  <div class="flex">
+                    <span>
+                      <img
+                        src="{{ asset('./image/services/checked.svg') }}"
+                        alt="checked"
+                        class="h-6 w-6 mr-3"
+                      />
+                    </span>
+                    Design responsive
+                  </div>
+                </li>
+                <li class="mb-3 flex flex-col">
+                  <div class="flex">
+                    <span>
+                      <img
+                        src="{{ asset('./image/services/checked.svg') }}"
+                        alt="checked"
+                        class="h-6 w-6 mr-3"
+                      />
+                    </span>
+                    Contenu statique
+                  </div>
+                </li>
+                <li class="mb-3 flex flex-col">
+                  <div class="flex">
+                    <span>
+                      <img
+                        src="{{ asset('./image/services/checked.svg') }}"
+                        alt="checked"
+                        class="h-6 w-6 mr-3"
+                      />
+                    </span>
+                    Pages essentielles
+                  </div>
+                </li>
+                <li class="flex flex-col">
+                  <div class="flex">
+                    <span>
+                      <img
+                        src="{{ asset('./image/services/checked.svg') }}"
+                        alt="checked"
+                        class="h-6 w-6 mr-3"
+                      />
+                    </span>
+                    Optimisation SEO de base
+                  </div>
+                </li>
+              </ul>
+            </div>
           </div>
-          <div class="text-grayText flex flex-col gap-4">
-            <p class="text-[40px] text-white">
-              1 200 <span class="text-grayText">€</span>
-            </p>
-            <p class="flex">
-              <span>
-                <img
-                  src="{{ asset('./image/services/checked.svg') }}"
-                  alt="checked"
-                  class="h-6 w-6 mr-2"
-                />
-              </span>
-              Design Responsive
-            </p>
-            <p class="flex">
-              <span>
-                <img
-                  src="{{ asset('./image/services/checked.svg') }}"
-                  alt="checked"
-                  class="h-6 w-6 mr-2"
-                />
-              </span>
-              Contenu Statique
-            </p>
-            <p class="flex">
-              <span>
-                <img
-                  src="{{ asset('./image/services/checked.svg') }}"
-                  alt="checked"
-                  class="h-6 w-6 mr-2"
-                />
-              </span>
-              Page Essentielles
-            </p>
-          </div>
-        </div>
-
-        <div>
-          <p class="text-grayText text-center mt-[20px] text-sm">
-            Parfait pour les petites entreprises ou portfolios personnels
-          </p>
-          <a
-            href="#"
-            class="flex justify-center items-center w-full p-4 rounded-md bg-secondary hover:bg-tertiary text-white mt-[30px] text-bold"
-            >Nous contacter</a
+          <a href="{{ path('app_contact') }}"
+            ><button class="blue-button w-full">Devis gratuit</button></a
           >
         </div>
-      </div>
-
-      <!-- Tarif 2 - Avancé -->
-      <div
-        class="p-8 bg-quaternary rounded-md w-[320px] h-[594px] flex flex-col justify-between text-white"
-        data-sal="slide-up"
-        data-sal-duration="800"
-        data-sal-delay="200"
-      >
-        <div class="flex flex-col gap-2 mb-3">
-          <div class="flex items-center">
-            <span class="p-3 rounded-md bg-secondary mr-4">00</span>
-            <h3 class="font-bold text-3xl">Avancé</h3>
+        <!-- Default -->
+        <div
+          class="default-border translate-effect bg-opacityBlue p-8 w-[320px] flex flex-col justify-between"
+        >
+          <div class="flex flex-col">
+            <h3 class="default-h responsive-h3 pb-3">Standard</h3>
+            <p class="default-p mb-8">
+              Conçu pour les entreprises visant une croissance accrue
+            </p>
+            <div class="flex flex-col">
+              <p class="text-[54px] text-white">2500 €</p>
+              <p class="default-p italic text-sm">
+                Prix indicatif, devis gratuit.
+              </p>
+              <p class="text-white font-medium text-lg mt-8 mb-3">
+                Comprends :
+              </p>
+              <ul class="text-grayText mb-10">
+                <li class="mb-3 flex flex-col">
+                  <div class="flex">
+                    <span>
+                      <img
+                        src="{{ asset('./image/services/checked.svg') }}"
+                        alt="checked"
+                        class="h-6 w-6 mr-3"
+                      />
+                    </span>
+                    Fonctionnalités basiques
+                  </div>
+                </li>
+                <li class="mb-3 flex flex-col">
+                  <div class="flex">
+                    <span>
+                      <img
+                        src="{{ asset('./image/services/checked.svg') }}"
+                        alt="checked"
+                        class="h-6 w-6 mr-3"
+                      />
+                    </span>
+                    Contenu dynamique
+                  </div>
+                </li>
+                <li class="mb-3 flex flex-col">
+                  <div class="flex">
+                    <span>
+                      <img
+                        src="{{ asset('./image/services/checked.svg') }}"
+                        alt="checked"
+                        class="h-6 w-6 mr-3"
+                      />
+                    </span>
+                    Blog
+                  </div>
+                </li>
+                <li class="flex flex-col">
+                  <div class="flex">
+                    <span>
+                      <img
+                        src="{{ asset('./image/services/checked.svg') }}"
+                        alt="checked"
+                        class="h-6 w-6 mr-3"
+                      />
+                    </span>
+                    Intégration réseaux sociaux
+                  </div>
+                </li>
+              </ul>
+            </div>
           </div>
-          <div class="text-grayText flex flex-col gap-4">
-            <p class="text-[40px] text-white">
-              2 800 <span class="text-grayText">€</span>
-            </p>
-            <p class="flex">
-              <span>
-                <img
-                  src="{{ asset('./image/services/checked.svg') }}"
-                  alt="checked"
-                  class="h-6 w-6 mr-2"
-                />
-              </span>
-              Design Personnalisé
-            </p>
-            <p class="flex relative">
-              <span>
-                <img
-                  src="{{ asset('./image/services/checked.svg') }}"
-                  alt="checked"
-                  class="h-6 w-6 mr-2"
-                />
-              </span>
-              Fonctionnalités Avancées
-              <span class="text-xs absolute top-5 left-8"
-                >formulaires (F.I), intégration API, etc.</span
-              >
-            </p>
-            <p class="flex">
-              <span>
-                <img
-                  src="{{ asset('./image/services/checked.svg') }}"
-                  alt="checked"
-                  class="h-6 w-6 mr-2"
-                />
-              </span>
-              Blog Optionnel
-            </p>
-            <p class="flex">
-              <span>
-                <img
-                  src="{{ asset('./image/services/checked.svg') }}"
-                  alt="checked"
-                  class="h-6 w-6 mr-2"
-                />
-              </span>
-              Options Basique
-            </p>
-          </div>
-        </div>
-
-        <div>
-          <p class="text-grayText text-center mt-[20px] text-sm">
-            Adapté aux entreprises en croissance nécessitant plus de
-            fonctionnalités
-          </p>
-          <a
-            href="#"
-            class="flex justify-center items-center w-full p-4 rounded-md bg-secondary hover:bg-tertiary text-white mt-[30px] text-bold"
-            >Nous contacter</a
+          <a href="{{ path('app_contact') }}"
+            ><button class="blue-button w-full">Devis gratuit</button></a
           >
         </div>
-      </div>
 
-      <!-- Tarif 3 - Complexe -->
-      <div
-        class="p-8 bg-quaternary rounded-md w-[320px] h-[594px] flex flex-col justify-between text-white"
-        data-sal="slide-up"
-        data-sal-duration="800"
-        data-sal-delay="250"
-      >
-        <div class="flex flex-col gap-2 mb-3">
-          <div class="flex items-center">
-            <span class="p-3 rounded-md bg-secondary mr-4">00</span>
-            <h3 class="font-bold text-3xl">Complexe</h3>
+        <!-- Avanced -->
+        <div
+          class="default-border translate-effect bg-opacityBlue p-8 w-[320px] flex flex-col justify-between"
+        >
+          <div class="flex flex-col">
+            <h3 class="default-h responsive-h3 pb-3">Avancé</h3>
+            <p class="default-p mb-8">
+              Parfait pour les grandes entreprises ou boutiques en ligne
+            </p>
+
+            <div class="flex flex-col">
+              <p class="text-[54px] text-white">5000 €</p>
+              <p class="default-p italic text-sm">
+                Prix indicatif, devis gratuit.
+              </p>
+              <p class="text-white font-medium text-lg mt-8 mb-3">
+                Comprends :
+              </p>
+              <ul class="text-grayText mb-10">
+                <li class="mb-3 flex flex-col">
+                  <div class="flex">
+                    <span>
+                      <img
+                        src="{{ asset('./image/services/checked.svg') }}"
+                        alt="checked"
+                        class="h-6 w-6 mr-3"
+                      />
+                    </span>
+                    Fonctionnalités standards
+                  </div>
+                </li>
+                <li class="mb-3 flex flex-col">
+                  <div class="flex">
+                    <span>
+                      <img
+                        src="{{ asset('./image/services/checked.svg') }}"
+                        alt="checked"
+                        class="h-6 w-6 mr-3"
+                      />
+                    </span>
+                    Design sur mesure
+                  </div>
+                </li>
+                <li class="mb-3 flex flex-col">
+                  <div class="flex">
+                    <span>
+                      <img
+                        src="{{ asset('./image/services/checked.svg') }}"
+                        alt="checked"
+                        class="h-6 w-6 mr-3"
+                      />
+                    </span>
+                    Pages e-commerce
+                  </div>
+                </li>
+                <li class="flex flex-col">
+                  <div class="flex">
+                    <span>
+                      <img
+                        src="{{ asset('./image/services/checked.svg') }}"
+                        alt="checked"
+                        class="h-6 w-6 mr-3"
+                      />
+                    </span>
+                    Intégration CRM et newsletter
+                  </div>
+                </li>
+              </ul>
+            </div>
           </div>
-          <div class="text-grayText flex flex-col gap-4">
-            <p class="text-[40px] text-white">
-              4 800 <span class="text-grayText">€</span>
-            </p>
-            <p class="flex">
-              <span>
-                <img
-                  src="{{ asset('./image/services/checked.svg') }}"
-                  alt="checked"
-                  class="h-6 w-6 mr-2"
-                />
-              </span>
-              Optimisation de Performance
-            </p>
-            <p class="flex">
-              <span>
-                <img
-                  src="{{ asset('./image/services/checked.svg') }}"
-                  alt="checked"
-                  class="h-6 w-6 mr-2"
-                />
-              </span>
-              E-commerce Optionnel
-            </p>
-            <p class="flex">
-              <span>
-                <img
-                  src="{{ asset('./image/services/checked.svg') }}"
-                  alt="checked"
-                  class="h-6 w-6 mr-2"
-                />
-              </span>
-              Design Avancé
-            </p>
-            <p class="flex">
-              <span>
-                <img
-                  src="{{ asset('./image/services/checked.svg') }}"
-                  alt="checked"
-                  class="h-6 w-6 mr-2"
-                />
-              </span>
-              Sécurité Renforcée
-            </p>
-            <p class="flex">
-              <span>
-                <img
-                  src="{{ asset('./image/services/checked.svg') }}"
-                  alt="checked"
-                  class="h-6 w-6 mr-2"
-                />
-              </span>
-              Options Basique et Avancé
-            </p>
-          </div>
+          <a href="{{ path('app_contact') }}"
+            ><button class="blue-button w-full">Devis gratuit</button></a
+          >
         </div>
 
-        <div>
-          <p class="text-grayText text-center mt-[20px] text-sm">
-            Idéal pour les grandes entreprises ou projets nécessitant une
-            personnalisation poussée
-          </p>
-          <a
-            href="#"
-            class="flex justify-center items-center w-full p-4 rounded-md bg-secondary hover:bg-tertiary text-white mt-[30px] text-bold"
-            >Nous contacter</a
+        <!-- Custom -->
+        <div
+          class="default-border translate-effect bg-opacityBlue p-8 w-[320px] flex flex-col justify-between"
+        >
+          <div class="flex flex-col">
+            <h3 class="default-h responsive-h3 pb-3">Personnalisé</h3>
+            <p class="default-p mb-8">
+              Adapté aux projets nécessitant des solutions sur mesure
+            </p>
+
+            <div class="flex flex-col">
+              <p class="text-[54px] text-white">Sur devis</p>
+              <p class="default-p italic text-sm">
+                Tarification sur mesure, devis gratuit.
+              </p>
+              <p class="text-white font-medium text-lg mt-8 mb-3">
+                Comprends :
+              </p>
+              <ul class="text-grayText mb-10">
+                <li class="mb-3 flex flex-col">
+                  <div class="flex">
+                    <span>
+                      <img
+                        src="{{ asset('./image/services/checked.svg') }}"
+                        alt="checked"
+                        class="h-6 w-6 mr-3"
+                      />
+                    </span>
+                    Analyse personnalisée
+                  </div>
+                </li>
+                <li class="mb-3 flex flex-col">
+                  <div class="flex">
+                    <span>
+                      <img
+                        src="{{ asset('./image/services/checked.svg') }}"
+                        alt="checked"
+                        class="h-6 w-6 mr-3"
+                      />
+                    </span>
+                    Fonctionnalités spécifiques
+                  </div>
+                </li>
+                <li class="mb-3 flex flex-col">
+                  <div class="flex">
+                    <span>
+                      <img
+                        src="{{ asset('./image/services/checked.svg') }}"
+                        alt="checked"
+                        class="h-6 w-6 mr-3"
+                      />
+                    </span>
+                    Intégrations complexes
+                  </div>
+                </li>
+                <li class="flex flex-col">
+                  <div class="flex">
+                    <span>
+                      <img
+                        src="{{ asset('./image/services/checked.svg') }}"
+                        alt="checked"
+                        class="h-6 w-6 mr-3"
+                      />
+                    </span>
+                    Suivi et support dédiés
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <a href="{{ path('app_contact') }}"
+            ><button class="blue-button w-full">Devis gratuit</button></a
           >
         </div>
       </div>
     </div>
   </article>
 
-  <article class="w-full mt-[100px] flex flex-col lg:flex-row">
+  <article class="w-full default-mt flex flex-col lg:flex-row">
     <div class="lg:w-1/2">
       <!-- Development Specifique -->
-      <div class="mb-[40px]">
-        <h1
-          class="text-white font-bold lg:text-[32px] md:text-[28px] text-[24px] tracking-tight"
+      <div class="mb-10">
+        <h3
+          class="default-h responsive-h3"
           data-sal="slide-up"
           data-sal-duration="800"
           data-sal-delay="150"
         >
-          Développement Spécifique
-        </h1>
+          Développement spécifique
+        </h3>
         <p
-          class="text-grayText mt-[20px] leading-[28px]"
+          class="default-p mt-5"
           data-sal="fade-in"
           data-sal-duration="800"
           data-sal-delay="200"
@@ -320,27 +350,42 @@
           transparence.
         </p>
         <p
-          class="text-secondary mt-[20px] font-bold leading-[28px]"
+          class="text-secondary mt-5 font-bold"
           data-sal="fade-in"
           data-sal-duration="800"
-          data-sal-delay="200"
+          data-sal-delay="250"
         >
-          Tarif horaire : <span class="text-grayText font-normal">45 €</span>
+          Tarif horaire :
+          <span
+            class="font-normal"
+            data-sal="slide-up"
+            data-sal-duration="800"
+            data-sal-delay="300"
+            >30 - 45 €</span
+          >
+        </p>
+        <p
+          class="default-p italic text-sm"
+          data-sal="slide-up"
+          data-sal-duration="800"
+          data-sal-delay="350"
+        >
+          Tarif indicatif, devis gratuit.
         </p>
       </div>
 
       <!-- Tarif Journalier Équipe -->
-      <div class="mb-[40px]">
-        <h1
-          class="text-white font-bold lg:text-[32px] md:text-[28px] text-[24px] tracking-tight"
+      <div class="mb-10">
+        <h3
+          class="default-h responsive-h3"
           data-sal="slide-up"
           data-sal-duration="800"
           data-sal-delay="150"
         >
-          Tarif Journalier Équipe
-        </h1>
+          Tarif journalier équipe
+        </h3>
         <p
-          class="text-grayText mt-[20px] leading-[28px]"
+          class="default-p mt-5"
           data-sal="fade-in"
           data-sal-duration="800"
           data-sal-delay="200"
@@ -349,118 +394,138 @@
           journalier garantit une mobilisation complète de notre équipe.
         </p>
         <p
-          class="text-secondary mt-[20px] font-bold leading-[28px]"
+          class="text-secondary mt-5 font-bold"
           data-sal="fade-in"
           data-sal-duration="800"
-          data-sal-delay="200"
+          data-sal-delay="250"
         >
-          Tarif horaire : <span class="text-grayText font-normal">560 €</span>
+          Tarif journalier :
+          <span
+            class="font-normal"
+            data-sal="slide-up"
+            data-sal-duration="800"
+            data-sal-delay="300"
+            >560 - 720 €</span
+          >
+        </p>
+        <p
+          class="default-p italic text-sm"
+          data-sal="slide-up"
+          data-sal-duration="800"
+          data-sal-delay="350"
+        >
+          Tarif indicatif, devis gratuit.
         </p>
       </div>
 
       <!-- Consultations et Devis Personnalisés -->
-      <div class="mb-[40px]">
-        <h1
-          class="text-white font-bold lg:text-[32px] md:text-[28px] text-[24px] tracking-tight"
+      <div>
+        <h3
+          class="default-h responsive-h3"
           data-sal="slide-up"
           data-sal-duration="800"
           data-sal-delay="150"
         >
-          Consultations et Devis Personnalisés
-        </h1>
+          Consultations et devis personnalisés
+        </h3>
         <p
-          class="text-grayText mt-[20px] leading-[28px]"
+          class="default-p mt-5"
           data-sal="fade-in"
           data-sal-duration="800"
           data-sal-delay="200"
         >
           Chaque projet est unique et mérite notre attention détaillée.
           Bénéficiez d’une
-          <span class="text-secondary">consultation gratuite</span> pour définir
-          ensemble la stratégie pour votre projet.
+          <span class="text-secondary">consultation gratuite</span>
+          pour définir ensemble la stratégie pour votre projet.
         </p>
       </div>
     </div>
 
     <!-- Block Refonte, Maintenance, Référencement -->
-    <div class="lg:w-1/2 flex flex-col items-center sibling-fade">
+    <div
+      class="default-mt lg:w-1/2 flex flex-col justify-between items-center gap-10 lg:items-end lg:mt-0"
+    >
       <!-- Refonte -->
       <a
-        href="{{ path('app_expertise_redesign') }}"
-        class="bg-quaternary rounded-lg p-6 cursor-pointer w-[290px] h-[150px] m-6 block"
+        href="{{ path('app_contact') }}"
+        class="blur-intensify bg-whiteTransparency rounded-[6px] px-[30px] py-[25px] w-[300px] border border-borderBase translate-effect"
+        data-sal="slide-up"
+        data-sal-duration="800"
+        data-sal-delay="150"
       >
         <div class="flex justify-between relative">
           <img
             style="transition-property: transform, left, bottom"
             alt="icon refonte"
             src="{{ asset('./image/expertise/refonte.svg') }}"
-            class="absolute w-[80px] left-[200px] bottom-[0px]"
+            class="absolute h-[60px] left-[196px] bottom-[-24px]"
           />
         </div>
-        <h3 class="text-white font-bold text-xl mt-1">Refonte</h3>
-        <p class="text-grayText mt-2 mb-3 text-base">
-          Avancé ou Complexe : 3 800 €
-        </p>
-        <p class="text-grayText mt-2 mb-3 text-base">Basique : 1 000 €</p>
+        <h3 class="default-h responsive-h5">Refonte</h3>
+        <p class="default-p mt-5">Avancé : 3800 €</p>
+        <p class="default-p">Basique : 1000 €</p>
+        <p class="default-p italic text-sm">Tarifs indicatif, devis gratuit.</p>
       </a>
 
       <!-- Maintenance -->
       <a
-        href="{{ path('app_expertise_redesign') }}"
-        class="bg-quaternary rounded-lg p-6 cursor-pointer w-[290px] h-[150px] m-6 block"
+        href="{{ path('app_contact') }}"
+        class="blur-intensify bg-whiteTransparency rounded-[6px] px-[30px] py-[25px] w-[300px] border border-borderBase translate-effect"
+        data-sal="slide-up"
+        data-sal-duration="800"
+        data-sal-delay="200"
       >
         <div class="flex justify-between relative">
           <img
             style="transition-property: transform, left, bottom"
-            alt="icon refonte"
-            src="{{ asset('./image/expertise/refonte.svg') }}"
-            class="absolute w-[80px] left-[200px] bottom-[0px]"
+            alt="icon maintenance"
+            src="{{ asset('./image/expertise/maintenance.svg') }}"
+            class="absolute h-[60px] left-[196px] bottom-[-24px]"
           />
         </div>
-        <h3 class="text-white font-bold text-xl mt-1">Maintenance</h3>
-        <p class="text-grayText mt-2 mb-3 text-base">
-            Basique :  80 €/mois
-        </p>
-        <p class="text-grayText mt-2 mb-3 text-base">Complet : 250 €/mois</p>
+        <h3 class="default-h responsive-h5">Maintenance</h3>
+        <p class="default-p mt-5">Basique : 80 €/mois</p>
+        <p class="default-p">Complet : 250 €/mois</p>
+        <p class="default-p italic text-sm">Tarifs indicatif, devis gratuit.</p>
       </a>
 
       <!-- Référencement -->
       <a
-        href="{{ path('app_expertise_redesign') }}"
-        class="bg-quaternary rounded-lg p-6 cursor-pointer w-[290px] h-[170px] m-6 block"
+        href="{{ path('app_contact') }}"
+        class="blur-intensify bg-whiteTransparency rounded-[6px] px-[30px] py-[25px] w-[300px] border border-borderBase translate-effect"
+        data-sal="slide-up"
+        data-sal-duration="800"
+        data-sal-delay="250"
       >
         <div class="flex justify-between relative">
           <img
             style="transition-property: transform, left, bottom"
-            alt="icon refonte"
-            src="{{ asset('./image/expertise/refonte.svg') }}"
-            class="absolute w-[80px] left-[200px] bottom-[0px]"
+            alt="icon référencement"
+            src="{{ asset('./image/expertise/referencement.svg') }}"
+            class="absolute h-[60px] left-[196px] bottom-[-24px]"
           />
         </div>
-        <h3 class="text-white font-bold text-xl mt-1">Référencement</h3>
-        <p class="text-grayText mt-2 mb-3 text-base">
-          Audit SEO Technique :  450 €
-        </p>
-        <p class="text-grayText mt-2 mb-3 text-base">Optimisation SEO Continue : 250 €/mois</p>
+        <h3 class="default-h responsive-h5">SEO</h3>
+        <p class="default-p mt-5">Initial : 450 €</p>
+        <p class="default-p">Continue : 250 €/mois</p>
+        <p class="default-p italic text-sm">Tarifs indicatif, devis gratuit.</p>
       </a>
     </div>
   </article>
 </section>
 
-
-<script>
-
- const help = document.querySelector('.div-hover-help');
- const button = document.querySelector('.button-hover-help');
-
- button.addEventListener('mouseover', () => {
-   help.classList.remove('hidden');
- });
-
- button.addEventListener('mouseout', () => {
-   help.classList.add('hidden');
- });
-
-</script>
-
-{% endblock %}
+<!-- Component CTA -->
+<!-- Title -->
+{% set title = "Améliorez votre présence en ligne" %}
+<!-- Content -->
+{% set content %} Optimisez votre visibilité et performance avec notre équipe
+spécialisée en développement web, maintenance, refonte et référencement vous
+garantissant des résultats optimaux. Découvrez comment atteindre vos objectifs
+en profitant de notre consultation gratuite.
+<span class="text-secondary">Nous reviendrons vers vous sous 24h.</span>
+{% endset %}
+<!-- Button -->
+{% set button = "Obtenez votre consultation gratuite maintenant" %}
+<!-- CTA -->
+{% include "./components/cta.html.twig" %} {% endblock %}
