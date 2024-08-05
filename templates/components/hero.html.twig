@@ -1,47 +1,25 @@
 {% block hero %}
-<section class="hero-section height-nav flex justify-center items-center w-full">
-  {#
-  <div class="container h-[400px] overflow-hidden absolute">
-    <img
-      src="{{ asset('./image/hero/pattern.svg') }}"
-      class="w-full object-cover opacity-5"
-      alt="pattern hero"
-    />
-  </div>
-  #}
-  <div class="hero-glow"></div>
-  <article class="md:w-4/6 flex flex-col justify-center items-center mb-[100px] z-20 sm:container default-container">
-    <p
-      class="text-secondary uppercase font-medium tracking-[1px] mb-[10px]"
-    >
-      AGENCE HAFO WEB SOLUTIONS
-    </p>
-    <h1
-      class="text-white text-[34px] md:text-[38px] lg:text-[50px] font-bold text-center mb-[20px] leading-[1.19]"
-    >
-      Transformez Votre Vision en Succès Numérique
+<section
+  class="height-nav sm:container default-container flex justify-center items-center"
+>
+  <article
+    class="md:w-4/6 flex flex-col justify-center items-center mb-[100px]"
+  >
+    <p class="default-bp mb-3">AGENCE HAFO WEB SOLUTIONS</p>
+    <h1 class="default-h responsive-h1 text-center mb-5">
+      Transformez Votre Vision en Réalité Numérique
     </h1>
-    <p
-      class="text-grayText text-center leading-[28px] mb-[30px]"
-    >
-      Découvrez un monde de possibilités avec des solutions web sur mesure qui
-      captent l'essence de vos idées et transforment votre vision en réalité
-      digitale.
+    <p class="default-p text-center mb-8">
+      Explorez nos solutions web personnalisées, conçues pour concrétiser vos
+      idées et faire de votre vision une réalité numérique.
     </p>
-    <a
-      href="{{ path('app_services_and_prices') }}"
-    >
-      <button
-        class="blue-button"
-      >
-        Découvrez nos services
-      </button>
+    <a href="{{ path('app_services_and_prices') }}">
+      <button class="blue-button">Explorez nos services</button>
     </a>
 
     <!-- item icon with tooltip -->
-    <div
-      class="hidden flex-col md:flex-row gap-3"
-    >
+    {#
+    <div class="hidden flex-col md:flex-row gap-3">
       <div class="flex gap-[15px]">
         <a class="relative group cursor-pointer">
           <div class="relative mb-2">
@@ -214,6 +192,7 @@
         </div>
       </div>
     </div>
+    #}
   </article>
 </section>
 {% endblock hero %}

@@ -1,6 +1,6 @@
 {% block journey %}
 <section
-  class="w-full sm:container default-container mt-[80px] lg:mt-[100px] xl:flex xl:flex-col xl:justify-center xl:items-center"
+  class="default-mt w-full sm:container default-container xl:flex xl:flex-col xl:justify-center xl:items-center"
 >
   <!-- title section -->
   <div
@@ -10,12 +10,12 @@
     data-sal-delay="150"
   >
     <h2
-      class="text-[34px] md:text-[38px] xl:text-[50px] font-bold tracking-tight mb-[10px] text-white leading-[1.19]"
+      class="default-h responsive-h2 mb-3"
     >
       {{ title }}
     </h2>
     <!-- text section -->
-    <p class="text-grayText mb-[75px]">
+    <p class="default-p mb-[75px]">
       {{ subtitle }}
     </p>
   </div>
@@ -28,13 +28,13 @@
       <!-- Step 01 - Definir objectif -->
       <a
         href="{{ path('app_define_your_goals') }}"
-        class="blur-intensify bg-whiteTransparency rounded-[6px] px-[30px] py-[25px] w-[300px] border border-borderBase translate-effect"
+        class="default-border blur-intensify bg-whiteTransparency px-8 py-6 w-[300px] translate-effect"
         data-sal="slide-up"
         data-sal-duration="800"
         data-sal-delay="150"
       >
         <div class="flex justify-between relative">
-          <p class="text-grayText font-semibold opacity-[0.1]">ÉTAPE-01</p>
+          <p class="text-grayText font-semibold opacity-[0.3]">ÉTAPE-01</p>
           <img
             style="transition-property: transform, left, bottom"
             alt="icon refonte"
@@ -42,10 +42,10 @@
             class="absolute h-[80px] left-[204px] bottom-[-15px]"
           />
         </div>
-        <h3 class="text-white font-bold text-[25px] mt-[30px]">
+        <h3 class="default-h text-[24px] mt-8">
           Définir vos objectifs
         </h3>
-        <p class="text-grayText mt-[10px] text-base leading-[28px]">
+        <p class="default-p mt-3">
           Définissez précisément vos objectifs pour orienter et assurer le
           succès de votre projet.
         </p>
@@ -53,14 +53,14 @@
 
       <!-- Step 02 - Contactez-nous -->
       <a
-        href="{{ path('app_define_your_goals') }}"
-        class="blur-intensify bg-whiteTransparency rounded-[6px] px-[30px] py-[25px] w-[300px] border border-borderBase translate-effect"
+        href="{{ path('app_contact') }}"
+        class="default-border blur-intensify bg-whiteTransparency px-8 py-6 w-[300px] translate-effect"
         data-sal="slide-up"
         data-sal-duration="800"
         data-sal-delay="200"
       >
         <div class="flex justify-between relative">
-          <p class="text-grayText font-semibold opacity-[0.1]">ÉTAPE-02</p>
+          <p class="text-grayText font-semibold opacity-[0.3]">ÉTAPE-02</p>
           <img
             style="transition-property: transform, left, bottom"
             alt="icon refonte"
@@ -68,10 +68,10 @@
             class="absolute h-[80px] left-[204px] bottom-[-2px]"
           />
         </div>
-        <h3 class="text-white font-bold text-[25px] mt-[30px]">
+        <h3 class="default-h text-[24px] mt-8">
           Contactez-nous
         </h3>
-        <p class="text-grayText mt-[10px] text-base leading-[28px]">
+        <p class="default-p mt-3">
           Prenez l’initiative de nous joindre pour discuter en détail de vos
           idées et besoins spécifiques.
         </p>
@@ -79,14 +79,14 @@
 
       <!-- Step 03 - Planifions ensemble -->
       <a
-        href="{{ path('app_define_your_goals') }}"
-        class="blur-intensify bg-whiteTransparency rounded-[6px] px-[30px] py-[25px] w-[300px] border border-borderBase translate-effect"
+        href="{{ path('app_lets_plan_together') }}"
+        class="default-border blur-intensify bg-whiteTransparency px-8 py-6 w-[300px] translate-effect"
         data-sal="slide-up"
         data-sal-duration="800"
         data-sal-delay="250"
       >
         <div class="flex justify-between relative">
-          <p class="text-grayText font-semibold opacity-[0.1]">ÉTAPE-03</p>
+          <p class="text-grayText font-semibold opacity-[0.3]">ÉTAPE-03</p>
           <img
             style="transition-property: transform, left, bottom"
             alt="icon refonte"
@@ -94,10 +94,10 @@
             class="absolute h-[80px] left-[204px] bottom-[-15px]"
           />
         </div>
-        <h3 class="text-white font-bold text-[25px] mt-[30px]">
+        <h3 class="default-h text-[24px] mt-8">
           Planifions ensemble
         </h3>
-        <p class="text-grayText mt-[10px] text-base leading-[28px]">
+        <p class="default-p mt-3">
           Nous établirons un plan précis qui détaille chaque étape pour
           atteindre vos objectifs.
         </p>
@@ -105,14 +105,14 @@
 
       <!-- Step 04 - Lancement du projet -->
       <a
-        href="{{ path('app_define_your_goals') }}"
-        class="blur-intensify bg-whiteTransparency rounded-[6px] px-[30px] py-[25px] w-[300px] border border-borderBase translate-effect"
+        href="{{ path('app_project_launch') }}"
+        class="default-border blur-intensify bg-whiteTransparency px-8 py-6 w-[300px] translate-effect"
         data-sal="slide-up"
         data-sal-duration="800"
         data-sal-delay="300"
       >
         <div class="flex justify-between relative">
-          <p class="text-grayText font-semibold opacity-[0.1]">ÉTAPE-04</p>
+          <p class="text-grayText font-semibold opacity-[0.3]">ÉTAPE-04</p>
           <img
             style="transition-property: transform, left, bottom"
             alt="icon refonte"
@@ -120,10 +120,10 @@
             class="absolute h-[80px] left-[204px] bottom-[-15px]"
           />
         </div>
-        <h3 class="text-white font-bold text-[25px] mt-[30px]">
+        <h3 class="default-h text-[24px] mt-8">
           Lancement du projet
         </h3>
-        <p class="text-grayText mt-[10px] text-base leading-[28px]">
+        <p class="default-p mt-3">
           Une fois le plan approuvé, nous commençons la mise en œuvre pour
           réaliser vos ambitions.
         </p>

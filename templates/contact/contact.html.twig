@@ -1,4 +1,4 @@
-{% extends 'base.html.twig' %} {% block title %} Nous contacter {% endblock %}
+{% extends 'base.html.twig' %} {% block title %} Contact - Hafo Web Solutions {% endblock %}
 {% block javascripts %}
 {{ parent() }}
 {{ encore_entry_script_tags("contact") }}
@@ -12,24 +12,20 @@
   <!-- Contact information -->
   <div class="lg:w-1/2">
     <div>
-      <h1
-        class="text-white text-[28px] md:text-[32px] lg:md:text-[36px] font-bold mb-6"
-      >
-        Nous contacter
-      </h1>
-      <p class="text-grayText">
+      <h1 class="default-h responsive-h1 mb-6">Nous contacter</h1>
+      <p class="default-p">
         En quête d'une agence web fiable pour votre projet ? Prenez contact avec
         nous et explorez nos solutions sur-mesure.
       </p>
     </div>
     <div class="border-t border-borderBase w-[100px] my-10"></div>
     <div class="mb-10">
-      <h2 class="text-base text-grayText">Hafo Web Solutions</h2>
+      <p class="default-p">Hafo Web Solutions</p>
       <ul>
         <li class="my-2.5">
           <!-- Phone number link -->
           <a
-            class="border-expand relative text-base text-grayText hover:text-secondary duration-300 ease-in-out"
+            class="border-expand relative default-p hover:text-secondary duration-300 ease-in-out"
             href="tel:06 18 86 59 97"
             >06 18 86 59 97</a
           >
@@ -37,7 +33,7 @@
         <li>
           <!-- Email link -->
           <a
-            class="border-expand relative text-base text-grayText hover:text-secondary duration-300 ease-in-out"
+            class="border-expand relative default-p hover:text-secondary duration-300 ease-in-out"
             href="mailto:contact@hafowebsolutions.fr"
             >contact@hafowebsolutions.fr</a
           >
@@ -194,7 +190,7 @@
           form_widget(form_contact.attachment, {
             attr: {
               class:
-                "form-contact-input w-full rounded-[4px] border border-borderBase pt-[15px] bg-opacityBlue h-[50px] px-4 text-sm font-light file-upload-input"
+                "cursor-pointer form-contact-input w-full rounded-[4px] border border-borderBase pt-[15px] bg-opacityBlue h-[50px] px-4 text-sm font-light file-upload-input"
             }
           })
         }}
@@ -238,7 +234,7 @@
         form_widget(form_contact.subject, {
           attr: {
             class:
-              "form-contact-input select-input w-full rounded-[4px] border border-borderBase bg-opacityBlue h-[50px] px-4 text-white text-sm font-light focus:outline-none focus:ring focus:ring-secondary focus:ring-[1px]"
+              "cursor-pointer form-contact-input select-input w-full rounded-[4px] border border-borderBase bg-opacityBlue h-[50px] px-4 text-white text-sm font-light focus:outline-none focus:ring focus:ring-secondary focus:ring-[1px]"
           }
         })
       }}
@@ -282,7 +278,7 @@
       <div class="flex items-center">
         {{
           form_widget(form_contact.consent, {
-            attr: { class: "form-contact-input" }
+            attr: { class: "cursor-pointer form-contact-input" }
           })
         }}
       </div>
@@ -292,8 +288,8 @@
       >
         J'accepte les
         <a href="" class="text-secondary">Mentions Légales</a> et les
-        <a href="" class="text-secondary">Conditions Générales de Vente</a
-        >. <span class="text-secondary">*</span>
+        <a href="" class="text-secondary">Conditions Générales de Vente</a>.
+        <span class="text-secondary">*</span>
       </label>
     </div>
     <span

@@ -14,7 +14,7 @@
             alt="Hafo Web Solutions"
         /></a>
         <p class="text-lg text-grayText mt-3 leading-[28px]">
-          Innovation et expertise unies pour réaliser votre vision du digitale.
+          Innovation et expertise pour des solutions web sur mesure.
         </p>
         <h6
           class="text-base border-t border-borderBase pt-10 mt-10 text-grayText"
@@ -45,15 +45,23 @@
         <ul class="mt-6 space-y-2.5">
           <li>
             <a
-              href="{{ path('app_expertise_site_creation') }}" 
+              href="{{ path('app_expertise') }}"
               class="border-expand text-base relative text-grayText hover:text-secondary duration-300 ease-in-out"
             >
-              Création de Site
+              Expertises
             </a>
           </li>
           <li>
             <a
-            href="{{ path('app_expertise_redesign') }}" 
+              href="{{ path('app_expertise_site_creation') }}"
+              class="border-expand text-base relative text-grayText hover:text-secondary duration-300 ease-in-out"
+            >
+              Création de site
+            </a>
+          </li>
+          <li>
+            <a
+              href="{{ path('app_expertise_redesign') }}"
               class="border-expand text-base relative text-grayText hover:text-secondary duration-300 ease-in-out"
             >
               Refonte
@@ -61,7 +69,7 @@
           </li>
           <li>
             <a
-            href="{{ path('app_expertise_maintenance') }}"
+              href="{{ path('app_expertise_maintenance') }}"
               class="border-expand text-base relative text-grayText hover:text-secondary duration-300 ease-in-out"
             >
               Maintenance
@@ -69,7 +77,7 @@
           </li>
           <li>
             <a
-              href="{{ path('app_expertise_seo') }}" 
+              href="{{ path('app_expertise_seo') }}"
               class="border-expand text-base relative text-grayText hover:text-secondary duration-300 ease-in-out"
             >
               Référencement
@@ -84,12 +92,22 @@
         <ul class="mt-6 space-y-2.5">
           <li>
             <a
+              href="{{ path('app_services_and_prices') }}"
+              class="border-expand text-base relative text-grayText hover:text-secondary duration-300 ease-in-out"
+            >
+              Services
+            </a>
+          </li>
+          {#
+          <li>
+            <a
               href="{{ path('app_achievements') }}"
               class="border-expand text-base relative text-grayText hover:text-secondary duration-300 ease-in-out"
             >
               Réalisations
             </a>
           </li>
+          #}
           <li>
             <a
               href="{{ path('app_agency') }}"
@@ -100,7 +118,7 @@
           </li>
           <li>
             <a
-              href="placeholder"
+              href="{{ path('app_blog') }}"
               class="border-expand text-base relative text-grayText hover:text-secondary duration-300 ease-in-out"
             >
               Blog
@@ -108,7 +126,7 @@
           </li>
           <li>
             <a
-              href="placeholder"
+              href="{{ path('app_contact') }}"
               class="border-expand text-base relative text-grayText hover:text-secondary duration-300 ease-in-out"
             >
               Contact
@@ -116,12 +134,38 @@
           </li>
           <li>
             <a
-              href="{{ path('app_support_center') }}" 
+              href="{{ path('app_support_center') }}"
               class="border-expand text-base relative text-grayText hover:text-secondary duration-300 ease-in-out"
             >
               Support / FAQ
             </a>
           </li>
+          {#
+          <li>
+            <a
+              href="{{ path('app_define_your_goals') }}"
+              class="border-expand text-base relative text-grayText hover:text-secondary duration-300 ease-in-out"
+            >
+              Définir vos objectifs
+            </a>
+          </li>
+          <li>
+            <a
+              href="{{ path('app_lets_plan_together') }}"
+              class="border-expand text-base relative text-grayText hover:text-secondary duration-300 ease-in-out"
+            >
+              Planifier ensemble
+            </a>
+          </li>
+          <li>
+            <a
+              href="{{ path('app_project_launch') }}"
+              class="border-expand text-base relative text-grayText hover:text-secondary duration-300 ease-in-out"
+            >
+              Lancement du projet
+            </a>
+          </li>
+          #}
         </ul>
       </div>
 
@@ -198,7 +242,7 @@
       <ul class="flex gap-x-2.5">
         <li>
           <a
-            href="placeholder"
+            href="#"
             class="dark rounded-full h-10 w-10 flex items-center justify-center bg-darkBlue hover:bg-secondary duration-300 ease-in-out stroke-grayText hover:stroke-white"
           >
             <svg
@@ -229,7 +273,7 @@
         </li>
         <li>
           <a
-            href="placeholder"
+            href="https://github.com/Hafo-Web-Solutions"
             class="dark rounded-full h-10 w-10 flex items-center justify-center bg-darkBlue hover:bg-secondary duration-300 ease-in-out stroke-grayText hover:stroke-white"
           >
             <svg
@@ -254,7 +298,7 @@
         </li>
         <li>
           <a
-            href="placeholder"
+            href="mailto:contact@hafowebsolutions.fr"
             class="dark rounded-full h-10 w-10 flex items-center justify-center bg-darkBlue hover:bg-secondary duration-300 ease-in-out stroke-grayText hover:stroke-white"
           >
             <svg

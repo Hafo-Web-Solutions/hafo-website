@@ -72,6 +72,14 @@ body {
   border-style: solid;
   border-color: transparent transparent #212e48 transparent;
 }
+.hide-on-touch {
+  display: none;
+}
+@media (hover: hover) {
+  .hide-on-touch {
+    display: block;
+  }
+}
 
 /* Feather arrow right */
 .feather {
@@ -677,13 +685,13 @@ textarea {
 }
 
 .project-tag::first-letter {
-  text-transform: uppercase
+  text-transform: uppercase;
 }
 
 /* BLOG */
 
 .post-tag::first-letter {
-  text-transform: uppercase
+  text-transform: uppercase;
 }
 
 /* HERO */

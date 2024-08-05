@@ -1,7 +1,372 @@
-{% extends 'base.html.twig' %}
-{% block title %}
-  Expertise
-{% endblock %}
-{% block body %}
+{% extends 'base.html.twig' %} {% block title %} Développement Web, Refonte,
+Maintenance et Référencement {% endblock %} {% block body %}
+
+<!-- Expertise -->
+<section class="default-mt flex flex-col w-full">
+  <!-- Header -->
+  <article
+    class="default-container default-mb sm:container flex justify-center flex-col w-full gap-10 lg:flex-row"
+  >
+    <div class="text-center lg:w-3/4">
+      <h1
+        class="default-h responsive-h1"
+        data-sal="slide-up"
+        data-sal-duration="800"
+        data-sal-delay="150"
+      >
+        Nos expertises
+      </h1>
+      <p
+        class="default-bp mt-3"
+        data-sal="slide-up"
+        data-sal-duration="800"
+        data-sal-delay="200"
+      >
+        Solutions sur mesure pour chaque besoin
+      </p>
+      <p
+        class="default-p mt-5"
+        data-sal="slide-up"
+        data-sal-duration="800"
+        data-sal-delay="250"
+      >
+        Chez Hafo Web Solutions, nous comprenons l'importance de maintenir vôtre
+        site web performant et sécurisé. Notre service de maintenance garantit
+        que votre site reste à jour, sécurisé et fonctionnel, vous permettant de
+        vous concentrer sur votre activité principale.
+      </p>
+    </div>
+  </article>
+
+  <!-- Component Expertise -->
+  <!-- Title -->
+  {% set expertise_title = "Nos compétences en développement" %}
+  <!-- Content -->
+  {% set expertise_content %} Nous sommes spécialisés dans la création de
+  solutions web sur mesure. Que vous ayez besoin d’un site e-commerce
+  performant, d’une vitrine attrayante ou d’une refonte de votre site actuel,
+  nous mettons à profit notre expertise. {% endset %}
+  <!-- Expertise -->
   {% include "./components/expertise.html.twig" %}
-{% endblock %}
+
+  <!-- Development Stack -->
+  <article class="default-mt default-container sm:container">
+    <h2
+      class="default-h responsive-h2 mb-16"
+      data-sal="slide-up"
+      data-sal-duration="800"
+      data-sal-delay="150"
+    >
+      Stack de développement
+    </h2>
+    <div class="flex flex-col text-center gap-10 lg:flex-row">
+      <div
+        class="flex flex-col justify-center items-center h-full pb-6 lg:py-0"
+        data-sal="slide-up"
+        data-sal-duration="800"
+        data-sal-delay="200"
+      >
+        <img
+          src="{{ asset('./image/expertise/docker.svg') }}"
+          class="h-16 w-16"
+          alt="Symfony"
+        />
+        <h4 class="default-h responsive-h4 mt-4">Déploiement isolé</h4>
+        <p class="default-p mt-3 sm:w-3/4 lg:w-full">
+          Avec Docker, nous assurons des déploiements rapides et fiables, en
+          créant des environnements de développement isolés et reproductibles.
+        </p>
+      </div>
+      <div
+        class="flex flex-col justify-center items-center h-full py-6 lg:py-0 lg:px-8"
+        data-sal="slide-up"
+        data-sal-duration="800"
+        data-sal-delay="250"
+      >
+        <img
+          src="{{ asset('./image/expertise/postgresql.svg') }}"
+          class="h-16 w-16"
+          alt="Symfony"
+        />
+        <h4 class="default-h responsive-h4 mt-4">Base de données</h4>
+        <p class="default-p mt-3 sm:w-3/4 lg:w-full">
+          Nous optons pour PostgreSQL pour garantir des performances élevées et
+          une gestion efficace des données de votre site web ou application.
+        </p>
+      </div>
+      <div
+        class="flex flex-col justify-center items-center h-full pt-6 lg:py-0"
+        data-sal="slide-up"
+        data-sal-duration="800"
+        data-sal-delay="300"
+      >
+        <img
+          src="{{ asset('./image/expertise/symfony.svg') }}"
+          class="h-16 w-16"
+          alt="Symfony"
+        />
+        <h4 class="default-h responsive-h4 mt-4">Développement web</h4>
+        <p class="default-p mt-3 sm:w-3/4 lg:w-full">
+          Nous utilisons Symfony pour créer des applications web robustes et
+          évolutives, adaptées aux besoins spécifiques de votre entreprise.
+        </p>
+      </div>
+    </div>
+  </article>
+
+  <!-- Services -->
+  <article
+    class="default-container sm:container default-mt flex flex-col w-full lg:gap-8 lg:mt-[100px]"
+  >
+    <div class="flex flex-col lg:flex-row lg:gap-10">
+      <div class="flex flex-col lg:w-1/2 lg:mt-[110px]">
+        <div class="mb-8 lg:mb-0 order-2 lg:order-1">
+          <h2
+            class="default-mt default-h responsive-h2 mb-[20px] lg:mb-0 lg:mt-0"
+            data-sal="slide-up"
+            data-sal-duration="800"
+            data-sal-delay="150"
+          >
+            Découvrez nos Services Complets
+          </h2>
+        </div>
+        <!-- Our Process -->
+        <article
+          class="lg:mt-[200px] flex flex-col py-12 px-10 default-border order-1 lg:order-2"
+        >
+          <h2
+            class="responsive-h2 default-h mb-[20px]"
+            data-sal="slide-up"
+            data-sal-duration="800"
+            data-sal-delay="150"
+          >
+            Notre processus de travail
+          </h2>
+          <p
+            class="default-p mb-3"
+            data-sal="slide-up"
+            data-sal-duration="800"
+            data-sal-delay="200"
+          >
+            Nous suivons une méthodologie structurée pour garantir le succès de
+            chaque projet.
+          </p>
+          <ol class="default-p bullet-point">
+            <li
+              class="mb-3 pl-5 relative"
+              data-sal="slide-up"
+              data-sal-duration="800"
+              data-sal-delay="250"
+            >
+              Analyse des besoins
+            </li>
+            <li
+              class="mb-3 pl-5 relative"
+              data-sal="slide-up"
+              data-sal-duration="800"
+              data-sal-delay="300"
+            >
+              Planification et conception
+            </li>
+            <li
+              class="mb-3 pl-5 relative"
+              data-sal="slide-up"
+              data-sal-duration="800"
+              data-sal-delay="350"
+            >
+              Développement et tests
+            </li>
+            <li
+              class="mb-3 pl-5 relative"
+              data-sal="slide-up"
+              data-sal-duration="800"
+              data-sal-delay="400"
+            >
+              Lancement et support
+            </li>
+          </ol>
+        </article>
+      </div>
+      <div
+        class="default-border flex flex-col justify-center p-[25px] lg:w-1/2 h-full lg:sticky lg:top-[185px]"
+      >
+        <p
+          class="default-p mb-[40px]"
+          data-sal="slide-up"
+          data-sal-duration="800"
+          data-sal-delay="200"
+        >
+          Explorez la gamme complète de services que nous offrons pour répondre
+          à tous vos besoins en développement web, maintenance, refonte et
+          référencement. Découvrez comment Hafo Web Solutions peut vous aider à
+          atteindre vos objectifs avec des solutions personnalisées et
+          efficaces.
+        </p>
+        <a
+          href="{{ path('app_services_and_prices') }}"
+          data-sal="slide-up"
+          data-sal-duration="800"
+          data-sal-selay="250"
+          ><button class="darkBlue-button">
+            En savoir plus sur nos services
+          </button></a
+        >
+      </div>
+    </div>
+  </article>
+
+  <!-- avantages -->
+  <article class="default-container sm:container">
+    <h2
+      class="default-h default-mt responsive-h2 mb-16"
+      data-sal="slide-up"
+      data-sal-duration="800"
+      data-sal-selay="150"
+    >
+      Avantages de nos solutions
+    </h2>
+    <div
+      class="flex flex-col text-center gap-10 lg:flex-row"
+      data-sal="slide-up"
+      data-sal-duration="800"
+      data-sal-selay="200"
+    >
+      <div class="flex flex-col justify-center items-center pb-6 lg:py-0">
+        <img
+          src="{{ asset('./image/expertise/puzzle.svg') }}"
+          class="h-16 w-16"
+          alt="Symfony"
+        />
+        <h4 class="default-h responsive-h4 mt-4">
+          Flexibilité et personnalisation
+        </h4>
+        <p class="default-p mt-3">
+          Nos solutions sont conçues pour s'adapter précisément à vos besoins.
+          Chaque projet est unique et nous veillons à offrir des fonctionnalités
+          sur mesure qui correspondent à vos objectifs spécifiques.
+        </p>
+      </div>
+      <div
+        class="flex flex-col justify-center items-center py-6 lg:py-0 lg:px-8"
+      >
+        <img
+          src="{{ asset('./image/expertise/shield.svg') }}"
+          class="h-16 w-16"
+          alt="Symfony"
+        />
+        <h4 class="default-h responsive-h4 mt-4">Performance et sécurité</h4>
+        <p class="default-p mt-3">
+          Nous utilisons les meilleures pratiques et technologies pour garantir
+          des performances optimales et une sécurité renforcée, assurant que vos
+          données sont protégées et que votre site fonctionne sans interruption.
+        </p>
+      </div>
+      <div class="flex flex-col justify-center items-center pt-6 lg:py-0">
+        <img
+          src="{{ asset('./image/expertise/tools.svg') }}"
+          class="h-16 w-16"
+          alt="Symfony"
+        />
+        <h4 class="default-h responsive-h4 mt-4">Expertise polyvalente</h4>
+        <p class="default-p mt-3">
+          Notre équipe maîtrise une large gamme de technologies et frameworks,
+          nous permettant de prendre en charge des projets diversifiés et de
+          vous proposer des solutions complètes et adaptées à chaque besoin.
+        </p>
+      </div>
+    </div>
+  </article>
+
+  <!-- polyvalence -->
+  <article
+    class="default-container sm:container default-mt flex flex-col w-full lg:flex-row lg:gap-8 lg:mt-[100px]"
+  >
+    <div class="flex flex-col justify-center mb-8 lg:w-1/2 lg:mb-0">
+      <h2
+        class="default-h responsive-h2 mb-[20px] lg:mb-0"
+        data-sal="slide-up"
+        data-sal-duration="800"
+        data-sal-delay="150"
+      >
+        Expertise polyvalente
+      </h2>
+    </div>
+    <div class="default-border flex flex-col justify-center p-[25px] lg:w-1/2">
+      <p
+        class="default-p"
+        data-sal="slide-up"
+        data-sal-duration="800"
+        data-sal-delay="200"
+      >
+        Notre expertise ne se limite pas à Symfony, Docker et PostgreSQL. Nous
+        maîtrisons une large gamme de technologies pour répondre aux besoins
+        variés de nos clients. Quel que soit votre projet, nous avons les
+        compétences pour le réaliser avec succès.
+      </p>
+    </div>
+  </article>
+</section>
+
+<!-- Component CTA -->
+<!-- Title -->
+{% set title = "Optimisez votre projet avec notre expertise" %}
+<!-- Content -->
+{% set content %} Contactez-nous dès maintenant pour discuter de vos besoins en
+développement web, maintenance, refonte ou référencement. Profitez de notre
+expertise pour obtenir des solutions sur mesure.
+<span class="text-secondary">Nous reviendrons vers vous sous 24h.</span>
+{% endset %}
+<!-- Button -->
+{% set button = "Obtenez votre consultation gratuite" %}
+<!-- CTA -->
+{% include "./components/cta.html.twig" %}
+
+<!-- Component FAQ -->
+<!-- Question 1 -->
+{% set faq_question1_title = "Pourquoi choisir Symfony ?" %} {% set
+faq_question1_content = "Symfony offre une flexibilité et une robustesse
+incomparables pour développer des applications web évolutives et performantes.
+Sa modularité permet d'adapter le projet à des besoins spécifiques tout en
+garantissant une sécurité et une maintenance aisées." %}
+<!-- Question 2 -->
+{% set faq_question2_title = "Quels sont les avantages de Docker ?" %} {% set
+faq_question2_content = "Docker permet des déploiements rapides et fiables avec
+des environnements de développement isolés et reproductibles. Il facilite la
+gestion des dépendances et assure une continuité entre les environnements de
+développement, de test et de production." %}
+<!-- Question 3 -->
+{% set faq_question3_title = "Pourquoi utiliser PostgreSQL ?" %} {% set
+faq_question3_content = "PostgreSQL garantit des performances élevées et une
+gestion efficace des données pour des applications exigeantes. C'est un système
+de gestion de bases de données relationnelles robuste et fiable, capable de
+gérer de grandes charges de travail avec une forte concurrence." %}
+<!-- Question 4 -->
+{% set faq_question4_title = "Comment assurez-vous la sécurité des applications
+?" %} {% set faq_question4_content = "Nous intégrons des protocoles de sécurité
+rigoureux dans toutes nos solutions. Avec Symfony, nous utilisons des composants
+de sécurité robustes pour protéger contre les vulnérabilités courantes, assurant
+ainsi une protection complète des données." %}
+<!-- Question 5 -->
+{% set faq_question5_title = "Mettez-vous en place une CI/CD ?" %} {% set
+faq_question5_content = "Oui, nous mettons en place des pipelines CI/CD pour
+automatiser le déploiement et l'intégration des nouvelles fonctionnalités,
+assurant ainsi une livraison rapide et fiable des mises à jour." %}
+<!-- Question 6 -->
+{% set faq_question6_title = "Avantage d'une équipe polyvalente ?" %} {% set
+faq_question6_content = "Notre polyvalence nous permet de nous adapter à divers
+projets et besoins avec des outils variés. Nous pouvons intégrer et utiliser
+différentes technologies et frameworks pour répondre spécifiquement à vos
+exigences, garantissant ainsi des solutions optimales." %}
+<!-- Question 7 -->
+{% set faq_question7_title = "Types de projets adaptés à Symfony ?" %}{% set
+faq_question7_content = "Symfony convient aux sites vitrines, applications web
+complexes et plateformes e-commerce. Grâce à sa flexibilité et à sa modularité,
+il peut être utilisé pour des projets de toute taille, du petit site web aux
+applications d'entreprise complexes." %}
+<!-- Question 8 -->
+{% set faq_question8_title = "Utilisez-vous Git ?" %} {% set
+faq_question8_content = "Oui, nous utilisons Git pour la gestion de version, ce
+qui permet un suivi précis des modifications, une collaboration efficace et une
+intégration continue dans nos projets de développement." %}
+<!-- FAQ -->
+{% include "./components/faq.html.twig" %}{% endblock %}
