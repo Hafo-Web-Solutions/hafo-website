@@ -163,6 +163,7 @@ Web Solutions {% endblock %} {% block javascripts %}
         x-data="{ block: 1 }"
         x-show="selectedForm === 'form1'"
         class="mt-6 w-full flex flex-col gap-6"
+        id="form1"
       >
         <!-- Question 1 -->
         <div x-show="block1 || (block1 = true)" class="flex flex-col">
@@ -279,7 +280,7 @@ Web Solutions {% endblock %} {% block javascripts %}
 
         <!-- End block -->
         <div x-show="block9" class="lg:w-[91%]">
-          <button id="download-button" class="blue-button">Télécharger</button>
+          <button id="download-button1" class="blue-button">Télécharger</button>
           <p class="text-grayText text-xs mt-6">
             Tous les champs marqués d'un astérisque (<span
               class="text-secondary"
@@ -294,6 +295,7 @@ Web Solutions {% endblock %} {% block javascripts %}
         x-data="{ block: 1 }"
         x-show="selectedForm === 'form2'"
         class="mt-6 w-full flex flex-col gap-6"
+        id="form2"
       >
         <!-- Question 1 -->
         <div x-show="block1 || (block1 = true)" class="flex flex-col">
@@ -411,7 +413,7 @@ Web Solutions {% endblock %} {% block javascripts %}
 
         <!-- End block -->
         <div x-show="block9" class="lg:w-[91%]">
-          <button id="download-button" class="blue-button">Télécharger</button>
+          <button id="download-button2" class="blue-button" >Télécharger</button>
           <p class="text-grayText text-xs mt-6">
             Tous les champs marqués d'un astérisque (<span
               class="text-secondary"
@@ -426,6 +428,7 @@ Web Solutions {% endblock %} {% block javascripts %}
         x-data="{ block: 1 }"
         x-show="selectedForm === 'form3'"
         class="mt-6 w-full flex flex-col gap-6"
+        id="form3"
       >
         <!-- Question 1 -->
         <div x-show="block1 || (block1 = true)" class="flex flex-col">
@@ -543,7 +546,7 @@ Web Solutions {% endblock %} {% block javascripts %}
 
         <!-- End block -->
         <div x-show="block9" class="lg:w-[91%]">
-          <button id="download-button" class="blue-button">Télécharger</button>
+          <button id="download-button3" class="blue-button">Télécharger</button>
           <p class="text-grayText text-xs mt-6">
             Tous les champs marqués d'un astérisque (<span
               class="text-secondary"
@@ -558,6 +561,7 @@ Web Solutions {% endblock %} {% block javascripts %}
         x-data="{ block: 1 }"
         x-show="selectedForm === 'form4'"
         class="mt-6 w-full flex flex-col gap-6"
+        id="form4"
       >
         <!-- Question 1 -->
         <div x-show="block1 || (block1 = true)" class="flex flex-col">
@@ -660,7 +664,7 @@ Web Solutions {% endblock %} {% block javascripts %}
 
         <!-- End block -->
         <div x-show="block8" class="lg:w-[91%]">
-          <button id="download-button" class="blue-button">Télécharger</button>
+          <button id="download-button4" class="blue-button">Télécharger</button>
           <p class="text-grayText text-xs mt-6">
             Tous les champs marqués d'un astérisque (<span
               class="text-secondary"
@@ -669,145 +673,8 @@ Web Solutions {% endblock %} {% block javascripts %}
           </p>
         </div>
       </div>
+      <div id="statusMessages" class="mt-6"></div>
     </article>
   </div>
 </section>
-{% endblock %} {#
-<article class="mt-[80px] lg:mt-[100px] mx-auto w-full">
-  <div class="flex flex-col justify-center items-center mt-[20px] w-full">
-    <h2
-      class="lg:w-[91%] w-full text-white lg:text-[32px] md:text-[28px] text-[26px] tracking-tight"
-    >
-      Questionnaire de définition de vos objectifs
-    </h2>
-
-    <!-- Div pour les messages d'erreur -->
-    <div class="mt-2 w-full lg:w-[91%]">
-      <div class="w-full lg:w-1/2">
-        <div id="statusMessages" role="alert"></div>
-      </div>
-    </div>
-
-    <!-- Div pour les questions -->
-    <div class="flex flex-col mt-[50px] relative w-full lg:w-[91%] mb-4">
-      <div class="lg:w-1/2 flex flex-col">
-        <label for="type" class="default-label">
-          Type de projet<span class="text-secondary">*</span>
-        </label>
-        <div class="select-container bg-primary lg:w-1/2 flex items-center">
-          <select
-            id="type"
-            class="bg-quaternary select-input w-full rounded-[4px] border border-borderBase bg-opacityBlue h-[50px] px-4 text-white text-sm font-light focus:outline-none focus:ring focus:ring-secondary"
-          >
-            <option selected>-Sélectionnez le type de votre projet-</option>
-            <option value="1">Développement de site web</option>
-            <option value="2">Refonte</option>
-            <option value="3">Maintenance</option>
-            <option value="4">Référencement</option>
-          </select>
-        </div>
-      </div>
-    </div>
-
-    <div
-      class="flex flex-col lg:flex-row gap-4 flex-wrap items-center justify-center w-full"
-    >
-      <div class="w-full lg:w-[45%] conditional-div">
-        <label for="message" class="mb-4 text-sm text-grayText"
-          >1/8. Quels sont les objectifs principaux de votre site d'entreprise
-          ?<span class="text-secondary">*</span></label
-        >
-        <textarea
-          placeholder="Exemple : Augmenter la notoriété de la marque, améliorer l'engagement client, etc."
-          rows="5"
-          resize="none"
-          class="p-2.5 w-full mt-2 text-sm text-grayText bg-quaternary rounded-md border border-borderBase"
-          id="textarea1"
-          required
-        ></textarea>
-      </div>
-
-      <div class="w-full lg:w-[45%] conditional-div hidden-div">
-        <label for="message" class="mb-2 text-sm text-grayText"
-          >2/5. Quelles fonctionnalités spécifiques votre site doit-il inclure
-          pour atteindre ces objectifs ?<span class="text-secondary"
-            >*</span
-          ></label
-        >
-        <textarea
-          placeholder="Formulaire de contact, présentation des services, section témoignages, blog d'entreprise, etc."
-          rows="5"
-          resize="none"
-          class="p-2.5 w-full mt-2 text-sm text-grayText bg-quaternary rounded-md border border-borderBase"
-          id="textarea2"
-          required
-        ></textarea>
-      </div>
-
-      <div class="w-full lg:w-[45%] conditional-div hidden-div">
-        <label for="message" class="mb-2 text-sm text-grayText"
-          >3/5. Comment mesurez-vous le succès de votre site d'entreprise ?<span
-            class="text-secondary"
-            >*</span
-          ></label
-        >
-        <textarea
-          placeholder="Taux de conversion, trafic web, durée des sessions utilisateur, etc."
-          rows="5"
-          resize="none"
-          class="p-2.5 w-full mt-2 text-sm text-grayText bg-quaternary rounded-md border border-borderBase"
-          id="textarea3"
-          required
-        ></textarea>
-      </div>
-
-      <div class="w-full lg:w-[45%] conditional-div hidden-div">
-        <label for="message" class="mb-2 text-sm text-grayText"
-          >4/5.Quel est votre public cible ?<span class="text-secondary"
-            >*</span
-          ></label
-        >
-        <textarea
-          placeholder="Systèmes de réservation, intégration CRM, newsletters, etc."
-          rows="5"
-          resize="none"
-          class="p-2.5 w-full mt-2 text-sm text-grayText bg-quaternary rounded-md border border-borderBase"
-          id="textarea4"
-          required
-        ></textarea>
-      </div>
-
-      <div class="w-full lg:w-[45%] conditional-div hidden-div">
-        <label for="message" class="mb-2 text-sm text-grayText"
-          >5/5. Avez-vous des intégrations spécifiques à incorporer ?</label
-        >
-        <textarea
-          placeholder="Détails démographiques, préférences, comportements en ligne, etc."
-          rows="5"
-          resize="none"
-          class="p-2.5 w-full mt-2 text-sm text-grayText bg-quaternary rounded-md border border-borderBase"
-          id="textarea5"
-        ></textarea>
-      </div>
-
-      <div
-        class="h-[150px] lg:w-[45%] bg-slate-400 opacity-0 hidden lg:block"
-      ></div>
-    </div>
-
-    <div class="lg:w-[91%] w-full">
-      <button
-        id="download-button"
-        class="px-4 py-2 bg-secondary rounded-md text-white mt-[20px]"
-      >
-        Telecharger
-      </button>
-      <p class="text-grayText text-xs mt-6">
-        Tous les champs marqués d'un astérisque (<span class="text-secondary"
-          >*</span
-        >) sont requis.
-      </p>
-    </div>
-  </div>
-</article>
-#}
+{% endblock %}
