@@ -129,67 +129,31 @@
       <div class="mt-10 sm:mt-0">
         <h6 class="text-2xl font-semibold text-white">Posts Récents</h6>
         <ul class="mt-6 sibling-fade">
-          <li>
-            <a
-              class="flex border-b border-borderBase pb-2.5"
-              href="placeholder"
-            >
-              <img
-                src="https://static.vecteezy.com/system/resources/previews/000/304/787/original/vector-responsive-web-design.jpg"
-                alt="placeholder"
-                class="h-16 w-16 rounded-full mr-3 object-cover"
-              />
-              <div class="flex flex-col justify-center">
-                <div class="text-xs text-secondary uppercase">Lorem ipsum</div>
-                <h6 class="text-sm text-grayText text-ellipsis">
-                  Lorem ipsum, dolor sit amet consectetur adipisicing elit.
-                  Veritatis dignissimos quod eaque. Temporibus atque laudantium
-                  minima reiciendis magnam dolor? Quod nulla voluptatibus
-                  consectetur consequuntur, laboriosam dicta reprehenderit
-                  commodi reiciendis blanditiis.
-                </h6>
-              </div>
-            </a>
-          </li>
+          {% for item in app.request.attributes.get('footerData') %}
           <li>
             <a
               class="flex border-b border-borderBase py-2.5"
               href="placeholder"
             >
+            {% set image = item.getImageByType('post') %}
+            {% if image %}
               <img
-                src="https://dc722jrlp2zu8.cloudfront.net/media/featured_images/LARAVEL_VS_SYMFONY.jpg"
+                src="{{ asset('/images/uploads/' ~ image.getImage() ) }}"
                 alt="placeholder"
                 class="h-16 w-16 rounded-full mr-3 object-cover"
               />
+              {% else %}
+              <p>Aucune image disponible</p>
+               {% endif %}
               <div class="flex flex-col justify-center">
-                <div class="text-xs text-secondary uppercase">Lorem ipsum</div>
+                <div class="text-xs text-secondary uppercase">{{ item.title }}</div>
                 <h6 class="text-sm text-grayText text-ellipsis">
-                  Lorem ipsum, dolor sit amet consectetur adipisicing elit.
-                  Porro maiores enim dicta hic harum facilis doloremque possimus
-                  voluptatem praesentium recusandae modi, magni laborum qui
-                  tenetur non quisquam. Consequatur, omnis saepe?
+                  {{ item.content|raw }}
                 </h6>
               </div>
             </a>
           </li>
-          <li>
-            <a class="flex pt-2.5" href="placeholder">
-              <img
-                src="https://th.bing.com/th/id/R.00b785fb439e96e69a9d3f10f6288317?rik=v5lxBeFiEKVo9w&riu=http%3a%2f%2fethsam.fr%2fimages%2fuploads%2f2023%2f02%2f14%2fsecure-by-design-symfony-developpeur-reunion.jpg&ehk=Mt%2bsZ0CiN6zvdYiC8t1%2bBaW6e6pxZb%2f%2fqyL6qBbWhZs%3d&risl=&pid=ImgRaw&r=0"
-                alt="placeholder"
-                class="h-16 w-16 rounded-full mr-3 object-cover"
-              />
-              <div class="flex flex-col justify-center">
-                <div class="text-xs text-secondary uppercase">Lorem ipsum</div>
-                <h6 class="text-sm text-grayText text-ellipsis">
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Eos
-                  odit cumque officiis harum, fugiat voluptatibus nisi! Rerum
-                  debitis optio cumque aut eaque alias, amet culpa ipsum,
-                  explicabo obcaecati similique expedita.
-                </h6>
-              </div>
-            </a>
-          </li>
+          {% endfor %}
         </ul>
       </div>
     </div>

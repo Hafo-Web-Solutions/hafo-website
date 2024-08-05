@@ -685,3 +685,54 @@ textarea {
 .post-tag::first-letter {
   text-transform: uppercase
 }
+
+/* HERO */
+.hero-section {
+  background-image: url("../../public/image/hero/background2.png");
+  background-repeat: repeat;
+  position: relative;
+  width: 100% !important;
+}
+.hero-section::before {
+  content: "";
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  left: 0;
+  top: 0;
+  background-image: url("../../public/image/bg/noise.gif");
+  z-index: 1;
+  opacity: 0.03;
+  background-color: rebeccapurple;
+}
+.hero-glow{
+  background: #00a2ff68;
+  width: 200px;
+  height: 200px;
+  position: absolute;
+  filter: blur(2.5rem);
+  border-radius: 50%;
+  z-index: -1;
+  animation: moveHorizontal 5s linear infinite, waveVertical 2s ease-in-out infinite;
+}
+@keyframes moveHorizontal {
+  0% {
+      left: 0;
+  }
+  100% {
+      left: calc(100% - 50px); /* Ajuster la largeur moins la taille du cercle */
+  }
+}
+
+@keyframes waveVertical {
+  0%, 100% {
+      top: 50%; /* Position initiale */
+      transform: translateY(-50%) scale(1);
+      opacity: 1;
+  }
+  50% {
+      top: 20%; /* Point le plus haut des vagues */
+      transform: translateY(-50%) scale(1);
+      opacity: 0.5;
+  }
+}
