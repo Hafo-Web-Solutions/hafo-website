@@ -1,3 +1,26 @@
+const cursorInner = document.querySelector(".cursor-inner");
+const cursorOuter = document.querySelector(".cursor-outer");
+let isHovering = false;
+
+function attachHoverListeners() {
+  if (!cursorInner || !cursorOuter) return; // Check if cursors are available
+
+  document
+    .querySelectorAll("a, button, input, select, textarea, .cursor-pointer")
+    .forEach((el) => {
+      el.addEventListener("mouseenter", () => {
+        cursorInner.classList.add("cursor-hover");
+        cursorOuter.classList.add("cursor-hover");
+        isHovering = true;
+      });
+      el.addEventListener("mouseleave", () => {
+        cursorInner.classList.remove("cursor-hover");
+        cursorOuter.classList.remove("cursor-hover");
+        isHovering = false;
+      });
+    });
+}
+
 if (window.innerWidth < 768) {
   let current = 0;
   function calculateCurrent() {
@@ -102,19 +125,25 @@ if (window.innerWidth < 768) {
     );
 
     contentText.innerHTML = `
-        <p class="mb-4 text-[#ACACAC] text-sm w-[120px] py-2 text-center border-[0.5px] border-white rounded-[100px] project-tag">
-          ${content[index]["tags"]}
-        </p>
-        <p class="text-3xl mb-5 font-semibold tracking-tight text-white">
+        <div class="flex justify-between items-center">
+          <a href="#">
+            <p class="mb-4 text-[#ACACAC] text-sm w-[120px] py-2 text-center border-[1px] border-borderBase rounded-[100px] project-tag">
+              ${content[index]["tags"]}
+            </p>
+          </a>
+        </div>
+        <h3 class="default-h responsive-h3 mb-5">
           ${content[index]["title"]}
-        </p>
-        <p class="mb-12 text-[#ACACAC] text-base lg:h-[100px]">
+        </h3>
+        <p class="default-p mb-12 lg:h-[100px]">
           ${truncatedDescription}
         </p>
         <a
           href="${content[index]["link"]}"
-          class="py-4 px-8 text-white font-semibold bg-[#00A3FF] hover:bg-tertiary text-base cursor-pointer rounded-lg"
-          >Voir le projet
+          <button class="blue-button">
+            Voir le projet
+          </button
+          >
           </a>
     `;
     contentImage.innerHTML = `
@@ -124,6 +153,9 @@ if (window.innerWidth < 768) {
             class="w-full h-[600px] object-cover"
         />
     `;
+
+    // Attach hover listeners to new elements
+    attachHoverListeners();
   }
 
   // Current index

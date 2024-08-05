@@ -16,7 +16,7 @@
   <!-- Navigation bar -->
   <nav
     :class="{'nav-hidden': !showNav, 'nav-visible': showNav}"
-    class="fixed w-full bg-[#1515218c] backdrop-blur-[10px] border-b border-borderBase"
+    class="fixed w-full bg-darkMidnightBlue border-b border-borderBase"
   >
     <div
       class="justify-between h-[85px] flex items-center default-container sm:container"
@@ -27,11 +27,7 @@
 
           <!-- Desktop logo and branding -->
           <div class="flex items-center">
-            <img
-              class=""
-              src="{{ asset('images/logo-white.svg') }}"
-              alt="logo-white"
-            />
+            <img src="{{ asset('images/logo-white.svg') }}" alt="logo-white" />
           </div>
         </a>
         <div
@@ -41,12 +37,14 @@
 
       <!-- Mobile navigation buttons -->
       <div class="flex lg:hidden space-x-2.5">
-        <button
-          type="button"
-          class="min-w:hidden relative inline-flex items-center gap-x-1.5 rounded-[10px] px-3 py-2 xl:text-base border border-borderBase font-medium text-grayText hover:text-white hover:border-quinternary hover:bg-quinternary duration-300 ease-in-out"
-        >
-          Nous Contacter
-        </button>
+        <a href="{{ path('app_contact') }}">
+          <button
+            type="button"
+            class="min-w:hidden relative inline-flex items-center gap-x-1.5 rounded-[10px] px-3 py-2 xl:text-base border border-borderBase font-medium text-grayText hover:text-white bg-[#161620] hover:border-quinternary hover:bg-quinternary duration-300 ease-in-out"
+          >
+            Nous Contacter
+          </button>
+        </a>
         <button
           onclick="Calendly.initPopupWidget({url: 'https://calendly.com/hafowebsolutions/30min'});return false;"
           class="min-w:hidden relative inline-flex items-center gap-x-1.5 rounded-[10px] bg-tertiary px-3 py-2 xl:text-base font-medium text-white hover:bg-secondary duration-300 ease-in-out"
@@ -57,7 +55,7 @@
         <!-- Mobile menu button -->
         <button
           type="button"
-          class="h-10 w-10 inline-flex items-center justify-center text-grayText rounded-full border border-borderBase hover:bg-quinternary hover:border-quinternary hover:text-white duration-300 ease-in-out"
+          class="h-10 w-10 inline-flex items-center justify-center text-grayText rounded-full border border-borderBase bg-[#161620] hover:bg-quinternary hover:border-quinternary hover:text-white duration-300 ease-in-out"
           @click="openMobileMenu = !openMobileMenu; (openMobileMenu)"
         >
           <span class="sr-only"> Open main menu </span>
@@ -76,10 +74,13 @@
             />
           </svg>
         </button>
+
+        <!-- Theme button -->
+        {#
         <button
           href="#"
           @click.prevent="darkMode = !darkMode; document.documentElement.classList.toggle('dark', darkMode)"
-          class="setColor light rounded-full h-10 w-10 flex items-center justify-center border border-borderBase hover:bg-quinternary hover:border-quinternary duration-300 ease-in-out stroke-grayText hover:stroke-white"
+          class="setColor light rounded-full h-10 w-10 flex items-center justify-center border border-borderBase bg-[#161620] hover:bg-quinternary hover:border-quinternary duration-300 ease-in-out stroke-grayText hover:stroke-white"
           x-show="!darkMode"
         >
           <svg
@@ -177,6 +178,7 @@
             />
           </svg>
         </button>
+        #}
       </div>
       <div
         class="border-l border-borderBase h-8 ml-8 nav-sm:ml-4 mr-2.5 nav-sm:mr-0 sm:hidden lg:block min-w:hidden"
@@ -184,24 +186,24 @@
 
       <!-- Desktop navigation links 1/2 -->
       <div class="hidden lg:flex items-center">
-        <div>
+        <div x-data="setupMenu()">
           <a href="{{ path('app_expertise') }}">
             <button
-            type="button"
-            class="px-3 nav-sm:px-2 mx-2 py-[30px] xl:text-base flex items-center gap-x-1 font-medium leading-6 text-grayText hover:text-secondary duration-300 ease-in-out"
-            x-on:click.stop="openFlyoutMenu = !openFlyoutMenu"
-            @mouseenter="openFlyoutMenu = true"
-            @mouseleave="openFlyoutMenu = false"
-          >
-            Expertise
-          </button>
+              type="button"
+              class="px-3 nav-sm:px-2 mx-2 py-[30px] xl:text-base flex items-center gap-x-1 font-medium leading-6 text-grayText hover:text-secondary duration-300 ease-in-out"
+              x-on:click.stop="openFlyoutMenu = !openFlyoutMenu"
+              @mouseenter="menuMouseEnter"
+              @mouseleave="menuMouseLeave"
+            >
+              Expertises
+            </button>
           </a>
 
           <!-- Desktop flyout menu -->
           <div
-            @mouseenter="openFlyoutMenu = true"
-            @mouseleave="openFlyoutMenu = false"
-            class="submenu-container absolute px-3 py-5 transform -translate-x-2/2 shadow-md mt-4 rounded-b-[10px] bg-primary border-x border-b border-borderBase ring-1 ring-gray-900/5 rounded-[10px]-t"
+            @mouseenter="menuMouseEnter"
+            @mouseleave="menuMouseLeave"
+            class="submenu-container hide-on-touch absolute px-3 py-5 transform -translate-x-2/2 shadow-md mt-4 rounded-b-[10px] bg-darkMidnightBlue border-x border-b border-borderBase ring-1 ring-gray-900/5 rounded-[10px]-t"
             x-cloak
             x-show="openFlyoutMenu"
             x-transition:enter="transition ease-out duration-300"
@@ -212,10 +214,13 @@
             x-transition:leave-end="opacity-0 translate-y-5"
           >
             <ul
-              class="relative mx-auto grid max-w-2xl bg-primary rounded-[10px]"
+              class="relative mx-auto grid max-w-2xl bg-darkMidnightBlue rounded-[10px]"
             >
               <li class="group relative rounded-[10px]">
-                <a href="{{ path('app_expertise_site_creation') }}" class="flex items-start menu-item px-6 py-4">
+                <a
+                  href="{{ path('app_expertise_site_creation') }}"
+                  class="flex items-start menu-item px-6 py-4"
+                >
                   <div class="flex-shrink-0">
                     <div
                       class="flex h-11 w-11 items-center justify-center rounded-[10px] bg-whiteTransparency group-hover:bg-whiteTransparency"
@@ -246,7 +251,10 @@
                 </a>
               </li>
               <li class="group relative rounded-[10px]">
-                <a href="{{ path('app_expertise_redesign') }}" class="flex items-start menu-item px-6 py-4">
+                <a
+                  href="{{ path('app_expertise_redesign') }}"
+                  class="flex items-start menu-item px-6 py-4"
+                >
                   <div class="flex-shrink-0">
                     <div
                       class="flex h-11 w-11 items-center justify-center rounded-[10px] bg-whiteTransparency group-hover:bg-whiteTransparency"
@@ -277,7 +285,10 @@
                 </a>
               </li>
               <li class="group relative rounded-[10px]">
-                <a href="{{ path('app_expertise_maintenance') }}" class="flex items-start menu-item px-6 py-4">
+                <a
+                  href="{{ path('app_expertise_maintenance') }}"
+                  class="flex items-start menu-item px-6 py-4"
+                >
                   <div class="flex-shrink-0">
                     <div
                       class="flex h-11 w-11 items-center justify-center rounded-[10px] bg-whiteTransparency group-hover:bg-whiteTransparency"
@@ -310,7 +321,10 @@
                 </a>
               </li>
               <li class="group relative rounded-[10px]">
-                <a href="{{ path('app_expertise_seo') }}"  class="flex items-start menu-item px-6 py-4">
+                <a
+                  href="{{ path('app_expertise_seo') }}"
+                  class="flex items-start menu-item px-6 py-4"
+                >
                   <div class="flex-shrink-0">
                     <div
                       class="flex h-11 w-11 items-center justify-center rounded-[10px] bg-whiteTransparency group-hover:bg-whiteTransparency"
@@ -347,22 +361,24 @@
 
         <!-- Desktop navigation links 1/2 -->
         <a
+          href="{{ path('app_services_and_prices') }}"
+          class="flex px-3 nav-sm:px-2 mx-2 items-center py-[30px] underline-slide xl:text-base font-medium leading-6 text-grayText hover:text-secondary duration-300 ease-in-out"
+        >
+          Services
+        </a>
+        {#
+        <a
           href="{{ path('app_achievements') }}"
           class="flex px-3 nav-sm:px-2 mx-2 items-center py-[30px] underline-slide xl:text-base font-medium leading-6 text-grayText 3xl hover:text-secondary duration-300 ease-in-out"
         >
           Réalisations
         </a>
+        #}
         <a
           href="{{ path('app_agency') }}"
           class="flex px-3 nav-sm:px-2 mx-2 items-center py-[30px] underline-slide xl:text-base font-medium leading-6 text-grayText hover:text-secondary duration-300 ease-in-out"
         >
           Agence
-        </a>
-        <a
-          href="{{ path('app_services_and_prices') }}"
-          class="flex px-3 nav-sm:px-2 mx-2 items-center py-[30px] underline-slide xl:text-base font-medium leading-6 text-grayText hover:text-secondary duration-300 ease-in-out"
-        >
-          Services
         </a>
         <a
           href="{{ path('app_blog') }}"
@@ -376,25 +392,28 @@
       <div
         class="hidden lg:flex lg:flex-1 lg:justify-end items-center space-x-2.5"
       >
+        <a href="{{ path('app_contact') }}">
+          <button
+            type="button"
+            class="md:text-15 relative inline-flex items-center rounded-[10px] px-3 py-2 xl:text-base border border-borderBase font-medium text-grayText bg-[#161620] hover:bg-quinternary hover:border-quinternary hover:text-white duration-300 ease-in-out"
+          >
+            Nous Contacter
+          </button>
+        </a>
         <button
+          id="rdv-button"
           type="button"
-          class="md:text-15 relative inline-flex items-center rounded-[10px] px-3 py-2 xl:text-base border border-borderBase font-medium text-grayText hover:bg-quinternary hover:border-quinternary hover:text-white duration-300 ease-in-out"
-        >
-          Nous Contacter
-        </button>
-        <button
-        id="rdv-button"
-        type="button"
-        class="md:text-15 relative inline-flex items-center rounded-[10px] bg-tertiary px-3 py-2 xl:text-base font-medium text-white hover:bg-secondary duration-300 ease-in-out"
+          class="md:text-15 relative inline-flex items-center rounded-[10px] bg-tertiary px-3 py-2 xl:text-base font-medium text-white hover:bg-secondary duration-300 ease-in-out"
         >
           Prendre RDV
         </button>
 
         <!-- Theme button -->
+        {#
         <button
           href="#"
           @click.prevent="darkMode = !darkMode; document.documentElement.classList.toggle('dark', darkMode)"
-          class="setColor light rounded-full h-10 w-10 flex items-center justify-center border border-borderBase hover:bg-quinternary hover:border-quinternary duration-300 ease-in-out stroke-grayText hover:stroke-white"
+          class="setColor light rounded-full h-10 w-10 flex items-center justify-center border border-borderBase bg-[#161620] hover:bg-quinternary hover:border-quinternary duration-300 ease-in-out stroke-grayText hover:stroke-white"
           x-show="!darkMode"
         >
           <svg
@@ -492,6 +511,7 @@
             />
           </svg>
         </button>
+        #}
       </div>
     </div>
   </nav>
@@ -562,31 +582,36 @@
       <!-- Main menu -->
       <ul class="space-y-2 py-4 px-5">
         <li>
-          <a href="{{ path('app_expertise') }}">
-          <button
-            @click="selected !== 1 ? selected = 1 : selected = null"
-            type="button"
-            class="py-2 border-b flex border-borderBase w-full items-center justify-between font-medium text-grayText hover:text-secondary duration-300 ease-in-out"
-            @click.away="selected = null"
-          >
-            Expertise
-            <svg
-              :class="selected === 1 ? 'transform rotate-180' : ''"
-              xmlns="http://www.w3.org/2000/svg"
-              width="16"
-              height="24"
-              viewbox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              stroke-width="2"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              class="feather feather-chevron-up"
+          <div class="flex items-center">
+            <a href="{{ path('app_expertise') }}" class="w-full">
+              <button
+                class="py-2 border-b flex border-borderBase w-full items-center justify-between font-medium text-grayText hover:text-secondary duration-300 ease-in-out"
+              >
+                Expertises
+              </button>
+            </a>
+            <span
+              @click="selected !== 1 ? selected = 1 : selected = null"
+              @click.away="selected = null"
+              class="text-grayText border-b border-borderBase h-10 flex items-center"
             >
-              <polyline points="18 15 12 9 6 15"></polyline>
-            </svg>
-          </button>
-          </a>
+              <svg
+                :class="selected === 1 ? 'transform rotate-180' : ''"
+                xmlns="http://www.w3.org/2000/svg"
+                width="16"
+                height="24"
+                viewbox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                class="feather feather-chevron-up"
+              >
+                <polyline points="18 15 12 9 6 15"></polyline>
+              </svg>
+            </span>
+          </div>
 
           <!-- Expertise accordion -->
           <ul
@@ -661,7 +686,7 @@
             </li>
             <li class="flex justify-between items-center">
               <a
-                href="{{ path('app_expertise_seo') }}" 
+                href="{{ path('app_expertise_seo') }}"
                 class="border-b border-borderBase flex justify-between items-center w-full py-2 text-sm font-medium leading-7 text-grayText hover:text-secondary duration-300 ease-in-out"
                 onmouseover="this.querySelector('svg').classList.add('text-secondary', 'duration-300', 'ease-in-out')"
                 onmouseout="this.querySelector('svg').classList.remove('text-secondary', 'duration-300', 'ease-in-out')"
@@ -685,12 +710,13 @@
         </li>
         <li>
           <a
-            href="{{ path('app_agency') }}"
+            href="{{ path('app_services_and_prices') }}"
             class="py-2 border-b flex border-borderBase font-medium text-grayText hover:text-secondary duration-300 ease-in-out"
           >
-            Agence
+            Services
           </a>
         </li>
+        {#
         <li>
           <a
             href="{{ path('app_achievements') }}"
@@ -699,17 +725,18 @@
             Réalisations
           </a>
         </li>
+        #}
         <li>
           <a
-            href="{{ path('app_services_and_prices') }}"
+            href="{{ path('app_agency') }}"
             class="py-2 border-b flex border-borderBase font-medium text-grayText hover:text-secondary duration-300 ease-in-out"
           >
-            Services
+            Agence
           </a>
         </li>
         <li>
           <a
-          href="{{ path('app_blog') }}"
+            href="{{ path('app_blog') }}"
             class="py-2 flex font-medium text-grayText hover:text-secondary duration-300 ease-in-out"
           >
             Blog
@@ -721,12 +748,14 @@
       <div
         class="flex flex-col items-center absolute bottom-12 inset-x-0 py-4 px-5 first-line:-height gap-y-5 static-on-small-screen"
       >
-        <button
-          type="button"
-          class="justify-center w-full h-12 items-center rounded-[10px] xl:text-base border border-borderBase font-medium text-grayText hover:text-white hover:border-quinternary hover:bg-quinternary duration-300 ease-in-out"
+        <a href="{{ path('app_contact') }}" class="w-full">
+          <button
+            type="button"
+            class="justify-center w-full h-12 items-center rounded-[10px] xl:text-base border border-borderBase font-medium text-grayText hover:text-white hover:border-quinternary hover:bg-quinternary duration-300 ease-in-out"
+          >
+            Nous Contacter
+          </button></a
         >
-          Nous Contacter
-        </button>
         <button
           id="rdv-button2"
           type="button"

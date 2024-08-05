@@ -14,6 +14,7 @@ Encore
     .addEntry('project', './assets/js/project.js')
     .addEntry('define', './assets/js/define.js')
     .addEntry('plan', './assets/js/plan.js')
+    .addEntry('support', './assets/js/support.js')
     .enablePostCssLoader()
     .splitEntryChunks()
     .enableSingleRuntimeChunk()
