@@ -1,209 +1,813 @@
-{% extends 'base.html.twig' %} {% block title %} Definir vos objectifs {%
-endblock %} {% block javascripts %}
+{% extends 'base.html.twig' %} {% block title %} Definir vos objectifs - Hafo
+Web Solutions {% endblock %} {% block javascripts %}
 {{ parent() }}
 {{ encore_entry_script_tags("define") }}
 {% endblock %} {% block body %}
 
-<section
-  class="mt-[80px] lg:mt-[100px] w-full default-container 2xl:container-fluid 2xl:px-[140px]"
->
-  <!-- Content Header -->
-  <article class="flex lg:flex-row flex-col gap-8 lg:h-[480px]">
-    <!-- Title -->
-    <div class="lg:w-1/2">
-      <h2
-        class="text-white lg:text-[45px] md:text-[32px] text-[28px] tracking-tight"
+<section class="default-mt flex flex-col justify-center items-center w-full">
+  <!-- Header -->
+  <article
+    class="flex flex-col w-full gap-10 sm:container lg:flex-row lg:default-container"
+  >
+    <div class="px-8 lg:px-0 lg:w-1/2">
+      <h1
+        class="default-h responsive-h1 mb-3"
         data-sal="slide-up"
         data-sal-duration="800"
         data-sal-delay="150"
       >
-        Définir vos Objectifs
-      </h2>
+        Définir vos objectifs
+      </h1>
       <p
-        class="text-grayText mt-3 mb-8 leading-[28px]"
+        class="default-bp mt-[10px]"
+        data-sal="fade-in"
+        data-sal-duration="800"
+        data-sal-delay="200"
+      >
+        Listez vos besoins pour un projet réussi
+      </p>
+      <p
+        class="default-p mt-[20px]"
         data-sal="fade-in"
         data-sal-duration="800"
         data-sal-delay="250"
       >
-        Nous vous proposons de sélectionner le type de projet que vous envisagez
-        pour vous fournir un questionnaire adapté à vos besoins spécifiques.
-      </p>
-      <h2
-        class="text-white lg:text-[32px] md:text-[28px] text-[26px] tracking-tight"
-        data-sal="slide-up"
-        data-sal-duration="800"
-        data-sal-delay="150"
-      >
-        Comment utiliser cet outil ?
-      </h2>
-      <p
-        class="text-grayText mt-3 mb-8 leading-[28px]"
-        data-sal="fade-in"
-        data-sal-duration="800"
-        data-sal-delay="250"
-      >
-        Suivez ces étapes simples pour tirer le meilleur parti de notre
-        questionnaire :
-      </p>
-      <p class="text-grayText mt-3 mb-8 leading-[28px]">
-        1. <span class="font-bold">Choisissez le type de projet</span> qui
-        correspond à vos besoins. <br />
-        2. <span class="font-bold">Répondez aux questions spécifiques</span> à
-        ce type de projet pour nous aider à mieux comprendre vos objectifs.
-        <br />
-        3. <span class="font-bold">Téléchargez vos réponses</span> en format PDF
-        à la fin du questionnaire. <br />
-        4. <span class="font-bold">Envoyez-nous le PDF</span>via notre page de
-        contact pour une consultation personnalisée.
+        Utilisez cet outil pour nous aider à comprendre vos besoins spécifiques
+        en matière de création de site web, maintenance, SEO ou refonte. En
+        remplissant ce formulaire, vous pourrez générer un document PDF
+        récapitulatif à nous transmettre pour une analyse précise et
+        personnalisée de votre projet.
       </p>
     </div>
-
-    <!-- Image -->
-    <div
-      class="overflow-hidden h-[300px] lg:h-full lg:w-1/2 lg:rounded-md"
-    >
+    <div class="lg:w-1/2">
       <img
         src="{{ asset('./image/support/define.jpeg') }}"
         alt="creation de site"
-        class="object-cover hover:scale-150 transition-transform duration-500 ease-in-out"
+        class="object-cover h-[560px] w-full"
       />
     </div>
   </article>
 
-  <article class="mt-[80px] lg:mt-[100px] mx-auto w-full">
-    <div class="flex flex-col justify-center items-center mt-[20px] w-full">
-      <h2
-        class="lg:w-[91%] w-full text-white lg:text-[32px] md:text-[28px] text-[26px] tracking-tight"
+  <!-- Content -->
+  <div
+    class="default-container flex flex-col w-full mt-[-100px] sm:container lg:gap-10 lg:flex-row lg:mt-0"
+  >
+    <!-- Block tool -->
+    <article class="lg:w-1/2">
+      <div
+        class="default-border relative flex flex-col justify-center bg-quaternary lg:bg-whiteTransparency py-12 px-10 lg:sticky lg:top-[185px] lg:mt-[-230px] xl:mb-0"
       >
-        Questionnaire de définition de vos objectifs
-      </h2>
+        <h2
+          class="default-h responsive-h2 mb-5"
+          data-sal="slide-up"
+          data-sal-duration="800"
+          data-sal-delay="150"
+        >
+          Comment utiliser cet outil
+        </h2>
+        <p
+          class="default-p mb-5"
+          data-sal="slide-up"
+          data-sal-duration="800"
+          data-sal-delay="200"
+        >
+          Suivez les étapes ci-dessous pour remplir le formulaire et obtenir un
+          PDF récapitulatif de vos besoins. Ce processus vous guidera pour
+          définir clairement vos objectifs et nous permettre de vous offrir des
+          solutions sur mesure.
+        </p>
+        <ol class="default-p mt-3 mb-8 bullet-point">
+          <li
+            class="mb-3 pl-5 relative"
+            data-sal="slide-up"
+            data-sal-duration="800"
+            data-sal-delay="200"
+          >
+            <strong>Sélectionner le Type de Projet :</strong>
+            Choisissez entre développement de site web, refonte, maintenance ou
+            référencement.
+          </li>
+          <li
+            class="mb-3 pl-5 relative"
+            data-sal="slide-up"
+            data-sal-duration="800"
+            data-sal-delay="250"
+          >
+            <strong>Répondre aux questions spécifiques :</strong>
+            Remplissez les questions relatives au type de projet sélectionné.
+          </li>
+          <li
+            class="mb-3 pl-5 relative"
+            data-sal="slide-up"
+            data-sal-duration="800"
+            data-sal-delay="300"
+          >
+            <strong>Vérifier les informations :</strong>
+            Assurez-vous que toutes les informations fournies sont correctes.
+          </li>
+          <li
+            class="mb-3 pl-5 relative"
+            data-sal="slide-up"
+            data-sal-duration="800"
+            data-sal-delay="350"
+          >
+            <strong>Télécharger le PDF :</strong> Cliquez sur le bouton pour
+            générer et télécharger le PDF récapitulatif de vos réponses.
+          </li>
+          <li
+            class="pl-5 relative"
+            data-sal="slide-up"
+            data-sal-duration="800"
+            data-sal-delay="400"
+          >
+            <strong>Transmettre le PDF :</strong> Envoyez-nous le document via
+            notre page de contact pour que nous puissions analyser vos besoins
+            et vous proposer une solution adaptée.
+          </li>
+        </ol>
+        <a
+          href="{{ path('app_contact') }}"
+          data-sal="slide-up"
+          data-sal-duration="800"
+          data-sal-selay="250"
+          ><button class="darkBlue-button">Transmettre le PDF</button></a
+        >
+      </div>
+    </article>
 
-      <!-- Div pour les messages d'erreur -->
-      <div class="mt-2 w-full lg:w-[91%]">
-        <div class="w-full lg:w-1/2">
-          <div id="statusMessages" role="alert"></div>
+    <!-- Block forms -->
+    <article
+      x-data="{ selectedForm: '', block1: false, block2: false, block3: false, block4: false, block5: false, block6: false, block7: false, block8: false, block9: false }"
+      class="default-mt flex flex-col lg:w-1/2"
+    >
+      <div>
+        <label for="formType" class="default-label">
+          Sélectionnez le type de formulaire
+          <span class="text-secondary">*</span>
+        </label>
+        <select
+          id="formType"
+          x-model="selectedForm"
+          class="default-input default-focus cursor-pointer select-input w-full"
+        >
+          <option value="">-Sélectionnez le type de projet-</option>
+          <option value="form1">Développement de site web</option>
+          <option value="form2">Refonte</option>
+          <option value="form3">Maintenance</option>
+          <option value="form4">Référencement</option>
+        </select>
+      </div>
+
+      <!-- Devlopment form -->
+      <div
+        x-data="{ block: 1 }"
+        x-show="selectedForm === 'form1'"
+        class="mt-6 w-full flex flex-col gap-6"
+      >
+        <!-- Question 1 -->
+        <div x-show="block1 || (block1 = true)" class="flex flex-col">
+          <label for="input1" class="default-label"
+            >1/8. Nom du projet <span class="text-secondary">*</span></label
+          >
+          <input
+            type="text"
+            id="input1"
+            class="w-full default-input default-focus"
+            placeholder="ex : Mon Site Web Pro"
+            @input="block2 =  true"
+          />
+        </div>
+        <!-- Question 2 -->
+        <div x-show="block2">
+          <label for="input2" class="default-label"
+            >2/8. Description de votre entreprise
+            <span class="text-secondary">*</span></label
+          >
+          <textarea
+            type="text"
+            id="input2"
+            class="w-full default-textarea default-focus"
+            placeholder="ex : Entreprise de vente de produits artisanaux, fondée en 2015, basée à Paris."
+            @input="block3 =  true"
+          ></textarea>
+        </div>
+        <!-- Question 3 -->
+        <div x-show="block3">
+          <label for="input3" class="default-label"
+            >3/8. Objectif du site web
+            <span class="text-secondary">*</span></label
+          >
+          <input
+            type="text"
+            id="input3"
+            class="w-full default-input default-focus"
+            placeholder="ex : Présence en ligne pour augmenter la visibilité et attirer de nouveaux clients."
+            @input="block4 =  true"
+          />
+        </div>
+        <!-- Question 4 -->
+        <div x-show="block4">
+          <label for="input4" class="default-label"
+            >4/8. Fonctionnalités souhaitées
+            <span class="text-secondary">*</span></label
+          >
+          <textarea
+            type="text"
+            id="input4"
+            class="w-full default-textarea default-focus"
+            placeholder="ex : Formulaire de contact, Blog, E-commerce pour vendre des produits."
+            @input="block5 =  true"
+          ></textarea>
+        </div>
+
+        <!-- Question 5 -->
+        <div x-show="block5">
+          <label for="input5" class="default-label"
+            >5/8. Public cible <span class="text-secondary">*</span></label
+          >
+          <input
+            type="text"
+            id="input5"
+            class="w-full default-input default-focus"
+            placeholder="ex : Adultes de 25 à 45 ans, intéressés par les produits artisanaux."
+            @input="block6 =  true"
+          />
+        </div>
+        <!-- Question 6 -->
+        <div x-show="block6">
+          <label for="input6" class="default-label"
+            >6/8. Exemples de sites qui vous inspirent
+            <span class="text-secondary">*</span></label
+          >
+          <textarea
+            type="text"
+            id="input6"
+            class="w-full default-textarea default-focus"
+            placeholder="ex : www.exemple1.com, www.exemple2.com"
+            @input="block7 =  true"
+          ></textarea>
+        </div>
+
+        <!-- Question 7 -->
+        <div x-show="block7">
+          <label for="input7" class="default-label"
+            >7/8. Budget estimé <span class="text-secondary">*</span></label
+          >
+          <input
+            type="text"
+            id="input7"
+            class="w-full default-input default-focus"
+            @input="block8 =  true"
+            placeholder="ex : 2000 - 3000 €"
+          />
+        </div>
+
+        <!-- Question 8 -->
+        <div x-show="block8">
+          <label for="input8" class="default-label"
+            >8/8. Délai souhaité pour le lancement
+            <span class="text-secondary">*</span></label
+          >
+          <input
+            type="text"
+            id="input8"
+            class="w-full default-input default-focus"
+            placeholder="ex : 3 mois à partir de la signature du contrat."
+            @input="block9 =  true"
+          />
+        </div>
+
+        <!-- End block -->
+        <div x-show="block9" class="lg:w-[91%]">
+          <button id="download-button" class="blue-button">Télécharger</button>
+          <p class="text-grayText text-xs mt-6">
+            Tous les champs marqués d'un astérisque (<span
+              class="text-secondary"
+              >*</span
+            >) sont requis.
+          </p>
         </div>
       </div>
 
-      <!-- Div pour les questions -->
-      <div class="flex flex-col mt-[50px] relative w-full lg:w-[91%] mb-4">
-        <div class="lg:w-1/2 flex flex-col">
-          <label for="type" class="text-grayText text-sm font-medium mb-2">
-            Type de projet<span class="text-secondary">*</span>
-          </label>
-          <div class="select-container bg-primary lg:w-1/2 flex items-center">
-            <select
-              id="type"
-              class="form-contact-input bg-quaternary select-input w-full rounded-[4px] border border-borderBase bg-opacityBlue h-[50px] px-4 text-white text-sm font-light focus:outline-none focus:ring focus:ring-secondary"
-            >
-              <option selected>-Sélectionnez le type de votre projet-</option>
-              <option value="1">Site Vitrine</option>
-              <option value="2">Site Web</option>
-              <option value="3">Site Complexe</option>
-            </select>
-          </div>
+      <!-- Redesign form -->
+      <div
+        x-data="{ block: 1 }"
+        x-show="selectedForm === 'form2'"
+        class="mt-6 w-full flex flex-col gap-6"
+      >
+        <!-- Question 1 -->
+        <div x-show="block1 || (block1 = true)" class="flex flex-col">
+          <label for="input1" class="default-label"
+            >1/8. URL du site actuel
+            <span class="text-secondary">*</span></label
+          >
+          <input
+            type="text"
+            id="input1"
+            class="w-full default-input default-focus"
+            placeholder="ex : Mon Site Web Pro"
+            @input="block2 =  true"
+          />
         </div>
+        <!-- Question 2 -->
+        <div x-show="block2">
+          <label for="input2" class="default-label"
+            >2/8. Principales raisons de la refonte
+            <span class="text-secondary">*</span></label
+          >
+          <textarea
+            type="text"
+            id="input2"
+            class="w-full default-textarea default-focus"
+            placeholder="ex : Entreprise de vente de produits artisanaux, fondée en 2015, basée à Paris."
+            @input="block3 =  true"
+          ></textarea>
+        </div>
+        <!-- Question 3 -->
+        <div x-show="block3">
+          <label for="input3" class="default-label"
+            >3/8. Objectifs de la refonte
+            <span class="text-secondary">*</span></label
+          >
+          <input
+            type="text"
+            id="input3"
+            class="w-full default-input default-focus"
+            placeholder="ex : Présence en ligne pour augmenter la visibilité et attirer de nouveaux clients."
+            @input="block4 =  true"
+          />
+        </div>
+        <!-- Question 4 -->
+        <div x-show="block4">
+          <label for="input4" class="default-label"
+            >4/8. Fonctionnalités à ajouter ou améliorer
+            <span class="text-secondary">*</span></label
+          >
+          <textarea
+            type="text"
+            id="input4"
+            class="w-full default-textarea default-focus"
+            placeholder="ex : Formulaire de contact, Blog, E-commerce pour vendre des produits."
+            @input="block5 =  true"
+          ></textarea>
+        </div>
+
+        <!-- Question 5 -->
+        <div x-show="block5">
+          <label for="input5" class="default-label"
+            >5/8. Public cible <span class="text-secondary">*</span></label
+          >
+          <input
+            type="text"
+            id="input5"
+            class="w-full default-input default-focus"
+            placeholder="ex : Adultes de 25 à 45 ans, intéressés par les produits artisanaux."
+            @input="block6 =  true"
+          />
+        </div>
+        <!-- Question 6 -->
+        <div x-show="block6">
+          <label for="input6" class="default-label"
+            >6/8. Exemples de sites qui vous inspirent
+            <span class="text-secondary">*</span></label
+          >
+          <textarea
+            type="text"
+            id="input6"
+            class="w-full default-textarea default-focus"
+            placeholder="ex : www.exemple1.com, www.exemple2.com"
+            @input="block7 =  true"
+          ></textarea>
+        </div>
+
+        <!-- Question 7 -->
+        <div x-show="block7">
+          <label for="input7" class="default-label"
+            >7/8. Budget estimé <span class="text-secondary">*</span></label
+          >
+          <input
+            type="text"
+            id="input7"
+            class="w-full default-input default-focus"
+            @input="block8 =  true"
+            placeholder="ex : 2000 - 3000 €"
+          />
+        </div>
+
+        <!-- Question 8 -->
+        <div x-show="block8">
+          <label for="input8" class="default-label"
+            >8/8. Délai souhaité pour le lancement
+            <span class="text-secondary">*</span></label
+          >
+          <input
+            type="text"
+            id="input8"
+            class="w-full default-input default-focus"
+            placeholder="ex : 3 mois à partir de la signature du contrat."
+            @input="block9 =  true"
+          />
+        </div>
+
+        <!-- End block -->
+        <div x-show="block9" class="lg:w-[91%]">
+          <button id="download-button" class="blue-button">Télécharger</button>
+          <p class="text-grayText text-xs mt-6">
+            Tous les champs marqués d'un astérisque (<span
+              class="text-secondary"
+              >*</span
+            >) sont requis.
+          </p>
+        </div>
+      </div>
+
+      <!-- Maintenance form -->
+      <div
+        x-data="{ block: 1 }"
+        x-show="selectedForm === 'form3'"
+        class="mt-6 w-full flex flex-col gap-6"
+      >
+        <!-- Question 1 -->
+        <div x-show="block1 || (block1 = true)" class="flex flex-col">
+          <label for="input1" class="default-label"
+            >1/8. URL du site <span class="text-secondary">*</span></label
+          >
+          <input
+            type="text"
+            id="input1"
+            class="w-full default-input default-focus"
+            placeholder="ex : Mon Site Web Pro"
+            @input="block2 =  true"
+          />
+        </div>
+        <!-- Question 2 -->
+        <div x-show="block2">
+          <label for="input2" class="default-label"
+            >2/8. Technologies utilisées
+            <span class="text-secondary">*</span></label
+          >
+          <textarea
+            type="text"
+            id="input2"
+            class="w-full default-textarea default-focus"
+            placeholder="ex : Entreprise de vente de produits artisanaux, fondée en 2015, basée à Paris."
+            @input="block3 =  true"
+          ></textarea>
+        </div>
+        <!-- Question 3 -->
+        <div x-show="block3">
+          <label for="input3" class="default-label"
+            >3/8. Types de maintenance souhaitée
+            <span class="text-secondary">*</span></label
+          >
+          <input
+            type="text"
+            id="input3"
+            class="w-full default-input default-focus"
+            placeholder="ex : Présence en ligne pour augmenter la visibilité et attirer de nouveaux clients."
+            @input="block4 =  true"
+          />
+        </div>
+        <!-- Question 4 -->
+        <div x-show="block4">
+          <label for="input4" class="default-label"
+            >4/8. Fréquence des mises à jour
+            <span class="text-secondary">*</span></label
+          >
+          <textarea
+            type="text"
+            id="input4"
+            class="w-full default-textarea default-focus"
+            placeholder="ex : Formulaire de contact, Blog, E-commerce pour vendre des produits."
+            @input="block5 =  true"
+          ></textarea>
+        </div>
+
+        <!-- Question 5 -->
+        <div x-show="block5">
+          <label for="input5" class="default-label"
+            >5/8. Public cible <span class="text-secondary">*</span></label
+          >
+          <input
+            type="text"
+            id="input5"
+            class="w-full default-input default-focus"
+            placeholder="ex : Adultes de 25 à 45 ans, intéressés par les produits artisanaux."
+            @input="block6 =  true"
+          />
+        </div>
+        <!-- Question 6 -->
+        <div x-show="block6">
+          <label for="input6" class="default-label"
+            >6/8. Problèmes actuels rencontrés
+            <span class="text-secondary">*</span></label
+          >
+          <textarea
+            type="text"
+            id="input6"
+            class="w-full default-textarea default-focus"
+            placeholder="ex : www.exemple1.com, www.exemple2.com"
+            @input="block7 =  true"
+          ></textarea>
+        </div>
+
+        <!-- Question 7 -->
+        <div x-show="block7">
+          <label for="input7" class="default-label"
+            >7/8. Budget mensuel alloué
+            <span class="text-secondary">*</span></label
+          >
+          <input
+            type="text"
+            id="input7"
+            class="w-full default-input default-focus"
+            @input="block8 =  true"
+            placeholder="ex : 2000 - 3000 €"
+          />
+        </div>
+
+        <!-- Question 8 -->
+        <div x-show="block8">
+          <label for="input8" class="default-label"
+            >8/8. Priorités de maintenance
+            <span class="text-secondary">*</span></label
+          >
+          <input
+            type="text"
+            id="input8"
+            class="w-full default-input default-focus"
+            placeholder="ex : 3 mois à partir de la signature du contrat."
+            @input="block9 =  true"
+          />
+        </div>
+
+        <!-- End block -->
+        <div x-show="block9" class="lg:w-[91%]">
+          <button id="download-button" class="blue-button">Télécharger</button>
+          <p class="text-grayText text-xs mt-6">
+            Tous les champs marqués d'un astérisque (<span
+              class="text-secondary"
+              >*</span
+            >) sont requis.
+          </p>
+        </div>
+      </div>
+
+      <!-- SEO form -->
+      <div
+        x-data="{ block: 1 }"
+        x-show="selectedForm === 'form4'"
+        class="mt-6 w-full flex flex-col gap-6"
+      >
+        <!-- Question 1 -->
+        <div x-show="block1 || (block1 = true)" class="flex flex-col">
+          <label for="input1" class="default-label"
+            >1/8. URL du site <span class="text-secondary">*</span></label
+          >
+          <input
+            type="text"
+            id="input1"
+            class="w-full default-input default-focus"
+            placeholder="ex : Mon Site Web Pro"
+            @input="block2 =  true"
+          />
+        </div>
+        <!-- Question 2 -->
+        <div x-show="block2">
+          <label for="input2" class="default-label"
+            >2/8. Principaux mots-clés visés
+            <span class="text-secondary">*</span></label
+          >
+          <textarea
+            type="text"
+            id="input2"
+            class="w-full default-textarea default-focus"
+            placeholder="ex : Entreprise de vente de produits artisanaux, fondée en 2015, basée à Paris."
+            @input="block3 =  true"
+          ></textarea>
+        </div>
+        <!-- Question 3 -->
+        <div x-show="block3">
+          <label for="input3" class="default-label"
+            >3/8. Objectifs de SEO <span class="text-secondary">*</span></label
+          >
+          <input
+            type="text"
+            id="input3"
+            class="w-full default-input default-focus"
+            placeholder="ex : Présence en ligne pour augmenter la visibilité et attirer de nouveaux clients."
+            @input="block4 =  true"
+          />
+        </div>
+        <!-- Question 4 -->
+        <div x-show="block4">
+          <label for="input4" class="default-label"
+            >4/8. État actuel du SEO
+            <span class="text-secondary">*</span></label
+          >
+          <textarea
+            type="text"
+            id="input4"
+            class="w-full default-textarea default-focus"
+            placeholder="ex : Formulaire de contact, Blog, E-commerce pour vendre des produits."
+            @input="block5 =  true"
+          ></textarea>
+        </div>
+
+        <!-- Question 5 -->
+        <div x-show="block5">
+          <label for="input5" class="default-label"
+            >5/8. Concurrents principaux
+            <span class="text-secondary">*</span></label
+          >
+          <input
+            type="text"
+            id="input5"
+            class="w-full default-input default-focus"
+            placeholder="ex : Adultes de 25 à 45 ans, intéressés par les produits artisanaux."
+            @input="block6 =  true"
+          />
+        </div>
+        <!-- Question 6 -->
+        <div x-show="block6">
+          <label for="input6" class="default-label"
+            >6/8. Budget mensuel alloué
+            <span class="text-secondary">*</span></label
+          >
+          <textarea
+            type="text"
+            id="input6"
+            class="w-full default-textarea default-focus"
+            placeholder="ex : www.exemple1.com, www.exemple2.com"
+            @input="block7 =  true"
+          ></textarea>
+        </div>
+
+        <!-- Question 7 -->
+        <div x-show="block7">
+          <label for="input7" class="default-label"
+            >7/8. Priorités de référencement
+            <span class="text-secondary">*</span></label
+          >
+          <input
+            type="text"
+            id="input7"
+            class="w-full default-input default-focus"
+            @input="block8 =  true"
+            placeholder="ex : 2000 - 3000 €"
+          />
+        </div>
+
+        <!-- End block -->
+        <div x-show="block8" class="lg:w-[91%]">
+          <button id="download-button" class="blue-button">Télécharger</button>
+          <p class="text-grayText text-xs mt-6">
+            Tous les champs marqués d'un astérisque (<span
+              class="text-secondary"
+              >*</span
+            >) sont requis.
+          </p>
+        </div>
+      </div>
+    </article>
+  </div>
+</section>
+{% endblock %} {#
+<article class="mt-[80px] lg:mt-[100px] mx-auto w-full">
+  <div class="flex flex-col justify-center items-center mt-[20px] w-full">
+    <h2
+      class="lg:w-[91%] w-full text-white lg:text-[32px] md:text-[28px] text-[26px] tracking-tight"
+    >
+      Questionnaire de définition de vos objectifs
+    </h2>
+
+    <!-- Div pour les messages d'erreur -->
+    <div class="mt-2 w-full lg:w-[91%]">
+      <div class="w-full lg:w-1/2">
+        <div id="statusMessages" role="alert"></div>
+      </div>
+    </div>
+
+    <!-- Div pour les questions -->
+    <div class="flex flex-col mt-[50px] relative w-full lg:w-[91%] mb-4">
+      <div class="lg:w-1/2 flex flex-col">
+        <label for="type" class="default-label">
+          Type de projet<span class="text-secondary">*</span>
+        </label>
+        <div class="select-container bg-primary lg:w-1/2 flex items-center">
+          <select
+            id="type"
+            class="bg-quaternary select-input w-full rounded-[4px] border border-borderBase bg-opacityBlue h-[50px] px-4 text-white text-sm font-light focus:outline-none focus:ring focus:ring-secondary"
+          >
+            <option selected>-Sélectionnez le type de votre projet-</option>
+            <option value="1">Développement de site web</option>
+            <option value="2">Refonte</option>
+            <option value="3">Maintenance</option>
+            <option value="4">Référencement</option>
+          </select>
+        </div>
+      </div>
+    </div>
+
+    <div
+      class="flex flex-col lg:flex-row gap-4 flex-wrap items-center justify-center w-full"
+    >
+      <div class="w-full lg:w-[45%] conditional-div">
+        <label for="message" class="mb-4 text-sm text-grayText"
+          >1/8. Quels sont les objectifs principaux de votre site d'entreprise
+          ?<span class="text-secondary">*</span></label
+        >
+        <textarea
+          placeholder="Exemple : Augmenter la notoriété de la marque, améliorer l'engagement client, etc."
+          rows="5"
+          resize="none"
+          class="p-2.5 w-full mt-2 text-sm text-grayText bg-quaternary rounded-md border border-borderBase"
+          id="textarea1"
+          required
+        ></textarea>
+      </div>
+
+      <div class="w-full lg:w-[45%] conditional-div hidden-div">
+        <label for="message" class="mb-2 text-sm text-grayText"
+          >2/5. Quelles fonctionnalités spécifiques votre site doit-il inclure
+          pour atteindre ces objectifs ?<span class="text-secondary"
+            >*</span
+          ></label
+        >
+        <textarea
+          placeholder="Formulaire de contact, présentation des services, section témoignages, blog d'entreprise, etc."
+          rows="5"
+          resize="none"
+          class="p-2.5 w-full mt-2 text-sm text-grayText bg-quaternary rounded-md border border-borderBase"
+          id="textarea2"
+          required
+        ></textarea>
+      </div>
+
+      <div class="w-full lg:w-[45%] conditional-div hidden-div">
+        <label for="message" class="mb-2 text-sm text-grayText"
+          >3/5. Comment mesurez-vous le succès de votre site d'entreprise ?<span
+            class="text-secondary"
+            >*</span
+          ></label
+        >
+        <textarea
+          placeholder="Taux de conversion, trafic web, durée des sessions utilisateur, etc."
+          rows="5"
+          resize="none"
+          class="p-2.5 w-full mt-2 text-sm text-grayText bg-quaternary rounded-md border border-borderBase"
+          id="textarea3"
+          required
+        ></textarea>
+      </div>
+
+      <div class="w-full lg:w-[45%] conditional-div hidden-div">
+        <label for="message" class="mb-2 text-sm text-grayText"
+          >4/5.Quel est votre public cible ?<span class="text-secondary"
+            >*</span
+          ></label
+        >
+        <textarea
+          placeholder="Systèmes de réservation, intégration CRM, newsletters, etc."
+          rows="5"
+          resize="none"
+          class="p-2.5 w-full mt-2 text-sm text-grayText bg-quaternary rounded-md border border-borderBase"
+          id="textarea4"
+          required
+        ></textarea>
+      </div>
+
+      <div class="w-full lg:w-[45%] conditional-div hidden-div">
+        <label for="message" class="mb-2 text-sm text-grayText"
+          >5/5. Avez-vous des intégrations spécifiques à incorporer ?</label
+        >
+        <textarea
+          placeholder="Détails démographiques, préférences, comportements en ligne, etc."
+          rows="5"
+          resize="none"
+          class="p-2.5 w-full mt-2 text-sm text-grayText bg-quaternary rounded-md border border-borderBase"
+          id="textarea5"
+        ></textarea>
       </div>
 
       <div
-        class="flex flex-col lg:flex-row gap-4 flex-wrap items-center justify-center w-full"
-      >
-        <div class="w-full lg:w-[45%] conditional-div">
-          <label for="message" class="mb-4 text-sm text-grayText"
-            >1/5. Quels sont les objectifs principaux de votre site d'entreprise
-            ?<span class="text-secondary">*</span></label
-          >
-          <textarea
-            placeholder="Exemple : Augmenter la notoriété de la marque, améliorer l'engagement client, etc."
-            rows="5"
-            resize="none"
-            class="p-2.5 w-full mt-2 text-sm text-grayText bg-quaternary rounded-md border border-borderBase"
-            id="textarea1"
-            required
-          ></textarea>
-        </div>
-
-        <div class="w-full lg:w-[45%] conditional-div hidden-div">
-          <label for="message" class="mb-2 text-sm text-grayText"
-            >2/5. Quelles fonctionnalités spécifiques votre site doit-il inclure
-            pour atteindre ces objectifs ?<span class="text-secondary"
-              >*</span
-            ></label
-          >
-          <textarea
-            placeholder="Formulaire de contact, présentation des services, section témoignages, blog d'entreprise, etc."
-            rows="5"
-            resize="none"
-            class="p-2.5 w-full mt-2 text-sm text-grayText bg-quaternary rounded-md border border-borderBase"
-            id="textarea2"
-            required
-          ></textarea>
-        </div>
-
-        <div class="w-full lg:w-[45%] conditional-div hidden-div">
-          <label for="message" class="mb-2 text-sm text-grayText"
-            >3/5. Comment mesurez-vous le succès de votre site d'entreprise
-            ?<span class="text-secondary">*</span></label
-          >
-          <textarea
-            placeholder="Taux de conversion, trafic web, durée des sessions utilisateur, etc."
-            rows="5"
-            resize="none"
-            class="p-2.5 w-full mt-2 text-sm text-grayText bg-quaternary rounded-md border border-borderBase"
-            id="textarea3"
-            required
-          ></textarea>
-        </div>
-
-        <div class="w-full lg:w-[45%] conditional-div hidden-div">
-          <label for="message" class="mb-2 text-sm text-grayText"
-            >4/5.Quel est votre public cible ?<span class="text-secondary"
-              >*</span
-            ></label
-          >
-          <textarea
-            placeholder="Systèmes de réservation, intégration CRM, newsletters, etc."
-            rows="5"
-            resize="none"
-            class="p-2.5 w-full mt-2 text-sm text-grayText bg-quaternary rounded-md border border-borderBase"
-            id="textarea4"
-            required
-          ></textarea>
-        </div>
-
-        <div class="w-full lg:w-[45%] conditional-div hidden-div">
-          <label for="message" class="mb-2 text-sm text-grayText"
-            >5/5. Avez-vous des intégrations spécifiques à incorporer ?</label
-          >
-          <textarea
-            placeholder="Détails démographiques, préférences, comportements en ligne, etc."
-            rows="5"
-            resize="none"
-            class="p-2.5 w-full mt-2 text-sm text-grayText bg-quaternary rounded-md border border-borderBase"
-            id="textarea5"
-          ></textarea>
-        </div>
-
-        <div
-          class="h-[150px] lg:w-[45%] bg-slate-400 opacity-0 hidden lg:block"
-        ></div>
-      </div>
-
-      <div class="lg:w-[91%] w-full">
-        <button
-          id="download-button"
-          class="px-4 py-2 bg-secondary rounded-md text-white mt-[20px]"
-        >
-          Telecharger
-        </button>
-        <p class="text-grayText text-xs mt-6">
-          Tous les champs marqués d'un astérisque (<span class="text-secondary"
-            >*</span
-          >) sont requis.
-        </p>
-      </div>
+        class="h-[150px] lg:w-[45%] bg-slate-400 opacity-0 hidden lg:block"
+      ></div>
     </div>
-  </article>
-</section>
 
-{% endblock %}
+    <div class="lg:w-[91%] w-full">
+      <button
+        id="download-button"
+        class="px-4 py-2 bg-secondary rounded-md text-white mt-[20px]"
+      >
+        Telecharger
+      </button>
+      <p class="text-grayText text-xs mt-6">
+        Tous les champs marqués d'un astérisque (<span class="text-secondary"
+          >*</span
+        >) sont requis.
+      </p>
+    </div>
+  </div>
+</article>
+#}

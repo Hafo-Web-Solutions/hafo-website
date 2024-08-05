@@ -1,152 +1,179 @@
-{% extends 'base.html.twig' %} {% block title %} Lancement du projet {% endblock
-%} {% block javascripts %}
+{% extends 'base.html.twig' %} {% block title %} Lancement du projet - Hafo Web
+Solutions {% endblock %} {% block javascripts %}
 {{ parent() }}
 {{ encore_entry_script_tags("define") }}
 {% endblock %} {% block body %}
 
-<section
-  class="mt-[80px] lg:mt-[100px] w-full default-container 2xl:container-fluid 2xl:px-[140px]"
->
+<section class="default-mt w-full default-container sm:container">
   <!-- Content Header -->
-  <article class="flex flex-col lg:w-1/2">
-    <h2
-      class="text-white lg:text-[45px] md:text-[32px] text-[28px] tracking-tight"
-      data-sal="slide-up"
-      data-sal-duration="800"
-      data-sal-delay="150"
-    >
-      Lancement du projet
-    </h2>
-    <p
-      class="text-secondary mt-3 leading-[28px]"
-      data-sal="fade-in"
-      data-sal-duration="800"
-      data-sal-delay="250"
-    >
-      Lancez-vous avec confiance.
-    </p>
-    <p
-      class="text-grayText mt-3 leading-[28px]"
-      data-sal="fade-in"
-      data-sal-duration="800"
-      data-sal-delay="250"
-    >
-      Lorsque votre stratégie est validée, nous passons à l’action. Nous
-      activons le plan précis que nous avons établi ensemble pour réaliser vos
-      objectifs. Chaque étape est soigneusement préparée pour assurer un
-      démarrage fluide et établir une présence en ligne efficace et adaptée à
-      vos besoins.
-    </p>
-  </article>
+  <article
+    class="flex flex-col w-full gap-10 sm:container lg:flex-row lg:default-container"
+  >
+    <div class="lg:w-1/2 px-8 lg:px-0">
+      <h1
+        class="default-h responsive-h1"
+        data-sal="slide-up"
+        data-sal-duration="800"
+        data-sal-delay="150"
+      >
+        Lancement du projet
+      </h1>
+      <p
+        class="default-bp mt-3"
+        data-sal="fade-in"
+        data-sal-duration="800"
+        data-sal-delay="200"
+      >
+        Lancez-vous avec confiance.
+      </p>
+      <p
+        class="default-p mt-3"
+        data-sal="fade-in"
+        data-sal-duration="800"
+        data-sal-delay="250"
+      >
+        Lorsque votre stratégie est validée, nous passons à l’action. Nous
+        activons le plan précis que nous avons établi ensemble pour réaliser vos
+        objectifs. Chaque étape est soigneusement préparée pour assurer un
+        démarrage fluide et établir une présence en ligne efficace et adaptée à
+        vos besoins.
+      </p>
+      <div class="mt-10">
+        <h2
+          class="default-h responsive-h2"
+          data-sal="slide-up"
+          data-sal-duration="800"
+          data-sal-delay="300"
+        >
+          L'importance de la planification
+        </h2>
+        <p
+          class="default-p mt-3"
+          data-sal="fade-in"
+          data-sal-duration="800"
+          data-sal-delay="350"
+        >
+          La planification est cruciale pour le succès de tout projet. Elle
+          permet de définir des objectifs clairs, d'anticiper les obstacles et
+          d'assurer une exécution fluide. Grâce à une planification rigoureuse,
+          nous garantissons des résultats optimaux et une satisfaction client
+          maximale.
+        </p>
+      </div>
+    </div>
 
-  <article class="flex lg:flex-row flex-col gap-8 mt-[80px] lg:mt-[100px] mx-auto w-full">
-    <!-- Image -->
-    <div
-      class="overflow-hidden h-[300px] w-full lg:h-[800px] lg:w-1/2 lg:rounded-md"
-    >
+    <div class="lg:w-1/2">
       <img
         src="{{ asset('./image/support/launch.jpeg') }}"
         alt="creation de site"
-        class="object-cover w-full h-full hover:scale-110 transition-transform duration-500"
+        class="object-cover h-[560px] w-full"
       />
     </div>
+  </article>
 
-    <div class="lg:w-1/2 flex flex-col gap-4 lg:gap-8  mt-[80px] lg:mt-[0px] ">
-      <div>
-        <h2
-          class="text-white lg:text-[28px] md:text-[26px] text-[24px] tracking-tight"
-          data-sal="slide-up"
-          data-sal-duration="800"
-          data-sal-delay="150"
-        >
-          Validation Technique et Planification
-        </h2>
-        <p
-          class="text-secondary mt-3 leading-[28px]"
-          data-sal="fade-in"
-          data-sal-duration="800"
-          data-sal-delay="250"
-        >
-          Des bases solides pour une performance optimale.
-        </p>
-        <p
-          class="text-grayText mt-3 mb-8 leading-[28px]"
-          data-sal="fade-in"
-          data-sal-duration="800"
-          data-sal-delay="250"
-        >
-          Nous commençons par une validation technique pour nous assurer que
-          toutes les spécifications correspondent parfaitement à vos attentes.
-          Cette phase inclut l’organisation des ressources nécessaires, la
-          planification des étapes clés et la mise en place des systèmes
-          essentiels. Elle garantit que tout est prêt pour un développement sans
-          accroc.
+  <!-- process -->
+  <article class="default-container sm:container">
+    <h2
+      class="default-h default-mt responsive-h2 mb-16"
+      data-sal="slide-up"
+      data-sal-duration="800"
+      data-sal-selay="150"
+    >
+      Processus de lancement de projet
+    </h2>
+    <div
+      class="flex flex-col text-center gap-10 lg:flex-row"
+      data-sal="slide-up"
+      data-sal-duration="800"
+      data-sal-selay="200"
+    >
+      <div class="flex flex-col justify-center items-center pb-6 lg:py-0">
+        <img
+          src="{{ asset('./image/journey/check.svg') }}"
+          class="h-16 w-16"
+          alt="Symfony"
+        />
+        <h4 class="default-h responsive-h4 mt-4">Préparation finale</h4>
+        <p class="default-p mt-3">
+          Nous revérifions tous les aspects du projet pour nous assurer qu'ils
+          répondent à vos attentes et aux normes de qualité. Si nécessaire, nous
+          fournissons une formation pour vous familiariser avec les outils et
+          les fonctionnalités développés.
         </p>
       </div>
-
-      <div>
-        <h2
-          class="text-white lg:text-[28px] md:text-[26px] text-[24px] tracking-tight"
-          data-sal="slide-up"
-          data-sal-duration="800"
-          data-sal-delay="150"
-        >
-          Développement et Intégration
-        </h2>
-        <p
-          class="text-secondary mt-3 leading-[28px]"
-          data-sal="fade-in"
-          data-sal-duration="800"
-          data-sal-delay="250"
-        >
-          Transformez les plans en réalité fonctionnelle.
-        </p>
-        <p
-          class="text-grayText mt-3 mb-8 leading-[28px]"
-          data-sal="fade-in"
-          data-sal-duration="800"
-          data-sal-delay="250"
-        >
-          Cette phase est le cœur du développement de votre site ou application.
-          Notre équipe construit et intègre les fonctionnalités prévues,
-          utilisant des méthodes agiles pour une adaptation rapide et efficace.
-          Nous nous assurons que chaque élément fonctionne harmonieusement pour
-          répondre à vos besoins spécifiques.
+      <div
+        class="flex flex-col justify-center items-center py-6 lg:py-0 lg:px-8"
+      >
+        <img
+          src="{{ asset('./image/journey/rocket.svg') }}"
+          class="h-16 w-16"
+          alt="Symfony"
+        />
+        <h4 class="default-h responsive-h4 mt-4">Déploiement</h4>
+        <p class="default-p mt-3">
+          Nous déployons votre projet sur le serveur de production, assurant une
+          transition sans heurt et minimisant les interruptions. Des tests
+          finaux en conditions réelles sont effectués pour vérifier que tout
+          fonctionne parfaitement.
         </p>
       </div>
-
-      <div>
-        <h2
-          class="text-white lg:text-[28px] md:text-[26px] text-[24px] tracking-tight"
-          data-sal="slide-up"
-          data-sal-duration="800"
-          data-sal-delay="150"
-        >
-          Tests et Assurance Qualité
-        </h2>
-        <p
-          class="text-secondary mt-3 leading-[28px]"
-          data-sal="fade-in"
-          data-sal-duration="800"
-          data-sal-delay="250"
-        >
-          Assurez la qualité avant le lancement.
-        </p>
-        <p
-          class="text-grayText mt-3 mb-8 leading-[28px]"
-          data-sal="fade-in"
-          data-sal-duration="800"
-          data-sal-delay="250"
-        >
-          Nous soumettons votre projet à une série de tests pour vérifier que
-          tout fonctionne parfaitement. Ces tests comprennent la sécurité, la
-          compatibilité et la performance. L’objectif est détecter et résoudre
-          tout problème avant le lancement, garantissant ainsi une expérience
-          utilisateur fluide et sécurisée dès le départ.
+      <div class="flex flex-col justify-center items-center pt-6 lg:py-0">
+        <img
+          src="{{ asset('./image/journey/chart.svg') }}"
+          class="h-16 w-16"
+          alt="Symfony"
+        />
+        <h4 class="default-h responsive-h4 mt-4">Suivi et ajustements</h4>
+        <p class="default-p mt-3">
+          Nous surveillons la performance du site pour détecter et corriger
+          rapidement toute anomalie. Des ajustements peuvent être faits pour
+          améliorer encore plus la performance et l'expérience utilisateur.
         </p>
       </div>
+    </div>
+  </article>
+
+  <!-- Partnership -->
+  <article
+    class="default-container sm:container default-mt flex flex-col w-full lg:flex-row lg:gap-8 lg:mt-[100px]"
+  >
+    <div class="flex flex-col justify-center mb-8 lg:w-1/2 lg:mb-0">
+      <h2
+        class="default-h responsive-h2 mb-[20px] lg:mb-0"
+        data-sal="slide-up"
+        data-sal-duration="800"
+        data-sal-delay="150"
+      >
+        Un partenariat continu
+      </h2>
+    </div>
+    <div class="default-border flex flex-col justify-center p-[25px] lg:w-1/2">
+      <p
+        class="default-p"
+        data-sal="slide-up"
+        data-sal-duration="800"
+        data-sal-delay="200"
+      >
+        Nous restons disponibles bien après le lancement de votre projet. Notre
+        engagement inclut un support continu pour garantir le bon fonctionnement
+        de votre site ou application. Nous sommes prêts à vous accompagner dans
+        vos futurs projets, en vous aidant à innover et à vous adapter aux
+        évolutions du marché. Avec notre équipe, vous avez l’assurance d’un
+        partenariat fiable et durable.
+      </p>
     </div>
   </article>
 </section>
 
-{% endblock %}
+<!-- Component CTA -->
+<!-- Title -->
+{% set title = "Lancez votre projet aujourd'hui " %}
+<!-- Content -->
+{% set content %} Contactez-nous dès maintenant pour lancer votre projet avec
+succès et bénéficier d'un suivi continu.
+<span class="text-secondary">Nous reviendrons vers vous sous 24h.</span>
+{% endset %}
+<!-- Button -->
+{% set button = "Planifiez votre projet" %}
+<!-- CTA -->
+{% include "./components/cta.html.twig" %} {% endblock %}

@@ -16,7 +16,7 @@ module.exports = {
         dark: "#1D1D1D",
         customBlack: "rgba(0, 0, 0, 0.8)",
         darkBlue: "#242435",
-        darkMidnightBlue: "#151521",
+        darkMidnightBlue: "#161620",
         opacityBlue: "rgba(36, 36, 53, 0.3412)",
       },
       boxShadow: {
@@ -45,6 +45,8 @@ module.exports = {
         "lg-1500": "1400px",
         "expertise-lg": { min: "1024px", max: "1200px" },
         "expertise-size": "1354px",
+        "mac-size": "1400px",
+        "plan-lg": { min: "1024px", max: "1157px" },
       },
       transitionProperty: {
         position: "left, bottom",
@@ -219,6 +221,50 @@ module.exports = {
             marginTop: "100px",
           },
         },
+        ".default-mb": {
+          marginBottom: "80px",
+          "@screen lg": {
+            marginBottom: "100px",
+          },
+        },
+
+        // Label
+        ".default-label": {
+          color: "#acacac",
+          fontSize: "14px",
+          lineHeight: "20px",
+          fontWeight: "500",
+        },
+
+        // Input
+        ".default-input": {
+          borderRadius: "4px",
+          borderColor: "#282832",
+          borderWidth: "1px",
+          backgroundColor: "rgba(36, 36, 53, 0.3412)",
+          height: "50px",
+          padding: "0 16px",
+          color: "#ffffff",
+          fontSize: "14px",
+          lineHeight: "20px",
+          fontWeight: "300",
+          marginTop: "8px",
+        },
+
+        // Textarea
+        ".default-textarea": {
+          borderRadius: "4px",
+          borderColor: "#282832",
+          borderWidth: "1px",
+          backgroundColor: "rgba(36, 36, 53, 0.3412)",
+          height: "150px",
+          padding: "12px 16px 0 16px",
+          color: "#ffffff",
+          fontSize: "14px",
+          lineHeight: "20px",
+          fontWeight: "300",
+          marginTop: "8px",
+        },
       };
 
       addUtilities(newUtilities);
@@ -227,6 +273,10 @@ module.exports = {
       const newComponents = {
         ".default-container": {
           "@apply w-full mx-auto px-8 py-0.5": {},
+        },
+        ".default-focus": {
+          "@apply focus:outline-none focus:ring focus:ring-secondary focus:ring-[1px]":
+            {},
         },
       };
 

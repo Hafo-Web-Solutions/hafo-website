@@ -1,17 +1,97 @@
-{% extends 'base.html.twig' %}
-{% block title %}
-  Hafo Web Solutions
-{% endblock %}
-{% block body %}
-  {% include "./components/hero.html.twig" %}
-  {% include "./components/about.html.twig" %}
-  {% include "./components/expertise.html.twig" with { redirect: true } %}
-  {% include "./components/achievements.html.twig" %}
-  {% include "./components/journey.html.twig" with { title:
-    "Votre Parcours de Réussite", subtitle: "Chaque Étape, Un Pas de Plus Vers Votre
-    Vision" } %}
-  {% include "./components/projects.html.twig" %}
-  {% include "./components/cta.html.twig" %}
-  {% include "./components/blog.html.twig" %}
-  {% include "./components/faq.html.twig" %}
-{% endblock %}
+{% extends 'base.html.twig' %} {% block title %}Agence Web - Hafo Web Solutions
+{% endblock %} {% block body %}
+<!-- Component Hero -->
+{% include "./components/hero.html.twig" %}
+
+<!-- Component About -->
+{% include "./components/about.html.twig" %}
+
+<!-- Component Expertise -->
+<!-- Subtitle -->
+{% set expertise_subtitle = "Votre projet, notre expertise" %}
+<!-- Title -->
+{% set expertise_title = "Explorez notre Savoir-Faire" %}
+<!-- Content -->
+{% set expertise_content %} Plongez dans l’univers du digital avec aisance et
+précision. Nous transformons vos visions en réalisations numériques
+personnalisées, combinant performance, esthétique moderne et expérience
+utilisateur optimale. Vos ambitions sont au coeur de notre démarche créative {%
+endset %}
+<!-- Expertise -->
+{% include "./components/expertise.html.twig" with { redirect: true } %}
+
+<!-- Component Achievements -->
+{% include "./components/achievements.html.twig" %}
+
+<!-- Component Journey -->
+{% include "./components/journey.html.twig" with { title: "Votre parcours de
+réussite", subtitle: "Chaque étape, un pas de plus vers votre vision" } %}
+
+<!-- Component Projects -->
+{% include "./components/projects.html.twig" %}
+
+<!-- Component CTA -->
+<!-- Title -->
+{% set title = "Améliorez votre présence en ligne" %}
+<!-- Content -->
+{% set content %}Optimisez votre visibilité et performance avec Hafo Web
+Solutions. Nous offrons des services de développement web, maintenance, refonte
+et référencement. Notre équipe s'engage à fournir des solutions sur mesure pour
+répondre à vos besoins spécifiques.
+<span class="text-secondary">Nous reviendrons vers vous sous 24h.</span>{%
+endset %}
+<!-- Button -->
+{% set button = "Obtenez votre consultation gratuite maintenant" %}
+<!-- CTA -->
+{% include "./components/cta.html.twig" %}
+
+<!-- Component Blog -->
+{% include "./components/blog.html.twig" %}
+
+<!-- Component FAQ -->
+<!-- Question 1 -->
+{% set faq_question1_title = "Quels services proposez-vous ?" %} {% set
+faq_question1_content = "Nous offrons des services de développement web,
+maintenance, refonte, et référencement. Nous sommes spécialisés dans le
+développement Symfony, garantissant des solutions robustes et sur mesure pour
+nos clients." %}
+<!-- Question 2 -->
+{% set faq_question2_title = "Comment obtenir un devis ?" %} {% set
+faq_question2_content = "Contactez-nous pour un devis gratuit adapté à vos
+besoins spécifiques. Nous analysons votre projet et fournissons une estimation
+précise basée sur vos exigences." %}
+<!-- Question 3 -->
+{% set faq_question3_title = "Quels sont vos tarifs pour le développement de
+site ?" %} {% set faq_question3_content = "Nos tarifs varient : Basique (1200
+€), Standard (2500 €), Avancé (5000 €), Personnalisé (sur devis). Ces prix sont
+indicatifs et flexibles en fonction de la complexité et des fonctionnalités
+requises." %}
+<!-- Question 4 -->
+{% set faq_question4_title = "Proposez-vous des services de maintenance ?" %} {%
+set faq_question4_content = "Oui, nous proposons des services de maintenance à
+partir de 80 €/mois pour le forfait Basique et 250 €/mois pour le forfait
+Complet, assurant que votre site reste à jour et performant." %}
+<!-- Question 5 -->
+{% set faq_question5_title = "Combien de temps prend un projet typique ?" %} {%
+set faq_question5_content = "La durée d'un projet dépend de sa complexité. Après
+une analyse détaillée de vos besoins, nous fournissons une estimation précise du
+délai nécessaire pour réaliser votre projet." %}
+<!-- Question 6 -->
+{% set faq_question6_title = "Offrez-vous des consultations gratuites ?" %} {%
+set faq_question6_content = "Oui, nous offrons des consultations gratuites pour
+discuter de vos besoins et définir la meilleure stratégie pour votre projet." %}
+<!-- Question 7 -->
+{% set faq_question7_title = "Comment prendre rendez-vous avec votre équipe ?"
+%}{% set faq_question7_content = "Utilisez notre bouton \"Prendre RDV\" pour
+accéder à notre calendrier. Planifiez un rendez-vous à votre convenance. Nous
+sommes flexibles et disponibles pour répondre à vos questions et discuter de
+votre projet." %}
+<!-- Question 8 -->
+{% set faq_question8_title = "Quels avantages pour le référencement
+proposez-vous ?" %} {% set faq_question8_content = "Nous offrons une
+optimisation SEO initiale à 450 € pour améliorer votre visibilité en ligne.
+Ensuite, nous proposons des optimisations SEO continues à 250 €/mois pour
+garantir que votre site reste performant et bien classé dans les moteurs de
+recherche." %}
+<!-- FAQ -->
+{% include "./components/faq.html.twig" %} {% endblock %}

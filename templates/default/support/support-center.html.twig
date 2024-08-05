@@ -1,6 +1,411 @@
-{% extends 'base.html.twig' %} {% block title %} Centre de support {% endblock
-%} {% block body %} {% include "./components/journey.html.twig" with { title:
-"Votre Parcours de Réussite", subtitle: "Chaque Étape, Un Pas de Plus Vers Votre
-Vision", style: "bg-secondary" , style: "mt-[80px] lg:mt-[100px]"} %} {% include
-"./components/faq.html.twig" with { isTitle: false, style: "mt-[80px]
-lg:mt-[100px]", isSupport: true} %} {% endblock %}
+{% extends 'base.html.twig' %} {% block title %} Centre de support - Hafo Web
+Solutions {% endblock %} {% block javascripts %}
+{{ parent() }}
+{{ encore_entry_script_tags("support") }}
+{% endblock %} {% block body %}
+
+<!-- Header -->
+<div
+  class="default-mt flex flex-col items-center justify-center default-container nav-min:px-4 sm:container"
+>
+  <h1
+    class="default-h responsive-h1 text-center"
+    data-sal="slide-up"
+    data-sal-duration="800"
+    data-sal-selay="150"
+  >
+    Centre de support
+  </h1>
+  <p
+    class="default-bp mt-3 text-center"
+    data-sal="slide-up"
+    data-sal-duration="800"
+    data-sal-delay="200"
+  >
+    Nous sommes là pour vous aider
+  </p>
+  <p
+    class="default-p mt-5 text-center lg:w-3/4"
+    data-sal="slide-up"
+    data-sal-duration="800"
+    data-sal-delay="250"
+  >
+    Nous nous engageons à fournir un support de qualité à nos clients. Que vous
+    ayez des questions techniques, besoin d'assistance pour un projet en cours,
+    ou souhaitiez simplement en savoir plus sur nos services, notre équipe est
+    disponible pour vous aider. Utilisez notre centre de support pour trouver
+    des réponses à vos questions fréquentes ou contactez-nous directement pour
+    une assistance personnalisée.
+  </p>
+</div>
+
+<!-- Component Journey -->
+{% include "./components/journey.html.twig" with { title: "Votre Parcours de
+Réussite", subtitle: "Chaque Étape, Un Pas de Plus Vers Votre Vision", style:
+"bg-secondary" , style: "mt-[80px] lg:mt-[100px]"} %}
+
+<section class="default-container w-full sm:container lg:my-0">
+  <div
+    class="default-mt flex flex-col lg:flex-row lg:items-center mb-10 h-auto justify-between"
+  >
+    <h2
+      id="subject_heading"
+      class="order-2 lg:order-1 default-h responsive-h2 mt-5 lg:mt-0"
+    >
+      Questions fréquentes
+    </h2>
+    <div class="order-1 lg:order-2 select-container lg:w-1/4">
+      <select
+        name="select_subject"
+        id="select_subject"
+        class="cursor-pointer form-contact-input select-input w-full rounded-[4px] border border-borderBase bg-opacityBlue h-[50px] px-4 text-white text-sm font-light focus:outline-none focus:ring focus:ring-secondary focus:ring-[1px]"
+        onchange="updateSubject()"
+      >
+        <option value="0" selected>-Sélectionnez un sujet-</option>
+        <option value="1">Questions fréquentes</option>
+        <option value="2">Expertise</option>
+        <option value="3">Création de site</option>
+        <option value="4">Refonte</option>
+        <option value="5">Maintenance</option>
+        <option value="6">Référencement</option>
+      </select>
+    </div>
+  </div>
+  <article
+    class="flex flex-col items-center w-full mt-5 gap-x-8 md:items-start lg:flex-row"
+  >
+    <!-- Block Questions -->
+    <div class="lg:w-1/2">
+      <!-- Block Question 1 -->
+
+      <div data-sal="slide-up" data-sal-duration="800" data-sal-delay="200">
+        <h4 class="question_title default-h responsive-h4 space-select">
+          Quels services proposez-vous ?
+        </h4>
+        <p class="question_content default-p mt-4 flex flex-col gap-2">
+          Nous offrons des services de développement web, maintenance, refonte,
+          et référencement. Nous sommes spécialisés dans le développement
+          Symfony, garantissant des solutions robustes et sur mesure pour nos
+          clients.
+        </p>
+      </div>
+
+      <!-- Block Question 2 -->
+      <div
+        class="mt-8"
+        data-sal="slide-up"
+        data-sal-duration="800"
+        data-sal-delay="250"
+      >
+        <h4 class="question_title default-h responsive-h4">
+          Comment obtenir un devis ?
+        </h4>
+        <p class="question_content default-p mt-4 flex flex-col gap-2">
+          Contactez-nous pour un devis gratuit adapté à vos besoins spécifiques.
+          Nous analysons votre projet et fournissons une estimation précise
+          basée sur vos exigences.
+        </p>
+      </div>
+
+      <!-- Block Question 3 -->
+      <div
+        class="mt-8"
+        data-sal="slide-up"
+        data-sal-duration="800"
+        data-sal-delay="300"
+      >
+        <h4 class="question_title default-h responsive-h4">
+          Quels sont vos tarifs pour le développement de site ?
+        </h4>
+        <p class="question_content default-p mt-4 flex flex-col gap-2">
+          Nos tarifs varient : Basique (1200 €), Standard (2500 €), Avancé (5000
+          €), Personnalisé (sur devis). Ces prix sont indicatifs et flexibles en
+          fonction de la complexité et des fonctionnalités requises.
+        </p>
+      </div>
+      <div
+        class="flex mt-8 gap-4 md:flex-row"
+        data-sal="slide-up"
+        data-sal-duration="800"
+        data-sal-delay="350"
+      >
+        <a href="{{ path('app_contact') }}"
+          ><button
+            class="py-3 px-4 text-white rounded-[10px] font-medium bg-secondary hover:bg-tertiary tracking-[0.5px] ease-in-out duration-300"
+          >
+            Nous contacter
+          </button></a
+        >
+        <button
+          onclick="Calendly.initPopupWidget({url: 'https://calendly.com/hafowebsolutions/30min'});return false;"
+          class="py-3 px-4 text-white rounded-[10px] font-medium hover:bg-secondary bg-tertiary tracking-[0.5px] ease-in-out duration-300"
+        >
+          Prendre RDV
+        </button>
+      </div>
+    </div>
+
+    <!-- Block Accordion -->
+    <ul class="mt-10 lg:mt-0 lg:w-1/2" x-data="{ selected: null }">
+      <!-- Block Question 1 -->
+      <li
+        class="relative bg-opacityBlue rounded-md"
+        data-sal="slide-up"
+        data-sal-duration="800"
+        data-sal-delay="150"
+      >
+        <button
+          type="button"
+          class="w-full bg-whiteTransparency rounded-t-md px-5"
+          @click="selected !== 1 ? selected = 1 : selected = null"
+        >
+          <div class="flex items-center justify-between h-[70px]">
+            <h4
+              class="question_title text-left md:text-xl"
+              :class="{ 'text-secondary ease-in-out duration-300': selected === 1, 'text-white ease-in-out duration-300': selected !== 1 }"
+            >
+              Proposez-vous des services de maintenance ?
+            </h4>
+            <span class="ico-plus">
+              <svg
+                :class="selected === 1 ? 'transform rotate-180' : ''"
+                xmlns="http://www.w3.org/2000/svg"
+                width="24"
+                height="24"
+                viewbox="0 0 24 24"
+                fill="none"
+                :stroke="selected === 1 ? '#00A3FF' : 'white'"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                class="feather feather-chevron-up"
+              >
+                <polyline points="18 15 12 9 6 15"></polyline>
+              </svg>
+            </span>
+          </div>
+        </button>
+        <div
+          class="relative overflow-hidden transition-all max-h-0 duration-300"
+          x-ref="container1"
+          x-bind:style="selected == 1 ? 'max-height: ' + $refs.container1.scrollHeight + 'px' : ''"
+        >
+          <p class="question_content default-p py-3 px-5 flex flex-col gap-2">
+            Oui, nous proposons des services de maintenance à partir de 80
+            €/mois pour le forfait Basique et 250 €/mois pour le forfait
+            Complet, assurant que votre site reste à jour et performant.
+          </p>
+        </div>
+      </li>
+
+      <!-- Block Question 2 -->
+      <li
+        class="relative bg-opacityBlue rounded-md mt-3"
+        data-sal="slide-up"
+        data-sal-duration="800"
+        data-sal-delay="200"
+      >
+        <button
+          type="button"
+          class="w-full bg-whiteTransparency rounded-t-md px-5"
+          @click="selected !== 2 ? selected = 2 : selected = null"
+        >
+          <div class="flex items-center justify-between h-[70px]">
+            <h4
+              class="question_title text-left md:text-xl"
+              :class="{ 'text-secondary ease-in-out duration-300': selected === 2, 'text-white ease-in-out duration-300': selected !== 2 }"
+            >
+              Combien de temps prend un projet typique ?
+            </h4>
+            <span class="ico-plus">
+              <span class="ico-plus">
+                <svg
+                  :class="selected === 2 ? 'transform rotate-180' : ''"
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="24"
+                  height="24"
+                  viewbox="0 0 24 24"
+                  fill="none"
+                  :stroke="selected === 2 ? '#00A3FF' : 'white'"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  class="feather feather-chevron-up"
+                >
+                  <polyline points="18 15 12 9 6 15"></polyline>
+                </svg>
+              </span>
+            </span>
+          </div>
+        </button>
+        <div
+          class="relative overflow-hidden transition-all max-h-0 duration-300"
+          x-ref="container2"
+          x-bind:style="selected == 2 ? 'max-height: ' + $refs.container2.scrollHeight + 'px' : ''"
+        >
+          <p class="question_content default-p p-6 flex flex-col gap-2">
+            La durée d'un projet dépend de sa complexité. Après une analyse
+            détaillée de vos besoins, nous fournissons une estimation précise du
+            délai nécessaire pour réaliser votre projet.
+          </p>
+        </div>
+      </li>
+
+      <!-- Block Question 3 -->
+      <li
+        class="relative bg-opacityBlue rounded-md mt-3"
+        data-sal="slide-up"
+        data-sal-duration="800"
+        data-sal-delay="250"
+      >
+        <button
+          type="button"
+          class="w-full bg-whiteTransparency rounded-t-md px-5"
+          @click="selected !== 3 ? selected = 3 : selected = null"
+        >
+          <div class="flex items-center justify-between h-[70px]">
+            <h4
+              class="question_title text-left md:text-xl"
+              :class="{ 'text-secondary ease-in-out duration-300': selected === 3, 'text-white ease-in-out duration-300': selected !== 3 }"
+            >
+              Offrez-vous des consultations gratuites ?
+            </h4>
+            <span class="ico-plus">
+              <svg
+                :class="selected === 3 ? 'transform rotate-180' : ''"
+                xmlns="http://www.w3.org/2000/svg"
+                width="24"
+                height="24"
+                viewbox="0 0 24 24"
+                fill="none"
+                :stroke="selected === 3 ? '#00A3FF' : 'white'"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                class="feather feather-chevron-up"
+              >
+                <polyline points="18 15 12 9 6 15"></polyline>
+              </svg>
+            </span>
+          </div>
+        </button>
+        <div
+          class="relative overflow-hidden transition-all max-h-0 duration-300"
+          x-ref="container3"
+          x-bind:style="selected == 3 ? 'max-height: ' + $refs.container3.scrollHeight + 'px' : ''"
+        >
+          <p class="question_content default-p py-3 px-5 flex flex-col gap-2">
+            Oui, nous offrons des consultations gratuites pour discuter de vos
+            besoins et définir la meilleure stratégie pour votre projet.
+          </p>
+        </div>
+      </li>
+
+      <!-- Block Question 4 -->
+      <li
+        class="relative bg-opacityBlue rounded-md mt-3"
+        data-sal="slide-up"
+        data-sal-duration="800"
+        data-sal-delay="300"
+      >
+        <button
+          type="button"
+          class="w-full bg-whiteTransparency rounded-t-md px-5"
+          @click="selected !== 4 ? selected = 4 : selected = null"
+        >
+          <div class="flex items-center justify-between h-[70px]">
+            <h4
+              class="question_title text-left md:text-xl"
+              :class="{ 'text-secondary ease-in-out duration-300': selected === 4, 'text-white ease-in-out duration-300': selected !== 4 }"
+            >
+              Comment prendre rendez-vous avec votre équipe ?
+            </h4>
+            <span class="ico-plus">
+              <svg
+                :class="selected === 3 ? 'transform rotate-180' : ''"
+                xmlns="http://www.w3.org/2000/svg"
+                width="24"
+                height="24"
+                viewbox="0 0 24 24"
+                fill="none"
+                :stroke="selected === 4 ? '#00A3FF' : 'white'"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                class="feather feather-chevron-up"
+              >
+                <polyline points="18 15 12 9 6 15"></polyline>
+              </svg>
+            </span>
+          </div>
+        </button>
+        <div
+          class="relative overflow-hidden transition-all max-h-0 duration-300"
+          x-ref="container3"
+          x-bind:style="selected == 4 ? 'max-height: ' + $refs.container3.scrollHeight + 'px' : ''"
+        >
+          <p class="question_content default-p py-3 px-5 flex flex-col gap-2">
+            Utilisez notre bouton "Prendre RDV" pour accéder à notre calendrier.
+            Planifiez un rendez-vous à votre convenance. Nous sommes flexibles
+            et disponibles pour répondre à vos questions et discuter de votre
+            projet.
+          </p>
+        </div>
+      </li>
+
+      <!-- Block Question 5 -->
+      <li
+        class="relative bg-opacityBlue rounded-md mt-3"
+        data-sal="slide-up"
+        data-sal-duration="800"
+        data-sal-delay="300"
+      >
+        <button
+          type="button"
+          class="w-full bg-whiteTransparency rounded-t-md px-5"
+          @click="selected !== 5 ? selected = 5 : selected = null"
+        >
+          <div class="flex items-center justify-between h-[70px]">
+            <h4
+              class="question_title text-left md:text-xl"
+              :class="{ 'text-secondary ease-in-out duration-300': selected === 5, 'text-white ease-in-out duration-300': selected !== 5 }"
+            >
+              Quels avantages pour le référencement proposez-vous ?
+            </h4>
+            <span class="ico-plus">
+              <svg
+                :class="selected === 5 ? 'transform rotate-180' : ''"
+                xmlns="http://www.w3.org/2000/svg"
+                width="24"
+                height="24"
+                viewbox="0 0 24 24"
+                fill="none"
+                :stroke="selected === 5 ? '#00A3FF' : 'white'"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                class="feather feather-chevron-up"
+              >
+                <polyline points="18 15 12 9 6 15"></polyline>
+              </svg>
+            </span>
+          </div>
+        </button>
+        <div
+          class="relative overflow-hidden transition-all max-h-0 duration-300"
+          x-ref="container4"
+          x-bind:style="selected == 5 ? 'max-height: ' + $refs.container4.scrollHeight + 'px' : ''"
+        >
+          <p class="question_content default-p py-3 px-5 flex flex-col gap-2">
+            Nous offrons une optimisation SEO initiale à 450 € pour améliorer
+            votre visibilité en ligne. Ensuite, nous proposons des optimisations
+            SEO continues à 250 €/mois pour garantir que votre site reste
+            performant et bien classé dans les moteurs de recherche
+          </p>
+        </div>
+      </li>
+    </ul>
+  </article>
+</section>
+
+{% endblock %}

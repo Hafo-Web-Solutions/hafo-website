@@ -8,11 +8,11 @@
       <!-- Block Question 1 -->
       {% if faq_question1_title is defined %}
       <div data-sal="slide-up" data-sal-duration="800" data-sal-delay="200">
-        <h4 class="default-h responsive-h4">
+        <h4 class="default-h responsive-h4 space-select">
           {{ faq_question1_title }}
         </h4>
-        <p class="default-p mt-4">
-          {{ faq_question1_content }}
+        <p class="default-p mt-4 flex flex-col gap-2">
+          {{ faq_question1_content | raw }}
         </p>
       </div>
       {% endif %}
@@ -28,8 +28,8 @@
         <h4 class="default-h responsive-h4">
           {{ faq_question2_title }}
         </h4>
-        <p class="default-p mt-4">
-          {{ faq_question2_content }}
+        <p class="default-p mt-4 flex flex-col gap-2">
+          {{ faq_question2_content | raw }}
         </p>
       </div>
       {% endif %}
@@ -45,8 +45,8 @@
         <h4 class="default-h responsive-h4">
           {{ faq_question3_title }}
         </h4>
-        <p class="default-p mt-4">
-          {{ faq_question3_content }}
+        <p class="default-p mt-4 flex flex-col gap-2">
+          {{ faq_question3_content | raw }}
         </p>
       </div>
       {% endif %}
@@ -119,8 +119,8 @@
           x-ref="container1"
           x-bind:style="selected == 1 ? 'max-height: ' + $refs.container1.scrollHeight + 'px' : ''"
         >
-          <p class="default-p py-3 px-5">
-            {{ faq_question4_content }}
+          <p class="default-p py-3 px-5 flex flex-col gap-2">
+            {{ faq_question4_content | raw }}
           </p>
         </div>
       </li>
@@ -172,8 +172,8 @@
           x-ref="container2"
           x-bind:style="selected == 2 ? 'max-height: ' + $refs.container2.scrollHeight + 'px' : ''"
         >
-          <p class="default-p p-6">
-            {{ faq_question5_content }}
+          <p class="default-p p-6 flex flex-col gap-2">
+            {{ faq_question5_content | raw }}
           </p>
         </div>
       </li>
@@ -223,8 +223,8 @@
           x-ref="container3"
           x-bind:style="selected == 3 ? 'max-height: ' + $refs.container3.scrollHeight + 'px' : ''"
         >
-          <p class="default-p py-3 px-5">
-            {{ faq_question6_content }}
+          <p class="default-p py-3 px-5 flex flex-col gap-2">
+            {{ faq_question6_content | raw }}
           </p>
         </div>
       </li>
@@ -274,8 +274,8 @@
           x-ref="container4"
           x-bind:style="selected == 4 ? 'max-height: ' + $refs.container4.scrollHeight + 'px' : ''"
         >
-          <p class="default-p py-3 px-5">
-            {{ faq_question7_content }}
+          <p class="default-p py-3 px-5 flex flex-col gap-2">
+            {{ faq_question7_content | raw }}
           </p>
         </div>
       </li>
@@ -325,8 +325,8 @@
           x-ref="container5"
           x-bind:style="selected == 5 ? 'max-height: ' + $refs.container5.scrollHeight + 'px' : ''"
         >
-          <p class="default-p py-3 px-5">
-            {{ faq_question8_content }}
+          <p class="default-p py-3 px-5 flex flex-col gap-2">
+            {{ faq_question8_content | raw }}
           </p>
         </div>
       </li>

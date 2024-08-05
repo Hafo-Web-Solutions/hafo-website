@@ -1,76 +1,116 @@
-{% extends 'base.html.twig' %} {% block title %} Planifions Ensemble {% endblock
-%} {% block javascripts %}
+{% extends 'base.html.twig' %} {% block title %} Planifions ensemble - Hafo Web
+Solutions {% endblock %} {% block javascripts %}
 {{ parent() }}
 {{ encore_entry_script_tags("plan") }}
 {% endblock %} {% block body %}
 
-<section
-  class="mt-[80px] lg:mt-[100px] w-full default-container 2xl:container-fluid 2xl:px-[140px]"
->
-  <!-- Content Header -->
-  <article class="flex lg:flex-row flex-col gap-8 lg:h-[480px]">
-    <!-- Title -->
+<section class="default-mt flex flex-col justify-center items-center w-full">
+  <!-- Header -->
+  <article
+    class="flex flex-col w-full gap-10 sm:container lg:flex-row lg:default-container"
+  >
     <div class="lg:w-1/2 px-8 lg:px-0">
-      <h2
-        class="text-white lg:text-[45px] md:text-[32px] text-[28px] tracking-tight"
-        data-sal="slide-up"
-        data-sal-duration="800"
-        data-sal-delay="150"
-      >
-        Planifions Ensemble
-      </h2>
-      <p
-        class="text-grayText mt-3 mb-8 leading-[28px]"
-        data-sal="fade-in"
-        data-sal-duration="800"
-        data-sal-delay="250"
-      >
-        Notre objectif est de transformer vos visions en réalité de manière
-        structurée et efficace. Cette page vous guidera à travers les éléments
-        essentiels de notre processus de planification, assurant que chaque
-        étape de votre projet est bien pensée et alignée avec vos objectifs
-        finaux.
-      </p>
-      <h2
-        class="text-white lg:text-[32px] md:text-[28px] text-[26px] tracking-tight"
-        data-sal="slide-up"
-        data-sal-duration="800"
-        data-sal-delay="150"
-      >
-        Pourquoi est-il essentiel de planifier ?
-      </h2>
-      <p
-        class="text-grayText mt-3 mb-8 leading-[28px]"
-        data-sal="fade-in"
-        data-sal-duration="800"
-        data-sal-delay="250"
-      >
-        Une bonne planification est la clé du succès de tout projet. Elle permet
-        d'identifier les ressources nécessaires, de fixer des délais réalistes,
-        et d'établir des critères clairs pour mesurer le progrès et la réussite
-        du projet. Nous prenons ce processus au sérieux pour garantir que vos
-        attentes sont non seulement rencontrées mais dépassées.
-      </p>
+      <div>
+        <h1
+          class="default-h responsive-h1"
+          data-sal="slide-up"
+          data-sal-duration="800"
+          data-sal-delay="150"
+        >
+          Planifions ensemble
+        </h1>
+        <p
+          class="default-bp mt-3"
+          data-sal="fade-in"
+          data-sal-duration="800"
+          data-sal-delay="200"
+        >
+          Un processus collaboratif pour réussir votre projet
+        </p>
+        <p
+          class="default-p mt-3"
+          data-sal="fade-in"
+          data-sal-duration="800"
+          data-sal-delay="250"
+        >
+          Découvrez notre approche structurée pour planifier et exécuter votre
+          projet web avec succès. À chaque étape, nous travaillons en étroite
+          collaboration avec vous pour garantir que vos besoins sont satisfaits
+          et que votre vision est réalisée.
+        </p>
+      </div>
+      <div class="mt-10">
+        <h2
+          class="default-h responsive-h2"
+          data-sal="slide-up"
+          data-sal-duration="800"
+          data-sal-delay="300"
+        >
+          L'importance de la planification
+        </h2>
+        <p
+          class="default-p mt-3"
+          data-sal="fade-in"
+          data-sal-duration="800"
+          data-sal-delay="350"
+        >
+          La planification est cruciale pour le succès de tout projet. Elle
+          permet de définir des objectifs clairs, d'anticiper les obstacles et
+          d'assurer une exécution fluide. Grâce à une planification rigoureuse,
+          nous garantissons des résultats optimaux et une satisfaction client
+          maximale.
+        </p>
+      </div>
     </div>
 
-    <!-- Image -->
-    <div class="overflow-hidden h-[300px] lg:h-full lg:w-1/2 lg:rounded-md">
+    <div class="lg:w-1/2">
       <img
         src="{{ asset('./image/support/define.jpeg') }}"
         alt="creation de site"
-        class="object-cover hover:scale-150 transition-transform duration-500 ease-in-out"
+        class="object-cover h-[560px] w-full"
       />
     </div>
   </article>
 
-  <article class="mt-[80px] lg:mt-[100px]">
-    <h2
-      class="text-white lg:text-[32px] md:text-[28px] text-[26px] tracking-tight"
-    >
-      Les Étapes de Notre Planification
-    </h2>
-    <div class="lg:px-[140px] flex flex-col">
-      <!-- block 1/6 -->
+  <!-- Content -->
+  <article
+    class="default-container default-mt flex flex-col w-full sm:container lg:gap-10 lg:flex-row plan-lg:mt-[100px] lg:mt-0"
+  >
+    <!-- Block steps-->
+    <article class="lg:w-1/2">
+      <div
+        class="default-border relative flex flex-col justify-center bg-quaternary lg:bg-whiteTransparency py-12 px-10 lg:sticky lg:top-[185px] lg:mt-[-80px] xl:mb-0"
+      >
+        <h2
+          class="default-h responsive-h2 mb-5"
+          data-sal="slide-up"
+          data-sal-duration="800"
+          data-sal-delay="150"
+        >
+          Nos étapes de planification
+        </h2>
+        <p
+          class="default-p mb-5"
+          data-sal="slide-up"
+          data-sal-duration="800"
+          data-sal-delay="200"
+        >
+          Suivez chaque étape de notre processus de planification pour garantir
+          la réussite de votre projet. Restez informé et impliqué tout au long
+          du développement grâce à notre approche méthodique.
+        </p>
+        <a
+          href="{{ path('app_contact') }}"
+          data-sal="slide-up"
+          data-sal-duration="800"
+          data-sal-selay="250"
+          ><button class="darkBlue-button">Planifiez votre projet</button></a
+        >
+      </div>
+    </article>
+
+    <article class="default-mt flex flex-col lg:w-1/2 items-center">
+      <!-- Block definition of goals -->
       <div
         class="block-item flex gap-4 justify-between h-[400px] w-full md:w-[400px] lg:w-[500px]"
       >
@@ -80,16 +120,18 @@
             <div class="child-plan"></div>
           </span>
         </div>
-        <div class="block-content-plan w-[350px] pt-[40px] flex-col gap-[15px]">
-          <p>Définition des Objectifs</p>
-          <p class="blabla">
-            Nous reprendrons les objectifs définis dans la phase initiale pour
-            nous assurer que notre équipe est alignée et comprend ce que vous
-            souhaitez atteindre.
+        <div class="block-content-plan w-[350px] pt-10 flex-col gap-3">
+          <p class="default-bp">Définir vos objectifs</p>
+          <p class="default-p">
+            Lors de cette première étape, nous discutons de vos attentes, de vos
+            besoins spécifiques et des objectifs que vous souhaitez atteindre
+            avec votre projet. Cette phase est essentielle pour aligner notre
+            vision sur la vôtre.
           </p>
         </div>
       </div>
-      <!-- block 2/6 -->
+
+      <!-- Block analysis and research -->
       <div
         class="block-item flex gap-4 justify-between h-[400px] w-full md:w-[400px] lg:w-[500px]"
       >
@@ -99,17 +141,18 @@
             <div class="child-plan"></div>
           </span>
         </div>
-        <div class="block-content-plan w-[350px] pt-[40px] flex-col gap-[15px]">
-          <p>Évaluation des Ressources et des Contraintes</p>
-          <p class="blabla">
-            Analyse des ressources disponibles, y compris le budget, les
-            technologies, et le personnel. Identification des contraintes
-            potentielles qui pourraient influencer le calendrier ou la qualité
-            du projet.
+        <div class="block-content-plan w-[350px] pt-10 flex-col gap-3">
+          <p class="default-bp">Analyse et Recherche</p>
+          <p class="default-p">
+            Nous effectuons une analyse approfondie de votre secteur, de vos
+            concurrents et des meilleures pratiques en matière de technologie et
+            de design. Cette recherche nous permet de proposer des solutions
+            innovantes et adaptées à votre contexte.
           </p>
         </div>
       </div>
-      <!-- block 3/6 -->
+
+      <!-- Block conception and prototype -->
       <div
         class="block-item flex gap-4 justify-between h-[400px] w-full md:w-[400px] lg:w-[500px]"
       >
@@ -119,16 +162,18 @@
             <div class="child-plan"></div>
           </span>
         </div>
-        <div class="block-content-plan w-[350px] pt-[40px] flex-col gap-[15px]">
-          <p>Élaboration du Plan d'Action</p>
-          <p class="blabla">
-            Développement d'un plan étape par étape qui détaille toutes les
-            actions nécessaires pour atteindre les objectifs fixés. Ce plan
-            inclura des jalons et des échéances pour chaque phase du projet.
+        <div class="block-content-plan w-[350px] pt-10 flex-col gap-3">
+          <p class="default-bp">Conception et Prototypage</p>
+          <p class="default-p">
+            Nous passons ensuite à la conception de maquettes et de prototypes
+            interactifs. Ces modèles servent de base pour discuter et affiner
+            les aspects visuels et fonctionnels de votre projet avant de passer
+            à la phase de développement.
           </p>
         </div>
       </div>
-      <!-- block 4/6 -->
+
+      <!-- Block development and integration -->
       <div
         class="block-item flex gap-4 justify-between h-[400px] w-full md:w-[400px] lg:w-[500px]"
       >
@@ -138,16 +183,18 @@
             <div class="child-plan"></div>
           </span>
         </div>
-        <div class="block-content-plan w-[350px] pt-[40px] flex-col gap-[15px]">
-          <p>Révision et Ajustement</p>
-          <p class="blabla">
-            Présentation du plan pour votre examen et ajustement basé sur vos
-            commentaires. Cette étape assure que le plan final répond
-            parfaitement à vos attentes.
+        <div class="block-content-plan w-[350px] pt-10 flex-col gap-3">
+          <p class="default-bp">Développement et Intégration</p>
+          <p class="default-p">
+            Une fois le prototype validé, nous commençons le développement de
+            votre site web en utilisant les technologies les plus adaptées,
+            telles que Symfony, Docker et PostgreSQL. Nous assurons également
+            l'intégration des fonctionnalités souhaitées.
           </p>
         </div>
       </div>
-      <!-- block 5/6 -->
+
+      <!-- Block tests and validation -->
       <div
         class="block-item flex gap-4 justify-between h-[400px] w-full md:w-[400px] lg:w-[500px]"
       >
@@ -157,16 +204,18 @@
             <div class="child-plan"></div>
           </span>
         </div>
-        <div class="block-content-plan w-[350px] pt-[40px] flex-col gap-[15px]">
-          <p>Mise en Place des Métriques de Suivi</p>
-          <p class="blabla">
-            Définition des indicateurs de performance pour suivre le progrès du
-            projet. Ces métriques permettent d'évaluer l'efficacité des
-            stratégies implémentées et de faire des ajustements si nécessaire.
+        <div class="block-content-plan w-[350px] pt-10 flex-col gap-3">
+          <p class="default-bp">Tests et Validation</p>
+          <p class="default-p">
+            Nous effectuons des tests rigoureux pour nous assurer que votre site
+            est performant, sécurisé et exempt de bugs. Cette phase inclut des
+            tests utilisateurs pour valider l'expérience client et ajuster les
+            derniers détails.
           </p>
         </div>
       </div>
-      <!-- block 6/6 -->
+
+      <!-- Block launch and maintenance -->
       <div
         class="block-item flex gap-4 justify-between h-[400px] w-full md:w-[400px] lg:w-[500px]"
       >
@@ -176,18 +225,18 @@
             <div class="child-plan"></div>
           </span>
         </div>
-        <div class="block-content-plan w-[350px] pt-[40px] flex-col gap-[15px]">
-          <p>Validation et Début de Réalisation</p>
-          <p class="blabla">
-            Une fois le plan approuvé par vous, nous procéderons à la mise en
-            œuvre du projet. Cette étape marque le début de la transformation de
-            votre vision en réalité.
+        <div class="block-content-plan w-[350px] pt-10 flex-col gap-3">
+          <p class="default-bp">Lancement et Suivi</p>
+          <p class="default-p">
+            Après validation, nous procédons au lancement officiel de votre
+            site. Nous restons à vos côtés pour assurer un suivi post-lancement
+            et fournir la maintenance nécessaire pour garantir la pérennité de
+            votre site.
           </p>
         </div>
       </div>
-    </div>
+    </article>
   </article>
-  {% include 'components/cta.html.twig' %}
 </section>
 
 {% endblock %}

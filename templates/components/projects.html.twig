@@ -1,13 +1,14 @@
-{% block projects %}
+{% block projects %} {% if projects is not empty %}
 <section
-  class="w-full default-container 2xl:container-fluid 2xl:px-[140px] flex flex-col md:flex-row mt-24 lg:mt-[100px] gap-4 mb-[100px]"
+  class="w-full default-mt default-container flex flex-col md:flex-row mt-24 gap-4 sm:container"
 >
   <!-- Block content -->
   <article class="md:w-1/2 md:px-2">
-    <h2 class="text-3xl mb-5 font-bold tracking-tight text-white md:w-[350px]"
-    data-sal="slide-up"
-    data-sal-duration="800"
-    data-sal-delay="150"
+    <h2
+      class="default-h responsive-h2 mb-5 md:w-[350px]"
+      data-sal="slide-up"
+      data-sal-duration="800"
+      data-sal-delay="150"
     >
       Nos Réalisations
     </h2>
@@ -15,43 +16,95 @@
     <div id="content-project-desktop" class="hidden md:block"></div>
 
     <!-- Buttons -->
-    <div class="flex items-center gap-3 mt-2 md:mt-14"
-    data-sal="slide-up"
-    data-sal-duration="800"
-    data-sal-delay="200"
+    <div
+      class="flex items-center gap-3 mt-2 md:mt-14"
+      data-sal="slide-up"
+      data-sal-duration="800"
+      data-sal-delay="200"
     >
-      <button id="prevProject" class="bg-tertiary text-secondary p-2 rounded">
-        <img
-          src="{{ asset('./image/blog/arrow.svg') }}"
-          alt="icon Définir vos objectifs"
-          class="w-full"
-        />
+      <!-- Previous Button -->
+      <button
+        id="prevProject"
+        class="flex justify-center items-center bg-opacityBlue hover:bg-secondary h-[50px] w-[50px] rounded-[6px] duration-300 ease-in-out"
+        onmouseover="this.querySelector('svg').classList.add('text-white', 'duration-300', 'ease-in-out')"
+        onmouseout="this.querySelector('svg').classList.remove('text-white', 'duration-300', 'ease-in-out')"
+      >
+        <svg
+          width="22"
+          height="22"
+          viewBox="0 0 22 22"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+          stroke="currentColor"
+          class="text-secondary"
+        >
+          <path
+            d="M17.4166 11H4.58331"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          />
+          <path
+            d="M11 17.4166L4.58331 10.9999L11 4.58325"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          />
+        </svg>
       </button>
-      <button id="nextProject" class="bg-tertiary text-secondary p-2 rounded">
-        <img
-          src="{{ asset('./image/blog/arrow.svg') }}"
-          alt="icon Définir vos objectifs"
-          class="w-full rotate-180"
-        />
+
+      <!-- Next Button -->
+      <button
+        id="nextProject"
+        class="flex justify-center items-center bg-opacityBlue hover:bg-secondary h-[50px] w-[50px] rounded-[6px] duration-300 ease-in-out"
+        onmouseover="this.querySelector('svg').classList.add('text-white', 'duration-300', 'ease-in-out')"
+        onmouseout="this.querySelector('svg').classList.remove('text-white', 'duration-300', 'ease-in-out')"
+      >
+        <svg
+          width="22"
+          height="22"
+          viewBox="0 0 22 22"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+          stroke="currentColor"
+          class="text-secondary rotate-180"
+        >
+          <path
+            d="M17.4166 11H4.58331"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          />
+          <path
+            d="M11 17.4166L4.58331 10.9999L11 4.58325"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          />
+        </svg>
       </button>
     </div>
   </article>
 
   <!-- Project Version Mobile -->
-  <div id="project" class="md:hidden"
-  data-sal="slide-up"
-  data-sal-duration="800"
-  data-sal-delay="250"
+  <div
+    id="project"
+    class="md:hidden"
+    data-sal="slide-up"
+    data-sal-duration="800"
+    data-sal-delay="250"
   >
     <article class="project-container">
       <div class="project-content">
         {% for project in projects %}
-        <div class="project-block border ">
-          <a href="{{ path('app_achievement', { id: project.id }) }}" class="project-content-redirect">
+        <div class="project-block border">
+          <a
+            href="{{ path('app_achievement', { id: project.id }) }}"
+            class="project-content-redirect"
+          >
             <p class="text-white text-[26px]">{{ project.description }}</p>
           </a>
-          {% set image = project.getImageByType('main') %}
-           {% if image %}
+          {% set image = project.getImageByType('main') %} {% if image %}
           <img
             class="h-full w-full object-cover"
             src="{{ asset('/images/uploads/' ~ image.getImage() ) }}"
@@ -61,9 +114,7 @@
           <p>Aucune image principale disponible</p>
           {% endif %}
           <div class="project-block-content-parent">
-            <div
-              class="project-block-content-children  bg-tertiary"
-            >
+            <div class="project-block-content-children bg-tertiary">
               <div class="m-4">
                 <p class="text-xl font-semibold">{{ project.title }}</p>
                 <p class="text-sm text-secondary">Site Vitrine</p>
@@ -84,9 +135,12 @@
   </div>
 
   <!-- Image -->
-  <article id="image-project-desktop" class="md:w-1/2 sm:px-2 hidden md:block"></article>
+  <article
+    id="image-project-desktop"
+    class="md:w-1/2 sm:px-2 hidden md:block"
+  ></article>
 </section>
-
+{% endif %}
 <!-- add script to project.js -->
 {% block javascripts %}
 {{ encore_entry_script_tags("project") }}
