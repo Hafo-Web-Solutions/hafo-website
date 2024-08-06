@@ -19,8 +19,8 @@ class Post
     #[ORM\Column(length: 255)]
     private ?string $title = null;
 
-    #[ORM\Column(type: Types::TEXT)]
-    private ?string $content = null;
+    #[ORM\Column(type: Types::JSON)]
+    private array $content = [];
 
     #[ORM\Column]
     private ?\DateTimeImmutable $createdAt = null;
@@ -46,11 +46,33 @@ class Post
     #[ORM\ManyToMany(targetEntity: Image::class, mappedBy: 'post', cascade: ['persist', 'remove'])]
     private Collection $images;
 
+    #[ORM\Column(type: Types::TEXT)]
+    private ?string $resume = null;
+
     public function __construct()
     {
         $this->category = new ArrayCollection();
         $this->tag = new ArrayCollection();
         $this->images = new ArrayCollection();
+        $this->createdAt = new \DateTimeImmutable();
+        $this->updatedAt = new \DateTimeImmutable();
+    }
+
+    /**
+     * @ORM\PrePersist
+     */
+    public function onPrePersist()
+    {
+        $this->createdAt = new \DateTimeImmutable();
+        $this->updatedAt = new \DateTimeImmutable();
+    }
+
+    /**
+     * @ORM\PreUpdate
+     */
+    public function onPreUpdate()
+    {
+        $this->updatedAt = new \DateTimeImmutable();
     }
 
     public function getId(): ?int
@@ -70,12 +92,12 @@ class Post
         return $this;
     }
 
-    public function getContent(): ?string
+    public function getContent(): array
     {
         return $this->content;
     }
 
-    public function setContent(string $content): static
+    public function setContent(array $content): static
     {
         $this->content = $content;
 
@@ -192,5 +214,15 @@ class Post
         return null;
     }
 
+    public function getResume(): ?string
+    {
+        return $this->resume;
+    }
 
+    public function setResume(string $resume): static
+    {
+        $this->resume = $resume;
+
+        return $this;
+    }
 }

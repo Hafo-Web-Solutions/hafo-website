@@ -20,8 +20,19 @@ class DefaultController extends AbstractController
     #[Route('/', name: 'app_default')]
     public function index(): Response
     {
-        $posts = $this->em->getRepository(Post::class)->findAll(['id' => 'DESC'], 4);
-        $projects = $this->em->getRepository(Project::class)->findAll(['id' => 'DESC'], 3);
+        $filterPosts = $this->em->getRepository(Post::class)->findBy([], ['id' => 'DESC'], 4);
+        $projects = $this->em->getRepository(Project::class)->findBy([], ['id' => 'DESC'], 4);
+
+        $posts = [];
+        foreach ($filterPosts as $post) {
+            $posts[] = [
+                'id' => $post->getId(),
+                'title' => $post->getTitle(),
+                'category' => $post->getCategory(),
+                'image' => $post->getImageByType('post')->getImage(),
+                'resume' => "ghvhvhvhvjjd dc kdckdc kbdkcd djc dvc  cd dc d dcdc  cdjdkjcjcd",
+            ];
+        }
 
         return $this->render('default/index.html.twig', [
             'posts' => $posts,
@@ -140,5 +151,4 @@ class DefaultController extends AbstractController
     {
         return $this->render('default/make-an-appointment.html.twig');
     }
-
 }

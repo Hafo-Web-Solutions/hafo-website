@@ -1,4 +1,6 @@
 twig:
+  form_themes:
+        - '@FOSCKEditor/Form/ckeditor_widget.html.twig'
   file_name_pattern: "*.twig"
   globals:
     recaptcha_public_key: "%env(RECAPTCHA_PUBLIC_KEY)%"
