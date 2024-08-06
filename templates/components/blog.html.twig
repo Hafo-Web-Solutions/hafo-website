@@ -10,7 +10,7 @@
         data-sal-duration="800"
         data-sal-delay="150"
       >
-      {{ blog_title|default("Nos posts récents") }}
+        {{ blog_title|default("Nos posts récents") }}
       </h2>
     </div>
 
@@ -134,15 +134,11 @@
           <div class="p-[18px] bg-whiteTransparency rounded-md">
             <!-- Image -->
             <div class="w-full overflow-hidden rounded-md">
-              {% set image = post.getImageByType('post') %} {% if image %}
               <img
-                src="{{ asset('/images/uploads/' ~ image.getImage() ) }}"
-                alt="{{ image.getType() }}"
+                src="{{ asset('/images/uploads/' ~ post.image ) }}"
+                alt="image"
                 class="object-cover w-full h-full"
               />
-              {% else %}
-              <p>Aucune image principale disponible</p>
-              {% endif %}
             </div>
 
             <!-- Post Details -->
@@ -157,7 +153,7 @@
               <h4
                 class="text-white text-[23px] mt-[10px] font-semibold text-ellipsis"
               >
-                {{ post.content | raw }}
+                {{ post.resume }}
               </h4>
             </div>
           </div>

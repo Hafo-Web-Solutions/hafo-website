@@ -14,14 +14,6 @@ document.addEventListener("DOMContentLoaded", function () {
     doc.setFontSize(16);
     doc.text("Questionnaire de définition de vos objectifs", 10, 10);
 
-    function removeAfterNewlineAndLastChar(str) {
-      // Split the string at the first occurrence of \n and take the first part
-      let result = str.split("\n")[0];
-      // Remove the last character from the result
-      result.slice(0, -1);
-      return result;
-    }
-
     const selectOptions = [
       { id: "1", value: "Développement de site web" },
       { id: "2", value: "Refonte" },
@@ -47,7 +39,7 @@ document.addEventListener("DOMContentLoaded", function () {
     for (let i = 0; i < 8; i++) {
       // Sélectionne tous les éléments textarea
       let labelValue = form.children[i].children[0].textContent;
-      arrayLabel.push(removeAfterNewlineAndLastChar(labelValue));
+      arrayLabel.push(labelValue);
     }
 
     doc.setFontSize(12);

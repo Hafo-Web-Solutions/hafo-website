@@ -4,48 +4,38 @@ endblock %} {% block body %}
 <section
   class="mt-[80px] lg:mt-[100px] w-full default-container sm:container flex gap-x-8 2xl:h-screen xl:gap-8"
 >
-  <article
-    class="mb-[75px] w-min-[380px] lg:w-2/3 flex flex-col xl:flex-start 2xl:mb-[200px]"
+<article
+class="mb-[75px] w-min-[380px] lg:w-2/3 flex flex-col xl:flex-start 2xl:mb-[200px]"
+>
+<div data-sal="slide-up" data-sal-duration="800" data-sal-delay="150">
+  <h2
+    class="text-[24px] md:text-[28px] xl:text-[36px] font-bold tracking-tight text-white leading-[1.19]"
   >
-    <div data-sal="slide-up" data-sal-duration="800" data-sal-delay="150">
-      <h2
-        class="text-[24px] md:text-[28px] xl:text-[36px] font-bold tracking-tight text-white leading-[1.19]"
-      >
-        {{ blog.title }}
-      </h2>
-    </div>
-    <p
-      class="text-grayText mt-[10px] mb-[30px] text-base leading-[28px]"
-      data-sal="slide-up"
-      data-sal-duration="800"
-      data-sal-delay="200"
-    >
-      {{ blog.createdAt|date('d M, Y', 'Europe/Paris', 'fr_FR') }}
-    </p>
-    <div class="w-full h-[512px] bg-slate-500">
-      {# Afficher l'image de type 'post' #} {% set image =
-      blog.getImageByType('post') %} {% if image %}
-      <img
-        src="{{ asset('/images/uploads/' ~ image.getImage() ) }}"
-        alt="{{ image.getType() }}"
-        class="w-full h-full object-cover"
-      />
-      {% else %}
-      <p>Aucune image principale disponible</p>
-      {% endif %}
-    </div>
-    <div class="flex flex-col gap-y-4 mt-6 text-grayText">
-      <p>
-        {{ blog.content | raw }}
-      </p>
-      <p class="text-white font-bold text-[20px] leading-[28px]">
-        Nobis eleifend option conguenes.
-      </p>
-      <p class="text-white font-bold text-[20px] leading-[28px]"></p>
-    </div>
-
- 
-  </article>
+    {{ blog.title }}
+  </h2>
+</div>
+<p
+  class="text-grayText mt-[10px] mb-[30px] text-base leading-[28px]"
+  data-sal="slide-up"
+  data-sal-duration="800"
+  data-sal-delay="200"
+>
+  {{ blog.createdAt|date('d M, Y', 'Europe/Paris', 'fr_FR') }}
+</p>
+<!-- <div class="w-full h-[512px] bg-slate-500">
+  <img
+    src="{{ asset('/images/uploads/' ~ blog.image ) }}"
+    alt="image"
+    class="w-full h-full object-cover"
+  />
+</div> -->
+<div class="flex flex-col gap-y-4 mt-6 text-grayText">
+  <div>
+    {{ blog.content|raw }}
+  </div>
+  <p class="text-white font-bold text-[20px] leading-[28px]"></p>
+</div>
+</article>
 
   <article class="lg:w-1/3 lg:px-2 hidden lg:flex flex-col gap-y-8">
     <div class="w-full border border-borderBase rounded-md overflow-hidden">

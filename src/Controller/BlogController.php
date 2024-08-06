@@ -37,8 +37,31 @@ class BlogController extends AbstractController
     #[Route('/blog/{id}', name: 'app_blog_detail')]
     public function blogDetail(PostRepository $postRepository, string $id): Response
     {
-        $blog = $postRepository->findOneById($id);
-        $threeLastedPosts = $postRepository->findThreeLatestExcludingId($id);
+        $filterBlog = $postRepository->findOneById($id);
+        $filterThreeLastedPosts = $postRepository->findThreeLatestExcludingId($id);
+
+        $blog = [
+            'id' => $filterBlog->getId(),
+            'title' => $filterBlog->getTitle(),
+            'category' => $filterBlog->getCategory(),
+            'image' => $filterBlog->getImageByType('post')->getImage(),
+            'resume' => "ghvhvhvhvjjd dc kdckdc kbdkcd djc dvc  cd dc d dcdc  cdjdkjcjcd",
+            'createdAt' => $filterBlog->getCreatedAt(),
+            'content' => $filterBlog->getContent()['content'],
+            'tag' => $filterBlog->getTag(),
+        ];
+
+        $threeLastedPosts = [];
+        foreach ($filterThreeLastedPosts as $post) {
+            $threeLastedPosts[] = [
+                'id' => $post->getId(),
+                'title' => $post->getTitle(),
+                'category' => $post->getCategory(),
+                'image' => $post->getImageByType('post')->getImage(),
+                'resume' => "ghvhvhvhvjjd dc kdckdc kbdkcd djc dvc  cd dc d dcdc  cdjdkjcjcd",
+            ];
+        }
+
 
         return $this->render('default/blog/blog.html.twig', [
             'blog' => $blog,

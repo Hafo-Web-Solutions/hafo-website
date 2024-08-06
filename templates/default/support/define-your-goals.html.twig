@@ -143,7 +143,6 @@ Web Solutions {% endblock %} {% block javascripts %}
       <div>
         <label for="formType" class="default-label">
           Sélectionnez le type de formulaire
-          <span class="text-secondary">*</span>
         </label>
         <select
           id="formType"
@@ -168,7 +167,7 @@ Web Solutions {% endblock %} {% block javascripts %}
         <!-- Question 1 -->
         <div x-show="block1 || (block1 = true)" class="flex flex-col">
           <label for="input1" class="default-label"
-            >1/8. Nom du projet <span class="text-secondary">*</span></label
+            >1/8. Nom du projet</label
           >
           <input
             type="text"
@@ -182,7 +181,7 @@ Web Solutions {% endblock %} {% block javascripts %}
         <div x-show="block2">
           <label for="input2" class="default-label"
             >2/8. Description de votre entreprise
-            <span class="text-secondary">*</span></label
+            </label
           >
           <textarea
             type="text"
@@ -196,7 +195,7 @@ Web Solutions {% endblock %} {% block javascripts %}
         <div x-show="block3">
           <label for="input3" class="default-label"
             >3/8. Objectif du site web
-            <span class="text-secondary">*</span></label
+            </label
           >
           <input
             type="text"
@@ -210,7 +209,7 @@ Web Solutions {% endblock %} {% block javascripts %}
         <div x-show="block4">
           <label for="input4" class="default-label"
             >4/8. Fonctionnalités souhaitées
-            <span class="text-secondary">*</span></label
+            </label
           >
           <textarea
             type="text"
@@ -224,7 +223,7 @@ Web Solutions {% endblock %} {% block javascripts %}
         <!-- Question 5 -->
         <div x-show="block5">
           <label for="input5" class="default-label"
-            >5/8. Public cible <span class="text-secondary">*</span></label
+            >5/8. Public cible </label
           >
           <input
             type="text"
@@ -238,7 +237,7 @@ Web Solutions {% endblock %} {% block javascripts %}
         <div x-show="block6">
           <label for="input6" class="default-label"
             >6/8. Exemples de sites qui vous inspirent
-            <span class="text-secondary">*</span></label
+            </label
           >
           <textarea
             type="text"
@@ -252,7 +251,7 @@ Web Solutions {% endblock %} {% block javascripts %}
         <!-- Question 7 -->
         <div x-show="block7">
           <label for="input7" class="default-label"
-            >7/8. Budget estimé <span class="text-secondary">*</span></label
+            >7/8. Budget estimé </label
           >
           <input
             type="text"
@@ -267,7 +266,7 @@ Web Solutions {% endblock %} {% block javascripts %}
         <div x-show="block8">
           <label for="input8" class="default-label"
             >8/8. Délai souhaité pour le lancement
-            <span class="text-secondary">*</span></label
+            </label
           >
           <input
             type="text"
@@ -281,12 +280,7 @@ Web Solutions {% endblock %} {% block javascripts %}
         <!-- End block -->
         <div x-show="block9" class="lg:w-[91%]">
           <button id="download-button1" class="blue-button">Télécharger</button>
-          <p class="text-grayText text-xs mt-6">
-            Tous les champs marqués d'un astérisque (<span
-              class="text-secondary"
-              >*</span
-            >) sont requis.
-          </p>
+         
         </div>
       </div>
 
@@ -301,7 +295,7 @@ Web Solutions {% endblock %} {% block javascripts %}
         <div x-show="block1 || (block1 = true)" class="flex flex-col">
           <label for="input1" class="default-label"
             >1/8. URL du site actuel
-            <span class="text-secondary">*</span></label
+            </label
           >
           <input
             type="text"
@@ -315,7 +309,7 @@ Web Solutions {% endblock %} {% block javascripts %}
         <div x-show="block2">
           <label for="input2" class="default-label"
             >2/8. Principales raisons de la refonte
-            <span class="text-secondary">*</span></label
+            </label
           >
           <textarea
             type="text"
@@ -329,7 +323,7 @@ Web Solutions {% endblock %} {% block javascripts %}
         <div x-show="block3">
           <label for="input3" class="default-label"
             >3/8. Objectifs de la refonte
-            <span class="text-secondary">*</span></label
+            </label
           >
           <input
             type="text"
@@ -343,7 +337,7 @@ Web Solutions {% endblock %} {% block javascripts %}
         <div x-show="block4">
           <label for="input4" class="default-label"
             >4/8. Fonctionnalités à ajouter ou améliorer
-            <span class="text-secondary">*</span></label
+            </label
           >
           <textarea
             type="text"
@@ -357,7 +351,7 @@ Web Solutions {% endblock %} {% block javascripts %}
         <!-- Question 5 -->
         <div x-show="block5">
           <label for="input5" class="default-label"
-            >5/8. Public cible <span class="text-secondary">*</span></label
+            >5/8. Public cible </label
           >
           <input
             type="text"
@@ -371,7 +365,7 @@ Web Solutions {% endblock %} {% block javascripts %}
         <div x-show="block6">
           <label for="input6" class="default-label"
             >6/8. Exemples de sites qui vous inspirent
-            <span class="text-secondary">*</span></label
+            </label
           >
           <textarea
             type="text"
@@ -385,7 +379,7 @@ Web Solutions {% endblock %} {% block javascripts %}
         <!-- Question 7 -->
         <div x-show="block7">
           <label for="input7" class="default-label"
-            >7/8. Budget estimé <span class="text-secondary">*</span></label
+            >7/8. Budget estimé </label
           >
           <input
             type="text"
@@ -400,7 +394,7 @@ Web Solutions {% endblock %} {% block javascripts %}
         <div x-show="block8">
           <label for="input8" class="default-label"
             >8/8. Délai souhaité pour le lancement
-            <span class="text-secondary">*</span></label
+            </label
           >
           <input
             type="text"
@@ -414,12 +408,7 @@ Web Solutions {% endblock %} {% block javascripts %}
         <!-- End block -->
         <div x-show="block9" class="lg:w-[91%]">
           <button id="download-button2" class="blue-button" >Télécharger</button>
-          <p class="text-grayText text-xs mt-6">
-            Tous les champs marqués d'un astérisque (<span
-              class="text-secondary"
-              >*</span
-            >) sont requis.
-          </p>
+         
         </div>
       </div>
 
@@ -433,7 +422,7 @@ Web Solutions {% endblock %} {% block javascripts %}
         <!-- Question 1 -->
         <div x-show="block1 || (block1 = true)" class="flex flex-col">
           <label for="input1" class="default-label"
-            >1/8. URL du site <span class="text-secondary">*</span></label
+            >1/8. URL du site </label
           >
           <input
             type="text"
@@ -447,7 +436,7 @@ Web Solutions {% endblock %} {% block javascripts %}
         <div x-show="block2">
           <label for="input2" class="default-label"
             >2/8. Technologies utilisées
-            <span class="text-secondary">*</span></label
+            </label
           >
           <textarea
             type="text"
@@ -461,7 +450,7 @@ Web Solutions {% endblock %} {% block javascripts %}
         <div x-show="block3">
           <label for="input3" class="default-label"
             >3/8. Types de maintenance souhaitée
-            <span class="text-secondary">*</span></label
+            </label
           >
           <input
             type="text"
@@ -475,7 +464,7 @@ Web Solutions {% endblock %} {% block javascripts %}
         <div x-show="block4">
           <label for="input4" class="default-label"
             >4/8. Fréquence des mises à jour
-            <span class="text-secondary">*</span></label
+            </label
           >
           <textarea
             type="text"
@@ -489,7 +478,7 @@ Web Solutions {% endblock %} {% block javascripts %}
         <!-- Question 5 -->
         <div x-show="block5">
           <label for="input5" class="default-label"
-            >5/8. Public cible <span class="text-secondary">*</span></label
+            >5/8. Historique des interventions précédentes </label
           >
           <input
             type="text"
@@ -503,7 +492,7 @@ Web Solutions {% endblock %} {% block javascripts %}
         <div x-show="block6">
           <label for="input6" class="default-label"
             >6/8. Problèmes actuels rencontrés
-            <span class="text-secondary">*</span></label
+            </label
           >
           <textarea
             type="text"
@@ -518,7 +507,7 @@ Web Solutions {% endblock %} {% block javascripts %}
         <div x-show="block7">
           <label for="input7" class="default-label"
             >7/8. Budget mensuel alloué
-            <span class="text-secondary">*</span></label
+            </label
           >
           <input
             type="text"
@@ -533,7 +522,7 @@ Web Solutions {% endblock %} {% block javascripts %}
         <div x-show="block8">
           <label for="input8" class="default-label"
             >8/8. Priorités de maintenance
-            <span class="text-secondary">*</span></label
+            </label
           >
           <input
             type="text"
@@ -547,12 +536,7 @@ Web Solutions {% endblock %} {% block javascripts %}
         <!-- End block -->
         <div x-show="block9" class="lg:w-[91%]">
           <button id="download-button3" class="blue-button">Télécharger</button>
-          <p class="text-grayText text-xs mt-6">
-            Tous les champs marqués d'un astérisque (<span
-              class="text-secondary"
-              >*</span
-            >) sont requis.
-          </p>
+         
         </div>
       </div>
 
@@ -566,7 +550,7 @@ Web Solutions {% endblock %} {% block javascripts %}
         <!-- Question 1 -->
         <div x-show="block1 || (block1 = true)" class="flex flex-col">
           <label for="input1" class="default-label"
-            >1/8. URL du site <span class="text-secondary">*</span></label
+            >1/8. URL du site </label
           >
           <input
             type="text"
@@ -580,7 +564,7 @@ Web Solutions {% endblock %} {% block javascripts %}
         <div x-show="block2">
           <label for="input2" class="default-label"
             >2/8. Principaux mots-clés visés
-            <span class="text-secondary">*</span></label
+            </label
           >
           <textarea
             type="text"
@@ -593,7 +577,7 @@ Web Solutions {% endblock %} {% block javascripts %}
         <!-- Question 3 -->
         <div x-show="block3">
           <label for="input3" class="default-label"
-            >3/8. Objectifs de SEO <span class="text-secondary">*</span></label
+            >3/8. Objectifs de SEO </label
           >
           <input
             type="text"
@@ -607,7 +591,7 @@ Web Solutions {% endblock %} {% block javascripts %}
         <div x-show="block4">
           <label for="input4" class="default-label"
             >4/8. État actuel du SEO
-            <span class="text-secondary">*</span></label
+            </label
           >
           <textarea
             type="text"
@@ -622,7 +606,7 @@ Web Solutions {% endblock %} {% block javascripts %}
         <div x-show="block5">
           <label for="input5" class="default-label"
             >5/8. Concurrents principaux
-            <span class="text-secondary">*</span></label
+            </label
           >
           <input
             type="text"
@@ -636,7 +620,7 @@ Web Solutions {% endblock %} {% block javascripts %}
         <div x-show="block6">
           <label for="input6" class="default-label"
             >6/8. Budget mensuel alloué
-            <span class="text-secondary">*</span></label
+            </label
           >
           <textarea
             type="text"
@@ -651,7 +635,7 @@ Web Solutions {% endblock %} {% block javascripts %}
         <div x-show="block7">
           <label for="input7" class="default-label"
             >7/8. Priorités de référencement
-            <span class="text-secondary">*</span></label
+            </label
           >
           <input
             type="text"
@@ -662,15 +646,25 @@ Web Solutions {% endblock %} {% block javascripts %}
           />
         </div>
 
+         <!-- Question 8 -->
+         <div x-show="block8">
+          <label for="input8" class="default-label"
+            >8/8. Délai prévu pour atteindre vos objectifs SEO
+            </label
+          >
+          <input
+            type="text"
+            id="input8"
+            class="w-full default-input default-focus"
+            @input="block9 =  true"
+            placeholder="ex : 2000 - 3000 €"
+          />
+        </div>
+
+
         <!-- End block -->
         <div x-show="block8" class="lg:w-[91%]">
           <button id="download-button4" class="blue-button">Télécharger</button>
-          <p class="text-grayText text-xs mt-6">
-            Tous les champs marqués d'un astérisque (<span
-              class="text-secondary"
-              >*</span
-            >) sont requis.
-          </p>
         </div>
       </div>
       <div id="statusMessages" class="mt-6"></div>

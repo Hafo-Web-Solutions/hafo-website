@@ -179,20 +179,17 @@
               class="flex border-b border-borderBase py-2.5"
               href="placeholder"
             >
-            {% set image = item.getImageByType('post') %}
-            {% if image %}
+         
               <img
-                src="{{ asset('/images/uploads/' ~ image.getImage() ) }}"
+                src="{{ asset('/images/uploads/' ~ item.image ) }}"
                 alt="placeholder"
                 class="h-16 w-16 rounded-full mr-3 object-cover"
               />
-              {% else %}
-              <p>Aucune image disponible</p>
-               {% endif %}
+           
               <div class="flex flex-col justify-center">
                 <div class="text-xs text-secondary uppercase">{{ item.title }}</div>
                 <h6 class="text-sm text-grayText text-ellipsis">
-                  {{ item.content|raw }}
+                  {{ item.resume }}
                 </h6>
               </div>
             </a>
