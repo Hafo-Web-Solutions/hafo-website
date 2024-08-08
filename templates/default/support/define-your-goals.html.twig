@@ -166,9 +166,7 @@ Web Solutions {% endblock %} {% block javascripts %}
       >
         <!-- Question 1 -->
         <div x-show="block1 || (block1 = true)" class="flex flex-col">
-          <label for="input1" class="default-label"
-            >1/8. Nom du projet</label
-          >
+          <label for="input1" class="default-label">1/8. Nom du projet</label>
           <input
             type="text"
             id="input1"
@@ -177,12 +175,12 @@ Web Solutions {% endblock %} {% block javascripts %}
             @input="block2 =  true"
           />
         </div>
+
         <!-- Question 2 -->
         <div x-show="block2">
           <label for="input2" class="default-label"
             >2/8. Description de votre entreprise
-            </label
-          >
+          </label>
           <textarea
             type="text"
             id="input2"
@@ -191,26 +189,26 @@ Web Solutions {% endblock %} {% block javascripts %}
             @input="block3 =  true"
           ></textarea>
         </div>
+
         <!-- Question 3 -->
         <div x-show="block3">
           <label for="input3" class="default-label"
             >3/8. Objectif du site web
-            </label
-          >
-          <input
+          </label>
+          <textarea
             type="text"
             id="input3"
-            class="w-full default-input default-focus"
+            class="w-full default-textarea default-focus"
             placeholder="ex : Présence en ligne pour augmenter la visibilité et attirer de nouveaux clients."
             @input="block4 =  true"
-          />
+          ></textarea>
         </div>
+
         <!-- Question 4 -->
         <div x-show="block4">
           <label for="input4" class="default-label"
             >4/8. Fonctionnalités souhaitées
-            </label
-          >
+          </label>
           <textarea
             type="text"
             id="input4"
@@ -222,23 +220,21 @@ Web Solutions {% endblock %} {% block javascripts %}
 
         <!-- Question 5 -->
         <div x-show="block5">
-          <label for="input5" class="default-label"
-            >5/8. Public cible </label
-          >
-          <input
+          <label for="input5" class="default-label">5/8. Public cible </label>
+          <textarea
             type="text"
             id="input5"
-            class="w-full default-input default-focus"
+            class="w-full default-textarea default-focus"
             placeholder="ex : Adultes de 25 à 45 ans, intéressés par les produits artisanaux."
             @input="block6 =  true"
-          />
+          ></textarea>
         </div>
+
         <!-- Question 6 -->
         <div x-show="block6">
           <label for="input6" class="default-label"
             >6/8. Exemples de sites qui vous inspirent
-            </label
-          >
+          </label>
           <textarea
             type="text"
             id="input6"
@@ -250,9 +246,7 @@ Web Solutions {% endblock %} {% block javascripts %}
 
         <!-- Question 7 -->
         <div x-show="block7">
-          <label for="input7" class="default-label"
-            >7/8. Budget estimé </label
-          >
+          <label for="input7" class="default-label">7/8. Budget estimé </label>
           <input
             type="text"
             id="input7"
@@ -266,8 +260,7 @@ Web Solutions {% endblock %} {% block javascripts %}
         <div x-show="block8">
           <label for="input8" class="default-label"
             >8/8. Délai souhaité pour le lancement
-            </label
-          >
+          </label>
           <input
             type="text"
             id="input8"
@@ -280,7 +273,6 @@ Web Solutions {% endblock %} {% block javascripts %}
         <!-- End block -->
         <div x-show="block9" class="lg:w-[91%]">
           <button id="download-button1" class="blue-button">Télécharger</button>
-         
         </div>
       </div>
 
@@ -295,98 +287,93 @@ Web Solutions {% endblock %} {% block javascripts %}
         <div x-show="block1 || (block1 = true)" class="flex flex-col">
           <label for="input1" class="default-label"
             >1/8. URL du site actuel
-            </label
-          >
+          </label>
           <input
             type="text"
             id="input1"
             class="w-full default-input default-focus"
-            placeholder="ex : Mon Site Web Pro"
+            placeholder="ex : https://www.votresite.com"
             @input="block2 =  true"
           />
         </div>
+
         <!-- Question 2 -->
         <div x-show="block2">
           <label for="input2" class="default-label"
             >2/8. Principales raisons de la refonte
-            </label
-          >
+          </label>
           <textarea
             type="text"
             id="input2"
             class="w-full default-textarea default-focus"
-            placeholder="ex : Entreprise de vente de produits artisanaux, fondée en 2015, basée à Paris."
+            placeholder="ex : Améliorer l'expérience utilisateur, moderniser le design, ajouter de nouvelles fonctionnalités"
             @input="block3 =  true"
           ></textarea>
         </div>
+
         <!-- Question 3 -->
         <div x-show="block3">
           <label for="input3" class="default-label"
             >3/8. Objectifs de la refonte
-            </label
-          >
-          <input
+          </label>
+          <textarea
             type="text"
             id="input3"
-            class="w-full default-input default-focus"
-            placeholder="ex : Présence en ligne pour augmenter la visibilité et attirer de nouveaux clients."
+            class="w-full default-textarea default-focus"
+            placeholder="ex : Augmenter les ventes en ligne, améliorer le SEO, rendre le site mobile-friendly"
             @input="block4 =  true"
-          />
+          ></textarea>
         </div>
+
         <!-- Question 4 -->
         <div x-show="block4">
           <label for="input4" class="default-label"
             >4/8. Fonctionnalités à ajouter ou améliorer
-            </label
-          >
+          </label>
           <textarea
             type="text"
             id="input4"
             class="w-full default-textarea default-focus"
-            placeholder="ex : Formulaire de contact, Blog, E-commerce pour vendre des produits."
+            placeholder="ex : Intégration de l'e-commerce, système de blog, formulaire de contact"
             @input="block5 =  true"
           ></textarea>
         </div>
 
         <!-- Question 5 -->
         <div x-show="block5">
-          <label for="input5" class="default-label"
-            >5/8. Public cible </label
-          >
-          <input
+          <label for="input5" class="default-label">5/8. Public cible </label>
+          <textarea
             type="text"
             id="input5"
-            class="w-full default-input default-focus"
-            placeholder="ex : Adultes de 25 à 45 ans, intéressés par les produits artisanaux."
+            class="w-full default-textarea default-focus"
+            placeholder="ex : Jeunes adultes, professionnels de la santé, amateurs de sport"
             @input="block6 =  true"
-          />
+          ></textarea>
         </div>
+
         <!-- Question 6 -->
         <div x-show="block6">
           <label for="input6" class="default-label"
             >6/8. Exemples de sites qui vous inspirent
-            </label
-          >
+          </label>
           <textarea
             type="text"
             id="input6"
             class="w-full default-textarea default-focus"
-            placeholder="ex : www.exemple1.com, www.exemple2.com"
+            placeholder="ex : https://www.inspiration1.com, https://www.inspiration2.com"
             @input="block7 =  true"
           ></textarea>
         </div>
 
         <!-- Question 7 -->
         <div x-show="block7">
-          <label for="input7" class="default-label"
-            >7/8. Budget estimé </label
-          >
+          <label for="input7" class="default-label">7/8. Budget estimé </label>
           <input
             type="text"
             id="input7"
             class="w-full default-input default-focus"
             @input="block8 =  true"
-            placeholder="ex : 2000 - 3000 €"
+            placeholder="ex : 5000 € - 10000 €"
           />
         </div>
 
@@ -394,21 +381,19 @@ Web Solutions {% endblock %} {% block javascripts %}
         <div x-show="block8">
           <label for="input8" class="default-label"
             >8/8. Délai souhaité pour le lancement
-            </label
-          >
+          </label>
           <input
             type="text"
             id="input8"
             class="w-full default-input default-focus"
-            placeholder="ex : 3 mois à partir de la signature du contrat."
+            placeholder="ex : 3 mois"
             @input="block9 =  true"
           />
         </div>
 
         <!-- End block -->
         <div x-show="block9" class="lg:w-[91%]">
-          <button id="download-button2" class="blue-button" >Télécharger</button>
-         
+          <button id="download-button2" class="blue-button">Télécharger</button>
         </div>
       </div>
 
@@ -421,84 +406,82 @@ Web Solutions {% endblock %} {% block javascripts %}
       >
         <!-- Question 1 -->
         <div x-show="block1 || (block1 = true)" class="flex flex-col">
-          <label for="input1" class="default-label"
-            >1/8. URL du site </label
-          >
+          <label for="input1" class="default-label">1/8. URL du site </label>
           <input
             type="text"
             id="input1"
             class="w-full default-input default-focus"
-            placeholder="ex : Mon Site Web Pro"
+            placeholder="ex : https://www.votresite.com"
             @input="block2 =  true"
           />
         </div>
+
         <!-- Question 2 -->
         <div x-show="block2">
           <label for="input2" class="default-label"
             >2/8. Technologies utilisées
-            </label
-          >
-          <textarea
+          </label>
+          <input
             type="text"
             id="input2"
-            class="w-full default-textarea default-focus"
-            placeholder="ex : Entreprise de vente de produits artisanaux, fondée en 2015, basée à Paris."
+            class="w-full default-input default-focus"
+            placeholder="ex : Symfony, Docker, PostgreSQL"
             @input="block3 =  true"
-          ></textarea>
+          />
         </div>
+
         <!-- Question 3 -->
         <div x-show="block3">
           <label for="input3" class="default-label"
             >3/8. Types de maintenance souhaitée
-            </label
-          >
-          <input
+          </label>
+          <textarea
             type="text"
             id="input3"
-            class="w-full default-input default-focus"
-            placeholder="ex : Présence en ligne pour augmenter la visibilité et attirer de nouveaux clients."
+            class="w-full default-textarea default-focus"
+            placeholder="ex : Maintenance corrective, évolutive, préventive"
             @input="block4 =  true"
-          />
+          ></textarea>
         </div>
+
         <!-- Question 4 -->
         <div x-show="block4">
           <label for="input4" class="default-label"
             >4/8. Fréquence des mises à jour
-            </label
-          >
-          <textarea
+          </label>
+          <input
             type="text"
             id="input4"
-            class="w-full default-textarea default-focus"
-            placeholder="ex : Formulaire de contact, Blog, E-commerce pour vendre des produits."
+            class="w-full default-input default-focus"
+            placeholder="ex : Hebdomadaire, mensuelle, trimestrielle"
             @input="block5 =  true"
-          ></textarea>
+          />
         </div>
 
         <!-- Question 5 -->
         <div x-show="block5">
           <label for="input5" class="default-label"
-            >5/8. Historique des interventions précédentes </label
-          >
-          <input
+            >5/8. Historique des interventions précédentes
+          </label>
+          <textarea
             type="text"
             id="input5"
-            class="w-full default-input default-focus"
-            placeholder="ex : Adultes de 25 à 45 ans, intéressés par les produits artisanaux."
+            class="w-full default-textarea default-focus"
+            placeholder="ex : Dernière mise à jour le 01/01/2024, correction de bugs, ajout de nouvelles fonctionnalités"
             @input="block6 =  true"
-          />
+          ></textarea>
         </div>
+
         <!-- Question 6 -->
         <div x-show="block6">
           <label for="input6" class="default-label"
             >6/8. Problèmes actuels rencontrés
-            </label
-          >
+          </label>
           <textarea
             type="text"
             id="input6"
             class="w-full default-textarea default-focus"
-            placeholder="ex : www.exemple1.com, www.exemple2.com"
+            placeholder="ex : Temps de chargement lent, bugs sur certaines pages, incompatibilité mobile"
             @input="block7 =  true"
           ></textarea>
         </div>
@@ -507,14 +490,13 @@ Web Solutions {% endblock %} {% block javascripts %}
         <div x-show="block7">
           <label for="input7" class="default-label"
             >7/8. Budget mensuel alloué
-            </label
-          >
+          </label>
           <input
             type="text"
             id="input7"
             class="w-full default-input default-focus"
             @input="block8 =  true"
-            placeholder="ex : 2000 - 3000 €"
+            placeholder="ex : 200 € - 500 €"
           />
         </div>
 
@@ -522,21 +504,19 @@ Web Solutions {% endblock %} {% block javascripts %}
         <div x-show="block8">
           <label for="input8" class="default-label"
             >8/8. Priorités de maintenance
-            </label
-          >
-          <input
+          </label>
+          <textarea
             type="text"
             id="input8"
-            class="w-full default-input default-focus"
-            placeholder="ex : 3 mois à partir de la signature du contrat."
+            class="w-full default-textarea default-focus"
+            placeholder="ex : Sécurité, performance, compatibilité"
             @input="block9 =  true"
-          />
+          ></textarea>
         </div>
 
         <!-- End block -->
         <div x-show="block9" class="lg:w-[91%]">
           <button id="download-button3" class="blue-button">Télécharger</button>
-         
         </div>
       </div>
 
@@ -549,55 +529,54 @@ Web Solutions {% endblock %} {% block javascripts %}
       >
         <!-- Question 1 -->
         <div x-show="block1 || (block1 = true)" class="flex flex-col">
-          <label for="input1" class="default-label"
-            >1/8. URL du site </label
-          >
+          <label for="input1" class="default-label">1/8. URL du site </label>
           <input
             type="text"
             id="input1"
             class="w-full default-input default-focus"
-            placeholder="ex : Mon Site Web Pro"
+            placeholder="ex : https://www.votresite.com"
             @input="block2 =  true"
           />
         </div>
+
         <!-- Question 2 -->
         <div x-show="block2">
           <label for="input2" class="default-label"
             >2/8. Principaux mots-clés visés
-            </label
-          >
-          <textarea
+          </label>
+          <input
             type="text"
             id="input2"
-            class="w-full default-textarea default-focus"
-            placeholder="ex : Entreprise de vente de produits artisanaux, fondée en 2015, basée à Paris."
+            class="w-full default-input default-focus"
+            placeholder="ex : développement web, agence SEO, marketing digital"
             @input="block3 =  true"
-          ></textarea>
+          />
         </div>
+
         <!-- Question 3 -->
         <div x-show="block3">
           <label for="input3" class="default-label"
-            >3/8. Objectifs de SEO </label
-          >
-          <input
+            >3/8. Objectifs de SEO
+          </label>
+          <textarea
             type="text"
             id="input3"
-            class="w-full default-input default-focus"
-            placeholder="ex : Présence en ligne pour augmenter la visibilité et attirer de nouveaux clients."
+            class="w-full default-textarea default-focus"
+            placeholder="ex : Augmenter le trafic organique, améliorer le classement des mots-clés, générer des leads"
             @input="block4 =  true"
-          />
+          ></textarea>
         </div>
+
         <!-- Question 4 -->
         <div x-show="block4">
           <label for="input4" class="default-label"
             >4/8. État actuel du SEO
-            </label
-          >
+          </label>
           <textarea
             type="text"
             id="input4"
             class="w-full default-textarea default-focus"
-            placeholder="ex : Formulaire de contact, Blog, E-commerce pour vendre des produits."
+            placeholder="ex : Score SEO actuel, performances sur les moteurs de recherche"
             @input="block5 =  true"
           ></textarea>
         </div>
@@ -606,61 +585,57 @@ Web Solutions {% endblock %} {% block javascripts %}
         <div x-show="block5">
           <label for="input5" class="default-label"
             >5/8. Concurrents principaux
-            </label
-          >
-          <input
+          </label>
+          <textarea
             type="text"
             id="input5"
-            class="w-full default-input default-focus"
-            placeholder="ex : Adultes de 25 à 45 ans, intéressés par les produits artisanaux."
+            class="w-full default-textarea default-focus"
+            placeholder="ex : Site A, Site B, Site C"
             @input="block6 =  true"
-          />
+          ></textarea>
         </div>
+
         <!-- Question 6 -->
         <div x-show="block6">
           <label for="input6" class="default-label"
             >6/8. Budget mensuel alloué
-            </label
-          >
-          <textarea
+          </label>
+          <input
             type="text"
             id="input6"
-            class="w-full default-textarea default-focus"
-            placeholder="ex : www.exemple1.com, www.exemple2.com"
+            class="w-full default-input default-focus"
+            placeholder="ex : 500 € - 2000 €"
             @input="block7 =  true"
-          ></textarea>
+          />
         </div>
 
         <!-- Question 7 -->
         <div x-show="block7">
           <label for="input7" class="default-label"
             >7/8. Priorités de référencement
-            </label
-          >
-          <input
+          </label>
+          <textarea
             type="text"
             id="input7"
-            class="w-full default-input default-focus"
+            class="w-full default-textarea default-focus"
             @input="block8 =  true"
-            placeholder="ex : 2000 - 3000 €"
-          />
+            placeholder="ex : Contenu, backlinks, optimisation technique"
+          ></textarea>
         </div>
 
-         <!-- Question 8 -->
-         <div x-show="block8">
+        <!-- Question 8 -->
+        <div x-show="block8">
           <label for="input8" class="default-label"
             >8/8. Délai prévu pour atteindre vos objectifs SEO
-            </label
-          >
+          </label>
           <input
             type="text"
             id="input8"
             class="w-full default-input default-focus"
             @input="block9 =  true"
-            placeholder="ex : 2000 - 3000 €"
+            placeholder="ex : 6 mois"
           />
         </div>
-
 
         <!-- End block -->
         <div x-show="block8" class="lg:w-[91%]">
