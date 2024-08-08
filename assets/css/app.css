@@ -744,3 +744,11 @@ textarea {
       opacity: 0.5;
   }
 }
+
+/* Form signin */
+
+.form-signin {
+  max-width: 600px;
+  padding: 15px;
+  margin: 0 auto;
+}

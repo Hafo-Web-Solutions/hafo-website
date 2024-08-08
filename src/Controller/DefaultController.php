@@ -20,6 +20,10 @@ class DefaultController extends AbstractController
     #[Route('/', name: 'app_default')]
     public function index(): Response
     {
+        if ($this->getUser()) {
+            return $this->redirectToRoute('admin');
+        }
+        
         $filterPosts = $this->em->getRepository(Post::class)->findBy([], ['id' => 'DESC'], 4);
         $projects = $this->em->getRepository(Project::class)->findBy([], ['id' => 'DESC'], 4);
 
