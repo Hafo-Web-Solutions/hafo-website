@@ -25,7 +25,7 @@ class FooterService
                 'title' => $post->getTitle(),
                 'category' => $post->getCategory(),
                 'image' => $post->getImageByType('post')->getImage(),
-                'resume' => "ghvhvhvhvjjd dc kdckdc kbdkcd djc dvc  cd dc d dcdc  cdjdkjcjcd",
+                'resume' => $post->getResume(),
             ];
         }
 

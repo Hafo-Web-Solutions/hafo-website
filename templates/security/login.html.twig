@@ -1,0 +1,60 @@
+{% extends 'base.html.twig' %} {% block title %}Log in!{% endblock %} {% block
+body %}
+<form
+  name="signin"
+  class="form-signin"
+  action="{{ path('app_login') }}"
+  method="post"
+>
+  {% if error %}
+  <div class="alert alert-danger">
+    {{ error.messageKey|trans(error.messageData, 'security') }}
+  </div>
+  {% endif %} {% if app.user %}
+  <div class="mb-3">
+    Vous êtes connecter avec {{ app.user.userIdentifier }},
+    <a href="{{ path('app_logout') }}">Se deconnecter</a>
+  </div>
+  {% endif %}
+
+  <h1 class="text-2xl mb-6 mt-3 font-weight-normal text-white">
+    Pannel Administrateur
+  </h1>
+  <label for="inputEmail" class="text-white">Email</label>
+  <input
+    type="text"
+    value="{{ last_username }}"
+    name="email"
+    id="inputEmail"
+    class="w-full mb-2 mt-2 rounded-[4px] border border-borderBase bg-opacityBlue h-[50px] px-4 text-white text-sm font-light focus:outline-none focus:ring focus:ring-secondary"
+    autocomplete="email"
+    required
+    autofocus
+  />
+  <label for="inputPassword" class="text-white">Mot de passe</label>
+  <input
+    type="password"
+    name="password"
+    id="inputPassword"
+    class="w-full mb-2 mt-2 rounded-[4px] border border-borderBase bg-opacityBlue h-[50px] px-4 text-white text-sm font-light focus:outline-none focus:ring focus:ring-secondary"
+    autocomplete="current-password"
+    required
+  />
+
+  <input
+    type="hidden"
+    name="_csrf_token"
+    value="{{ csrf_token('authenticate') }}"
+  />
+
+  <div class="checkbox mb-3">
+    <label class="text-white">
+      <input type="checkbox" name="_remember_me" /> Se souvenir de moi
+    </label>
+  </div>
+
+  <button class="text-black bg-white px-4 py-2 rounded-md" type="submit">
+    Se connecter
+  </button>
+</form>
+{% endblock %}
