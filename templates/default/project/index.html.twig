@@ -1,80 +1,90 @@
-{% extends 'base.html.twig' %} {% block title %} Nos réalisations {% endblock %}
-{% block body %}
+{% extends 'base.html.twig' %} {% block title %} Portfolio de Projets Web
+Réalisés {% endblock %} {% block description %} Explorez notre portfolio de
+projets web réalisés avec succès. Découvrez comment nous avons aidé nos clients
+à atteindre leurs objectifs grâce à des solutions digitales sur mesure. {%
+endblock %} {% block body %}
 <section>
   <!-- Header Project Block -->
-<article class="sm:container default-container flex justify-center mt-[80px] lg:mt-[100px]">
-  <div class="md:w-4/6 flex flex-col justify-center items-center">
-    <h1
-      class="text-white text-[28px] md:text-[34px] lg:text-[38px] font-bold text-center mb-[20px] leading-[1.19]"
-      data-sal="slide-up"
-      data-sal-duration="800"
-      data-sal-delay="150"
-      >
-    Nos réalisations
-    </h1>
-    <p
-      class="text-grayText text-center leading-[28px]"
-      data-sal="slide-up"
-      data-sal-duration="800"
-      data-sal-delay="200"
-    >
-    Entrer dans le monde du numérique avec aisance et expertise. Chez Hafo
-    Web Solutions, nous donnons vie à vos idées avec des solutions web
-    sur-mesure qui allient performance, design moderne et expérience
-    utilisateur optimale. Notre approche unique met vos ambitions au cœur de
-    notre processus créatif.
-    </p>
-  </div>
-</article>
-
-<!-- Project Block -->
-<article
-  class="mt-[80px] lg:mt-[100px] w-full flex flex-col justify-center items-center"
->
-  <div
-    class="flex lg:flex-row flex-col gap-8 lg:justify-center items-center flex-wrap w-full default-container 2xl:container-fluid 2xl:px-[140px]"
+  <article
+    class="sm:container default-container flex justify-center mt-[80px] lg:mt-[100px]"
   >
-    {% for achievement in achievements %}
-    <a href="{{ path('app_achievement', {id: achievement.id }) }}" class="w-[320px] h-[300px] flex flex-col justify-between">
-      <div
-        class="w-full h-[250px] rounded-md overflow-hidden"
+    <div class="md:w-4/6 flex flex-col justify-center items-center">
+      <h1
+        class="text-white text-[28px] md:text-[34px] lg:text-[38px] font-bold text-center mb-[20px] leading-[1.19]"
         data-sal="slide-up"
         data-sal-duration="800"
         data-sal-delay="150"
       >
-    {# Afficher l'image de type 'main' #}
-    {% set image = achievement.getImageByType('main') %}
-    {% if image %}
-        <img src="{{ asset('/images/uploads/' ~ image.getImage() ) }}" alt="{{ image.getType()  }}"
-        class="w-full h-full object-cover hover:scale-150 transition-transform duration-500 ease-in-out">
-    {% else %}
-        <p>Aucune image principale disponible</p>
-    {% endif %}
-      </div>
-      <div>
-        <p
-          class="text-secondary mt-[10px] text-sm uppercase"
+        Nos réalisations
+      </h1>
+      <p
+        class="text-grayText text-center leading-[28px]"
+        data-sal="slide-up"
+        data-sal-duration="800"
+        data-sal-delay="200"
+      >
+        Entrer dans le monde du numérique avec aisance et expertise. Chez Hafo
+        Web Solutions, nous donnons vie à vos idées avec des solutions web
+        sur-mesure qui allient performance, design moderne et expérience
+        utilisateur optimale. Notre approche unique met vos ambitions au cœur de
+        notre processus créatif.
+      </p>
+    </div>
+  </article>
+
+  <!-- Project Block -->
+  <article
+    class="mt-[80px] lg:mt-[100px] w-full flex flex-col justify-center items-center"
+  >
+    <div
+      class="flex lg:flex-row flex-col gap-8 lg:justify-center items-center flex-wrap w-full default-container 2xl:container-fluid 2xl:px-[140px]"
+    >
+      {% for achievement in achievements %}
+      <a
+        href="{{ path('app_achievement', { id: achievement.id }) }}"
+        class="w-[320px] h-[300px] flex flex-col justify-between"
+      >
+        <div
+          class="w-full h-[250px] rounded-md overflow-hidden"
           data-sal="slide-up"
           data-sal-duration="800"
-          data-sal-delay="200"
+          data-sal-delay="150"
         >
-       {% for tag in achievement.tag %}
-          {{ tag.name }}
-        {% endfor %}
-        </p>
-        <h3
-          class="llg:text-[28px] text-[24px] md:text-[26px] expertise-lg:text-[26px] text-white"
-          data-sal="slide-up"
-          data-sal-duration="800"
-          data-sal-delay="250"
-        >
-          {{ achievement.title }}
-        </h3>
-      </div>
-    </a>
-    {% endfor %}
-  </div>
-</article>
+          {# Afficher l'image de type 'main' #} {% set image =
+          achievement.getImageByType('main') %} {% if image %}
+          <img
+            src="{{ asset('/images/uploads/' ~ image.getImage() ) }}"
+            alt="{{ image.getType() }}"
+            class="w-full h-full object-cover hover:scale-150 transition-transform duration-500 ease-in-out"
+          />
+          {% else %}
+          <p>Aucune image principale disponible</p>
+          {% endif %}
+        </div>
+        <div>
+          <p
+            class="text-secondary mt-[10px] text-sm uppercase"
+            data-sal="slide-up"
+            data-sal-duration="800"
+            data-sal-delay="200"
+          >
+            {% for tag in achievement.tag %}
+            {{ tag.name }}
+            {% endfor %}
+          </p>
+          <h3
+            class="llg:text-[28px] text-[24px] md:text-[26px] expertise-lg:text-[26px] text-white"
+            data-sal="slide-up"
+            data-sal-duration="800"
+            data-sal-delay="250"
+          >
+            {{ achievement.title }}
+          </h3>
+        </div>
+      </a>
+      {% endfor %}
+    </div>
+  </article>
 </section>
 
 {% endblock %}

@@ -1,5 +1,9 @@
-{% extends 'base.html.twig' %} {% block title %} Centre de support - Hafo Web
-Solutions {% endblock %} {% block javascripts %}
+{% extends 'base.html.twig' %} {% block title %} Support web : Assistance et
+réponses à vos questions fréquentes {% endblock %} {% block description %}
+Trouvez des réponses à vos questions fréquentes et obtenez de l'aide pour vos
+projets web. Notre équipe est disponible pour vous accompagner à
+chaque étape de votre développement digital. {% endblock %} {% block javascripts
+%}
 {{ parent() }}
 {{ encore_entry_script_tags("support") }}
 {% endblock %} {% block body %}
@@ -58,7 +62,7 @@ Réussite", subtitle: "Chaque Étape, Un Pas de Plus Vers Votre Vision", style:
       <select
         name="select_subject"
         id="select_subject"
-        class="cursor-pointer form-contact-input select-input w-full rounded-[4px] border border-borderBase bg-opacityBlue h-[50px] px-4 text-white text-sm font-light focus:outline-none focus:ring focus:ring-secondary focus:ring-[1px]"
+        class="cursor-pointer form-contact-input select-input w-full rounded-[4px] border border-borderBase bg-opacityBlue h-[50px] px-4 text-white text-sm font-light focus:outline-none focus:ring-secondary focus:ring-[1px]"
         onchange="updateSubject()"
       >
         <option value="0" selected>-Sélectionnez un sujet-</option>
